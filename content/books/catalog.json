@@ -1,0 +1,134 @@
+[
+  {
+    "id": "zinchenko-putevoditel-oru",
+    "title": "Путеводитель по основным понятиям и схемам ОРУ",
+    "author": "Зинченко А.П.",
+    "year": null,
+    "folder": "0",
+    "file": "1_SHH_Putevoditel ORU.pdf",
+    "size_mb": 0.8,
+    "category": "chrestomathy",
+    "description": "Путеводитель по организационно-руководящей управленческой деятельности в СМД-методологии"
+  },
+  {
+    "id": "zinchenko-putevoditel-ponyatiya",
+    "title": "Путеводитель по понятиям и схемам",
+    "author": "Зинченко А.П.",
+    "year": null,
+    "folder": "0",
+    "file": "2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "size_mb": 1.9,
+    "category": "chrestomathy",
+    "description": "Путеводитель по понятиям и схемам СМД-методологии"
+  },
+  {
+    "id": "zinchenko-reflexia",
+    "title": "Рефлексия",
+    "author": "Зинченко А.П. (ред.)",
+    "year": null,
+    "folder": "0",
+    "file": "Reflexia.pdf",
+    "size_mb": 22.3,
+    "category": "chrestomathy",
+    "description": "Хрестоматия по рефлексии в СМД-методологии"
+  },
+  {
+    "id": "zinchenko-smd-scheme",
+    "title": "Схема мыследеятельности — разбор",
+    "author": "Зинченко А.П.",
+    "year": null,
+    "folder": "0",
+    "file": "Схема мыследеятельности разбор.docx",
+    "size_mb": 1.2,
+    "category": "chrestomathy",
+    "description": "Детальный разбор схемы мыследеятельности"
+  },
+  {
+    "id": "zinchenko-multithinking",
+    "title": "Scheme of Multithinking",
+    "author": "Зинченко А.П.",
+    "year": null,
+    "folder": "0",
+    "file": "Scheme of Multithinking.docx",
+    "size_mb": 0.4,
+    "category": "chrestomathy",
+    "description": "Схема мультимышления (англ.)"
+  },
+  {
+    "id": "zinchenko-management",
+    "title": "Общая управленческая подготовка",
+    "author": "Зинченко А.П.",
+    "year": null,
+    "folder": "0",
+    "file": "Общая управленческая подготовка.pdf",
+    "size_mb": 1.1,
+    "category": "chrestomathy",
+    "description": "Материалы по общей управленческой подготовке в контексте СМД-методологии"
+  },
+  {
+    "id": "gp-yazykovoe-myshlenie",
+    "title": "Языковое мышление и методы его исследования",
+    "author": "Щедровицкий Г.П.",
+    "year": 1964,
+    "folder": "1",
+    "file": "iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "size_mb": 3.8,
+    "category": "gp_original",
+    "description": "Докторская диссертация ГП. Ключевой текст — основания содержательно-генетической логики, анализ мышления как деятельности."
+  },
+  {
+    "id": "gp-ot-logiki-nauki",
+    "title": "От логики науки к теории мышления",
+    "author": "Щедровицкий Г.П.",
+    "year": 1987,
+    "folder": "1",
+    "file": "ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "size_mb": 4.5,
+    "category": "gp_original",
+    "description": "Сборник лекций 1987 года: мышление, деятельность, рефлексия, понимание. Содержит Лекцию 3 'Мышление, мыслительная деятельность и деятельность'."
+  },
+  {
+    "id": "gp-na-perekrestke",
+    "title": "На перекрёстке мысли",
+    "author": "Щедровицкий Г.П.",
+    "year": 1956,
+    "folder": "1",
+    "file": "na-perekrestke-mysli.pdf",
+    "size_mb": 3.1,
+    "category": "gp_original",
+    "description": "Ранние работы ГП 1950-х. Содержит статью 'О некоторых моментах мыслительного процесса в геометрии Евклида' (1956)."
+  },
+  {
+    "id": "gp-mifpsihologiya",
+    "title": "Мифопсихология. От теории мышления к...",
+    "author": "Щедровицкий Г.П.",
+    "year": null,
+    "folder": "1",
+    "file": "Shedrovickiyi_G._Mifpsihologiya._Ot_Teorii_Myishleniya_K_T.a4.pdf",
+    "size_mb": 8.0,
+    "category": "gp_original",
+    "description": "Расширенное издание работ ГП по теории мышления"
+  },
+  {
+    "id": "gp-methodology-problems",
+    "title": "Проблемы методологии",
+    "author": "Щедровицкий Г.П.",
+    "year": null,
+    "folder": "1",
+    "file": "GP - 1 - methodology problems.docx",
+    "size_mb": 2.1,
+    "category": "gp_original",
+    "description": "Проблемы методологии — конспект/обработка текстов ГП"
+  },
+  {
+    "id": "gp-raw-data-book2",
+    "title": "Raw data — вторая книга",
+    "author": "Щедровицкий Г.П.",
+    "year": null,
+    "folder": "1",
+    "file": "GP raw data second book.docx",
+    "size_mb": 6.3,
+    "category": "gp_original",
+    "description": "Сырые данные извлечения из второй книги ГП"
+  }
+]

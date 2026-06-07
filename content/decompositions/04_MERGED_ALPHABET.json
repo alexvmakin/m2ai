@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "title": "Сводный мета-алфавит операций мышления ГП Щедровицкого",
+    "sources": [
+      "01_DISSERTATION_INTRO.json — Диссертация, Введение §§1-3 (1964)",
+      "02_EUCLID_ANALYSIS.json — Статья об Евклиде (1956)",
+      "03_THINKING_ACTIVITY.json — Лекция «Мышление, мыслительная деятельность и деятельность» (1987)"
+    ],
+    "merge_date": "2026-05-11",
+    "total_operations": 34,
+    "total_types_before_merge": 28,
+    "total_types_after_merge": 18,
+    "method": "Объединение типов с одинаковой структурой (sopostavlenie_pattern + otnesenie_pattern + функциональная роль). Типы с одинаковым паттерном, но разной функцией сохраняются как отдельные."
+  },
+  "unified_alphabet": {
+    "A01_PROBLEM_SITUATION_FIXATION": {
+      "sopostavlenie_pattern": "S1",
+      "otnesenie_pattern": "value",
+      "definition": "Фиксация нового состояния дел или проблемной ситуации путём атрибутивного сопоставления с прежним",
+      "source_types": ["DISS:PROBLEM_SITUATION_FIXATION"],
+      "instances": ["D01:OP-001"],
+      "genetic_complexity": 1,
+      "frequency": 1
+    },
+    "A02_SUBJECT_DELIMITATION": {
+      "sopostavlenie_pattern": "S2",
+      "otnesenie_pattern": "law",
+      "definition": "Разграничение своего предмета/подхода с существующим (традиционным)",
+      "source_types": ["EUCL:SUBJECT_DELIMITATION"],
+      "instances": ["D02:OP-001"],
+      "genetic_complexity": 2,
+      "frequency": 1
+    },
+    "A03_INVENTORY": {
+      "sopostavlenie_pattern": "S2",
+      "otnesenie_pattern": "object",
+      "definition": "Перечисление и разграничение множества объектов как самостоятельных единиц, инвентаризация поля",
+      "source_types": ["DISS:INVENTORY"],
+      "instances": ["D01:OP-004"],
+      "genetic_complexity": 2,
+      "frequency": 1
+    },
+    "A04_GENETIC_TRANSITION": {
+      "sopostavlenie_pattern": "S2",
+      "otnesenie_pattern": "law",
+      "definition": "Разграничение двух состояний/эпох для обнаружения закономерного перехода",
+      "source_types": ["DISS:GENETIC_TRANSITION"],
+      "instances": ["D01:OP-002"],
+      "genetic_complexity": 2,
+      "frequency": 1
+    },
+    "A05_BOUNDARY_DRAWING": {
+      "sopostavlenie_pattern": "S2",
+      "otnesenie_pattern": "law",
+      "definition": "Проведение границы между феноменами, ранее не различавшимися, через конкретный пример. Включает: UNIT_INTRODUCTION (часть/целое), TYPOLOGY_CONSTRUCTION (тип/тип)",
+      "source_types": ["EUCL:UNIT_INTRODUCTION", "TA:BOUNDARY_DRAWING", "TA:TYPOLOGY_CONSTRUCTION"],
+      "instances": ["D02:OP-003", "D03:OP-004", "D03:OP-007"],
+      "genetic_complexity": 3,
+      "frequency": 3
+    },
+    "A06_CONVERGENCE_DISCOVERY": {
+      "sopostavlenie_pattern": "S3",
+      "otnesenie_pattern": "law",
+      "definition": "Проверка нескольких объектов по единому критерию, обнаружение их схождения к общему основанию",
+      "source_types": ["DISS:CONVERGENCE_DISCOVERY"],
+      "instances": ["D01:OP-003"],
+      "genetic_complexity": 3,
+      "frequency": 1
+    },
+    "A07_DEPENDENCY_DISCOVERY": {
+      "sopostavlenie_pattern": "S3",
+      "otnesenie_pattern": "law",
+      "definition": "Проверка элементов множества на взаимозависимость, фиксация системной связи",
+      "source_types": ["DISS:DEPENDENCY_DISCOVERY"],
+      "instances": ["D01:OP-005"],
+      "genetic_complexity": 3,
+      "frequency": 1
+    },
+    "A08_CATEGORICAL_DEFINITION": {
+      "sopostavlenie_pattern": "S3",
+      "otnesenie_pattern": "law",
+      "definition": "Определение объекта через подведение под категорию (род + видовые признаки) или через набор условий",
+      "source_types": ["EUCL:CATEGORICAL_DEFINITION", "EUCL:OPERATION_TYPE_DEFINITION(S1/S3)"],
+      "instances": ["D02:OP-002", "D02:OP-005", "D02:OP-006"],
+      "genetic_complexity": 3,
+      "frequency": 3
+    },
+    "A09_SEQUENCE_RULE_EXTRACTION": {
+      "sopostavlenie_pattern": "S3",
+      "otnesenie_pattern": "law",
+      "definition": "Проверка эмпирических последовательностей по набору правил, извлечение синтаксиса/грамматики",
+      "source_types": ["EUCL:SEQUENCE_RULE_EXTRACTION"],
+      "instances": ["D02:OP-010"],
+      "genetic_complexity": 3,
+      "frequency": 1
+    },
+    "A10_NEGATIVE_DEFINITION": {
+      "sopostavlenie_pattern": "S4",
+      "otnesenie_pattern": "law",
+      "definition": "Определение объекта через отрицание привычных интерпретаций (серия контрпримеров)",
+      "source_types": ["TA:NEGATIVE_DEFINITION", "EUCL:OPERATION_TYPE_DEFINITION(S4)"],
+      "instances": ["D03:OP-002", "D02:OP-007", "D02:OP-008"],
+      "genetic_complexity": 4,
+      "frequency": 3
+    },
+    "A11_REFUTATION_BY_COUNTEREXAMPLE": {
+      "sopostavlenie_pattern": "S4",
+      "otnesenie_pattern": "law",
+      "definition": "Предъявление контрпримера для отсечения ложного пути или диагностики кризиса",
+      "source_types": ["DISS:REFUTATION_BY_COUNTEREXAMPLE", "TA:CRISIS_DIAGNOSIS"],
+      "instances": ["D01:OP-007", "D03:OP-009"],
+      "genetic_complexity": 4,
+      "frequency": 2
+    },
+    "A12_PRINCIPLE_REPLACEMENT": {
+      "sopostavlenie_pattern": "S5",
+      "otnesenie_pattern": "law",
+      "definition": "Замена одного организующего принципа, рамки или метода другим (более продуктивным)",
+      "source_types": ["DISS:METHOD_FORMULATION", "EUCL:FRAMEWORK_REPLACEMENT", "TA:PRINCIPLE_REPLACEMENT", "TA:PROGRAM_FORMULATION"],
+      "instances": ["D01:OP-008", "D02:OP-004", "D03:OP-003", "D03:OP-010"],
+      "genetic_complexity": 5,
+      "frequency": 4,
+      "note": "САМЫЙ ЧАСТОТНЫЙ ТИП. ГП постоянно замещает одни рамки/методы/принципы другими — это его базовая мыслительная стратегия."
+    },
+    "A13_CONCEPT_REDEFINITION": {
+      "sopostavlenie_pattern": "S5",
+      "otnesenie_pattern": "law",
+      "definition": "Замена обыденного/традиционного определения понятия деятельностным/методологическим",
+      "source_types": ["TA:CONCEPT_REDEFINITION", "DISS:GENETIC_METHOD_POSITING"],
+      "instances": ["D03:OP-008", "D01:OP-012"],
+      "genetic_complexity": 5,
+      "frequency": 2
+    },
+    "A14_MECHANISM_EXPLICATION": {
+      "sopostavlenie_pattern": "S1",
+      "otnesenie_pattern": "law",
+      "definition": "Развёртка внутреннего механизма работы понятия или инструмента через метафору/аналогию",
+      "source_types": ["TA:MECHANISM_EXPLICATION"],
+      "instances": ["D03:OP-006"],
+      "genetic_complexity": 3,
+      "frequency": 1
+    },
+    "A15_PROBLEM_DECOMPOSITION": {
+      "sopostavlenie_pattern": "S3/S2/S1",
+      "otnesenie_pattern": "law",
+      "definition": "Расчленение целостной задачи на конкретные подпроблемы",
+      "source_types": ["DISS:PROBLEM_DECOMPOSITION"],
+      "instances": ["D01:OP-009", "D01:OP-010", "D01:OP-011"],
+      "genetic_complexity": 2,
+      "frequency": 3
+    },
+    "A16_ONTOLOGICAL_REFRAMING": {
+      "sopostavlenie_pattern": "S6",
+      "otnesenie_pattern": "law",
+      "definition": "Рефлексивный поворот: объектом становится сам способ разделения на предметы, результат — новая онтологическая схема",
+      "source_types": ["DISS:ONTOLOGICAL_REFRAMING"],
+      "instances": ["D01:OP-006"],
+      "genetic_complexity": 6,
+      "frequency": 1
+    },
+    "A17_REFLEXIVE_MODE_DISTINCTION": {
+      "sopostavlenie_pattern": "S6",
+      "otnesenie_pattern": "law",
+      "definition": "Рефлексия над модусами мышления: фиксация переключения между ними «изнутри»",
+      "source_types": ["TA:REFLEXIVE_MODE_DISTINCTION", "EUCL:META_OPERATION_DEFINITION"],
+      "instances": ["D03:OP-005", "D02:OP-011"],
+      "genetic_complexity": 6,
+      "frequency": 2
+    },
+    "A18_CULMINATION_THESIS": {
+      "sopostavlenie_pattern": "S6",
+      "otnesenie_pattern": "law",
+      "definition": "Рефлексивное замыкание: итоговый тезис, интегрирующий весь ход рассуждения",
+      "source_types": ["TA:CULMINATION_THESIS"],
+      "instances": ["D03:OP-011"],
+      "genetic_complexity": 6,
+      "frequency": 1
+    }
+  },
+  "meta_genetic_map": {
+    "description": "Сводная генетическая карта: как типы операций порождают друг друга в рассуждениях ГП",
+    "nodes": [
+      "A01_PROBLEM_SITUATION_FIXATION",
+      "A02_SUBJECT_DELIMITATION",
+      "A03_INVENTORY",
+      "A04_GENETIC_TRANSITION",
+      "A05_BOUNDARY_DRAWING",
+      "A06_CONVERGENCE_DISCOVERY",
+      "A07_DEPENDENCY_DISCOVERY",
+      "A08_CATEGORICAL_DEFINITION",
+      "A09_SEQUENCE_RULE_EXTRACTION",
+      "A10_NEGATIVE_DEFINITION",
+      "A11_REFUTATION_BY_COUNTEREXAMPLE",
+      "A12_PRINCIPLE_REPLACEMENT",
+      "A13_CONCEPT_REDEFINITION",
+      "A14_MECHANISM_EXPLICATION",
+      "A15_PROBLEM_DECOMPOSITION",
+      "A16_ONTOLOGICAL_REFRAMING",
+      "A17_REFLEXIVE_MODE_DISTINCTION",
+      "A18_CULMINATION_THESIS"
+    ],
+    "edges": [
+      {"from": "A01", "to": "A04", "condition": "проблемная ситуация → поиск генезиса", "weight": 1},
+      {"from": "A01", "to": "A02", "condition": "проблемная ситуация → разграничение предмета", "weight": 1},
+      {"from": "A02", "to": "A08", "condition": "разграничение → категориальное определение", "weight": 2},
+      {"from": "A04", "to": "A06", "condition": "генетический переход → конвергенция областей", "weight": 1},
+      {"from": "A06", "to": "A03", "condition": "конвергенция → инвентаризация единиц", "weight": 1},
+      {"from": "A03", "to": "A07", "condition": "инвентаризация → проверка на зависимости", "weight": 1},
+      {"from": "A07", "to": "A16", "condition": "системная зависимость → онтологический переворот", "weight": 1},
+      {"from": "A08", "to": "A05", "condition": "определение → проведение границ", "weight": 2},
+      {"from": "A05", "to": "A09", "condition": "границы → правила следования", "weight": 1},
+      {"from": "A05", "to": "A17", "condition": "проведение границ → рефлексия модусов", "weight": 1},
+      {"from": "A08", "to": "A10", "condition": "определение → негативное уточнение (через контрпримеры)", "weight": 2},
+      {"from": "A10", "to": "A12", "condition": "негативное определение → замена принципа", "weight": 3},
+      {"from": "A11", "to": "A12", "condition": "отсечение ложного → формулировка правильного", "weight": 2},
+      {"from": "A16", "to": "A11", "condition": "новая онтология → отсечение наивных подходов", "weight": 1},
+      {"from": "A12", "to": "A15", "condition": "новый метод → декомпозиция на подпроблемы", "weight": 1},
+      {"from": "A12", "to": "A13", "condition": "замена принципа → переопределение понятий", "weight": 2},
+      {"from": "A12", "to": "A14", "condition": "новый принцип → раскрытие механизма", "weight": 1},
+      {"from": "A13", "to": "A11", "condition": "переопределение → обнаружение кризиса старых форм", "weight": 1},
+      {"from": "A15", "to": "A13", "condition": "подпроблемы → уточнение понятий (генетический метод)", "weight": 1},
+      {"from": "A17", "to": "A18", "condition": "рефлексия модусов → итоговый интегрирующий тезис", "weight": 1},
+      {"from": "A09", "to": "A17", "condition": "правила следования → мета-рефлексия над процессом", "weight": 1}
+    ],
+    "key_hubs": {
+      "A12_PRINCIPLE_REPLACEMENT": "центральный хаб (4 вхождения, 4 входящих, 4 исходящих) — ядро мышления ГП",
+      "A08_CATEGORICAL_DEFINITION": "стартовый хаб для конкретной работы (3 вхождения)",
+      "A05_BOUNDARY_DRAWING": "ключевой аналитический ход (3 вхождения)",
+      "A10_NEGATIVE_DEFINITION": "подготовительный ход к замене (3 вхождения)"
+    }
+  },
+  "statistical_summary": {
+    "by_sopostavlenie_type": {
+      "S1": {"count": 2, "types": ["A01", "A14"], "percent": "11%"},
+      "S2": {"count": 5, "types": ["A02", "A03", "A04", "A05(part)", "A15(part)"], "percent": "28%"},
+      "S3": {"count": 4, "types": ["A06", "A07", "A08", "A09"], "percent": "22%"},
+      "S4": {"count": 2, "types": ["A10", "A11"], "percent": "11%"},
+      "S5": {"count": 2, "types": ["A12", "A13"], "percent": "11%"},
+      "S6": {"count": 3, "types": ["A16", "A17", "A18"], "percent": "17%"}
+    },
+    "by_complexity": {
+      "1-2": {"count": 4, "types": ["A01", "A02", "A03", "A04", "A15"]},
+      "3": {"count": 5, "types": ["A05", "A06", "A07", "A08", "A09", "A14"]},
+      "4": {"count": 2, "types": ["A10", "A11"]},
+      "5": {"count": 2, "types": ["A12", "A13"]},
+      "6": {"count": 3, "types": ["A16", "A17", "A18"]}
+    },
+    "key_findings": [
+      "A12 (PRINCIPLE_REPLACEMENT / S5) — самый частотный тип (4 экземпляра в 34 операциях = 12%). ГП постоянно замещает рамки, принципы, методы.",
+      "S2 (разграничительное сопоставление) — самый частотный паттерн (28%). ГП мыслит через различения.",
+      "S6 (рефлексивное) присутствует во всех трёх текстах — это signature операция ГП.",
+      "Генетическая карта не содержит циклов → типы образуют DAG с корнями в A01/A02 и стоком в A18.",
+      "Тексты 1956, 1964, 1987 демонстрируют устойчивый алфавит: ядро (S2+S5+S6) стабильно на протяжении 30 лет."
+    ]
+  }
+}

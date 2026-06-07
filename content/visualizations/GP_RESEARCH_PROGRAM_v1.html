@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Программа GP × AI v2 — От содержательно-генетической логики к технологизированному мышлению</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --card: #ffffff;
+    --border: #e7e5e4;
+    --text: #1c1917;
+    --text2: #57534e;
+    --accent: #0c4a6e;
+    --accent2: #0369a1;
+    --accent-light: #e0f2fe;
+    --green: #166534;
+    --green-light: #dcfce7;
+    --amber: #92400e;
+    --amber-light: #fef3c7;
+    --red: #991b1b;
+    --red-light: #fee2e2;
+    --purple: #581c87;
+    --purple-light: #f3e8ff;
+    --teal: #115e59;
+    --teal-light: #ccfbf1;
+    --phase1: #0c4a6e;
+    --phase1-light: #e0f2fe;
+    --phase2: #115e59;
+    --phase2-light: #ccfbf1;
+    --phase3: #166534;
+    --phase3-light: #dcfce7;
+    --phase4: #92400e;
+    --phase4-light: #fef3c7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #0c4a6e 0%, #075985 50%, #0369a1 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em; }
+  .hero .subtitle { font-size: 1.1em; opacity: 0.85; max-width: 800px; line-height: 1.7; }
+  .hero .meta { margin-top: 20px; font-size: 0.85em; opacity: 0.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+  .vision { margin: 40px auto; max-width: 1100px; padding: 0 30px; }
+  .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .vision-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px; position: relative; overflow: hidden;
+  }
+  .vision-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  .vision-card.goal1::before { background: var(--accent); }
+  .vision-card.goal2::before { background: var(--purple); }
+  .vision-card .label { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .vision-card.goal1 .label { color: var(--accent); }
+  .vision-card.goal2 .label { color: var(--purple); }
+  .vision-card h3 { font-size: 1.15em; font-weight: 700; margin-bottom: 10px; }
+  .vision-card p { font-size: 0.92em; color: var(--text2); line-height: 1.65; }
+  .arch-section { margin: 40px auto; max-width: 1100px; padding: 0 30px; }
+  .arch-section h2 { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
+  .formula-box {
+    background: var(--card); border: 2px solid var(--accent);
+    border-radius: 12px; padding: 24px 28px; margin-bottom: 24px;
+  }
+  .formula-box .formula { font-family: 'Georgia', serif; font-size: 1.05em; color: var(--accent); font-weight: 600; text-align: center; line-height: 1.8; }
+  .formula-box .formula .arr { color: var(--text2); font-weight: 400; }
+  .phase-section { margin: 50px auto; max-width: 1100px; padding: 0 30px; }
+  .phase-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+  .phase-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3em; font-weight: 700; color: white; flex-shrink: 0;
+  }
+  .phase-num.p1 { background: var(--phase1); }
+  .phase-num.p2 { background: var(--phase2); }
+  .phase-num.p3 { background: var(--phase3); }
+  .phase-num.p4 { background: var(--phase4); }
+  .phase-title { font-size: 1.35em; font-weight: 700; }
+  .phase-timing { font-size: 0.85em; color: var(--text2); }
+  .step-grid { display: grid; gap: 16px; margin-bottom: 16px; }
+  .step {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px 24px;
+    display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start;
+  }
+  .step-id {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8em; font-weight: 700; padding: 4px 0;
+    text-align: center; border-radius: 6px;
+  }
+  .step.p1 .step-id { background: var(--phase1-light); color: var(--phase1); }
+  .step.p2 .step-id { background: var(--phase2-light); color: var(--phase2); }
+  .step.p3 .step-id { background: var(--phase3-light); color: var(--phase3); }
+  .step.p4 .step-id { background: var(--phase4-light); color: var(--phase4); }
+  .step h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 6px; }
+  .step .desc { font-size: 0.88em; color: var(--text2); line-height: 1.6; }
+  .step .output {
+    margin-top: 8px; font-size: 0.82em; padding: 6px 10px;
+    background: #f5f5f4; border-radius: 6px;
+    font-family: 'SF Mono', 'Fira Code', monospace; color: var(--text2);
+  }
+  .step .output strong { color: var(--text); font-weight: 600; }
+  .step .tag {
+    display: inline-block; font-size: 0.72em; font-weight: 600;
+    padding: 2px 8px; border-radius: 4px; margin-top: 8px; margin-right: 4px;
+  }
+  .tag.tool { background: var(--accent-light); color: var(--accent); }
+  .tag.skill { background: var(--purple-light); color: var(--purple); }
+  .tag.done { background: var(--green-light); color: var(--green); }
+  .tag.manual { background: var(--amber-light); color: var(--amber); }
+  .tag.infra { background: var(--teal-light); color: var(--teal); }
+  .tag.viz { background: #fce7f3; color: #9d174d; }
+  .tag.val { background: #fee2e2; color: #991b1b; }
+  .materials { margin: 40px auto; max-width: 1100px; padding: 0 30px; }
+  .materials h2 { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
+  .mat-table {
+    width: 100%; border-collapse: collapse; font-size: 0.88em;
+    background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
+  }
+  .mat-table th {
+    background: #f5f5f4; padding: 10px 14px; text-align: left;
+    font-weight: 600; font-size: 0.85em; color: var(--text2);
+    text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--border);
+  }
+  .mat-table td { padding: 10px 14px; border-bottom: 1px solid #f5f5f4; vertical-align: top; }
+  .mat-table tr:last-child td { border-bottom: none; }
+  .mat-table .folder { font-weight: 600; color: var(--accent); }
+  .mat-table .status-done { color: var(--green); font-weight: 600; }
+  .mat-table .status-partial { color: var(--amber); font-weight: 600; }
+  .mat-table .status-todo { color: var(--text2); }
+  .dep-section { margin: 40px auto; max-width: 1100px; padding: 0 30px; }
+  .dep-section h2 { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
+  .dep-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 28px;
+    font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.78em;
+    line-height: 1.9; overflow-x: auto; white-space: pre; color: var(--text);
+  }
+  .dep-box .hl1 { color: var(--phase1); font-weight: 700; }
+  .dep-box .hl2 { color: var(--phase2); font-weight: 700; }
+  .dep-box .hl3 { color: var(--phase3); font-weight: 700; }
+  .dep-box .hl4 { color: var(--phase4); font-weight: 700; }
+  .dep-box .dim { color: #a8a29e; }
+  .metrics { margin: 40px auto; max-width: 1100px; padding: 0 30px; }
+  .metrics h2 { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .metric-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
+  .metric-card .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+  .metric-card .label { font-size: 0.82em; color: var(--text2); margin-top: 4px; }
+  .risks { margin: 40px auto 60px; max-width: 1100px; padding: 0 30px; }
+  .risks h2 { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
+  .risk-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 4px solid var(--red); border-radius: 0 10px 10px 0;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  .risk-item h4 { font-size: 0.92em; font-weight: 700; margin-bottom: 4px; }
+  .risk-item p { font-size: 0.85em; color: var(--text2); }
+  .risk-item .mitigation {
+    font-size: 0.82em; margin-top: 6px; padding: 6px 10px;
+    background: var(--green-light); border-radius: 6px; color: var(--green);
+  }
+  .footer { background: #1c1917; color: #a8a29e; padding: 30px 40px; text-align: center; font-size: 0.82em; }
+  .section-label { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text2); margin-bottom: 8px; }
+  .theme-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; margin-bottom: 24px; }
+  .theme-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; position: relative;
+  }
+  .theme-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 10px 10px 0 0; }
+  .theme-card.t1::before { background: var(--accent); }
+  .theme-card.t2::before { background: var(--green); }
+  .theme-card.t3::before { background: var(--amber); }
+  .theme-card .t-label { font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .theme-card.t1 .t-label { color: var(--accent); }
+  .theme-card.t2 .t-label { color: var(--green); }
+  .theme-card.t3 .t-label { color: var(--amber); }
+  .theme-card h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 6px; }
+  .theme-card p { font-size: 0.82em; color: var(--text2); line-height: 1.55; }
+  .theme-card ul { font-size: 0.82em; color: var(--text2); margin-top: 6px; padding-left: 16px; line-height: 1.7; }
+  .gate {
+    background: linear-gradient(90deg, var(--purple-light), var(--card));
+    border: 1px solid var(--border); border-left: 4px solid var(--purple);
+    border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 24px 0;
+  }
+  .gate h4 { font-size: 0.9em; font-weight: 700; color: var(--purple); margin-bottom: 6px; }
+  .gate ul { font-size: 0.85em; color: var(--text2); padding-left: 18px; line-height: 1.7; }
+
+  /* SUB-SECTION HEADERS */
+  .sub-header {
+    font-size: 0.8em; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text2);
+    margin: 24px 0 12px; padding: 8px 12px;
+    background: #f5f5f4; border-radius: 6px;
+    border-left: 3px solid;
+  }
+  .sub-header.sh-extract { border-color: var(--phase1); color: var(--phase1); }
+  .sub-header.sh-viz { border-color: #9d174d; color: #9d174d; }
+  .sub-header.sh-val { border-color: var(--red); color: var(--red); }
+  .sub-header.sh-infra { border-color: var(--teal); color: var(--teal); }
+
+  @media (max-width: 768px) {
+    .vision-grid, .theme-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 1.6em; }
+    .hero { padding: 40px 24px 36px; }
+    .container, .vision, .arch-section, .phase-section, .materials, .dep-section, .metrics, .risks { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<div class="hero">
+  <h1>GP &times; AI Research Program</h1>
+  <div class="subtitle">
+    От содержательно-генетической логики Щедровицкого к технологизированному мышлению:
+    автоматизация научных открытий и новое поколение reasoning-моделей
+  </div>
+  <div class="meta">v2.0 &mdash; 11 мая 2026 &nbsp;|&nbsp; Алексей Макин &nbsp;|&nbsp; Проект METHODOLOGY &nbsp;|&nbsp; 4 фазы</div>
+</div>
+
+<!-- ═══════════════════ VISION ═══════════════════ -->
+<div class="vision">
+  <div class="section-label">Две стратегические цели</div>
+  <div class="vision-grid">
+    <div class="vision-card goal1">
+      <div class="label">Цель 1 &mdash; Фабрика знания</div>
+      <h3>Automated Scientific Discovery System</h3>
+      <p>Технологизированное производство научного знания: извлечь из материалов ГП все операции мышления, связанные с научными открытиями, построением теорий, проверкой гипотез &mdash; и превратить их в воспроизводимый конвейер, ускоряющий нас в любых научных направлениях.</p>
+    </div>
+    <div class="vision-card goal2">
+      <div class="label">Цель 2 &mdash; Новое поколение AI</div>
+      <h3>GP-Enhanced MAS / LLM</h3>
+      <p>Встроить извлечённые и технологизированные операции мышления в мультиагентные системы или LLM &mdash; чтобы слабые модели достигали прорывного уровня рассуждений (научные открытия, построение теорий, исследования) &mdash; того, для чего нужен AGI или даже ASI.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ THEMES ═══════════════════ -->
+<div class="arch-section">
+  <div class="section-label">Три тематических направления извлечения</div>
+  <div class="theme-grid">
+    <div class="theme-card t1">
+      <div class="t-label">Тема 1</div>
+      <h4>Производство научного знания</h4>
+      <p>Всё, что касается научных открытий, построения теорий, проверки гипотез, ситуаций разрыва, замещения.</p>
+      <ul>
+        <li>Нисходящее разложение текстов</li>
+        <li>Операции: DEFINITION, REFUTATION, REPAIR, SYNTHESIS</li>
+        <li>Генетические карты научных рассуждений</li>
+        <li>Цикл: определение &rarr; проверка &rarr; разрушение &rarr; починка</li>
+      </ul>
+    </div>
+    <div class="theme-card t2">
+      <div class="t-label">Тема 2</div>
+      <h4>Теория мышления и деятельности</h4>
+      <p>Что ГП сформулировал: содержательно-генетическая логика, СМД, его программа и план развития направлений.</p>
+      <ul>
+        <li>Содержательно-генетическая логика</li>
+        <li>Схема мыследеятельности (СМД)</li>
+        <li>Рефлексия и рефлексивное управление</li>
+        <li>Программа и проект развития</li>
+      </ul>
+    </div>
+    <div class="theme-card t3">
+      <div class="t-label">Тема 3</div>
+      <h4>Вспомогательный корпус</h4>
+      <p>Системное мышление, организационное управление, антропотехника, Лефевр &mdash; контекст и инструментарий.</p>
+      <ul>
+        <li>Технология системного мышления</li>
+        <li>Организационно-управленческий контекст</li>
+        <li>Антропотехника и управление знаниями</li>
+        <li>Рефлексивный анализ (Лефевр)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FORMULA ═══════════════════ -->
+<div class="arch-section">
+  <div class="section-label">Архитектурная формула (по модели Palantir)</div>
+  <div class="formula-box">
+    <div class="formula">
+      Научные тексты <span class="arr">&rarr;</span> GP-разложение <span class="arr">&rarr;</span> Типизированный граф операций <span class="arr">&rarr;</span> Мета-алфавит<br>
+      <span class="arr">&darr;</span><br>
+      Стохастический AI внутри детерминистского каркаса операций мышления
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ МАТЕРИАЛЫ ═══════════════════ -->
+<div class="materials">
+  <h2>Корпус исходных материалов</h2>
+  <table class="mat-table">
+    <thead><tr><th>Папка</th><th>Документ</th><th>Тема</th><th>Статус</th></tr></thead>
+    <tbody>
+      <tr><td class="folder" rowspan="4">1/</td><td>Языковое мышление и методы его исследования (370 с.)</td><td>1+2</td><td class="status-partial">Глава 3 прочитана</td></tr>
+      <tr><td>От логики науки к теории мышления</td><td>2</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>На перекрёстке мысли</td><td>2</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>Мифопсихология: От теории мышления к теории деятельности</td><td>2</td><td class="status-todo">Не начато</td></tr>
+      <tr><td class="folder" rowspan="2">0/</td><td>Путеводитель ОРУ (тома 1-2)</td><td>3</td><td class="status-partial">Навигаторы созданы</td></tr>
+      <tr><td>Рефлексия (Лефевр)</td><td>3</td><td class="status-partial">Дельта извлечена</td></tr>
+      <tr><td class="folder" rowspan="6">2/</td><td>Рельсы, трубы, провода</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>Энергия промышленного роста</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>Первым делом самолёты</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>Знания в управлении</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>О методе управления знаниями</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>Корпоративная антропотехника</td><td>3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td class="folder" rowspan="2">3/</td><td>Технология системного мышления</td><td>2+3</td><td class="status-todo">Не начато</td></tr>
+      <tr><td>10-й том (избранные труды)</td><td>1+2</td><td class="status-todo">Не начато</td></tr>
+      <tr><td class="folder">PROGRAM/</td><td>The Rise of the Era of Intellectual Technologies</td><td>1</td><td class="status-partial">HTML-оверлей создан</td></tr>
+      <tr><td class="folder">Stanford/</td><td>12 статей (Analysis of Knowledge, Confirmation, Scientific Revolutions...)</td><td>1 (пилот)</td><td class="status-partial">1 статья разложена</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════ METRICS ═══════════════════ -->
+<div class="metrics">
+  <h2>Текущий уровень готовности</h2>
+  <div class="metrics-grid">
+    <div class="metric-card"><div class="num">4</div><div class="label">артефакта создано<br>(MD-документы)</div></div>
+    <div class="metric-card"><div class="num">1</div><div class="label">пилотный эксперимент<br>(11 операций, 8 типов)</div></div>
+    <div class="metric-card"><div class="num">6</div><div class="label">типов сопоставления<br>(таксономия S1-S6)</div></div>
+    <div class="metric-card"><div class="num">~20</div><div class="label">материалов в корпусе<br>(PDF + DOCX)</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════ ФАЗА 1: ЭКСТРАКТ + ВИЗУАЛИЗАЦИЯ + ВАЛИДАЦИЯ ═══════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="phase-section">
+  <div class="phase-header">
+    <div class="phase-num p1">1</div>
+    <div>
+      <div class="phase-title">Экстракт, визуализация результатов и валидация</div>
+      <div class="phase-timing">3&ndash;5 недель &nbsp;|&nbsp; Скиллы + экстракция из книг + проектирование представлений + контрольная проверка</div>
+    </div>
+  </div>
+
+  <!-- ── Блок A: Инструменты ── -->
+  <div class="sub-header sh-extract">A. Инструменты экстракции</div>
+  <div class="step-grid">
+
+    <div class="step p1">
+      <div class="step-id">1.1</div>
+      <div>
+        <h4>Скилл GP-разложения</h4>
+        <div class="desc">Оформить алгоритм из GP_DECOMPOSITION_ALGORITHM_AND_EXPERIMENT.md как воспроизводимый скилл с жёсткой валидацией: обязательные поля, DAG-проверка, классификация S1-S6, JSON-выход.</div>
+        <div class="output"><strong>Выход:</strong> SKILL.md + валидатор (Python/TS)</div>
+        <span class="tag skill">Скилл</span>
+        <span class="tag tool">Task #10</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.2</div>
+      <div>
+        <h4>Скилл тематического экстракта</h4>
+        <div class="desc">Скилл для систематического чтения PDF-книг ГП порциями (20 страниц): извлекает всё по заданной теме (1/2/3), складывает в JSON + MD. Не GP-разложение, а тематическая экстракция.</div>
+        <div class="output"><strong>Выход:</strong> SKILL.md (thematic-extractor)</div>
+        <span class="tag skill">Скилл</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Блок B: Экстракция из книг ── -->
+  <div class="sub-header sh-extract">B. Экстракция из материалов ГП</div>
+  <div class="step-grid">
+
+    <div class="step p1">
+      <div class="step-id">1.3</div>
+      <div>
+        <h4>Полный экстракт из диссертации «Языковое мышление»</h4>
+        <div class="desc">Дочитать главы 1-2 (с. 37-234). Глава 3 уже обработана. Полная карта тем 1-2-3 из диссертации.</div>
+        <div class="output"><strong>Выход:</strong> DISSERTATION_FULL_EXTRACT.md</div>
+        <span class="tag tool">Скилл 1.2</span>
+        <span class="tag done">Гл. 3 готова</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.4</div>
+      <div>
+        <h4>Экстракт из «От логики науки к теории мышления»</h4>
+        <div class="desc">Программа ГП по развитию теории мышления. Извлечь: (а) теорию мышления, (б) проект и план, (в) производство научного знания.</div>
+        <div class="output"><strong>Выход:</strong> BOOK_OT_LOGIKI_EXTRACT.md</div>
+        <span class="tag tool">Скилл 1.2</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.5</div>
+      <div>
+        <h4>Экстракт из «Мифопсихология» + «На перекрёстке мысли»</h4>
+        <div class="desc">Переход от теории мышления к СМД. Генезис, программа, методологические предостережения.</div>
+        <div class="output"><strong>Выход:</strong> BOOK_MIFPSYCH_EXTRACT.md + BOOK_PEREKRESTOK_EXTRACT.md</div>
+        <span class="tag tool">Скилл 1.2</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.6</div>
+      <div>
+        <h4>Экстракт из «Технология системного мышления» + 10-й том</h4>
+        <div class="desc">Системное мышление как процедура. Избранные тексты по темам 1-2.</div>
+        <div class="output"><strong>Выход:</strong> BOOK_SYST_EXTRACT.md + BOOK_TOM10_EXTRACT.md</div>
+        <span class="tag tool">Скилл 1.2</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.7</div>
+      <div>
+        <h4>Сборка: тематический свод по трём темам</h4>
+        <div class="desc">Из всех экстрактов (1.3&ndash;1.6) &mdash; три консолидированных документа. Кросс-ссылки, устранение дублей, выделение противоречий.</div>
+        <div class="output"><strong>Выход:</strong> THEME_1_PRODUCTION_OF_KNOWLEDGE.md<br>THEME_2_THEORY_OF_THINKING.md<br>THEME_3_AUXILIARY_CORPUS.md</div>
+        <span class="tag manual">Ручная сверка</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.8</div>
+      <div>
+        <h4>Экстракт из вспомогательного корпуса (папка 2/)</h4>
+        <div class="desc">6 книг. Быстрый проход: только то, что относится к темам 1-3. Фоновая задача.</div>
+        <div class="output"><strong>Выход:</strong> FOLDER_2_EXTRACTS/ (6 файлов)</div>
+        <span class="tag tool">Скилл 1.2</span>
+        <span class="tag manual">Низкий приоритет</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Блок C: Визуализация результатов ── -->
+  <div class="sub-header sh-viz">C. Проектирование и создание визуализаций результатов</div>
+  <div class="step-grid">
+
+    <div class="step p1">
+      <div class="step-id">1.9</div>
+      <div>
+        <h4>Спроектировать систему представлений результатов GP-разложения</h4>
+        <div class="desc">Определить, <strong>как именно визуально показывать</strong> результат работы: какие графы, какие диаграммы, какие таблицы, какие интерактивные представления нужны, чтобы человек мог изучить результат и отнестись к нему. Дизайн-документ с макетами представлений.</div>
+        <div class="output"><strong>Выход:</strong> VISUALIZATION_DESIGN.md &mdash; спецификация 5&ndash;7 типов визуализаций</div>
+        <span class="tag viz">Визуализация</span>
+        <span class="tag skill">Дизайн</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.10</div>
+      <div>
+        <h4>Визуализация единичного GP-разложения (HTML)</h4>
+        <div class="desc">Интерактивный HTML для одного Decomposition: (а) <strong>граф операций</strong> &mdash; узлы = операции, рёбра = inputs/outputs, цвет = тип, размер = генетическая сложность; (б) <strong>timeline основной линии</strong> &mdash; горизонтальная лента с операциями; (в) <strong>карточка операции</strong> &mdash; при клике на узел: полная двухчастная структура (сопоставление + отнесение); (г) <strong>алфавит-бар</strong> &mdash; частотная гистограмма типов. Протестировать на данных пилота (Stanford).</div>
+        <div class="output"><strong>Выход:</strong> GP_DECOMPOSITION_VIEWER.html (D3.js)</div>
+        <span class="tag viz">Визуализация</span>
+        <span class="tag done">Данные пилота есть</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.11</div>
+      <div>
+        <h4>Визуализация кросс-текстового сравнения</h4>
+        <div class="desc">HTML для сравнения нескольких разложений: (а) <strong>radar chart</strong> доменных сигнатур (доля каждого типа операций); (б) <strong>генетическая карта</strong> &mdash; DAG типов с рёбрами «проще &rarr; сложнее»; (в) <strong>паттерны-ленты</strong> &mdash; визуализация повторяющихся цепочек операций; (г) <strong>матрица сходства</strong> текстов по алфавитным профилям.</div>
+        <div class="output"><strong>Выход:</strong> GP_CROSS_COMPARISON_VIEWER.html (D3.js)</div>
+        <span class="tag viz">Визуализация</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.12</div>
+      <div>
+        <h4>Визуализация тематических сводов (HTML)</h4>
+        <div class="desc">Для результатов шага 1.7: интерактивная карта знаний по каждой теме. Связи между концепциями, кластеры, источники. Чтобы можно было «войти» в тему и увидеть структуру.</div>
+        <div class="output"><strong>Выход:</strong> THEME_KNOWLEDGE_MAP.html (force-graph)</div>
+        <span class="tag viz">Визуализация</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Блок D: Валидация ── -->
+  <div class="sub-header sh-val">D. Валидация: контрольный эксперимент</div>
+  <div class="step-grid">
+
+    <div class="step p1">
+      <div class="step-id">1.13</div>
+      <div>
+        <h4>Отобрать контрольный набор текстов (3&ndash;5 текстов)</h4>
+        <div class="desc">Короткие, разнородные тексты для контрольного прогона: 1 из аналитической философии (Stanford), 1 из экспериментальной физики, 1 из биологии/медицины, 1 из математики, 1 из экономики. По 1500&ndash;3000 слов каждый.</div>
+        <div class="output"><strong>Выход:</strong> VALIDATION_CORPUS/ (3-5 текстов)</div>
+        <span class="tag val">Валидация</span>
+        <span class="tag manual">Ручной отбор</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.14</div>
+      <div>
+        <h4>Ручной GP-прогон: разложение по инструкции (не скиллом)</h4>
+        <div class="desc">Проделать GP-разложение тех же текстов <strong>вручную по инструкции</strong> &mdash; шаг за шагом в чате, с возможностью останавливаться, обсуждать неоднозначности, принимать решения. Это «золотой стандарт» &mdash; максимально тщательный прогон.</div>
+        <div class="output"><strong>Выход:</strong> VALIDATION_MANUAL/ (3-5 JSON Decomposition) &mdash; эталонные разложения</div>
+        <span class="tag val">Валидация</span>
+        <span class="tag manual">Ручной</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.15</div>
+      <div>
+        <h4>Автоматический GP-прогон: разложение скиллом</h4>
+        <div class="desc">Прогнать те же контрольные тексты через скилл (1.1) &mdash; автономно, без вмешательства. Получить второй набор разложений.</div>
+        <div class="output"><strong>Выход:</strong> VALIDATION_AUTO/ (3-5 JSON Decomposition)</div>
+        <span class="tag val">Валидация</span>
+        <span class="tag skill">Скилл 1.1</span>
+      </div>
+    </div>
+
+    <div class="step p1">
+      <div class="step-id">1.16</div>
+      <div>
+        <h4>Сравнительный анализ: ручной vs автоматический</h4>
+        <div class="desc">Для каждого текста сравнить: (а) совпадение числа операций, (б) совпадение типов (precision/recall по алфавиту), (в) совпадение основной линии, (г) совпадение генетической карты. Визуализировать расхождения (1.10). Определить: где скилл теряет качество и нужна ли его доработка.</div>
+        <div class="output"><strong>Выход:</strong> VALIDATION_REPORT.md + VALIDATION_COMPARISON.html</div>
+        <span class="tag val">Валидация</span>
+        <span class="tag viz">Визуализация</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gate">
+    <h4>Gate 1: Готовность к инфраструктуре</h4>
+    <ul>
+      <li>Скилл GP-разложения работает и выдаёт валидный JSON</li>
+      <li>Минимум 4 книги прочитаны и экстракт собран (1.3&ndash;1.5)</li>
+      <li>Три тематических свода (1.7) содержат достаточно материала</li>
+      <li>Визуализации работают на данных пилота (1.10&ndash;1.12)</li>
+      <li>Контрольный прогон завершён (1.13&ndash;1.16): разница скилл vs ручной &lt; 20% по основным метрикам, или скилл доработан</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════ ФАЗА 2: ИНФРАСТРУКТУРА ═══════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="phase-section">
+  <div class="phase-header">
+    <div class="phase-num p2">2</div>
+    <div>
+      <div class="phase-title">Инфраструктура: база данных, пайплайн, дашборд стадий</div>
+      <div class="phase-timing">2&ndash;3 недели &nbsp;|&nbsp; Поднять хранилище, конвейер загрузки, визуализацию прогресса</div>
+    </div>
+  </div>
+
+  <div class="step-grid">
+
+    <div class="step p2">
+      <div class="step-id">2.1</div>
+      <div>
+        <h4>Формализация JSON-LD схемы онтологии</h4>
+        <div class="desc">По спецификации из GP_OPERATIONAL_LAYER_ONTOLOGY.md: все Object Types (Operation, OperationType, SopostavlenieType, GeneticLink, OperationPattern, Domain, Concept, Etalon) &rarr; JSON-LD. Это контракт для всех компонентов системы.</div>
+        <div class="output"><strong>Выход:</strong> gp-ontology-schema.jsonld</div>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p2">
+      <div class="step-id">2.2</div>
+      <div>
+        <h4>База данных: граф операций</h4>
+        <div class="desc">Поднять графовую БД для хранения всех GP-разложений. Варианты: (а) Neo4j (идеальный, если есть сервер), (б) SQLite + JSON (лёгкий, для старта), (в) NetworkX-граф в pickle (для экспериментов). Typed nodes + typed edges + CRUD + запросы по типам/доменам/паттернам.</div>
+        <div class="output"><strong>Выход:</strong> GP_GRAPH_DB/ + API (Python SDK)</div>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p2">
+      <div class="step-id">2.3</div>
+      <div>
+        <h4>Конвейер загрузки (Hydrate pipeline)</h4>
+        <div class="desc">Автоматизированный пайплайн: JSON Decomposition &rarr; валидация схемы &rarr; Entity Resolution (маппинг на мета-алфавит) &rarr; загрузка в граф &rarr; обновление статистики. Скрипт, который можно запустить на любом новом разложении.</div>
+        <div class="output"><strong>Выход:</strong> hydrate.py + тесты</div>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p2">
+      <div class="step-id">2.4</div>
+      <div>
+        <h4>Дашборд стадий и прогресса (HTML)</h4>
+        <div class="desc">Интерактивный HTML-дашборд, показывающий: (а) <strong>прогресс экстракции</strong> &mdash; какие книги прочитаны, какие нет, сколько страниц обработано; (б) <strong>прогресс GP-разложений</strong> &mdash; сколько текстов разложено, сколько операций в базе, сколько типов в мета-алфавите; (в) <strong>стадия каждого текста</strong> &mdash; pipeline status (queued &rarr; decomposed &rarr; validated &rarr; merged); (г) <strong>здоровье мета-алфавита</strong> &mdash; распределение типов, покрытие доменов, кандидаты на мерж.</div>
+        <div class="output"><strong>Выход:</strong> GP_PIPELINE_DASHBOARD.html</div>
+        <span class="tag viz">Визуализация</span>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p2">
+      <div class="step-id">2.5</div>
+      <div>
+        <h4>Версионирование мета-алфавита</h4>
+        <div class="desc">Мета-алфавит как JSON-файл в Git. Каждое добавление/мерж типа &mdash; коммит с обоснованием. Diff-визуализация: что изменилось между версиями. Changelog.</div>
+        <div class="output"><strong>Выход:</strong> META_ALPHABET/ (git repo) + diff viewer</div>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p2">
+      <div class="step-id">2.6</div>
+      <div>
+        <h4>Загрузить данные пилота + контрольного прогона в базу</h4>
+        <div class="desc">Первая загрузка: Stanford пилот (11 операций) + данные контрольного прогона (1.14&ndash;1.15). Проверить весь пайплайн end-to-end: JSON &rarr; валидация &rarr; граф &rarr; дашборд &rarr; визуализации.</div>
+        <div class="output"><strong>Выход:</strong> Работающая система с первыми данными</div>
+        <span class="tag infra">Инфраструктура</span>
+        <span class="tag done">End-to-end тест</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gate">
+    <h4>Gate 2: Инфраструктура готова</h4>
+    <ul>
+      <li>База данных поднята и работает, содержит данные пилота + контрольных прогонов</li>
+      <li>Конвейер загрузки (hydrate) работает: JSON &rarr; валидация &rarr; граф &rarr; за 1 команду</li>
+      <li>Дашборд показывает стадии, прогресс и состояние мета-алфавита</li>
+      <li>Визуализации (1.10&ndash;1.12) подключены к данным из базы</li>
+      <li>Мета-алфавит версионируется, diff видим</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════ ФАЗА 3: ПЕРВЫЙ ЭКСПЕРИМЕНТ ═══════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="phase-section">
+  <div class="phase-header">
+    <div class="phase-num p3">3</div>
+    <div>
+      <div class="phase-title">Первый эксперимент: сборка системы мышления</div>
+      <div class="phase-timing">4&ndash;8 недель &nbsp;|&nbsp; 20&ndash;30 текстов &rarr; proto-мета-алфавит + паттерны + GP-CoT</div>
+    </div>
+  </div>
+
+  <div class="step-grid">
+
+    <div class="step p3">
+      <div class="step-id">3.1</div>
+      <div>
+        <h4>Отбор 20&ndash;30 текстов для GP-разложения</h4>
+        <div class="desc">Stanford-корпус (12 статей) + ключевые фрагменты из экстрактов фазы 1 + 5&ndash;10 классических научных работ из разных доменов. Критерий: тексты с яркими примерами научного мышления.</div>
+        <div class="output"><strong>Выход:</strong> CORPUS_v1/ (20-30 фрагментов)</div>
+        <span class="tag manual">Ручной отбор</span>
+      </div>
+    </div>
+
+    <div class="step p3">
+      <div class="step-id">3.2</div>
+      <div>
+        <h4>Массовое GP-разложение скиллом + загрузка в базу</h4>
+        <div class="desc">Прогнать 20&ndash;30 текстов через скилл (1.1). Каждый JSON &rarr; hydrate pipeline (2.3) &rarr; граф (2.2). На дашборде (2.4) видно прогресс в реальном времени.</div>
+        <div class="output"><strong>Выход:</strong> 20-30 Decomposition в базе + обновлённый мета-алфавит</div>
+        <span class="tag skill">Скилл 1.1</span>
+        <span class="tag infra">Pipeline 2.3</span>
+      </div>
+    </div>
+
+    <div class="step p3">
+      <div class="step-id">3.3</div>
+      <div>
+        <h4>Entity Resolution: сращивание алфавитов</h4>
+        <div class="desc">Из 20&ndash;30 локальных алфавитов &rarr; proto-мета-алфавит. 3 уровня: структурный (авто), функциональный (полуавто), семантический (ручной). Прогноз: 25&ndash;40 типов.</div>
+        <div class="output"><strong>Выход:</strong> META_ALPHABET_v0.1.json + ENTITY_RESOLUTION_LOG.md</div>
+        <span class="tag manual">Ручная + LLM</span>
+      </div>
+    </div>
+
+    <div class="step p3">
+      <div class="step-id">3.4</div>
+      <div>
+        <h4>Pattern Detection: поиск повторяющихся цепочек</h4>
+        <div class="desc">Автоматический поиск OperationPattern в графе. Какие цепочки типов повторяются? Какие паттерны доменно-специфичны, какие универсальны? Визуализация через 1.11.</div>
+        <div class="output"><strong>Выход:</strong> PATTERNS_v0.1.md + визуализация в кросс-comparison viewer</div>
+        <span class="tag tool">Алгоритм</span>
+        <span class="tag viz">Визуализация 1.11</span>
+      </div>
+    </div>
+
+    <div class="step p3">
+      <div class="step-id">3.5</div>
+      <div>
+        <h4>«Карта операций научного мышления» (итоговая сборка)</h4>
+        <div class="desc">Интерактивный HTML: мета-алфавит + генетическая карта + доменные сигнатуры + паттерны + drill-down до конкретных операций из конкретных текстов. Всё подключено к базе.</div>
+        <div class="output"><strong>Выход:</strong> SCIENTIFIC_THINKING_MAP_v0.1.html</div>
+        <span class="tag viz">Визуализация</span>
+      </div>
+    </div>
+
+    <div class="step p3">
+      <div class="step-id">3.6</div>
+      <div>
+        <h4>Первый эксперимент GP-CoT</h4>
+        <div class="desc">Proto-мета-алфавит &rarr; структурированный chain-of-thought. Тест: дать LLM научную задачу, рассуждать через GP-операции. Сравнить с baseline (обычный CoT).</div>
+        <div class="output"><strong>Выход:</strong> GP_COT_EXPERIMENT_REPORT.md</div>
+        <span class="tag skill">Эксперимент</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gate">
+    <h4>Gate 3: Готовность к масштабированию</h4>
+    <ul>
+      <li>Proto-мета-алфавит содержит 25+ типов операций</li>
+      <li>Обнаружены 3+ повторяющихся паттерна (OperationPattern)</li>
+      <li>Entity Resolution отлажен, пайплайн работает end-to-end</li>
+      <li>Визуализации показывают осмысленную картину научного мышления</li>
+      <li>GP-CoT показывает хотя бы качественное улучшение</li>
+      <li>Дашборд стадий показывает полный прогресс всех 30 текстов</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════ ФАЗА 4: МАСШТАБИРОВАНИЕ ═══════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="phase-section">
+  <div class="phase-header">
+    <div class="phase-num p4">4</div>
+    <div>
+      <div class="phase-title">Масштабирование и продуктизация</div>
+      <div class="phase-timing">3&ndash;6 месяцев &nbsp;|&nbsp; Циклы: 100 &rarr; 300 &rarr; 1000 текстов</div>
+    </div>
+  </div>
+
+  <div class="step-grid">
+
+    <div class="step p4">
+      <div class="step-id">4.1</div>
+      <div>
+        <h4>Отбор 1000 сильнейших научных работ</h4>
+        <div class="desc">Курация корпуса: ~15 доменов. Критерии: Нобелевские, Филдсовские, Тьюринговские, наиболее цитируемые + Kuhn-переломные.</div>
+        <div class="output"><strong>Выход:</strong> CORPUS_1000/ + CORPUS_METADATA.json</div>
+        <span class="tag manual">Ручной + LLM-скаут</span>
+        <span class="tag tool">Task #11</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.2</div>
+      <div>
+        <h4>Массовое GP-разложение: 100 &rarr; 300 &rarr; 1000</h4>
+        <div class="desc">Три итерации с ревизией мета-алфавита. При 100: стабилизация. При 300: доменные сигнатуры. При 1000: полный мета-алфавит. Entity Resolution на каждом цикле.</div>
+        <div class="output"><strong>Выход:</strong> META_ALPHABET_v1.0.json</div>
+        <span class="tag skill">Скилл 1.1 (пакетный)</span>
+        <span class="tag tool">Task #12</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.3</div>
+      <div>
+        <h4>Масштабирование базы: Neo4j + Vector</h4>
+        <div class="desc">~10 000&ndash;15 000 операций, ~100+ типов. Векторный индекс для семантического поиска. Версионирование через Git.</div>
+        <div class="output"><strong>Выход:</strong> Neo4j DB + API (production)</div>
+        <span class="tag infra">Инфраструктура</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.4</div>
+      <div>
+        <h4>GP-PRM: Process Reward Model</h4>
+        <div class="desc">Мета-алфавит &rarr; reward function для оценки каждого шага рассуждения LLM.</div>
+        <div class="output"><strong>Выход:</strong> GP-PRM model + benchmark</div>
+        <span class="tag skill">Цель 2</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.5</div>
+      <div>
+        <h4>Dual-Plane Architecture (MAS)</h4>
+        <div class="desc">Content Agent (содержание) + Form Agent (GP-структура) + Controller. Content Agent свободен, Form Agent &mdash; жёсткий GP-каркас.</div>
+        <div class="output"><strong>Выход:</strong> MAS-прототип</div>
+        <span class="tag skill">Цель 2</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.6</div>
+      <div>
+        <h4>Discovery Engine: генерация гипотез</h4>
+        <div class="desc">Цепочки, возможные по генетической карте, но не наблюдавшиеся. Перенос паттернов между доменами. Генерация ограничена мета-алфавитом.</div>
+        <div class="output"><strong>Выход:</strong> Automated Scientific Discovery System v0.1</div>
+        <span class="tag skill">Цель 1</span>
+        <span class="tag tool">Task #13</span>
+      </div>
+    </div>
+
+    <div class="step p4">
+      <div class="step-id">4.7</div>
+      <div>
+        <h4>arXiv paper</h4>
+        <div class="desc">Вариант A (быстрый): GP-CoT + Trace Analysis. Вариант B (глубокий): GP-PRM + Dual-Plane.</div>
+        <div class="output"><strong>Выход:</strong> arXiv preprint</div>
+        <span class="tag tool">Task #14</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="gate">
+    <h4>Gate 4: Результат программы</h4>
+    <ul>
+      <li>Стабилизированный мета-алфавит из 50&ndash;120 типов операций научного мышления</li>
+      <li>Работающий Discovery Engine</li>
+      <li>GP-PRM или GP-CoT с измеримым улучшением reasoning</li>
+      <li>Опубликованный paper</li>
+      <li>Две системы запущены: фабрика знания (Цель 1) + GP-enhanced AI (Цель 2)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════ DEPENDENCIES ═══════════════════ -->
+<div class="dep-section">
+  <h2>Граф зависимостей</h2>
+  <div class="dep-box"><span class="hl1">ФАЗА 1: ЭКСТРАКТ + ВИЗУАЛИЗАЦИЯ + ВАЛИДАЦИЯ</span>
+
+<span class="hl1">1.1 Скилл GP</span> ────────────────────────────────────────────────────────────────────────────┐
+<span class="hl1">1.2 Скилл экстр.</span> ─┬─ <span class="hl1">1.3 Диссертация</span> ─┐                                                      │
+                  ├─ <span class="hl1">1.4 От логики</span> ───┤                                                      │
+                  ├─ <span class="hl1">1.5 Мифопсих.</span> ───┼─ <span class="hl1">1.7 Сборка тем</span> ─── <span class="hl1">1.12 Карта знаний HTML</span>           │
+                  └─ <span class="hl1">1.6 Сист.мышл.</span> ─┘                                                      │
+                                                                                             │
+<span class="hl1">1.9 Дизайн визуализаций</span> ─┬─ <span class="hl1">1.10 Viewer единичного</span> ─┐                                    │
+                        └─ <span class="hl1">1.11 Viewer кросс-текст.</span>─┤                                    │
+                                                    │                                    │
+<span class="hl1">1.13 Контр. корпус</span> ─┬─ <span class="hl1">1.14 Ручной прогон</span> ──┐    │                                    │
+                   └─ <span class="hl1">1.15 Авто прогон</span> ───┼─ <span class="hl1">1.16 Сравнение</span> ──── <span class="dim">GATE 1</span> ──────────┐    │
+                                        │                                  │    │
+<span class="hl2">ФАЗА 2: ИНФРАСТРУКТУРА</span>                  │                                  │    │
+                                        │                                  │    │
+<span class="hl2">2.1 JSON-LD схема</span> ──┬─ <span class="hl2">2.2 Граф-БД</span> ─────┬─ <span class="hl2">2.3 Hydrate pipeline</span> ──┐             │    │
+                   │                 └─ <span class="hl2">2.4 Дашборд стадий</span> ──┤             │    │
+                   └─ <span class="hl2">2.5 Версионирование</span> ─────────────────┤             │    │
+                                        <span class="hl2">2.6 Загрузка пилота</span> ─┴── <span class="dim">GATE 2</span> ──┤    │
+                                                                          │    │
+<span class="hl3">ФАЗА 3: ЭКСПЕРИМЕНТ</span>                                                    │    │
+                                                                          │    │
+<span class="hl3">3.1 Отбор 30 текстов</span> ── <span class="hl3">3.2 GP-разложение + hydrate</span> ── <span class="hl3">3.3 Entity Res.</span> ──┤    │
+                                                                    │    │    │
+                                          <span class="hl3">3.4 Паттерны</span> ────────────┤    │    │
+                                          <span class="hl3">3.5 Карта мышления HTML</span> ─┤    │    │
+                                          <span class="hl3">3.6 GP-CoT эксперимент</span> ──┴ <span class="dim">GATE 3</span>    │
+                                                                               │
+<span class="hl4">ФАЗА 4: МАСШТАБИРОВАНИЕ</span>                                                    │
+                                                                               │
+<span class="hl4">4.1 Корпус 1000</span> ── <span class="hl4">4.2 Масс. разложение</span> ── <span class="hl4">4.3 Neo4j prod</span> ───────────────────┘
+                                          <span class="hl4">4.4 GP-PRM</span> ──┐
+                                          <span class="hl4">4.5 MAS</span> ─────┤
+                                          <span class="hl4">4.6 Discovery</span>┤
+                                          <span class="hl4">4.7 arXiv</span> ───┴── <span class="dim">GATE 4</span></div>
+</div>
+
+<!-- ═══════════════════ RISKS ═══════════════════ -->
+<div class="risks">
+  <h2>Риски и митигации</h2>
+
+  <div class="risk-item">
+    <h4>R1. Скилл GP-разложения теряет качество по сравнению с ручным прогоном</h4>
+    <p>Автоматический скилл может пропускать операции, неверно классифицировать типы сопоставления, не замечать латентных эталонов.</p>
+    <div class="mitigation">Митигация: контрольный эксперимент (1.13&ndash;1.16) выявит расхождения до масштабирования. Итерация скилла до достижения &lt;20% отклонений. Возможно, потребуются два режима: strict (ручной) и batch (автоматический).</div>
+  </div>
+
+  <div class="risk-item">
+    <h4>R2. Entity Resolution не масштабируется</h4>
+    <p>Сращивание алфавитов из 1000 текстов может потребовать экспертной работы, несоразмерной по объёму.</p>
+    <div class="mitigation">Митигация: автоматизировать структурный + функциональный уровни (80%); семантический &mdash; только для спорных случаев. Отладка на 30 текстах (фаза 3) до масштабирования.</div>
+  </div>
+
+  <div class="risk-item">
+    <h4>R3. Таксономия S1-S6 недостаточна</h4>
+    <p>6 типов сопоставления могут не покрыть все тексты.</p>
+    <div class="mitigation">Митигация: заложена процедура расширения (N1, N2...). Контрольный прогон (1.14) на текстах из 5 доменов рано покажет границы таксономии.</div>
+  </div>
+
+  <div class="risk-item">
+    <h4>R4. GP-CoT/GP-PRM не даёт измеримого улучшения</h4>
+    <p>Структурирование reasoning через GP-операции может не улучшить бенчмарки LLM.</p>
+    <div class="mitigation">Митигация: мета-алфавит имеет самостоятельную ценность. Discovery Engine (Цель 1) не зависит от Цели 2.</div>
+  </div>
+
+  <div class="risk-item">
+    <h4>R5. Объём чтения материалов ГП</h4>
+    <p>~15 книг, 300-500 страниц каждая.</p>
+    <div class="mitigation">Митигация: скилл тематического экстракта (1.2) автоматизирует. Приоритет: 4 ключевые книги, остальное &mdash; по остаточному принципу.</div>
+  </div>
+
+  <div class="risk-item">
+    <h4>R6. Визуализации не передают суть</h4>
+    <p>Граф операций или генетическая карта могут быть информативны технически, но непонятны для изучения и принятия решений.</p>
+    <div class="mitigation">Митигация: специальный шаг проектирования (1.9) до реализации. Итерация дизайна на данных пилота. Несколько типов представлений (граф, timeline, карточки, radar) &mdash; разные углы зрения на один объект.</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  GP &times; AI Research Program v2.0 &nbsp;&bull;&nbsp; 4 фазы &nbsp;&bull;&nbsp; Проект METHODOLOGY &nbsp;&bull;&nbsp; 11 мая 2026
+</div>
+
+</body>
+</html>

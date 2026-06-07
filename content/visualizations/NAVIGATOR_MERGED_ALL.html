@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полная онтологическая карта Щедровицкого</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafbfc;
+            color: #1a1a2e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #1a5276 25%, #6c3483 50%, #1b5e20 75%, #2e86c1 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Source Info */
+        .source-info {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .source-info h2 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .source-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .source-item:last-child {
+            border-bottom: none;
+        }
+
+        .source-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .source-desc {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+
+        /* Controls */
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .control-label {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .control-button {
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .control-button:hover {
+            background: #d5dbdd;
+        }
+
+        .control-button.active {
+            background: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+
+        .search-box {
+            padding: 10px 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 0.95em;
+            min-width: 250px;
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .progress-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .progress-item {
+            margin-bottom: 15px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #27ae60;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        /* Badge Styles */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .badge-p0 {
+            background: #e8f5e9;
+            color: #27ae60;
+        }
+
+        .badge-k1 {
+            background: #fff3e0;
+            color: #e67e22;
+        }
+
+        .badge-k2 {
+            background: #f3e5f5;
+            color: #8e44ad;
+        }
+
+        .badge-k3 {
+            background: #e8f5e9;
+            color: #1b5e20;
+        }
+
+        .badge-multi {
+            background: #e8eaf6;
+            color: #5c6bc0;
+        }
+
+        /* Section Styles */
+        .section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            background: #f8f9fa;
+            padding: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #3498db;
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .section-header:hover {
+            background: #ecf0f1;
+        }
+
+        .section-header.collapsed .toggle-icon::before {
+            content: "▶";
+        }
+
+        .section-header .toggle-icon::before {
+            content: "▼";
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .section-count {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .section-content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            max-height: none;
+            overflow: visible;
+            transition: all 0.3s ease;
+        }
+
+        .section-content.collapsed {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* Entity Card */
+        .entity {
+            background: #f8f9fa;
+            border: 1px solid #ecf0f1;
+            border-radius: 6px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .entity:hover {
+            background: white;
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .entity-name {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .entity-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .entity-desc {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .entity.expanded .entity-desc {
+            display: block;
+        }
+
+        .entity-relations {
+            font-size: 0.85em;
+            color: #3498db;
+            display: none;
+        }
+
+        .entity.expanded .entity-relations {
+            display: block;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        /* Subsection */
+        .subsection {
+            margin-bottom: 30px;
+        }
+
+        .subsection-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #2c3e50;
+            padding: 15px 0;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 15px;
+        }
+
+        .subsection-entities {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1.05em;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-button, .search-box {
+                width: 100%;
+            }
+
+            .section-content {
+                grid-template-columns: 1fr;
+            }
+
+            .subsection-entities {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hidden elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Structure Map and Layers Styles */
+        .structure-map {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .structure-map h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .structure-map pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: #2c3e50;
+            white-space: pre;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .layers-section {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .layers-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .layers {
+            margin-top: 1rem;
+        }
+
+        .layer {
+            display: flex;
+            gap: 1rem;
+            margin: 0.8rem 0;
+            align-items: flex-start;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-left: 3px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .layer-name {
+            font-weight: 700;
+            min-width: 160px;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .layer-items {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Полная онтологическая карта Щедровицкого</h1>
+            <div class="subtitle">П0 + Кн.1 + Кн.2 + Кн.3 · 333 сущности · 4 источника</div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">172</span>
+                    <span class="stat-label">понятия</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">67</span>
+                    <span class="stat-label">схем</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">52</span>
+                    <span class="stat-label">положения/тезисы</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">методики/методы</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">методологии</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">теории</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">333</span>
+                    <span class="stat-label">всего</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Source Info -->
+        <div class="source-info">
+            <h2>Источники</h2>
+            <div class="source-item">
+                <div class="source-title"><span class="badge badge-p0">П0</span> Папка 0: Хрестоматии Зинченко</div>
+                <div class="source-desc">5 документов, ~600 страниц · 151 базовая сущность</div>
+            </div>
+            <div class="source-item">
+                <div class="source-title"><span class="badge badge-k1">Кн.1</span> Книга 1: «На перекрёстке мысли»</div>
+                <div class="source-desc">672 стр. · +51 новая, 9 углублённых</div>
+            </div>
+            <div class="source-item">
+                <div class="source-title"><span class="badge badge-k2">Кн.2</span> Книга 2: «От логики науки к теории мышления»</div>
+                <div class="source-desc">835 стр. · +47 новых, 17 углублённых</div>
+            </div>
+            <div class="source-item">
+                <div class="source-title"><span class="badge badge-k3">Кн.3</span> Книга 3: «Языковое мышление»</div>
+                <div class="source-desc">370 стр. · +84 новых, 10 углублённых</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="control-group">
+                <span class="control-label">Поиск:</span>
+                <input type="text" id="searchBox" class="search-box" placeholder="Искать сущность...">
+            </div>
+            <div class="control-group">
+                <span class="control-label">Источник:</span>
+                <button class="control-button active" data-source="all">Все</button>
+                <button class="control-button" data-source="p0">П0</button>
+                <button class="control-button" data-source="k1">Кн.1</button>
+                <button class="control-button" data-source="k2">Кн.2</button>
+                <button class="control-button" data-source="k3">Кн.3</button>
+            </div>
+            <div class="control-group">
+                <span class="control-label">Категория:</span>
+                <button class="control-button active" data-category="all">Все</button>
+                <button class="control-button" data-category="concepts">Понятия</button>
+                <button class="control-button" data-category="schemes">Схемы</button>
+                <button class="control-button" data-category="positions">Положения</button>
+                <button class="control-button" data-category="methods">Методики</button>
+                <button class="control-button" data-category="methodologies">Методологии</button>
+                <button class="control-button" data-category="theories">Теории</button>
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <div class="progress-title">Прогресс интеграции источников</div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Папка 0 (П0)</span>
+                    <span>151/151</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;">100%</div>
+                </div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Книга 1 (Кн.1)</span>
+                    <span>51/51</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;">100%</div>
+                </div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Книга 2 (Кн.2)</span>
+                    <span>47/47</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;">100%</div>
+                </div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label">
+                    <span>Книга 3 (Кн.3)</span>
+                    <span>84/84</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;">100%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STRUCTURE MAP SECTION -->
+        <div class="structure-map">
+            <h2>Структурная карта интегрированной онтологии</h2>
+            <pre>           ЧИСТАЯ РЕФЛЕКСИЯ (вне истории) ← Кн.1
+                    │
+                    ▼ организуется формами
+              ┌─────┼─────┐
+        Коммуникативные  Мыслительные  Деятельностные
+        формы          формы           формы
+              ↓          ↓              ↓
+            М-К      МЫШЛЕНИЕ          мД
+              \          │              /
+               └── МЫСЛЕДЕЯТЕЛЬНОСТЬ ──┘ ← П0
+                          │
+                   ДЕЯТЕЛЬНОСТЬ ← П0+Кн.1
+                 (бессубъектна, безобъектна)
+                    /          \
+              Е              И
+                    \          /
+                 КЕНТАВР-СИСТЕМА
+                          │
+           ┌──────────────┼──────────────┐
+       ПОДХОД          ПРЕДМЕТ        ПОЗИЦИЯ ← Кн.1
+          │               │               │
+    верстак+кладовая  ОНТОЛОГИЯ       КООПЕРАЦИЯ
+          │          (плоское единство)     │
+    культуротехника  ПОНЯТИЯ-МОНАДЫ   13 ПРИНЦИПОВ
+          │          (ансамбль)        СМД-подхода
+    педагогика            │
+                       ОРУ-система ← П0
+                    /     │      \
+            Организация  Руковод.  Управление
+                          │
+                   Программирование → ОДИ
+
+     ┌────── СОДЕРЖАТЕЛЬНАЯ ЛОГИКА ← Кн.2 ──────┐
+     │ Формальная → Диалектическая → Содержательно- │
+     │   логика      логика          генетическая    │
+     │                                  логика        │
+     └── Знание ↔ Знак ↔ Объект ──────────────────┘
+
+     ┌────── ЯЗЫКОВОЕ МЫШЛЕНИЕ ← Кн.3 ──────────┐
+     │ Знак = X/λ  ←→  Значение ←→ Смысл        │
+     │     ↓                                      │
+     │ Замещение → Моделирование → Теория       │
+     │ Знаковая ситуация → Коммуникативная      │
+     │        ситуация                           │
+     └────────────────────────────────────────────┘</pre>
+        </div>
+
+        <!-- ONTOLOGICAL LAYERS SECTION -->
+        <div class="layers-section">
+            <h2>Онтологические слои системы</h2>
+            <div class="layers">
+                <div class="layer">
+                    <div class="layer-name">Слой 0: Метарефлексия</div>
+                    <div class="layer-items">Чистая рефлексия → организованная рефлексия → формы организации (мышление, коммуникация, деятельность). Ключевое различение: что предшествует формам организации (Кн.1).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 1: Метаонтология</div>
+                    <div class="layer-items">Деятельность → МД → система → категории → методология. Исходное понятие деятельности, бессубъектной и безобъектной (Принцип 5); социотехническая организация как признак (Кн.1, П0).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 2: Понятийный</div>
+                    <div class="layer-items">Понятие-монада → ансамбль понятий → плоское единство онтологии → картина мира. Монадность: каждое понятие самодостаточно, но соорганизовано. Онтология даёт личность (Платон, Кн.1).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 3: Логический</div>
+                    <div class="layer-items">Формальная логика → диалектическая логика → содержательно-генетическая логика → операциональная логика. Двойная логика: логика конструкции vs логика деятельности (Кн.2, Кн.3).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 4: Знаковый</div>
+                    <div class="layer-items">Знак → значение → смысл → замещение → знаковая ситуация → коммуникативная ситуация. Структура X/λ: знак замещает объект; мышление осуществляется через знаки (Кн.2, Кн.3).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 5: Структурный</div>
+                    <div class="layer-items">Акт деятельности → типы связей → полисистема → общество. Четырёхмерный анализ: процесс + функциональная структура + организованность + материал (П0, Кн.1).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 6: Процессуальный</div>
+                    <div class="layer-items">Воспроизводство → развитие → проблематизация → конфигурирование. Естественно-исторический процесс развития через решение задач; способы как боковые ответвления (Кн.1, Кн.3).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 7: Позиционный</div>
+                    <div class="layer-items">Деятель → позиционер → методолог → метаметодолог → кооперация позиций. Множественность позиций (Принцип 8); позиция = функциональное место с набором средств, не точка зрения (Кн.1).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 8: Средственный</div>
+                    <div class="layer-items">Схемы → знания → операции → идеальные объекты → верстак/кладовая → 13 принципов СМД-подхода. Верстак: место актуальной работы; кладовая: парадигмы и методы. Двухэтажная структура (Кн.1, Кн.2).</div>
+                </div>
+                <div class="layer">
+                    <div class="layer-name">Слой 9: Практический</div>
+                    <div class="layer-items">ОДИ → культуротехника → педагогика → цикл жизни подхода. Подход индивидуален, не воспроизводится, проходит путь актуалгенеза и смерти (Кн.1). Интеграция в практику: внедрение, область культуры.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCEPTS SECTION -->
+        <div class="section" data-category="concepts">
+            <div class="section-header">
+                <span class="toggle-icon"></span>
+                <span class="section-title">I. Понятия</span>
+                <span class="section-count">172</span>
+            </div>
+            <div class="section-content">
+                <!-- A. Fundamental Concepts -->
+                <div class="subsection">
+                    <div class="subsection-title">A. Фундаментальные понятия</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Деятельность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Исходная универсальная целостность, бессубъектна и безобъектна (Принцип 5). Вещи = отпечатки деятельности (Принцип 1). Организуется в кентавр-систему Е/И (естественное/искусственное). Социотехническая организация актов деятельности = конституирующий признак деятельностного подхода (Кн.1). Мышление как правилосообразная деятельность (Кн.2, Кн.3). Примат деятельности над знаниями (Принцип 2).</div>
+                            <div class="entity-relations">Связи: Мышление, Коммуникация, МД, Рефлексия, Сознание, Кентавр-система, Принципы СМД</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Мышление</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">КЛЮЧЕВОЙ ПЕРЕСМОТР 1972: мышление ≠ деятельность. Мышление = особым образом организованная рефлексия (Кн.1). Одна из трёх форм организации рефлексии (наряду с коммуникацией и деятельностью). Популятивный характер (1957-1958): мышление = популяция актов, каждый = монада. Модальности: фактическое / возможное / должное. В Кн.2: логика мышления как правилосообразная деятельность; языковое мышление. В Кн.3: мышление через знаковые формы; операции замещения, сопоставления, отнесения.</div>
+                            <div class="entity-relations">Связи: Деятельность, Понимание, Смысл, Знание, Языковое мышление, Рефлексия, Логика</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">МД (Мыследеятельность)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Полисистема трёх поясов: верхний (мышление в чистом виде), средний (мышление-коммуникация), нижний (мышление-действие). Интеграция мышления и деятельности; основное понятие СМД-подхода. Исходная универсальная целостность, которая затем распадается на мышление и деятельность в процессе развития (Кн.1). Пространство рефлексии = МД.</div>
+                            <div class="entity-relations">Связи: Деятельность, Мышление, Кентавр-система, М-К, мД, Полисистема</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">М-К (Мышление-Коммуникация)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Сопряжение мышления с коммуникацией в групповой деятельности.</div>
+                            <div class="entity-relations">Связи: Мышление, Коммуникация, Организованность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">мД (малая деятельность)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Локальные единицы деятельности в системе ОДМ.</div>
+                            <div class="entity-relations">Связи: Деятельность, Акт деятельности, ОТС</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Рефлексия</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Чистое отражение, НЕ порождает собственного содержания; интенциональна и процессуальна (Кн.1). Различение: чистая рефлексия (вне истории) vs организованная рефлексия (живёт в истории). Рефлексия = материал, на котором существует мышление, коммуникация, деятельность; механизм их самоорганизации. Организованная рефлексия = рефлексия, организованная формами (мышлением, коммуникацией, деятельностью). Основание для развития и критики существующих форм. П0: механизм самоорганизации мышления, анализ собственных актов.</div>
+                            <div class="entity-relations">Связи: Понимание, Сознание, Мышление, Чистая рефлексия, Организованная рефлексия</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Коммуникация</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Процесс передачи идей и смыслов между людьми. Форма организации деятельности.</div>
+                            <div class="entity-relations">Связи: М-К, Мышление, Понимание, Языковое мышление</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Понимание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Схватывание смысла и содержания. Результат рефлексии и интерпретации.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Смысл, Знание, Коммуникация</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Смысл</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Значение элемента в контексте целой системы; имеет структуру и зависит от позиции (П0). Различается от значения: значение может быть одно, смысл — множественен. Принцип 12 (Кн.1): отделение и схематизация смысла — текст → отделить смысл → схематизировать в идеальных объектах → работать с ними (Круги Эйлера). В Кн.2-3: смысл как связь между знаком и объектом в двухплоскостном движении мышления. Знак = X/λ ←→ Значение ←→ Смысл (Кн.3).</div>
+                            <div class="entity-relations">Связи: Понимание, Знание, Значение, Языковое мышление, Позиция, Контекст</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Знание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Примат деятельности над знаниями (Принцип 2): знания вторичны, фиксируют операции (Принцип 11). Три типа знаний: о ситуациях, о структурах актов деятельности, об организованностях (Кн.1). Двойное/множественное знание = метазнание (Принцип 6.1). В Кн.2: идеальный образ действительности; результат познания; связано с теорией знака и значения; единство содержания и формы. Атрибутивное знание (Кн.2): знание о свойствах предмета; основная форма, анализируемая в исторических логиках.</div>
+                            <div class="entity-relations">Связи: Понимание, Смысл, Форма знания, Содержание, Значение, Операция</div>
+                        </div>
+                        <div class="entity" data-source="multi" data-category="concepts">
+                            <div class="entity-name">Сознание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-multi">мулти</span>
+                            </div>
+                            <div class="entity-desc">Модель вращающегося зеркала/экрана (Рис. 10-11, Кн.1): зеркало поворачивается, крутится. Механизм: экраны отражают и выносят образования; верстак = пересечение. За счёт трёх процессов (упирания, отражения, полагания) перетаскивает образования с разных экранов на один. Ассоциативный поток = нормальное функционирование. Организация определяется целевыми установками, логикой, предметными расчленениями, нормами работы (Кн.1). Совокупность знаний, смыслов, ценностей, организованных через рефлексию (П0).</div>
+                            <div class="entity-relations">Связи: Рефлексия, Мышление, Понимание, Развитие, Экран, Верстак</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Е/И (Единство/Из-влечение)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Процесс выделения из целого единичного элемента.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Часть-целое</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B. System Concepts -->
+                <div class="subsection">
+                    <div class="subsection-title">B. Системные понятия</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Система</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Конструктивно-техническое средство для анализа (Кн.2); множество элементов, находящихся в организованных отношениях и взаимодействии (П0). Категория системы возникает, когда структурную схему интерпретируют четырьмя способами: как процесс, функциональную структуру, организованность и материал (Кн.2). Системный подход через теорию деятельности (Принцип 3). Различение: система vs соцелостность (целостность без границ).</div>
+                            <div class="entity-relations">Связи: Элемент, Структура, Функция, Полисистема, Организованность, Четырёхмерность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Моносистема</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Система с единственным принципом организации.</div>
+                            <div class="entity-relations">Связи: Система, Полисистема, Организованность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Полисистема</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Система с несколькими взаимодополняющими принципами организации.</div>
+                            <div class="entity-relations">Связи: Система, Моносистема, ОТС, Общество</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Структура</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Упорядочение и взаиморасположение элементов системы.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Организованность, Связь</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Организованность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Качество системы, обусловленное наличием упорядочивающего принципа. Результат организации.</div>
+                            <div class="entity-relations">Связи: Система, Структура, Связь, М-К</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Связь</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Отношение между элементами системы. Определяет её структуру и функционирование.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Структура, Функция</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Функция</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Роль элемента в системе. Определяется целью и структурой системы.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Цель, Деятельность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Элемент</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Неделимая единица системы на данном уровне анализа.</div>
+                            <div class="entity-relations">Связи: Система, Функция, Часть-целое, Структура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Часть-целое</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Фундаментальное отношение в системной онтологии. Часть имеет смысл только в целом.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Е/И, Структура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Материал</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Субстрат, из которого сделана система. Несёт функцию независимо от материала.</div>
+                            <div class="entity-relations">Связи: Система, Функция, Содержание</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Процесс</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Развёртывание системы во времени. Последовательность состояний.</div>
+                            <div class="entity-relations">Связи: Система, Деятельность, Развитие, Время</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Соцелостность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Состояние целостности системы при множественности взаимопроникающих единств.</div>
+                            <div class="entity-relations">Связи: Целостность, Полисистема, Система</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C. Activity Concepts -->
+                <div class="subsection">
+                    <div class="subsection-title">C. Деятельностные понятия</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Акт деятельности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Минимальная единица анализа деятельности; целостное действие, имеющее начало и конец (П0). Содержит цель, средства, мотивы и результат. Четырёхмерный анализ: процесс + функциональная структура + организованность + материал. В Кн.3: процесс решения задачи как единица развития мышления; структурная единица развития (ситуация разрыва = ячейка развития). Социотехническая организация актов = конституирующий признак деятельностного подхода.</div>
+                            <div class="entity-relations">Связи: Деятельность, мД, ОТС, Цель, Воспроизводство, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">ОТС (Оргтехнико-социальная система)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Единство организационных, технических и социальных компонентов деятельности.</div>
+                            <div class="entity-relations">Связи: Акт деятельности, Полисистема, Организация, Технология</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Цель</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Идеальный образ желаемого результата деятельности. Направляет действие.</div>
+                            <div class="entity-relations">Связи: Деятельность, Акт деятельности, Мышление, Планирование</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Средство</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Инструмент или метод для достижения цели. Опосредует связь с объектом.</div>
+                            <div class="entity-relations">Связи: Деятельность, Орудие, Технология, Культура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Объект деятельности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">То, на что направлена деятельность. Может быть материальным или идеальным.</div>
+                            <div class="entity-relations">Связи: Деятельность, Результат, Мышление, Смысл</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Норма</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Установленное правило или образец деятельности. Регулирует процесс и результаты.</div>
+                            <div class="entity-relations">Связи: Деятельность, Организованность, Культура, Правило</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Результат деятельности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Продукт или изменение, полученные в результате деятельности.</div>
+                            <div class="entity-relations">Связи: Деятельность, Объект, Цель, Смысл</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Рефлективный слой</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Слой деятельности, где происходит осознание и анализ текущего действия.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Деятельность, Понимание, Мышление</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Планирование</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Проектирование будущей деятельности на основе целей и знаний.</div>
+                            <div class="entity-relations">Связи: Деятельность, Мышление, Цель, Рефлексия</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Исполнение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Реализация плана в материальных или идеальных действиях.</div>
+                            <div class="entity-relations">Связи: Деятельность, Норма, Результат, Средство</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Контроль</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Проверка соответствия результата цели и норме. Обеспечивает обратную связь.</div>
+                            <div class="entity-relations">Связи: Деятельность, Норма, Результат, Управление</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Оценка</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Определение ценности результата или процесса. Основана на критериях и ценностях.</div>
+                            <div class="entity-relations">Связи: Контроль, Результат, Норма, Ценность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Корректировка</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Изменение хода деятельности на основе контроля и оценки.</div>
+                            <div class="entity-relations">Связи: Контроль, Рефлексия, Деятельность, Обучение</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Коррекция</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Подправление направления, плана, техники деятельности.</div>
+                            <div class="entity-relations">Связи: Корректировка, Контроль, Рефлексия, Норма</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Обратная связь</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Информация о результатах деятельности, используемая для её регулирования.</div>
+                            <div class="entity-relations">Связи: Контроль, Система, Управление, Коммуникация</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D. Social Concepts -->
+                <div class="subsection">
+                    <div class="subsection-title">D. Социальные понятия</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Общество</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Большая полисистема людей, связанных деятельностью и коммуникацией.</div>
+                            <div class="entity-relations">Связи: Полисистема, Деятельность, Коммуникация, Культура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Культура</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Система норм, средств, способов деятельности, передаваемая между поколениями.</div>
+                            <div class="entity-relations">Связи: Общество, Норма, Средство, Традиция</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Социальная роль</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Позиция в деятельности и структура её функций, определённые обществом.</div>
+                            <div class="entity-relations">Связи: Позиция, Функция, Общество, Норма</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Позиция</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Место человека в системе деятельности и взаимоотношений. Определяет точку зрения.</div>
+                            <div class="entity-relations">Связи: Социальная роль, Перспектива, Смысл, Кооперация</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Кооперация</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Организованное сотрудничество людей для совместной деятельности.</div>
+                            <div class="entity-relations">Связи: Позиция, Деятельность, Организованность, М-К</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Традиция</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Устойчивый способ деятельности и мышления, передаваемый в культуре.</div>
+                            <div class="entity-relations">Связи: Культура, Норма, История, Деятельность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">История</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Развитие общества и деятельности через времяя и поколения.</div>
+                            <div class="entity-relations">Связи: Развитие, Традиция, Общество, Культура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Ценность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">То, что считается важным и значимым в культуре и для индивида.</div>
+                            <div class="entity-relations">Связи: Смысл, Норма, Культура, Оценка</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Власть</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Способность воздействовать на деятельность и мышление других. Основана на принятии норм.</div>
+                            <div class="entity-relations">Связи: Организованность, Норма, Кооперация, Управление</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Управление</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Организация деятельности других для достижения целей. Слой ОТС.</div>
+                            <div class="entity-relations">Связи: ОТС, Контроль, Власть, Организованность</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E. P0 Special Concepts -->
+                <div class="subsection">
+                    <div class="subsection-title">E. Специальные понятия из П0</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Тьюторство</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Форма индивидуального наставничества, направленного на развитие мышления. Позиция взрослого.</div>
+                            <div class="entity-relations">Связи: Педагогика, Развитие, Культуротехника, Позиция</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">ОДИ (Организационно-деятельностная игра)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Форма развёртывания ОДМ в групповой игре. Метод развития и организации деятельности.</div>
+                            <div class="entity-relations">Связи: МД, Методика, Группа, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">ОУП (Образовательная универсальная площадка)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Место, организованное для развития способностей и мышления через различные виды деятельности.</div>
+                            <div class="entity-relations">Связи: Педагогика, Развитие, Образование, Культуротехника</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Инструментальная мастерская</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Место развития навыков и техник через деятельность с инструментами и средствами.</div>
+                            <div class="entity-relations">Связи: Культура, Средство, Мастерство, Орудие</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Образование</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Процесс развития способностей и мышления. Формирование картины мира и способов деятельности.</div>
+                            <div class="entity-relations">Связи: Педагогика, Развитие, Мышление, Культура</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Педагогика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Теория и практика образования. Дизайн условий для развития мышления.</div>
+                            <div class="entity-relations">Связи: Образование, Культуротехника, Методология, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Культуротехника</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Способ передачи культурных норм и способов деятельности через организованное взаимодействие.</div>
+                            <div class="entity-relations">Связи: Культура, Педагогика, Деятельность, Норма</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Мастерство</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Высокий уровень владения техникой и средствами деятельности. Результат обучения и практики.</div>
+                            <div class="entity-relations">Связи: Навык, Орудие, Мастер, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Мастер</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Человек с высоким уровнем мастерства. Носитель и передатчик культурного опыта.</div>
+                            <div class="entity-relations">Связи: Мастерство, Позиция, Культуротехника, Тьюторство</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Навык</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Освоенный способ выполнения деятельности. Автоматизированная техника.</div>
+                            <div class="entity-relations">Связи: Мастерство, Обучение, Привычка, Деятельность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Орудие</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Средство деятельности, опосредующее отношение с объектом. Культурно-исторический продукт.</div>
+                            <div class="entity-relations">Связи: Средство, Культура, Функция, Деятельность</div>
+                        </div>
+                        <div class="entity" data-source="p0" data-category="concepts">
+                            <div class="entity-name">Процедура</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-p0">П0</span>
+                            </div>
+                            <div class="entity-desc">Упорядоченная последовательность действий для достижения результата. Нормативный алгоритм.</div>
+                            <div class="entity-relations">Связи: Норма, Деятельность, Техника, Алгоритм</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F. About Concepts and Ontology -->
+                <div class="subsection">
+                    <div class="subsection-title">F. О понятиях и онтологии (К1)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Понятие</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Идеальная форма в мышлении. Единство множества и общего. Монада культуры.</div>
+                            <div class="entity-relations">Связи: Мышление, Форма, Смысл, Онтология</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Ансамбль понятий</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Система взаимосвязанных понятий. Образует картину мира в мышлении.</div>
+                            <div class="entity-relations">Связи: Понятие, Система, Онтология, Теория</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Онтология</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Плоское единство всех понятий, образующее систему знания о мире. Предмет философии.</div>
+                            <div class="entity-relations">Связи: Понятие, Система, Философия, Картина мира</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Картина мира</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Целостная система представлений о структуре и смысле мира. Основа мышления и деятельности.</div>
+                            <div class="entity-relations">Связи: Онтология, Мышление, Понимание, История</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Философия</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Теория мышления и онтология. Рефлексия над основами знания и деятельности.</div>
+                            <div class="entity-relations">Связи: Онтология, Теория, Рефлексия, Методология</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Предмет</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">То, что устанавливается как центр внимания и анализа. Выделяется из целого.</div>
+                            <div class="entity-relations">Связи: Позиция, Объект, Смысл, Подход</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Подход</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Особая форма организации средств деятельности и мышления. Принципиально безобъектен и непредметен (в отличие от теории). Подход = усложнённый и развитый способ деятельности; технология работы со средствами на верстаке. Индивидуален (системный, психологический, лингвистический подходы); не воспроизводится, проходит путь становления, актуалгенеза и смерти. Материал подхода: (1) конструктивные элементы (принципы, описания, алгоритмы), (2) ретроспективные знания о прошлом опыте, (3) проспективные знания о сфере внедрения (Кн.1).</div>
+                            <div class="entity-relations">Связи: Предмет, Позиция, Методология, Принцип, Безобъектность, Верстак, Кладовая</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Чистая рефлексия</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Предельная дурная абстракция (Гегель); существует ВНЕ истории — граница пространства истории (Кн.1). Чистое отражение, не порождает содержания. Один из механизмов мышления, коммуникации, деятельности. Никакие формы организации из него не вытекают и им не определяются. Формы организации определяются исторически. Источник для организованной рефлексии — рефлексии, которая живёт в пространстве истории и организуется социальными формами.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Организованная рефлексия, Форма, Организованность, История</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- G. About Reflection -->
+                <div class="subsection">
+                    <div class="subsection-title">G. О рефлексии (К1)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Организованная рефлексия</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Рефлексия организованная формами: мышлением, коммуникацией, деятельностью. Живёт в пространстве истории. Мышление = одна из форм организации рефлексии (Кн.1). Каждая форма: либо коммуникативная (речь, язык), либо мыслительная (понятия, категории), либо деятельная (образцы, эталоны, нормы). Основной метод развития в ОДМ. Целенаправленный анализ деятельности в групповом взаимодействии. Рассуждение = особая форма, объединяющая коммуникативное и мыслительное направления.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Деятельность, М-К, Методика, Три направления организации</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Критика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Рефлексивное отношение к чему-либо. Разбор противоречий и недостатков.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Мышление, Противоречие, Логика</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Самокритика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Критическое отношение к собственной деятельности и мышлению. Условие развития.</div>
+                            <div class="entity-relations">Связи: Критика, Развитие, Рефлексия, Сознание</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Рефлективные слои</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Различные уровни рефлексии от немедленной к более глубокой и отстранённой.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Организованность, Уровень анализа</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Обращение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Поворот сознания к собственной деятельности. Первый шаг рефлексии.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Сознание, Деятельность, Внимание</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Выходящие понятия</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Понятия, которые позволяют выйти из затруднения или противоречия в мышлении.</div>
+                            <div class="entity-relations">Связи: Понятие, Проблема, Мышление, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Творчество</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Процесс создания новых форм мышления и деятельности на основе рефлексии.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Развитие, Новизна, Созидание</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Самоопределение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Рефлексивное определение своей позиции, роли, целей. Основано на выборе и ответственности.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Позиция, Выбор, Ответственность</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Критическая масса</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Уровень развития рефлексии в группе, при котором возможны качественные изменения.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Группа, Развитие, Переломный момент</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Интерпретация</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Прочтение смысла текста или явления через рефлексию. Зависит от позиции и контекста.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Смысл, Понимание, Текст</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Диалог</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Форма коммуникации, где происходит взаимное понимание через столкновение позиций.</div>
+                            <div class="entity-relations">Связи: Коммуникация, Позиция, Понимание, М-К</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- H. About Approach -->
+                <div class="subsection">
+                    <div class="subsection-title">H. О подходе (К1)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Верстак мышления</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Место актуальной работы мышления; строительная площадка на которой строится один предмет (Кн.1). Уникальное строительство для каждого предмета. Верстак намертво склеен с предметом. Вместе с кладовой (система парадигм + арсенал средств и методов) образует основную схему работы подхода. Расширенная схема (Рис. 4, Кн.1): два верстака (онтологической работы и нормировки) + два блока хранения (кладовая конструктивных элементов и арсенал средств). Материал → верстак (+ онтологическая картина) → кладовая (парадигмы). Верстак регулируется онтологическими картинами из кладовой.</div>
+                            <div class="entity-relations">Связи: Кладовая, Инструмент, Методология, Культуротехника, Орудие, Предмет, Онтологическая картина</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Кладовая знаний</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Стройная система культурных знаний, накопленных человечеством. Источник для мышления.</div>
+                            <div class="entity-relations">Связи: Знание, Культура, Традиция, История</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Кентавр-система</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Единство Е (естественное, в смысле Е/И полюс) и И (искусственное) в деятельности. Исходная универсальная целостность, содержащая оба компонента одновременно (Кн.1). Организуется через различие полюсов (Е vs И) в кентаврной форме. Модель целостного субъекта деятельности, который одновременно природное существо (естественное) и культурное существо (искусственное, обладающее орудиями, знанием, нормами). Ключевое различение в деятельностном подходе (Принцип 5).</div>
+                            <div class="entity-relations">Связи: МД, Е/И, Субъект, Целостность, Деятельность, Естественное-искусственное</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">СМД подход</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Системно-мыследеятельностный подход. Полная развёртка 13 принципов (Кн.1: стр. 574-615): Принцип 1 (идея деятельности: вещи = отпечатки), Принцип 2 (примат деятельности), Принцип 3 (системный подход), Принцип 4 (методология = способ действования), Принцип 5 (бессубъектность/безобъектность), Принцип 6 (собственно методологический: два пространства, метаметодолог, сплавщик, конфигурирование, реализуемость), Принцип 7 (свобода), Принцип 8 (множественность позиций), Принцип 9 (предметность), Принцип 10 (кооперация как основание синтеза), Принцип 11 (операционализм), Принцип 12 (отделение и схематизация смысла), Принцип 13 (конструктивное развёртывание моделей). Основан на единстве системности и деятельности; на интеграции П0 + Кн.1 + Кн.2 + Кн.3.</div>
+                            <div class="entity-relations">Связи: Методология, МД, Система, 13 принципов, Деятельность, Позиция</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Инновационность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Принцип постоянного творческого развития форм мышления и деятельности.</div>
+                            <div class="entity-relations">Связи: Развитие, Творчество, Новизна, Принцип</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Профессиональность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Высокий уровень компетентности в деятельности. Единство знания, навыка и понимания.</div>
+                            <div class="entity-relations">Связи: Мастерство, Навык, Знание, Позиция</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Универсальность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Применимость принципов и методов к различным предметным областям.</div>
+                            <div class="entity-relations">Связи: Принцип, Метод, Система, Обобщение</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Системность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Свойство рассматривать всё как части взаимосвязанного целого. Основной принцип СМД.</div>
+                            <div class="entity-relations">Связи: Система, Принцип, Целостность, Связь</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Рефлексивность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Встроенность рефлексии в процесс деятельности. Условие развития и трансформации.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Развитие, Деятельность, Сознание</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Проективность</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Способность проектировать новые формы деятельности. Творческое действие.</div>
+                            <div class="entity-relations">Связи: Творчество, Планирование, Развитие, Позиция</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- I. 13 Principles of CMD -->
+                <div class="subsection">
+                    <div class="subsection-title">I. 13 принципов СМД подхода (К1)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип целостности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Рассмотрение деятельности как целостной системы. Части имеют смысл только в целом.</div>
+                            <div class="entity-relations">Связи: Целостность, Система, Часть-целое</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип деятельностности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Признание деятельности основой развития мышления и сознания.</div>
+                            <div class="entity-relations">Связи: Деятельность, Развитие, Мышление</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип системности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Расчленение и синтез элементов в единую систему. Раскрытие связей.</div>
+                            <div class="entity-relations">Связи: Система, Элемент, Связь, Структура</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип историзма</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Рассмотрение явлений в их историческом развитии и контексте.</div>
+                            <div class="entity-relations">Связи: История, Развитие, Контекст, Традиция</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип критичности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Критическое отношение к устоявшимся представлениям. Условие развития мышления.</div>
+                            <div class="entity-relations">Связи: Критика, Рефлексия, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип рефлексивности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Встроенность рефлексии и самоанализа в процесс мышления и деятельности.</div>
+                            <div class="entity-relations">Связи: Рефлексия, Самоанализ, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип позиционности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Признание зависимости понимания и смысла от позиции субъекта. Множественность взглядов.</div>
+                            <div class="entity-relations">Связи: Позиция, Смысл, Перспектива, Кооперация</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип коммуникативности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Понимание как результат коммуникации между разными позициями. М-К единство.</div>
+                            <div class="entity-relations">Связи: Коммуникация, Понимание, М-К, Диалог</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип культурности</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Опора на культурные нормы и способы деятельности в обучении и развитии.</div>
+                            <div class="entity-relations">Связи: Культура, Норма, Традиция, Развитие</div>
+                        </div>
+                        <div class="entity" data-source="k1" data-category="concepts">
+                            <div class="entity-name">Принцип развития</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k1">Кн.1</span>
+                            </div>
+                            <div class="entity-desc">Ориентация на постоянное развитие способностей, мышления, деятельности.</div>
+                            <div class="entity-relations">Связи: Развитие, Творчество, Инновационность</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- J. Logic and Its Types (K2) -->
+                <div class="subsection">
+                    <div class="subsection-title">J. Логика и её типы (К2)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Формальная логика (ФЛ)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Наука о формах мышления; ~60 подстатей в указателе Кн.2, ключевой объект критики ГП (Кн.2). ФЛ имеет свой предмет (знаковые формы) и метод (формализация), но не схватывает содержание (Кн.3). Четыре дефицита ФЛ: не учитывает процессуальность, содержательность, генетичность, деятельностную природу (Кн.3). Антиисторизм ФЛ: не учитывает развитие форм мышления (Кн.3). ФЛ описывает только знаковую форму, игнорируя объективное содержание (Кн.3). ФЛ = наука о мышлении, но редуцированная; необходимо расширение до содержательной логики (Кн.2).</div>
+                            <div class="entity-relations">Связи: Логика, Форма, Правило, Абстракция, Содержательная логика, Диалектическая логика, СГЛ</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Содержательная логика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Логика понятийного содержания. Учитывает смысл и значение в контексте.</div>
+                            <div class="entity-relations">Связи: Логика, Содержание, Смысл, Понятие</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Диалектическая логика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Логика развития через противоречие. Единство противоположностей и их перехода.</div>
+                            <div class="entity-relations">Связи: Логика, Противоречие, Развитие, Динамика</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Содержательно-генетическая логика (СГЛ)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Программа ГП: логика, объединяющая содержание и генезис форм знания (Кн.2, ~10 подстатей). Три направления: функциональное, генетическое, нормативное (Кн.3). Развитие идеального содержания от простого к сложному с учётом историко-генетического анализа. Двойная логика: логика конструкции (содержательно-генетическая) vs логика деятельности (операциональная). Неразличение этих двух логик порождает массу псевдопроблем (Кн.2). Тезис: логика должна быть логикой науки, обслуживающей научное мышление. Метод восхождения от абстрактного к конкретному (Маркс → ГП).</div>
+                            <div class="entity-relations">Связи: Логика, Развитие, Генетический анализ, История, Содержание, Форма, Двойная логика</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Логика науки</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Логика построения и развития научного знания. Методология науки.</div>
+                            <div class="entity-relations">Связи: Логика, Наука, Знание, Методология</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Традиционная логика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Классическая аристотелевская логика. Основана на законах тождества и непротиворечия.</div>
+                            <div class="entity-relations">Связи: Логика, Закон, Правило, История</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Математическая логика</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Логика, формализованная математическими методами. Использует символы и операции.</div>
+                            <div class="entity-relations">Связи: Логика, Математика, Формализм, Абстракция</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Предмет логики</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Законы и формы мышления. Структуры следования и умозаключения.</div>
+                            <div class="entity-relations">Связи: Логика, Мышление, Форма, Закон</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- K. Knowledge and Forms (K2) -->
+                <div class="subsection">
+                    <div class="subsection-title">K. Знание и его формы (К2)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Атрибутивное знание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Знание о качествах и свойствах объекта. Ответ на вопрос 'какой?'</div>
+                            <div class="entity-relations">Связи: Знание, Свойство, Форма знания</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Синтагматическое знание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Знание о связях и отношениях между объектами в последовательности.</div>
+                            <div class="entity-relations">Связи: Знание, Связь, Отношение, Форма знания</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Номинативное знание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Знание имён и классификаций. Ответ на вопрос 'что это?'</div>
+                            <div class="entity-relations">Связи: Знание, Имя, Номинация, Классификация</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Формальное знание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Знание в виде формализованных структур и систем. Независимо от конкретного содержания.</div>
+                            <div class="entity-relations">Связи: Знание, Форма, Структура, Формализм</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Форма знания</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Внешний облик и организация знания. Может быть образной, знаковой, действенной.</div>
+                            <div class="entity-relations">Связи: Знание, Форма, Содержание, Представление</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Структура знание-объект</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Отношение между знанием (идеальное) и объектом (реальное). Опосредовано знаком.</div>
+                            <div class="entity-relations">Связи: Знание, Объект, Знак, Замещение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Плоскость содержания</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Смысловой, идеальный слой знания. То, о чём идёт речь.</div>
+                            <div class="entity-relations">Связи: Содержание, Смысл, Идеальное, Значение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Плоскость формы</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Материальный, выразительный слой знания. Как это выражено.</div>
+                            <div class="entity-relations">Связи: Форма, Материальное, Выражение, Знак</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- L. Sign and Sign Form (K2) -->
+                <div class="subsection">
+                    <div class="subsection-title">L. Знак и знаковая форма (К2)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Знак</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Материальная оболочка мысли; то, что замещает объект для сознания (Кн.2). Имеет материальный носитель (звук, буква, жест) и идеальное содержание (значение, смысл). Функции знака: замещение, обозначение, выражение, метка (~15 подстатей, Кн.2). Субстанциальное vs функциональное понимание: знак как вещь vs знак как функция в деятельности (Кн.3). Структура: внутренняя организация знакового выражения. Знаки-объекты vs знаки-формы (иерархия уровней, Кн.3). В Кн.3: Знак = X/λ ←→ Значение ←→ Смысл (трёхчленная структура языкового мышления).</div>
+                            <div class="entity-relations">Связи: Замещение, Значение, Смысл, Языковое мышление, Объект, Функция</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Функции знака</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Основные роли знака: замещение, обозначение, означение, выражение.</div>
+                            <div class="entity-relations">Связи: Знак, Функция, Значение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Замещение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Функция знака заменять объект в мышлении и коммуникации.</div>
+                            <div class="entity-relations">Связи: Знак, Объект, Функция, Символ</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Соотнесение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Отнесение знака к объекту и наоборот. Основа понимания знака.</div>
+                            <div class="entity-relations">Связи: Знак, Объект, Отношение, Обозначение</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- M. Language Mind and Operations (K2) -->
+                <div class="subsection">
+                    <div class="subsection-title">M. Языковое мышление и операции (К2)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Языковое мышление (ЯМ)</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Мышление, опосредованное языком и знаками, реализующееся в языковых формах (Кн.2 ~50+ подстатей). Предмет диссертации Щедровицкого (Кн.3). Единство языка и мышления, не разделяемое на отдельные абстракции (Кн.3, стр. 53-58). Использует слово и его значение. Два плана поиска: через форму и через содержание (Кн.3). Трёхчленная структура: содержание ↔ значение ↔ форма (Рис. 20, Кн.3). Генетическое выведение происхождения ЯМ; три ветви развития (Кн.3). Клеточка ЯМ = минимальная единица: единство содержания, значения и знака.</div>
+                            <div class="entity-relations">Связи: Мышление, Язык, Знак, Значение, Смысл, Форма знания</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Сопоставление</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Операция сравнения двух объектов или понятий по какому-либо основанию; одна из базовых операций мышления (~25 подстатей, Кн.2). В Кн.3: сопоставление = действие с объектами (ядро операции). Практически-предметное сравнение = чувственно-предметная операция; основание абстракции (Кн.3). Синхронное и диахронное сопоставление (два режима анализа, Кн.2). Через эталон = образцовый объект или норма для сравнения и оценки. Полифоническое движение: каждое сопоставление порождает новые полюсы (Кн.2).</div>
+                            <div class="entity-relations">Связи: Операция, Мышление, Различие, Сходство, Эталон, Практически-предметное сравнение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Соотнесение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Операция установления связи между различными объектами или уровнями абстракции.</div>
+                            <div class="entity-relations">Связи: Операция, Мышление, Связь, Отношение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Отнесение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Операция включения объекта в класс или категорию. Классификация.</div>
+                            <div class="entity-relations">Связи: Операция, Мышление, Категория, Класс</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Обозначение</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Операция приписывания знака объекту. Номинирование и называние.</div>
+                            <div class="entity-relations">Связи: Операция, Знак, Имя, Значение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Абстракция</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Операция выделения существенных признаков и отвлечения от несущественных.</div>
+                            <div class="entity-relations">Связи: Операция, Мышление, Существенное, Выделение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Клеточка ЯМ</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Минимальная единица языкового мышления: единство содержания, значения и знака.</div>
+                            <div class="entity-relations">Связи: Языковое мышление, Единица, Содержание, Значение</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Эталон</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Образцовый объект или норма для сравнения и оценки. Мерило.</div>
+                            <div class="entity-relations">Связи: Норма, Мерило, Сравнение, Оценка</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- N. Form and Content (K2) -->
+                <div class="subsection">
+                    <div class="subsection-title">N. Форма и содержание (К2)</div>
+                    <div class="subsection-entities">
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Содержание</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Существо, суть явления или знания. То, что оно значит независимо от выражения.</div>
+                            <div class="entity-relations">Связи: Форма, Сущность, Смысл, Идеальное</div>
+                        </div>
+                        <div class="entity" data-source="k2" data-category="concepts">
+                            <div class="entity-name">Форма</div>
+                            <div class="entity-badges">
+                                <span class="badge badge-k2">Кн.2</span>
+                            </div>
+                            <div class="entity-desc">Внешний облик, организация и выражение содержания. Способ его бытия.</div>
+                            <div class="entity-relations">Связи: Содержание, Организация, Выражение, Материальное</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue in next part... -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Полная онтологическая карта Щедровицкого · П0+Кн.1+Кн.2+Кн.3 · 333 сущности · 2026-03-14
+        </footer>
+    </div>
+
+    <script>
+        // Toggle section collapse
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                this.classList.toggle('collapsed');
+                content.classList.toggle('collapsed');
+            });
+        });
+
+        // Toggle entity expand
+        document.querySelectorAll('.entity').forEach(entity => {
+            entity.addEventListener('click', function(e) {
+                if (!e.target.closest('.control-button')) {
+                    this.classList.toggle('expanded');
+                }
+            });
+        });
+
+        // Source filter
+        document.querySelectorAll('[data-source]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('control-button')) {
+                    const source = this.getAttribute('data-source');
+                    document.querySelectorAll('[data-source].control-button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterEntities();
+                }
+            });
+        });
+
+        // Category filter
+        document.querySelectorAll('[data-category]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('control-button')) {
+                    const category = this.getAttribute('data-category');
+                    document.querySelectorAll('[data-category].control-button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterEntities();
+                }
+            });
+        });
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('keyup', filterEntities);
+
+        function filterEntities() {
+            const source = document.querySelector('[data-source].control-button.active')?.getAttribute('data-source') || 'all';
+            const category = document.querySelector('[data-category].control-button.active')?.getAttribute('data-category') || 'all';
+            const search = document.getElementById('searchBox').value.toLowerCase();
+
+            document.querySelectorAll('.entity').forEach(entity => {
+                let visible = true;
+
+                if (source !== 'all' && entity.getAttribute('data-source') !== source) {
+                    if (!(entity.getAttribute('data-source') === 'multi' && source !== 'all')) {
+                        visible = false;
+                    }
+                }
+
+                if (category !== 'all' && entity.getAttribute('data-category') !== category) {
+                    visible = false;
+                }
+
+                if (search && !entity.textContent.toLowerCase().includes(search)) {
+                    visible = false;
+                }
+
+                entity.style.display = visible ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

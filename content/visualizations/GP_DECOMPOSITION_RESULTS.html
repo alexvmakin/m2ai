@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GP-разложение: Результаты Фазы 1</title>
+<style>
+:root {
+  --bg: #0a0e17;
+  --surface: #111827;
+  --surface2: #1a2332;
+  --border: #2a3a4a;
+  --text: #e0e7ef;
+  --muted: #8899aa;
+  --accent: #3b82f6;
+  --accent2: #06b6d4;
+  --s1: #22c55e;
+  --s2: #3b82f6;
+  --s3: #a855f7;
+  --s4: #ef4444;
+  --s5: #f59e0b;
+  --s6: #ec4899;
+  --main: #3b82f6;
+  --edge: #6b7280;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 12px; color: var(--accent2); }
+h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.subtitle { color: var(--muted); margin-bottom: 24px; font-size: 0.95rem; }
+.tabs { display: flex; gap: 4px; margin-bottom: 24px; flex-wrap: wrap; }
+.tab { padding: 8px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 0.85rem; color: var(--muted); transition: all 0.2s; }
+.tab:hover { background: var(--surface2); color: var(--text); }
+.tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+.panel { display: none; }
+.panel.active { display: block; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 0.85rem; color: var(--muted); }
+.op-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 12px; transition: border-color 0.2s; }
+.op-card:hover { border-color: var(--accent); }
+.op-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.op-id { font-weight: 700; font-family: monospace; font-size: 0.9rem; }
+.op-type { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.op-fragment { font-style: italic; color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; border-left: 3px solid var(--border); padding-left: 12px; }
+.op-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.85rem; }
+.op-section { background: var(--surface2); border-radius: 8px; padding: 10px; }
+.op-section-title { font-weight: 600; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.75rem; font-weight: 600; }
+.badge-s1 { background: var(--s1); color: #000; }
+.badge-s2 { background: var(--s2); color: #fff; }
+.badge-s3 { background: var(--s3); color: #fff; }
+.badge-s4 { background: var(--s4); color: #fff; }
+.badge-s5 { background: var(--s5); color: #000; }
+.badge-s6 { background: var(--s6); color: #fff; }
+.badge-main { background: var(--main); color: #fff; }
+.badge-edge { background: var(--edge); color: #fff; }
+.alpha-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.alpha-name { font-weight: 700; font-family: monospace; color: var(--accent2); }
+.alpha-def { margin-top: 4px; font-size: 0.9rem; }
+.alpha-meta { display: flex; gap: 12px; margin-top: 8px; font-size: 0.8rem; color: var(--muted); }
+.genetic-map { width: 100%; overflow-x: auto; }
+.genetic-map svg { width: 100%; min-height: 500px; }
+.finding { background: var(--surface); border-left: 3px solid var(--accent); padding: 12px 16px; margin-bottom: 8px; border-radius: 0 8px 8px 0; font-size: 0.9rem; }
+.source-tag { font-size: 0.7rem; background: var(--surface2); padding: 2px 6px; border-radius: 3px; color: var(--muted); }
+.filter-row { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.filter-btn { padding: 4px 10px; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 0.8rem; color: var(--muted); }
+.filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.complexity-bar { display: flex; gap: 2px; }
+.cx-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.cx-dot.filled { background: var(--accent); }
+#geneticSvg { background: var(--surface); border-radius: 12px; border: 1px solid var(--border); }
+.node-circle { cursor: pointer; transition: r 0.2s; }
+.node-circle:hover { r: 28; }
+.node-label { font-size: 10px; fill: var(--text); pointer-events: none; text-anchor: middle; }
+.edge-line { stroke: var(--border); stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+.comparison-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.comparison-table th { background: var(--surface2); padding: 8px; text-align: left; border-bottom: 2px solid var(--border); }
+.comparison-table td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.comparison-table tr:hover { background: var(--surface2); }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>GP-разложение текстов Щедровицкого</h1>
+  <p class="subtitle">Фаза 1: три книги, 34 операции, 18 типов, сводная генетическая карта &bull; 2026-05-11</p>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('overview')">Обзор</div>
+    <div class="tab" onclick="showTab('diss')">Диссертация (1964)</div>
+    <div class="tab" onclick="showTab('euclid')">Евклид (1956)</div>
+    <div class="tab" onclick="showTab('thinking')">Лекция 3 (1987)</div>
+    <div class="tab" onclick="showTab('alphabet')">Сводный алфавит</div>
+    <div class="tab" onclick="showTab('genetic')">Генетическая карта</div>
+    <div class="tab" onclick="showTab('findings')">Выводы</div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div id="overview" class="panel active">
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Текста (1956, 1964, 1987)</div></div>
+      <div class="stat-card"><div class="stat-num">34</div><div class="stat-label">Операции мышления</div></div>
+      <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Типов в сводном алфавите</div></div>
+      <div class="stat-card"><div class="stat-num">21</div><div class="stat-label">Связей в генетической карте</div></div>
+      <div class="stat-card"><div class="stat-num">S5</div><div class="stat-label">Самый частотный: замещение (12%)</div></div>
+      <div class="stat-card"><div class="stat-num">S2</div><div class="stat-label">Самый частотный паттерн (28%)</div></div>
+    </div>
+
+    <h2>Распределение по типам сопоставления</h2>
+    <div id="s-distribution" style="display:flex;gap:4px;height:40px;margin-bottom:24px;border-radius:8px;overflow:hidden;">
+      <div style="flex:11;background:var(--s1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#000">S1: 11%</div>
+      <div style="flex:28;background:var(--s2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#fff">S2: 28%</div>
+      <div style="flex:22;background:var(--s3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#fff">S3: 22%</div>
+      <div style="flex:11;background:var(--s4);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#fff">S4: 11%</div>
+      <div style="flex:11;background:var(--s5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#000">S5: 11%</div>
+      <div style="flex:17;background:var(--s6);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;color:#fff">S6: 17%</div>
+    </div>
+
+    <h2>Три текста</h2>
+    <div class="stats-grid">
+      <div class="stat-card" style="border-left:3px solid var(--s2)">
+        <h3>Диссертация (1964)</h3>
+        <p style="font-size:0.85rem;color:var(--muted)">Введение §§1-3: «Задачи и проблемы теории мышления»</p>
+        <p style="margin-top:8px"><strong>12</strong> операций, <strong>10</strong> типов</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:4px">Ключевой ход: онтологический переворот (S6) — один объект, множество проекций</p>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--s3)">
+        <h3>Статья об Евклиде (1956)</h3>
+        <p style="font-size:0.85rem;color:var(--muted)">«О некоторых моментах мыслительного процесса в геометрии Евклида»</p>
+        <p style="margin-top:8px"><strong>11</strong> операций, <strong>7</strong> типов</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:4px">Мета-уровень: ГП сам выполняет proto-GP-разложение Евклида</p>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--s6)">
+        <h3>Лекция 3 (1987)</h3>
+        <p style="font-size:0.85rem;color:var(--muted)">«Мышление, мыслительная деятельность и деятельность»</p>
+        <p style="margin-top:8px"><strong>11</strong> операций, <strong>11</strong> типов</p>
+        <p style="font-size:0.8rem;color:var(--muted);margin-top:4px">Максимальное разнообразие типов. Высокая концентрация S5+S6</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISSERTATION -->
+  <div id="diss" class="panel">
+    <h2>Диссертация: Введение §§1-3 (1964)</h2>
+    <p style="color:var(--muted);margin-bottom:16px">12 операций, все — основная линия. Текст максимально сжат и линеен.</p>
+    <div id="diss-ops"></div>
+  </div>
+
+  <!-- EUCLID -->
+  <div id="euclid" class="panel">
+    <h2>Статья об Евклиде (1956)</h2>
+    <p style="color:var(--muted);margin-bottom:16px">11 операций. МЕТА-УРОВЕНЬ: ГП выполняет proto-GP-разложение геометрии Евклида. Мы разлагаем текст-о-разложении.</p>
+    <div id="euclid-ops"></div>
+  </div>
+
+  <!-- THINKING -->
+  <div id="thinking" class="panel">
+    <h2>Лекция 3: Мышление, мыслительная деятельность и деятельность (1987)</h2>
+    <p style="color:var(--muted);margin-bottom:16px">11 операций (10 main_line + 1 edge). Лекционный формат, полилог с аудиторией.</p>
+    <div id="thinking-ops"></div>
+  </div>
+
+  <!-- ALPHABET -->
+  <div id="alphabet" class="panel">
+    <h2>Сводный мета-алфавит (18 типов)</h2>
+    <div class="filter-row">
+      <span style="font-size:0.85rem;color:var(--muted)">Фильтр по S-типу:</span>
+      <div class="filter-btn active" onclick="filterAlpha('all',this)">Все</div>
+      <div class="filter-btn" onclick="filterAlpha('S1',this)"><span class="badge badge-s1">S1</span></div>
+      <div class="filter-btn" onclick="filterAlpha('S2',this)"><span class="badge badge-s2">S2</span></div>
+      <div class="filter-btn" onclick="filterAlpha('S3',this)"><span class="badge badge-s3">S3</span></div>
+      <div class="filter-btn" onclick="filterAlpha('S4',this)"><span class="badge badge-s4">S4</span></div>
+      <div class="filter-btn" onclick="filterAlpha('S5',this)"><span class="badge badge-s5">S5</span></div>
+      <div class="filter-btn" onclick="filterAlpha('S6',this)"><span class="badge badge-s6">S6</span></div>
+    </div>
+    <div id="alpha-list"></div>
+  </div>
+
+  <!-- GENETIC MAP -->
+  <div id="genetic" class="panel">
+    <h2>Сводная генетическая карта</h2>
+    <p style="color:var(--muted);margin-bottom:16px">DAG из 18 узлов и 21 связей. Корни: A01, A02. Сток: A18. Центральный хаб: A12 (PRINCIPLE_REPLACEMENT).</p>
+    <div class="genetic-map">
+      <svg id="geneticSvg" viewBox="0 0 1200 650"></svg>
+    </div>
+  </div>
+
+  <!-- FINDINGS -->
+  <div id="findings" class="panel">
+    <h2>Ключевые выводы</h2>
+    <div class="finding"><strong>1. ГП мыслит через замещение (S5).</strong> Самый частотный тип — A12 PRINCIPLE_REPLACEMENT (4 из 34 операций). ГП постоянно заменяет рамки, методы и принципы. Это ядро его мышления.</div>
+    <div class="finding"><strong>2. Разграничение (S2) — базовый аналитический ход.</strong> 28% всех операций используют S2. ГП мыслит через проведение различий.</div>
+    <div class="finding"><strong>3. Рефлексия (S6) — подпись ГП.</strong> Присутствует во всех трёх текстах (1956, 1964, 1987). Это операция, которая отличает ГП от формально-логического мышления.</div>
+    <div class="finding"><strong>4. Устойчивое ядро на протяжении 30 лет.</strong> Триада S2+S5+S6 (разграничение + замещение + рефлексия) стабильна в текстах 1956, 1964, 1987. Это инвариант мышления ГП.</div>
+    <div class="finding"><strong>5. Генетическая карта — DAG без циклов.</strong> Типы образуют направленный ациклический граф с чёткими корнями (фиксация ситуации / разграничение предмета) и стоком (кульминационный тезис). Центральный хаб — A12.</div>
+    <div class="finding"><strong>6. Мета-наблюдение: ГП сам выполнял GP-разложение.</strong> Статья об Евклиде (1956) — это proto-GP-decomposition: ГП вводит единицу (операцию), идентифицирует 5+1 типов, извлекает правила следования. Наш алгоритм формализует то, что ГП делал интуитивно.</div>
+    <div class="finding"><strong>7. Лекционный формат увеличивает разнообразие.</strong> Лекция 1987 года: 11 операций → 11 типов (максимальное разнообразие). Диссертация 1964: 12 операций → 10 типов. Статья 1956: 11 операций → 7 типов. Устный формат порождает больше уникальных ходов.</div>
+
+    <h2 style="margin-top:24px">Сравнение с proto-алфавитом ГП (Евклид, 1956)</h2>
+    <table class="comparison-table">
+      <tr><th>ГП (1956): операции Евклида</th><th>Наш алфавит (2026): мета-операции ГП</th><th>Соответствие</th></tr>
+      <tr><td>Задание (объекты в связи)</td><td>A01 Problem Situation Fixation, A02 Subject Delimitation</td><td>Аналог: исходное полагание</td></tr>
+      <tr><td>Сравнение (наложение)</td><td>A05 Boundary Drawing, A03 Inventory</td><td>Аналог: прямое различение</td></tr>
+      <tr><td>Извлечение (через понятие)</td><td>A08 Categorical Definition, A06 Convergence Discovery</td><td>Аналог: работа через категорию</td></tr>
+      <tr><td>Разложение (расчленение)</td><td>A15 Problem Decomposition</td><td>Прямой аналог</td></tr>
+      <tr><td>Выведение (синтез)</td><td>A12 Principle Replacement, A18 Culmination Thesis</td><td>Аналог: восстановление целого</td></tr>
+      <tr><td>Сокращение/снятие (мета-операция)</td><td>A17 Reflexive Mode Distinction</td><td>Аналог: рефлексия над процессом</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+// DATA
+const dissOps = [
+  {id:"OP-001",type:"PROBLEM_SITUATION_FIXATION",s:"S1",role:"main_line",cx:1,frag:"методологические дисциплины — увеличение значения",sop:"текущий этап науки ↔ прежний",otn:"рост методологии = проблемная ситуация"},
+  {id:"OP-002",type:"GENETIC_TRANSITION",s:"S2",role:"main_line",cx:2,frag:"наука переходит к объективным системам связей",sop:"наука нового типа ↔ прежнего типа",otn:"системность объекта → необходимость логики"},
+  {id:"OP-003",type:"CONVERGENCE_DISCOVERY",s:"S3",role:"main_line",cx:3,frag:"во всех дисциплинах — одна проблематика: мышление",sop:"4 области ↔ общий критерий (теория мышления)",otn:"все упираются в теорию мышления"},
+  {id:"OP-004",type:"INVENTORY",s:"S2",role:"main_line",cx:2,frag:"логика, психология, теория познания, языкознание",sop:"науки ↔ друг другу",otn:"каждая сложилась обособленно"},
+  {id:"OP-005",type:"DEPENDENCY_DISCOVERY",s:"S3",role:"main_line",cx:3,frag:"понимание каждой зависит от понимания других",sop:"предмет каждой ↔ предметы других",otn:"взаимозависимость предметов"},
+  {id:"OP-006",type:"ONTOLOGICAL_REFRAMING",s:"S6",role:"main_line",cx:6,frag:"один сложный, дифференцированный предмет исследования",sop:"способ разделения ↔ альтернативная онтология",otn:"мышление = один объект, науки = проекции"},
+  {id:"OP-007",type:"REFUTATION_BY_COUNTEREXAMPLE",s:"S4",role:"main_line",cx:4,frag:"«берёза» путём сложения «берёз» и «белизны»",sop:"механическое сложение ↔ требование корректности",otn:"суммативный подход невозможен"},
+  {id:"OP-008",type:"METHOD_FORMULATION",s:"S5",role:"main_line",cx:5,frag:"анализ способов абстракции → структурная модель",sop:"дисциплинарный метод ↔ процедурный",otn:"метод = анализ абстракций → модель"},
+  {id:"OP-009",type:"PROBLEM_DECOMPOSITION",s:"S3",role:"main_line",cx:3,frag:"Первая проблема: мышление как функция",sop:"мышление ↔ деятельность общества",otn:"Проблема 1: функция в деятельности"},
+  {id:"OP-010",type:"PROBLEM_DECOMPOSITION",s:"S2",role:"main_line",cx:2,frag:"Вторая проблема: реконструкция из продуктов",sop:"деятельность ↔ продукты",otn:"Проблема 2: реконструкция"},
+  {id:"OP-011",type:"PROBLEM_DECOMPOSITION",s:"S1",role:"main_line",cx:1,frag:"Третья проблема: структура",sop:"мышление ↔ структура",otn:"Проблема 3: сложная структура"},
+  {id:"OP-012",type:"GENETIC_METHOD_POSITING",s:"S5",role:"main_line",cx:5,frag:"исторически развивающееся целое. Метод восхождения",sop:"статика ↔ генезис",otn:"Проблема 4: метод восхождения"}
+];
+const euclidOps = [
+  {id:"OP-001",type:"SUBJECT_DELIMITATION",s:"S2",role:"main_line",cx:2,frag:"изучение процессов, предшествующих доказательству",sop:"новый подход ↔ традиционный (доказательство)",otn:"предмет ≠ доказательство"},
+  {id:"OP-002",type:"CATEGORICAL_DEFINITION",s:"S3",role:"main_line",cx:3,frag:"мышление = деятельность: материал + цель + действие",sop:"мышление ↔ структура деятельности",otn:"3 момента мыслительного процесса"},
+  {id:"OP-003",type:"UNIT_INTRODUCTION",s:"S2",role:"main_line",cx:3,frag:"операция = простейший одноактный процесс",sop:"операция ↔ сложный процесс",otn:"единица анализа = операция"},
+  {id:"OP-004",type:"FRAMEWORK_REPLACEMENT",s:"S5",role:"main_line",cx:5,frag:"геометрия = система опосредствующих задач",sop:"геометрия-теоремы ↔ геометрия-задачи",otn:"новая интерпретация + эквивалентность"},
+  {id:"OP-005",type:"OPERATION_ZADANIE",s:"S1",role:"main_line",cx:3,frag:"объекты задаются в некоторой связи",sop:"начальный шаг ↔ задание",otn:"ЗАДАНИЕ: полагание в связи"},
+  {id:"OP-006",type:"OPERATION_SRAVNENIE",s:"S3",role:"main_line",cx:3,frag:"количественное определение через наложение. 3 условия",sop:"сравнение ↔ 3 условия",otn:"СРАВНЕНИЕ: наложение при выполнении условий"},
+  {id:"OP-007",type:"OPERATION_IZVLECHENIE",s:"S4",role:"main_line",cx:4,frag:"когда сравнение невыполнимо → извлечение через понятие",sop:"невозможность сравнения ↔ условия",otn:"ИЗВЛЕЧЕНИЕ: через понятие"},
+  {id:"OP-008",type:"OPERATION_RAZLOZHENIE",s:"S4",role:"main_line",cx:4,frag:"когда ни сравнение, ни извлечение → разложение",sop:"невозможность предыдущих ↔ условия",otn:"РАЗЛОЖЕНИЕ: расчленение по знаниям"},
+  {id:"OP-009",type:"OPERATION_VYVEDENIE",s:"S2",role:"main_line",cx:2,frag:"воспроизвести объект из составляющих",sop:"знание о частях ↔ знание о целом",otn:"ВЫВЕДЕНИЕ: синтез из частей"},
+  {id:"OP-010",type:"SEQUENCE_RULES",s:"S3",role:"main_line",cx:3,frag:"6 правил следования операций",sop:"эмпирические последовательности ↔ правила",otn:"синтаксис: задание→сравнение/разложение→выведение"},
+  {id:"OP-011",type:"META_OPERATION",s:"S6",role:"main_line",cx:6,frag:"сокращение/снятие: опуская процесс, связать начало и конец",sop:"весь процесс ↔ возможность свёртки",otn:"СОКРАЩЕНИЕ: мета-операция над процессом"}
+];
+const thinkingOps = [
+  {id:"OP-001",type:"SITUATION_FRAMING",s:"S2",role:"edge_process",cx:2,frag:"критика слушателей — стереотипные позиции",sop:"замысел ↔ восприятие",otn:"разрыв между методом и пониманием"},
+  {id:"OP-002",type:"NEGATIVE_DEFINITION",s:"S4",role:"main_line",cx:4,frag:"схема ≠ изображение, ≠ проект. Это организационная структура",sop:"схема ↔ привычные трактовки",otn:"схема = «разборный ящик» для рефлексии"},
+  {id:"OP-003",type:"PRINCIPLE_REPLACEMENT",s:"S5",role:"main_line",cx:5,frag:"распредмечивание: нет предметных организаций",sop:"предметная ↔ непредметная организация",otn:"распредмечивание = снятие границ"},
+  {id:"OP-004",type:"BOUNDARY_DRAWING",s:"S2",role:"main_line",cx:4,frag:"мышление процедуры ≠ осуществление процедуры",sop:"мышление процедуры ↔ осуществление",otn:"ученик «мыслит» наложение, не «делает»"},
+  {id:"OP-005",type:"REFLEXIVE_MODE_DISTINCTION",s:"S6",role:"main_line",cx:6,frag:"мышление в функции рефлексии → мыслительная деятельность",sop:"переход между модусами ↔ рефлексия",otn:"два модуса: рефлексивное vs деятельностное"},
+  {id:"OP-006",type:"MECHANISM_EXPLICATION",s:"S1",role:"main_line",cx:3,frag:"«разборный ящик», знак = «калитка» через «забор»",sop:"схема ↔ метафора ящика",otn:"механизм: знаки = точки входа в содержание"},
+  {id:"OP-007",type:"TYPOLOGY_CONSTRUCTION",s:"S2",role:"main_line",cx:2,frag:"чистое мышление vs практически ориентированное",sop:"чистое ↔ практическое",otn:"типология по цели: текст vs деятельность"},
+  {id:"OP-008",type:"CONCEPT_REDEFINITION",s:"S5",role:"main_line",cx:5,frag:"понимание = способность воспроизвести деятельность",sop:"обыденное определение ↔ деятельностное",otn:"понимание ≠ декодирование, = воспроизведение"},
+  {id:"OP-009",type:"CRISIS_DIAGNOSIS",s:"S4",role:"main_line",cx:4,frag:"наука как форма организации мышления умерла",sop:"наука ↔ современные задачи",otn:"наука = тормоз прогресса"},
+  {id:"OP-010",type:"PROGRAM_FORMULATION",s:"S5",role:"main_line",cx:5,frag:"распредметить мышление, задать новое пространство",sop:"дисциплинарная ↔ методологическая организация",otn:"программа: распредмечивание → новая организация"},
+  {id:"OP-011",type:"CULMINATION_THESIS",s:"S6",role:"main_line",cx:6,frag:"методология — новая тотальная форма организации",sop:"весь ход рассуждения ↔ итоговый тезис",otn:"методология ≠ служанка науки, = новая форма"}
+];
+
+const alphaData = [
+  {id:"A01",name:"PROBLEM_SITUATION_FIXATION",s:"S1",cx:1,freq:1,def:"Фиксация нового состояния дел путём атрибутивного сопоставления с прежним",src:["DISS"]},
+  {id:"A02",name:"SUBJECT_DELIMITATION",s:"S2",cx:2,freq:1,def:"Разграничение своего предмета/подхода с традиционным",src:["EUCL"]},
+  {id:"A03",name:"INVENTORY",s:"S2",cx:2,freq:1,def:"Перечисление и разграничение множества объектов",src:["DISS"]},
+  {id:"A04",name:"GENETIC_TRANSITION",s:"S2",cx:2,freq:1,def:"Разграничение двух состояний для обнаружения перехода",src:["DISS"]},
+  {id:"A05",name:"BOUNDARY_DRAWING",s:"S2",cx:3,freq:3,def:"Проведение границы между ранее не различавшимися феноменами",src:["EUCL","TA"]},
+  {id:"A06",name:"CONVERGENCE_DISCOVERY",s:"S3",cx:3,freq:1,def:"Проверка объектов по критерию → обнаружение схождения",src:["DISS"]},
+  {id:"A07",name:"DEPENDENCY_DISCOVERY",s:"S3",cx:3,freq:1,def:"Проверка на взаимозависимость, фиксация системной связи",src:["DISS"]},
+  {id:"A08",name:"CATEGORICAL_DEFINITION",s:"S3",cx:3,freq:3,def:"Определение через категорию, род + видовые признаки, условия",src:["EUCL"]},
+  {id:"A09",name:"SEQUENCE_RULE_EXTRACTION",s:"S3",cx:3,freq:1,def:"Извлечение правил следования/синтаксиса из эмпирических данных",src:["EUCL"]},
+  {id:"A10",name:"NEGATIVE_DEFINITION",s:"S4",cx:4,freq:3,def:"Определение через отрицание привычных интерпретаций",src:["TA","EUCL"]},
+  {id:"A11",name:"REFUTATION_BY_COUNTEREXAMPLE",s:"S4",cx:4,freq:2,def:"Контрпример для отсечения ложного пути или диагностики кризиса",src:["DISS","TA"]},
+  {id:"A12",name:"PRINCIPLE_REPLACEMENT",s:"S5",cx:5,freq:4,def:"Замена организующего принципа / рамки / метода более продуктивным",src:["DISS","EUCL","TA"]},
+  {id:"A13",name:"CONCEPT_REDEFINITION",s:"S5",cx:5,freq:2,def:"Замена традиционного определения деятельностным/методологическим",src:["TA","DISS"]},
+  {id:"A14",name:"MECHANISM_EXPLICATION",s:"S1",cx:3,freq:1,def:"Развёртка механизма работы через метафору/аналогию",src:["TA"]},
+  {id:"A15",name:"PROBLEM_DECOMPOSITION",s:"S3",cx:2,freq:3,def:"Расчленение задачи на подпроблемы",src:["DISS"]},
+  {id:"A16",name:"ONTOLOGICAL_REFRAMING",s:"S6",cx:6,freq:1,def:"Рефлексивный поворот: новая онтологическая схема",src:["DISS"]},
+  {id:"A17",name:"REFLEXIVE_MODE_DISTINCTION",s:"S6",cx:6,freq:2,def:"Рефлексия над модусами мышления, фиксация переключения",src:["TA","EUCL"]},
+  {id:"A18",name:"CULMINATION_THESIS",s:"S6",cx:6,freq:1,def:"Рефлексивное замыкание: итоговый тезис всего рассуждения",src:["TA"]}
+];
+
+// RENDER FUNCTIONS
+function showTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function sColor(s) {
+  const map = {S1:'var(--s1)',S2:'var(--s2)',S3:'var(--s3)',S4:'var(--s4)',S5:'var(--s5)',S6:'var(--s6)'};
+  return map[s] || 'var(--muted)';
+}
+
+function sBadge(s) {
+  return `<span class="badge badge-${s.toLowerCase()}">${s}</span>`;
+}
+
+function cxDots(n) {
+  let html = '<div class="complexity-bar">';
+  for(let i=0;i<6;i++) html += `<div class="cx-dot ${i<n?'filled':''}"></div>`;
+  return html + '</div>';
+}
+
+function renderOps(ops, containerId) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = ops.map(op => `
+    <div class="op-card">
+      <div class="op-header">
+        <span class="op-id">${op.id}</span>
+        <span>${sBadge(op.s)} <span class="badge ${op.role==='main_line'?'badge-main':'badge-edge'}">${op.role==='main_line'?'main':'edge'}</span></span>
+      </div>
+      <div class="op-fragment">${op.frag}</div>
+      <div class="op-detail">
+        <div class="op-section">
+          <div class="op-section-title" style="color:${sColor(op.s)}">Сопоставление (${op.s})</div>
+          <div>${op.sop}</div>
+        </div>
+        <div class="op-section">
+          <div class="op-section-title" style="color:var(--accent2)">Отнесение</div>
+          <div>${op.otn}</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+        <span style="font-size:0.8rem;color:var(--muted)">${op.type}</span>
+        ${cxDots(op.cx)}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderAlpha() {
+  const c = document.getElementById('alpha-list');
+  c.innerHTML = alphaData.map(a => `
+    <div class="alpha-card" data-s="${a.s}">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span class="alpha-name">${a.id}: ${a.name}</span>
+        ${sBadge(a.s)}
+      </div>
+      <div class="alpha-def">${a.def}</div>
+      <div class="alpha-meta">
+        <span>Частота: <strong>${a.freq}</strong></span>
+        <span>Сложность: ${cxDots(a.cx)}</span>
+        <span>Источники: ${a.src.map(s=>`<span class="source-tag">${s}</span>`).join(' ')}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterAlpha(sType, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.alpha-card').forEach(card => {
+    card.style.display = (sType === 'all' || card.dataset.s === sType) ? '' : 'none';
+  });
+}
+
+// GENETIC MAP SVG
+function renderGeneticMap() {
+  const svg = document.getElementById('geneticSvg');
+  const nodes = [
+    {id:"A01",x:80,y:60,s:"S1"},{id:"A02",x:80,y:160,s:"S2"},
+    {id:"A04",x:220,y:60,s:"S2"},{id:"A03",x:350,y:60,s:"S2"},
+    {id:"A06",x:350,y:160,s:"S3"},{id:"A07",x:490,y:60,s:"S3"},
+    {id:"A08",x:220,y:260,s:"S3"},{id:"A05",x:380,y:310,s:"S2"},
+    {id:"A09",x:530,y:310,s:"S3"},{id:"A10",x:380,y:420,s:"S4"},
+    {id:"A11",x:640,y:160,s:"S4"},{id:"A16",x:640,y:60,s:"S6"},
+    {id:"A12",x:640,y:350,s:"S5"},{id:"A14",x:800,y:260,s:"S1"},
+    {id:"A15",x:800,y:420,s:"S3"},{id:"A13",x:940,y:350,s:"S5"},
+    {id:"A17",x:940,y:200,s:"S6"},{id:"A18",x:1100,y:300,s:"S6"}
+  ];
+  const edges = [
+    ["A01","A04"],["A01","A02"],["A02","A08"],["A04","A06"],["A06","A03"],
+    ["A03","A07"],["A07","A16"],["A08","A05"],["A08","A10"],
+    ["A05","A09"],["A05","A17"],["A10","A12"],["A11","A12"],
+    ["A16","A11"],["A12","A15"],["A12","A13"],["A12","A14"],
+    ["A13","A11"],["A15","A13"],["A17","A18"],["A09","A17"]
+  ];
+
+  const sColorMap = {S1:'#22c55e',S2:'#3b82f6',S3:'#a855f7',S4:'#ef4444',S5:'#f59e0b',S6:'#ec4899'};
+
+  let svgContent = `<defs><marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a5568"/></marker></defs>`;
+
+  edges.forEach(([from,to]) => {
+    const n1 = nodes.find(n=>n.id===from);
+    const n2 = nodes.find(n=>n.id===to);
+    if(n1&&n2) {
+      const dx=n2.x-n1.x, dy=n2.y-n1.y, d=Math.sqrt(dx*dx+dy*dy);
+      const sx=n1.x+dx/d*22, sy=n1.y+dy/d*22;
+      const ex=n2.x-dx/d*22, ey=n2.y-dy/d*22;
+      svgContent += `<line x1="${sx}" y1="${sy}" x2="${ex}" y2="${ey}" class="edge-line"/>`;
+    }
+  });
+
+  nodes.forEach(n => {
+    const c = sColorMap[n.s];
+    svgContent += `<circle cx="${n.x}" cy="${n.y}" r="22" fill="${c}22" stroke="${c}" stroke-width="2" class="node-circle"/>`;
+    svgContent += `<text x="${n.x}" y="${n.y+4}" class="node-label" font-weight="600">${n.id}</text>`;
+  });
+
+  svg.innerHTML = svgContent;
+
+  // Legend
+  const legend = document.createElementNS("http://www.w3.org/2000/svg","g");
+  let lx = 40, ly = 580;
+  Object.entries(sColorMap).forEach(([s,c],i) => {
+    const cx = lx + i*120;
+    legend.innerHTML += `<circle cx="${cx}" cy="${ly}" r="8" fill="${c}"/><text x="${cx+14}" y="${ly+4}" fill="#8899aa" font-size="11">${s}</text>`;
+  });
+  svg.appendChild(legend);
+}
+
+// INIT
+renderOps(dissOps, 'diss-ops');
+renderOps(euclidOps, 'euclid-ops');
+renderOps(thinkingOps, 'thinking-ops');
+renderAlpha();
+renderGeneticMap();
+</script>
+</body>
+</html>
