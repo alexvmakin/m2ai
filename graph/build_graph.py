@@ -248,6 +248,24 @@ def main():
             if n.get("type") == "entity" and not n.get("anchors") and n["id"] in loc:
                 n["anchors"] = [dict(a, deep_link=_deep_link(a["file"], a.get("page"))) for a in loc[n["id"]]]
 
+    # S3 bridge: operation layer <-> entity layer (curated, justified)
+    op_ids = [n["id"] for n in nodes if n.get("type") == "operation_type"]
+    ent_present = {n["id"] for n in nodes if n.get("type") == "entity"}
+    def add(f, t, rel, rt):
+        if t in ent_present or t in op_ids:
+            edges.append({"from": f, "to": t, "rel": rel, "rel_type": rt})
+    SGL = "C101"
+    for oid in op_ids:                       # алфавит реализует СГЛ
+        add(oid, SGL, "relates_to", "операциональная логика")
+    add("A12", "C202", "produces", "замена принципа → замещение")
+    add("A17", "C003", "produces", "рефлексивный режим → рефлексия")
+    add("A16", "C054", "produces", "онтологическая перерамка → онтология")
+    add("C112", SGL, "relates_to", "сопоставление — часть операции")   # сопоставление
+    add("C113", SGL, "relates_to", "отнесение — часть операции")       # соотнесение/отнесение
+    for n in nodes:
+        if n.get("type") == "source":
+            add(n["id"], SGL, "relates_to", "разложение по СГЛ")
+
     OUT.mkdir(exist_ok=True)
     # backlinks
     incoming = {}

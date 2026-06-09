@@ -2842,9 +2842,13 @@
    {
     "from": "TH001",
     "rel": "mentions"
+   },
+   {
+    "from": "A16",
+    "rel": "produces"
    }
   ],
-  "degree": 8
+  "degree": 9
  },
  {
   "id": "C119",
@@ -4341,9 +4345,13 @@
    {
     "from": "T027",
     "rel": "mentions"
+   },
+   {
+    "from": "A17",
+    "rel": "produces"
    }
   ],
-  "degree": 24,
+  "degree": 25,
   "merged_ids": [
    "C080"
   ],
@@ -4839,9 +4847,101 @@
    {
     "from": "C204",
     "rel": "relates_to"
+   },
+   {
+    "from": "A01",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A02",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A03",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A04",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A05",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A06",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A07",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A08",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A09",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A10",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A11",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A12",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A13",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A14",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A15",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A16",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A17",
+    "rel": "relates_to"
+   },
+   {
+    "from": "A18",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C112",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C113",
+    "rel": "relates_to"
+   },
+   {
+    "from": "SRC_01_DISSERTATION_INTRO",
+    "rel": "relates_to"
+   },
+   {
+    "from": "SRC_02_EUCLID_ANALYSIS",
+    "rel": "relates_to"
+   },
+   {
+    "from": "SRC_03_THINKING_ACTIVITY",
+    "rel": "relates_to"
    }
   ],
-  "degree": 4
+  "degree": 27
  },
  {
   "id": "C113",
@@ -4880,7 +4980,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 4
+  "degree": 5
  },
  {
   "id": "C112",
@@ -4927,7 +5027,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 8
  },
  {
   "id": "C100",
@@ -9168,9 +9268,13 @@
    {
     "from": "C206",
     "rel": "mentions"
+   },
+   {
+    "from": "A12",
+    "rel": "produces"
    }
   ],
-  "degree": 10
+  "degree": 11
  },
  {
   "id": "C203",
@@ -9295,7 +9399,7 @@
   "genetic_complexity": 1,
   "key": "A01_PROBLEM_SITUATION_FIXATION",
   "backlinks": [],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A02",
@@ -9315,7 +9419,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A03",
@@ -9335,7 +9439,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A04",
@@ -9355,7 +9459,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A05",
@@ -9375,7 +9479,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "A06",
@@ -9395,7 +9499,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A07",
@@ -9415,7 +9519,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A08",
@@ -9435,7 +9539,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "A09",
@@ -9455,7 +9559,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A10",
@@ -9475,7 +9579,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A11",
@@ -9499,7 +9603,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "A12",
@@ -9523,7 +9627,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 5
+  "degree": 7
  },
  {
   "id": "A13",
@@ -9547,7 +9651,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "A14",
@@ -9567,7 +9671,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "A15",
@@ -9587,7 +9691,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A16",
@@ -9607,7 +9711,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 2
+  "degree": 4
  },
  {
   "id": "A17",
@@ -9631,7 +9735,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 3
+  "degree": 5
  },
  {
   "id": "A18",
@@ -9651,7 +9755,7 @@
     "rel": "transforms"
    }
   ],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "SRC_01_DISSERTATION_INTRO",
@@ -9663,7 +9767,7 @@
   "year": "1964",
   "definition": "GP-разложение · 12 операций",
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "SRC_02_EUCLID_ANALYSIS",
@@ -9675,7 +9779,7 @@
   "year": "1956",
   "definition": "GP-разложение · 11 операций",
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "SRC_03_THINKING_ACTIVITY",
@@ -9687,6 +9791,6 @@
   "year": "1987",
   "definition": "GP-разложение · 11 операций",
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  }
 ]

@@ -3147,6 +3147,162 @@
   "weight": 1
  },
  {
+  "from": "A01",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A02",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A03",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A04",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A05",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A06",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A07",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A08",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A09",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A10",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A11",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A12",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A13",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A14",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A15",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A16",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A17",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A18",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "операциональная логика"
+ },
+ {
+  "from": "A12",
+  "to": "C202",
+  "rel": "produces",
+  "rel_type": "замена принципа → замещение"
+ },
+ {
+  "from": "A17",
+  "to": "C003",
+  "rel": "produces",
+  "rel_type": "рефлексивный режим → рефлексия"
+ },
+ {
+  "from": "A16",
+  "to": "C054",
+  "rel": "produces",
+  "rel_type": "онтологическая перерамка → онтология"
+ },
+ {
+  "from": "C112",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "сопоставление — часть операции"
+ },
+ {
+  "from": "C113",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "отнесение — часть операции"
+ },
+ {
+  "from": "SRC_01_DISSERTATION_INTRO",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "разложение по СГЛ"
+ },
+ {
+  "from": "SRC_02_EUCLID_ANALYSIS",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "разложение по СГЛ"
+ },
+ {
+  "from": "SRC_03_THINKING_ACTIVITY",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "разложение по СГЛ"
+ },
+ {
   "from": "C001",
   "to": "C005",
   "rel": "refines",
