@@ -136,7 +136,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 130,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=130"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -228,7 +236,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 660,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=660"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -331,7 +347,7 @@
   "subcategory": "A. Фундаментальные онтологические",
   "first_appearance": "Папка 0",
   "slug": "deyatelnost",
-  "definition": "Исходная универсальная целостность (система), единственная социальная реальность. Не принадлежность индивида, а объемлющая система. Пульсирует между «живой» (процессуальной) и «застывшей» (объектно-материальной) формами. ---",
+  "definition": "Базовая категория СМД-подхода: безличная, бессубъектная и безобъектная система, воспроизводящаяся через социотехническую организацию. Деятельность не принадлежит индивиду — наоборот, индивид «занимает места» в уже существующей системе деятельности. Описывается четырёхмерно: процессы, функциональные структуры, организованности и материал.",
   "versions": [
    {
     "source": "Папка 0",
@@ -370,6 +386,7 @@
     "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=574"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C024",
@@ -613,7 +630,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 316,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=316"
+   }
+  ],
   "backlinks": [
    {
     "from": "T034",
@@ -867,7 +892,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 671,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=671"
+   }
+  ],
   "backlinks": [
    {
     "from": "C104",
@@ -898,7 +931,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 589,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=589"
+   }
+  ],
   "backlinks": [
    {
     "from": "C128",
@@ -992,7 +1033,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 269,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=269"
+   }
+  ],
   "backlinks": [
    {
     "from": "C011",
@@ -1074,7 +1123,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 366,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=366"
+   }
+  ],
   "backlinks": [],
   "degree": 3
  },
@@ -1356,7 +1413,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 830,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=830"
+   }
+  ],
   "backlinks": [
    {
     "from": "S041",
@@ -1657,7 +1722,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 129,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=129"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -1949,7 +2022,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 150,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=150"
+   }
+  ],
   "backlinks": [
    {
     "from": "C050",
@@ -2088,7 +2169,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 184,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=184"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -2115,7 +2204,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 171,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=171"
+   }
+  ],
   "backlinks": [
    {
     "from": "TH009",
@@ -2191,7 +2288,7 @@
   "subcategory": "A. Фундаментальные онтологические",
   "first_appearance": "Папка 0",
   "slug": "myshlenie-m",
-  "definition": "Верхний пояс МД; развёртывается в невербальных схемах, формулах, графиках, таблицах, диаграммах. Имеет строгие правила и законы (логос). ---",
+  "definition": "Особая форма организации, существующая на материале рефлексии и реализующаяся через знаки. Мышление не сводится к психике индивида: это работа со знаковыми замещениями объектов, подчинённая собственным логическим формам. В схеме мыследеятельности — один из трёх поясов (наряду с мысле-коммуникацией и мыследействованием).",
   "versions": [
    {
     "source": "Папка 0",
@@ -2230,6 +2327,7 @@
     "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=25"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C001",
@@ -2323,7 +2421,7 @@
   "subcategory": "A. Фундаментальные онтологические",
   "first_appearance": "Папка 0",
   "slug": "mysledeyatelnost-md",
-  "definition": "Полисистема, организованная в три пояса (слоя): чистое мышление (М), мысль-коммуникация (М-К), мыследействование (мД). Центральный стержень — пояс М-К. ---",
+  "definition": "Центральная единица СМД-подхода: связка трёх поясов — мышления (М), мысле-коммуникации (М-К) и мыследействования (мД), скреплённых рефлексией и пониманием. МД — не сумма, а целостная система, в которой мышление «спускается» в коммуникацию и действие и поднимается обратно через рефлексию.",
   "versions": [
    {
     "source": "Папка 0",
@@ -2346,6 +2444,7 @@
     "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C001",
@@ -2502,7 +2601,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 7,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=7"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -3098,7 +3205,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 825,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=825"
+   }
+  ],
   "backlinks": [
    {
     "from": "C108",
@@ -3125,7 +3240,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 572,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=572"
+   }
+  ],
   "backlinks": [
    {
     "from": "C109",
@@ -3147,7 +3270,7 @@
   "subcategory": "E. Понятия о подходе",
   "first_appearance": "Папка 1",
   "slug": "podkhod",
-  "definition": "### Папка 1: Книга 1 «На перекрёстке мысли» Особая форма организации средств деятельности и мышления. Принципиально безобъектен (в отличие от теории). Непредметен. Подход = усложнённый и развитый способ деятельности. Подход = технология работы со средствами на верстаке. Подход индивидуален. Все подходы — популятивное целое. ---",
+  "definition": "Способ организации мыслительной работы, задающий, как исследователь видит и конструирует объект. Подход реализуется через «верстак и кладовую»: актуальная работа на верстаке регулируется онтологическими картинами и средствами из кладовой. Противопоставляется натурализму: деятельностный подход рассматривает объект как сделанный, а не природно данный.",
   "versions": [
    {
     "source": "Папка 1: Книга 1 «На перекрёстке мысли»",
@@ -3169,6 +3292,7 @@
     "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=195"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C205",
@@ -3207,7 +3331,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 710,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=710"
+   }
+  ],
   "backlinks": [
    {
     "from": "C002",
@@ -3663,7 +3795,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 703,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=703"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -4125,6 +4265,12 @@
     "file": "1/na-perekrestke-mysli.pdf",
     "page": 155,
     "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   },
+   {
+    "label": "- На перекрёстке мысли, стр. 181",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 181,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=181"
    }
   ],
   "backlinks": [
@@ -4375,7 +4521,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 8,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=8"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -4388,7 +4542,7 @@
   "subcategory": "B. Системные понятия",
   "first_appearance": "Папка 0",
   "slug": "sistema",
-  "definition": "Конструктивно-техническое средство (НЕ объект природы). Два понятия системы: первое (четырёхплановое) и второе (пятиплановое). ---",
+  "definition": "Объект, заданный одновременно процессом, функциональной структурой, организованностью материала и самим материалом. Системное представление у ГП — не «совокупность элементов и связей», а четырёхслойное описание, позволяющее переходить от моно- к полисистемам и удерживать развитие.",
   "versions": [
    {
     "source": "Папка 0",
@@ -4405,6 +4559,7 @@
     "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=101"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C014",
@@ -4511,7 +4666,7 @@
   "subcategory": "E. Методологические понятия",
   "first_appearance": "Папка 0",
   "slug": "smd-podkhod",
-  "definition": "11 принципов; объединение системного, деятельностного и мыследеятельностного подходов. ---",
+  "definition": "Системо-мысле-деятельностный подход — зрелая форма методологии ГП, объединяющая системное представление, теорию мышления и теорию деятельности в единую рамку мыследеятельности. Опирается на набор принципов (бессубъектность деятельности, рефлексивность, конфигурирование) и реализуется в практике ОДИ и оргуправления.",
   "versions": [
    {
     "source": "Папка 0",
@@ -4539,6 +4694,7 @@
     "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=574"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C001",
@@ -4576,7 +4732,7 @@
   "subcategory": "A. Фундаментальные онтологические",
   "first_appearance": "Папка 0",
   "slug": "smysl",
-  "definition": "Содержание, возникающее в актах понимания; связан со структурой знака. ---",
+  "definition": "Контекстное содержание знака, возникающее в конкретной коммуникативной ситуации, в отличие от значения как устойчивого содержания в системе языка. Смысл связывает знак с пониманием: он не закреплён в знаке заранее, а восстанавливается в ситуации употребления.",
   "versions": [
    {
     "source": "Папка 0",
@@ -4593,6 +4749,7 @@
     "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=12"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C009",
@@ -4631,7 +4788,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 272,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=272"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -4644,7 +4809,7 @@
   "subcategory": "B. Логика и методология",
   "first_appearance": "Книга 2",
   "slug": "soderzhatelno-geneticheskaya-logika",
-  "definition": "Центральная программа ГП: логика, объединяющая содержание и генезис форм знания. Не формализация рассуждений, а исследование реальных процессов мышления с учётом их содержания и развития. Противопоставлена формальной логике. ---",
+  "definition": "Логика, реконструирующая происхождение содержания мысли — как из проблемной ситуации через сопоставление и замещение рождаются понятия. В отличие от формальной (фиксирующей готовые формы) и диалектической (вводящей развитие), содержательно-генетическая логика даёт операциональный аппарат восстановления генезиса знания.",
   "versions": [
    {
     "source": "Книга 2 «От логики науки к теории мышления» (🆕 Новая)",
@@ -4661,6 +4826,7 @@
     "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=276"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C123",
@@ -4695,7 +4861,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 127,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=127"
+   }
+  ],
   "backlinks": [
    {
     "from": "S045",
@@ -4726,7 +4900,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 231,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=231"
+   }
+  ],
   "backlinks": [
    {
     "from": "M019",
@@ -5074,7 +5256,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 695,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=695"
+   }
+  ],
   "backlinks": [
    {
     "from": "C011",
@@ -5269,7 +5459,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 439,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=439"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5496,7 +5694,7 @@
   "subcategory": "H. Специальные понятия",
   "first_appearance": "Папка 0",
   "slug": "vosproizvodstvo",
-  "definition": "Базовый процесс существования деятельности; пространство социальных ситуаций + пространство культуры; нормы, стандарты, образцы. ---",
+  "definition": "Механизм существования деятельности во времени: деятельность сохраняется не потому, что её носит индивид, а потому что она воспроизводится — передаётся через нормы, образцы и трансляцию культуры. Воспроизводство — условие развития: только воспроизводящаяся система может проблематизироваться и перестраиваться.",
   "versions": [
    {
     "source": "Папка 0",
@@ -5513,6 +5711,7 @@
     "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=125"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C025",
@@ -5606,7 +5805,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 5,
+    "located": true,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=5"
+   }
+  ],
   "backlinks": [
    {
     "from": "C110",
@@ -5666,7 +5873,7 @@
   "subcategory": "E. Методологические понятия",
   "first_appearance": "Папка 0",
   "slug": "znak",
-  "definition": "Структура знака; смысл и значение; понимание как компонент исследования знака. ---",
+  "definition": "Элемент знаковой ситуации, замещающий объект и берущий на себя его функции в мышлении. Знак имеет структуру X/λ (форма и замещаемое содержание) и работает через значение и смысл. Знак — материальная опора мышления: без знакового замещения мыслительная работа невозможна.",
   "versions": [
    {
     "source": "Папка 0",
@@ -5688,6 +5895,7 @@
     "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=20"
    }
   ],
+  "status": "enriched",
   "backlinks": [
    {
     "from": "C011",
@@ -5793,7 +6001,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 5,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=5"
+   }
+  ],
   "backlinks": [
    {
     "from": "ML001",
@@ -5915,7 +6131,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 232,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=232"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5937,7 +6161,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 545,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=545"
+   }
+  ],
   "backlinks": [
    {
     "from": "C050",
@@ -6446,7 +6678,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 360,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=360"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6892,6 +7132,12 @@
     "file": "0/1_SHH_Putevoditel ORU.pdf",
     "page": 145,
     "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   },
+   {
+    "label": "- Путеводитель по понятиям, стр. 145",
+    "file": "0/Reflexia.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/Reflexia.pdf#page=145"
    }
   ],
   "backlinks": [
@@ -7061,7 +7307,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 406,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=406"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7083,7 +7337,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 495,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=495"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -7105,7 +7367,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 445,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=445"
+   }
+  ],
   "backlinks": [
    {
     "from": "C002",
@@ -7140,7 +7410,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 823,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=823"
+   }
+  ],
   "backlinks": [
    {
     "from": "C052",
@@ -7167,7 +7445,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 562,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=562"
+   }
+  ],
   "backlinks": [
    {
     "from": "C052",
@@ -7260,7 +7546,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 169,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=169"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -7304,7 +7598,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 831,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=831"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7449,7 +7751,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/na-perekrestke-mysli.pdf",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 205,
+    "located": true,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=205"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -7522,7 +7832,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 823,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=823"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -8112,7 +8430,15 @@
    }
   ],
   "sources": [],
-  "anchors": [],
+  "anchors": [
+   {
+    "book": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 704,
+    "located": true,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=704"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },

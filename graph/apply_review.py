@@ -52,6 +52,9 @@ for n in nodes:
             if v.get("source") not in ex: k.setdefault("versions",[]).append(v)
         for s in n.get("sources",[]):
             if s not in k.get("sources",[]): k.setdefault("sources",[]).append(s)
+        exa={(a.get("file"),a.get("page")) for a in k.get("anchors",[])}
+        for a in n.get("anchors",[]):
+            if (a.get("file"),a.get("page")) not in exa: k.setdefault("anchors",[]).append(a)
 
 # redirect edges through canonical; drop self-loops; dedup
 seen=set(); new_edges=[]

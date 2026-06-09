@@ -1,0 +1,27 @@
+{
+ "1/na-perekrestke-mysli.pdf": {
+  "offset": 0,
+  "confidence": 616,
+  "total": 675
+ },
+ "1/ot-logiki-nauki-k-teorii-mysleniia.pdf": {
+  "offset": 0,
+  "confidence": 747,
+  "total": 836
+ },
+ "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf": {
+  "offset": 0,
+  "confidence": 335,
+  "total": 380
+ },
+ "0/1_SHH_Putevoditel ORU.pdf": {
+  "offset": 0,
+  "confidence": 175,
+  "total": 201
+ },
+ "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf": {
+  "offset": 0,
+  "confidence": 238,
+  "total": 265
+ }
+}

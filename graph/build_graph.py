@@ -32,11 +32,17 @@ def _book_file(src_low):
     return None
 
 
+try:
+    _OFFSETS = {k: v.get("offset", 0) for k, v in json.loads((Path(__file__).resolve().parent / "book_offsets.json").read_text(encoding="utf-8")).items()}
+except Exception:
+    _OFFSETS = {}
+
+
 def _deep_link(f, page):
     from urllib.parse import quote as _q
     link = "/content/books/" + "/".join(_q(p) for p in f.split("/"))
     if page:
-        link += f"#page={page}"
+        link += f"#page={page + _OFFSETS.get(f, 0)}"
     return link
 
 
@@ -224,6 +230,23 @@ def main():
                       "category": "source", "category_label": "Источник",
                       "author": meta.get("author"), "year": meta.get("year"),
                       "definition": f"GP-разложение · {len(d.get('operations',[]))} операций"})
+
+    # enrich: fuller paraphrase definitions for key concepts
+    enr_path = OUT / "enrich.json"
+    if enr_path.exists():
+        enr = json.loads(enr_path.read_text(encoding="utf-8"))
+        for n in nodes:
+            if n.get("type") == "entity" and n["id"] in enr:
+                n["definition"] = enr[n["id"]]
+                n["status"] = n.get("status") or "enriched"
+
+    # merge located anchors (PDF title-search) for entities without note-anchors
+    loc_path = OUT / "located_anchors.json"
+    if loc_path.exists():
+        loc = json.loads(loc_path.read_text(encoding="utf-8"))
+        for n in nodes:
+            if n.get("type") == "entity" and not n.get("anchors") and n["id"] in loc:
+                n["anchors"] = [dict(a, deep_link=_deep_link(a["file"], a.get("page"))) for a in loc[n["id"]]]
 
     OUT.mkdir(exist_ok=True)
     # backlinks
