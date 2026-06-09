@@ -152,7 +152,7 @@
       "title": "Вики-база знаний ГП (связанные объекты)",
       "status": "in_progress",
       "priority": "high",
-      "progress": 30,
+      "progress": 40,
       "horizon": "now",
       "summary": "Пересборка текстов ГП в серфабельную вики-базу: статьи Entity/Operation/Source со сквозными ссылками и backlinks. Под капотом — единый типизированный граф связанных объектов (сшивка entity-base и operation-base). Интерфейс — по мотивам эстетики redmadrobot.ai (dark/минимализм/типографика; вдохновение, не копия).",
       "depends_on": [
@@ -194,17 +194,17 @@
             {
               "id": "P2-S1a",
               "title": "same_as дедуп между книгами",
-              "status": "next"
+              "status": "done"
             },
             {
               "id": "P2-S1b",
               "title": "чистка сирот (isolate_node)",
-              "status": "backlog"
+              "status": "in_progress"
             },
             {
               "id": "P2-S1c",
               "title": "diff граф↔каркас → пробелы/находки → вердикт покрытия",
-              "status": "in_progress"
+              "status": "done"
             }
           ]
         },
@@ -273,6 +273,10 @@
         }
       ],
       "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "S1 ревью same_as применено (10 слияний, 14 refines). same_as-кандидаты=0; сироты 28 (12%), 6 пробелов каркаса → цели S2. Вердикт пока LOOP по сиротам."
+        },
         {
           "date": "2026-06-09",
           "entry": "S1 старт: отчёт покрытия (LOOP). 58 сирот, 36 same_as-кандидатов на ревью, 8 пробелов каркаса."

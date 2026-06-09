@@ -73,15 +73,15 @@
     "rel": "relates_to"
    },
    {
-    "from": "S002",
-    "rel": "relates_to"
-   },
-   {
     "from": "S012",
     "rel": "relates_to"
    }
   ],
-  "degree": 9
+  "degree": 9,
+  "merged_ids": [
+   "S002"
+  ],
+  "aliases": []
  },
  {
   "id": "C076",
@@ -254,50 +254,11 @@
     "rel": "relates_to"
    },
    {
-    "from": "S025",
-    "rel": "relates_to"
-   },
-   {
     "from": "T019",
     "rel": "relates_to"
    }
   ],
-  "degree": 8
- },
- {
-  "id": "C080",
-  "type": "entity",
-  "title": "Чистая рефлексия",
-  "category": "concepts",
-  "category_label": "Понятие",
-  "subcategory": "F. Понятия о рефлексии и сознании",
-  "first_appearance": "Папка 1",
-  "slug": "chistaya-refleksiya",
-  "definition": "### Папка 1: Книга 1 «На перекрёстке мысли» Предельная «дурная» абстракция. Граница пространства истории. Существует ВНЕ истории. Не порождает содержания. Один из механизмов мышления, коммуникации, деятельности, но никакие формы организации из него не вытекают и им не определяются. Формы организации определяются исторически. ---",
-  "versions": [
-   {
-    "source": "Папка 1: Книга 1 «На перекрёстке мысли»",
-    "delta": "new",
-    "text": "Предельная «дурная» абстракция. Граница пространства истории. Существует ВНЕ истории. Не порождает содержания. Один из механизмов мышления, коммуникации, деятельности, но никакие формы организации из него не вытекают и им не определяются. Формы организации определяются исторически. ---"
-   },
-   {
-    "source": "Папка 1",
-    "delta": "new",
-    "text": "- На перекрёстке мысли, стр. 181-182 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [
-   {
-    "from": "C003",
-    "rel": "mentions"
-   },
-   {
-    "from": "S066",
-    "rel": "mentions"
-   }
-  ],
-  "degree": 3
+  "degree": 7
  },
  {
   "id": "C001",
@@ -449,7 +410,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 40
+  "degree": 41
  },
  {
   "id": "C061",
@@ -611,9 +572,13 @@
    {
     "from": "M010",
     "rel": "relates_to"
+   },
+   {
+    "from": "C011",
+    "rel": "refines"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "C020",
@@ -839,9 +804,13 @@
    {
     "from": "C011",
     "rel": "mentions"
+   },
+   {
+    "from": "C011",
+    "rel": "refines"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "C085",
@@ -868,7 +837,7 @@
   "sources": [],
   "backlinks": [
    {
-    "from": "C080",
+    "from": "C003",
     "rel": "mentions"
    },
    {
@@ -1103,13 +1072,14 @@
    }
   ],
   "sources": [],
-  "backlinks": [
-   {
-    "from": "S004",
-    "rel": "relates_to"
-   }
+  "backlinks": [],
+  "degree": 1,
+  "merged_ids": [
+   "S004"
   ],
-  "degree": 2
+  "aliases": [
+   "Кентавр-объект"
+  ]
  },
  {
   "id": "C110",
@@ -1223,7 +1193,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 9
+  "degree": 10
  },
  {
   "id": "C060",
@@ -1477,10 +1447,6 @@
     "rel": "mentions"
    },
    {
-    "from": "S002",
-    "rel": "mentions"
-   },
-   {
     "from": "S020",
     "rel": "mentions"
    },
@@ -1529,7 +1495,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 33
+  "degree": 32
  },
  {
   "id": "C088",
@@ -1693,7 +1659,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 10
+  "degree": 13
  },
  {
   "id": "C048",
@@ -1824,9 +1790,13 @@
    {
     "from": "TH003",
     "rel": "mentions"
+   },
+   {
+    "from": "C013",
+    "rel": "refines"
    }
   ],
-  "degree": 9
+  "degree": 10
  },
  {
   "id": "C002",
@@ -1918,9 +1888,13 @@
    {
     "from": "C007",
     "rel": "relates_to"
+   },
+   {
+    "from": "C008",
+    "rel": "refines"
    }
   ],
-  "degree": 6
+  "degree": 7
  },
  {
   "id": "C005",
@@ -1988,9 +1962,13 @@
    {
     "from": "TH002",
     "rel": "relates_to"
+   },
+   {
+    "from": "C001",
+    "rel": "refines"
    }
   ],
-  "degree": 18
+  "degree": 19
  },
  {
   "id": "C007",
@@ -2645,7 +2623,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "C117",
@@ -2715,9 +2693,13 @@
    {
     "from": "TH003",
     "rel": "mentions"
+   },
+   {
+    "from": "C013",
+    "rel": "refines"
    }
   ],
-  "degree": 9
+  "degree": 10
  },
  {
   "id": "C030",
@@ -3098,13 +3080,15 @@
    {
     "from": "S006",
     "rel": "relates_to"
-   },
-   {
-    "from": "S021",
-    "rel": "relates_to"
    }
   ],
-  "degree": 11
+  "degree": 10,
+  "merged_ids": [
+   "S021"
+  ],
+  "aliases": [
+   "Проблематизация (схема)"
+  ]
  },
  {
   "id": "C031",
@@ -3180,7 +3164,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C041",
@@ -3381,6 +3365,16 @@
     "source": "Папка 1: Книга 1 «На перекрёстке мысли» (🔄 Углублено)",
     "delta": "deepened",
     "text": "Чистая рефлексия vs организованная рефлексия. Чистая = предельная абстракция, вне истории, не порождает содержания, «упёртость в» (интенциональность). Организованная = формами мышления, коммуникации, деятельности. Рефлексия = материал, на котором существует мышление. Но мышление не определяется механизмом рефлексии. **Источники:** На перекрёстке мысли, стр. 155-192 ---"
+   },
+   {
+    "source": "Папка 1: Книга 1 «На перекрёстке мысли»",
+    "delta": "new",
+    "text": "Предельная «дурная» абстракция. Граница пространства истории. Существует ВНЕ истории. Не порождает содержания. Один из механизмов мышления, коммуникации, деятельности, но никакие формы организации из него не вытекают и им не определяются. Формы организации определяются исторически. ---"
+   },
+   {
+    "source": "Папка 1",
+    "delta": "new",
+    "text": "- На перекрёстке мысли, стр. 181-182 ---"
    }
   ],
   "sources": [],
@@ -3411,10 +3405,6 @@
    },
    {
     "from": "S005",
-    "rel": "relates_to"
-   },
-   {
-    "from": "S016",
     "rel": "relates_to"
    },
    {
@@ -3458,7 +3448,13 @@
     "rel": "mentions"
    }
   ],
-  "degree": 25
+  "degree": 24,
+  "merged_ids": [
+   "C080"
+  ],
+  "aliases": [
+   "Чистая рефлексия"
+  ]
  },
  {
   "id": "C027",
@@ -3570,15 +3566,15 @@
   "sources": [],
   "backlinks": [
    {
-    "from": "S018",
-    "rel": "relates_to"
-   },
-   {
     "from": "TH004",
     "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 2,
+  "merged_ids": [
+   "S018"
+  ],
+  "aliases": []
  },
  {
   "id": "C105",
@@ -3649,7 +3645,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 10
+  "degree": 13
  },
  {
   "id": "C052",
@@ -3733,9 +3729,13 @@
    {
     "from": "C012",
     "rel": "mentions"
+   },
+   {
+    "from": "C087",
+    "rel": "refines"
    }
   ],
-  "degree": 9
+  "degree": 10
  },
  {
   "id": "C010",
@@ -4000,7 +4000,7 @@
     "rel": "relates_to"
    },
    {
-    "from": "S002",
+    "from": "C024",
     "rel": "mentions"
    }
   ],
@@ -4030,10 +4030,6 @@
     "rel": "relates_to"
    },
    {
-    "from": "S026",
-    "rel": "relates_to"
-   },
-   {
     "from": "M010",
     "rel": "mentions"
    },
@@ -4042,7 +4038,13 @@
     "rel": "mentions"
    }
   ],
-  "degree": 5
+  "degree": 4,
+  "merged_ids": [
+   "S026"
+  ],
+  "aliases": [
+   "Стратегия (пути)"
+  ]
  },
  {
   "id": "C016",
@@ -4337,7 +4339,13 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 0,
+  "merged_ids": [
+   "S065"
+  ],
+  "aliases": [
+   "Три направления организации рефлексии (Рис. 12)"
+  ]
  },
  {
   "id": "C121",
@@ -4532,13 +4540,13 @@
    {
     "from": "C067",
     "rel": "relates_to"
-   },
-   {
-    "from": "S011",
-    "rel": "relates_to"
    }
   ],
-  "degree": 4
+  "degree": 3,
+  "merged_ids": [
+   "S011"
+  ],
+  "aliases": []
  },
  {
   "id": "C129",
@@ -4709,7 +4717,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 14
+  "degree": 17
  },
  {
   "id": "ML003",
@@ -4755,8 +4763,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 2
+  "backlinks": [
+   {
+    "from": "C050",
+    "rel": "refines"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "ML004",
@@ -4776,8 +4789,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 2
+  "backlinks": [
+   {
+    "from": "C050",
+    "rel": "refines"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "ML006",
@@ -4844,8 +4862,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 3
+  "backlinks": [
+   {
+    "from": "C050",
+    "rel": "refines"
+   }
+  ],
+  "degree": 4
  },
  {
   "id": "M018",
@@ -5319,27 +5342,6 @@
   "degree": 1
  },
  {
-  "id": "S002",
-  "type": "entity",
-  "title": "Акт деятельности (элементарная единичка)",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "akt-deyatelnosti-elementarnaya-edinichka",
-  "definition": "Деятель + сознание + интенции + материал → продукт. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по ОРУ, стр. 17-18 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 3
- },
- {
   "id": "S012",
   "type": "entity",
   "title": "Акт преобразовательной деятельности",
@@ -5382,27 +5384,6 @@
   "degree": 1
  },
  {
-  "id": "S025",
-  "type": "entity",
-  "title": "Единство «места» и «индивида»",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "edinstvo-mesta-i-individa",
-  "definition": "Человек = несводимое к сумме единство. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 198 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
- },
- {
   "id": "S066",
   "type": "entity",
   "title": "Формы организации над чистой рефлексией (Рис. 13)",
@@ -5426,7 +5407,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 3
+  "degree": 2
  },
  {
   "id": "S017",
@@ -5469,27 +5450,6 @@
   "sources": [],
   "backlinks": [],
   "degree": 0
- },
- {
-  "id": "S004",
-  "type": "entity",
-  "title": "Кентавр-объект",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "kentavr-obekt",
-  "definition": "Совмещение Е и И. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по ОРУ, стр. 25 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
  },
  {
   "id": "S028",
@@ -5577,8 +5537,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 2
+  "backlinks": [
+   {
+    "from": "C013",
+    "rel": "refines"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "S024",
@@ -5623,27 +5588,6 @@
   "degree": 1
  },
  {
-  "id": "S021",
-  "type": "entity",
-  "title": "Проблематизация (схема)",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "problematizatsiya-skhema",
-  "definition": "Циклическая спираль: темы → цели → задачи → проблемы. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 165-168 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
- },
- {
   "id": "S019",
   "type": "entity",
   "title": "Программирование НИР",
@@ -5661,8 +5605,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C032",
+    "rel": "refines"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "S014",
@@ -5739,28 +5688,13 @@
     "rel": "mentions"
    }
   ],
-  "degree": 3
- },
- {
-  "id": "S016",
-  "type": "entity",
-  "title": "Рефлексивный выход (вариант 2)",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "refleksivnyy-vykhod-variant-2",
-  "definition": "Выход из позиции; рефлексивное поглощение. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 145 ---"
-   }
+  "degree": 3,
+  "merged_ids": [
+   "S016"
   ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "aliases": [
+   "Рефлексивный выход (вариант 2)"
+  ]
  },
  {
   "id": "S020",
@@ -5824,32 +5758,6 @@
   "sources": [],
   "backlinks": [],
   "degree": 1
- },
- {
-  "id": "S018",
-  "type": "entity",
-  "title": "Шаг развития",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "shag-razvitiya",
-  "definition": "Три топоса; хронотоп; Е + И. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 150-155 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [
-   {
-    "from": "TH004",
-    "rel": "mentions"
-   }
-  ],
-  "degree": 2
  },
  {
   "id": "S010",
@@ -6048,27 +5956,6 @@
   "degree": 0
  },
  {
-  "id": "S026",
-  "type": "entity",
-  "title": "Стратегия (пути)",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "strategiya-puti",
-  "definition": "Возможные пути достижения цели. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 211 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
- },
- {
   "id": "S067",
   "type": "entity",
   "title": "Структура подхода (Рис. 1 Section II)",
@@ -6163,32 +6050,6 @@
   "degree": 1
  },
  {
-  "id": "S065",
-  "type": "entity",
-  "title": "Три направления организации рефлексии (Рис. 12)",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Из Книги 1",
-  "first_appearance": "Папка 1",
-  "slug": "tri-napravleniya-refleksii-ris12",
-  "definition": "### Папка 1: Книга 1 «На перекрёстке мысли» Коммуникативные формы (речь, язык), мыслительные формы (понятия, категории), деятельностные формы (образцы, нормы). ---",
-  "versions": [
-   {
-    "source": "Папка 1: Книга 1 «На перекрёстке мысли»",
-    "delta": "new",
-    "text": "Коммуникативные формы (речь, язык), мыслительные формы (понятия, категории), деятельностные формы (образцы, нормы). ---"
-   },
-   {
-    "source": "Папка 1",
-    "delta": "new",
-    "text": "- На перекрёстке мысли, стр. ~165 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 0
- },
- {
   "id": "S007",
   "type": "entity",
   "title": "Три слоя МД",
@@ -6281,27 +6142,6 @@
     "source": "Папка 1",
     "delta": "new",
     "text": "- На перекрёстке мысли, стр. 236 ---"
-   }
-  ],
-  "sources": [],
-  "backlinks": [],
-  "degree": 1
- },
- {
-  "id": "S011",
-  "type": "entity",
-  "title": "Воспроизводство деятельности",
-  "category": "schemas",
-  "category_label": "Схема",
-  "subcategory": "Схемы",
-  "first_appearance": "Папка 0",
-  "slug": "vosproizvodstvo-deyatelnosti",
-  "definition": "Пространство социальных ситуаций + пространство культуры. ---",
-  "versions": [
-   {
-    "source": "Папка 0",
-    "delta": "new",
-    "text": "- Путеводитель по понятиям, стр. 125 ---"
    }
   ],
   "sources": [],
@@ -6436,8 +6276,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 4
+  "backlinks": [
+   {
+    "from": "C087",
+    "rel": "refines"
+   }
+  ],
+  "degree": 5
  },
  {
   "id": "TH009",
@@ -6484,7 +6329,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 5
+  "degree": 4
  },
  {
   "id": "TH008",
@@ -6699,7 +6544,13 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 1,
+  "merged_ids": [
+   "S025"
+  ],
+  "aliases": [
+   "Единство «места» и «индивида»"
+  ]
  },
  {
   "id": "T029",
@@ -7398,9 +7249,13 @@
    {
     "from": "C033",
     "rel": "mentions"
+   },
+   {
+    "from": "C011",
+    "rel": "refines"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A01",

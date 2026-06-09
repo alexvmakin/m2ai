@@ -11,7 +11,7 @@ from urllib.parse import quote
 
 import markdown as md
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse, PlainTextResponse, FileResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 BASE = Path(__file__).resolve().parent.parent
@@ -22,6 +22,10 @@ GRAPH_NODES_FILE = BASE / "graph" / "nodes.json"
 GRAPH_EDGES_FILE = BASE / "graph" / "edges.json"
 BACKBONE_FILE = BASE / "graph" / "backbone.json"
 RECONCILE_FILE = BASE / "graph" / "reconcile.json"
+try:
+    ALIASES = json.loads((BASE / "graph" / "aliases.json").read_text(encoding="utf-8"))
+except Exception:
+    ALIASES = {}
 
 def _load_graph():
     try:
@@ -613,6 +617,8 @@ def wiki_coverage():
 
 @app.get("/wiki/{nid}", response_class=HTMLResponse)
 def wiki_node(nid: str):
+    if nid in ALIASES:
+        return RedirectResponse(f"/wiki/{ALIASES[nid]}", status_code=307)
     n = GRAPH_BY_ID.get(nid)
     if not n:
         raise HTTPException(404, "Узел не найден")

@@ -1330,13 +1330,6 @@
   "to_name": "Человек"
  },
  {
-  "from": "S002",
-  "to": "C024",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Акт деятельности"
- },
- {
   "from": "S012",
   "to": "C024",
   "rel": "relates_to",
@@ -1351,7 +1344,7 @@
   "to_name": "Проблематизация"
  },
  {
-  "from": "S025",
+  "from": "T019",
   "to": "C043",
   "rel": "relates_to",
   "rel_type": "содержательная",
@@ -1370,13 +1363,6 @@
   "rel": "relates_to",
   "rel_type": "содержательная",
   "to_name": "Проектирование"
- },
- {
-  "from": "S004",
-  "to": "C064",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Кентавр-объекты"
  },
  {
   "from": "S028",
@@ -1414,13 +1400,6 @@
   "to_name": "Технология"
  },
  {
-  "from": "S021",
-  "to": "C033",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Проблематизация"
- },
- {
   "from": "S019",
   "to": "C032",
   "rel": "relates_to",
@@ -1449,13 +1428,6 @@
   "to_name": "Рефлексия"
  },
  {
-  "from": "S016",
-  "to": "C003",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Рефлексия"
- },
- {
   "from": "S020",
   "to": "C034",
   "rel": "relates_to",
@@ -1468,13 +1440,6 @@
   "rel": "relates_to",
   "rel_type": "содержательная",
   "to_name": "Управление"
- },
- {
-  "from": "S018",
-  "to": "C058",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Шаг развития"
  },
  {
   "from": "S010",
@@ -1533,13 +1498,6 @@
   "to_name": "**C111**"
  },
  {
-  "from": "S026",
-  "to": "C036",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Стратегия"
- },
- {
   "from": "S045",
   "to": "C113",
   "rel": "relates_to",
@@ -1559,13 +1517,6 @@
   "rel": "relates_to",
   "rel_type": "содержательная",
   "to_name": "МД"
- },
- {
-  "from": "S011",
-  "to": "C025",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Воспроизводство деятельности"
  },
  {
   "from": "TH001",
@@ -1657,13 +1608,6 @@
   "rel": "relates_to",
   "rel_type": "содержательная",
   "to_name": "Знание"
- },
- {
-  "from": "T019",
-  "to": "C043",
-  "rel": "relates_to",
-  "rel_type": "содержательная",
-  "to_name": "Человек"
  },
  {
   "from": "T001",
@@ -1900,7 +1844,7 @@
   "rel_type": "co-mention"
  },
  {
-  "from": "C080",
+  "from": "C003",
   "to": "C085",
   "rel": "mentions",
   "rel_type": "co-mention"
@@ -2243,12 +2187,6 @@
  },
  {
   "from": "C003",
-  "to": "C080",
-  "rel": "mentions",
-  "rel_type": "co-mention"
- },
- {
-  "from": "C003",
   "to": "C019",
   "rel": "mentions",
   "rel_type": "co-mention"
@@ -2452,32 +2390,20 @@
   "rel_type": "co-mention"
  },
  {
-  "from": "S002",
-  "to": "C019",
-  "rel": "mentions",
-  "rel_type": "co-mention"
- },
- {
-  "from": "S002",
+  "from": "C024",
   "to": "C004",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
  {
   "from": "S066",
-  "to": "C080",
+  "to": "C003",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
  {
   "from": "S066",
   "to": "C085",
-  "rel": "mentions",
-  "rel_type": "co-mention"
- },
- {
-  "from": "S066",
-  "to": "C003",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2634,12 +2560,6 @@
  {
   "from": "TH004",
   "to": "S015",
-  "rel": "mentions",
-  "rel_type": "co-mention"
- },
- {
-  "from": "TH004",
-  "to": "S018",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2933,5 +2853,89 @@
   "rel": "transforms",
   "condition": "правила следования → мета-рефлексия над процессом",
   "weight": 1
+ },
+ {
+  "from": "C001",
+  "to": "C005",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C011",
+  "to": "C066",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C011",
+  "to": "C107",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C008",
+  "to": "C006",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C050",
+  "to": "ML005",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C050",
+  "to": "ML004",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C050",
+  "to": "ML001",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C013",
+  "to": "C014",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C087",
+  "to": "C049",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C087",
+  "to": "TH010",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C013",
+  "to": "C015",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C032",
+  "to": "S019",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C013",
+  "to": "S023",
+  "rel": "refines",
+  "rel_type": "уточнение"
+ },
+ {
+  "from": "C011",
+  "to": "T012",
+  "rel": "refines",
+  "rel_type": "уточнение"
  }
 ]

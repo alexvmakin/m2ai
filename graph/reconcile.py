@@ -25,6 +25,16 @@ def norm(s):
 isolates = [{"id": n["id"], "title": n["title"], "category": n.get("category_label")}
             for n in ents if n.get("degree", 0) == 0]
 
+# reviewed pairs to exclude (already decided on the board)
+reviewed_ids, reviewed_titles = set(), set()
+rd_path = G / "review_decisions.json"
+if rd_path.exists():
+    for d in json.loads(rd_path.read_text(encoding="utf-8")):
+        reviewed_ids.add(frozenset((d["a"], d["b"])))
+# refines-linked pairs also excluded
+refined = {frozenset((e["from"], e["to"])) for e in edges if e.get("rel") in ("refines",)}
+title_by_id = {n["id"]: norm(n["title"]) for n in ents}
+
 # same_as candidates: equal/containment titles across different ids
 cands = []
 for a, b in combinations(ents, 2):
@@ -36,7 +46,8 @@ for a, b in combinations(ents, 2):
         reason = "идентичный заголовок"
     elif (na in nb or nb in na) and abs(len(na) - len(nb)) <= 12 and min(len(na), len(nb)) >= 5:
         reason = "вложенный заголовок"
-    if reason:
+    if reason and frozenset((a["id"], b["id"])) not in reviewed_ids \
+            and frozenset((a["id"], b["id"])) not in refined:
         cands.append({"a": a["id"], "a_title": a["title"], "b": b["id"], "b_title": b["title"],
                       "same_category": a["category"] == b["category"], "reason": reason})
 
