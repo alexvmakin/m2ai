@@ -152,7 +152,7 @@
       "title": "Вики-база знаний ГП (связанные объекты)",
       "status": "in_progress",
       "priority": "high",
-      "progress": 90,
+      "progress": 95,
       "horizon": "now",
       "summary": "Пересборка текстов ГП в серфабельную вики-базу: статьи Entity/Operation/Source со сквозными ссылками и backlinks. Под капотом — единый типизированный граф связанных объектов (сшивка entity-base и operation-base). Интерфейс — по мотивам эстетики redmadrobot.ai (dark/минимализм/типографика; вдохновение, не копия).",
       "depends_on": [
@@ -267,12 +267,16 @@
             {
               "id": "P2-S5b",
               "title": "экспорт графа для P3 (RAG)",
-              "status": "backlog"
+              "status": "done"
             }
           ]
         }
       ],
       "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "S5: RAG-экспорт — documents.jsonl (245 docs: текст+метаданные+связи) и m2graph.json (266 узлов/516 рёбер), отдаются через /api/documents и /api/graph. Готово к P3 (GraphRAG)."
+        },
         {
           "date": "2026-06-09",
           "entry": "S4: /wiki/timeline (ось 1956→1987, типы операций по текстам, инвариант A12) + /wiki/operations (алфавит A01-A18, фильтр по S-типу, хабы генетической карты)."

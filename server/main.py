@@ -701,6 +701,22 @@ def wiki_coverage():
     return page("Отчёт покрытия — M2AI", body)
 
 
+@app.get("/api/graph")
+def api_graph():
+    p = BASE / "graph" / "export" / "m2graph.json"
+    if not p.exists():
+        raise HTTPException(404, "export not built")
+    return FileResponse(str(p), media_type="application/json", filename="m2graph.json")
+
+
+@app.get("/api/documents")
+def api_documents():
+    p = BASE / "graph" / "export" / "documents.jsonl"
+    if not p.exists():
+        raise HTTPException(404, "export not built")
+    return FileResponse(str(p), media_type="application/x-ndjson", filename="documents.jsonl")
+
+
 @app.get("/wiki/operations", response_class=HTMLResponse)
 def wiki_operations(s: str = ""):
     types = ALPHA_TYPES
