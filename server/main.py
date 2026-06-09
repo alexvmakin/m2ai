@@ -21,6 +21,7 @@ NEWS_FILE = BASE / "roadmap" / "news.json"
 GRAPH_NODES_FILE = BASE / "graph" / "nodes.json"
 GRAPH_EDGES_FILE = BASE / "graph" / "edges.json"
 BACKBONE_FILE = BASE / "graph" / "backbone.json"
+RECONCILE_FILE = BASE / "graph" / "reconcile.json"
 
 def _load_graph():
     try:
@@ -462,7 +463,7 @@ def wiki_index(q: str = ""):
     body = ('<div class="idx mono">Вики · граф связанных объектов</div>'
             '<h2 style="margin-top:8px">База знаний ГП</h2>'
             f'<p class="lead" style="font-size:15px">{total} сущностей · 18 типов операций · '
-            '<a href="/wiki/backbone" style="color:var(--red)">каркас-эталон ↗</a></p>'
+            '<a href="/wiki/backbone" style="color:var(--red)">каркас-эталон ↗</a> · <a href="/wiki/coverage" style="color:var(--red)">отчёт покрытия ↗</a></p>'
             f'<form method="get"><input class="wsearch" name="q" placeholder="поиск по сущностям…" value="{html.escape(q)}"></form>')
     for cat in sorted(by_cat, key=lambda c: -len(by_cat[c])):
         items = sorted(by_cat[cat], key=lambda n: n["title"].lower())
@@ -564,6 +565,50 @@ def wiki_backbone():
             '<div style="overflow-x:auto;border:1px solid var(--line2);background:#fff;padding:10px">'
             + "".join(svg) + '</div>')
     return page("Каркас-эталон — M2AI", body)
+
+
+@app.get("/wiki/coverage", response_class=HTMLResponse)
+def wiki_coverage():
+    r = _load_json(RECONCILE_FILE)
+    if not r:
+        return page("Покрытие — M2AI", '<p class="lead">reconcile.json не найден.</p>')
+    d = r["dims"]
+    vmap = {"GO": "s-live", "CAUTION": "s-in_progress", "LOOP": "s-next", "ABORT": "s-idea"}
+    body = ('<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+            '<div class="idx mono">A4.5 + A4.99 · резолюция и вердикт покрытия</div>'
+            '<h2 style="margin-top:6px">Отчёт покрытия</h2>'
+            f'<div class="meta-row" style="font-size:13px"><span class="chip {vmap.get(r["verdict"],"s-backlog")}">вердикт: {html.escape(r["verdict"])}</span></div>'
+            '<div class="stats">'
+            f'<div><b>{d["backbone_coverage_pct"]}%</b><span>покрытие каркаса</span></div>'
+            f'<div><b>{d["isolate_count"]}</b><span>сирот ({d["isolate_pct"]}%)</span></div>'
+            f'<div><b>{d["relates_resolved_pct"]}%</b><span>связей резолвится</span></div>'
+            f'<div><b>{d["same_as_candidates"]}</b><span>same_as к ревью</span></div></div>')
+    if r.get("reasons"):
+        body += '<div class="def">' + " · ".join(html.escape(x) for x in r["reasons"]) + '</div>'
+    # backbone gaps
+    body += f'<h3>Пробелы каркаса ({len(r["backbone_gaps"])}) — кандидаты на извлечение/доразметку</h3><ul class="rel">'
+    for g in r["backbone_gaps"]:
+        lbl = g["backbone"].replace(chr(10), " ")
+        body += f'<li><span class="edge">○ gap</span><span>{html.escape(lbl)}</span></li>'
+    body += '</ul>'
+    # same_as candidates
+    cands = r["same_as_candidates"]
+    body += f'<h3>Кандидаты на слияние same_as ({len(cands)}) — нужен ручной разбор</h3>'
+    body += '<table style="width:100%;border-collapse:collapse;font-size:13px">'
+    body += '<tr><th style="text-align:left;border-bottom:1px solid var(--line);padding:6px">A</th><th style="text-align:left;border-bottom:1px solid var(--line);padding:6px">B</th><th style="text-align:left;border-bottom:1px solid var(--line);padding:6px">причина</th></tr>'
+    for c in cands[:60]:
+        sc = "" if c["same_category"] else " · разные категории"
+        body += (f'<tr><td style="padding:5px;border-bottom:1px dashed var(--line)"><a href="/wiki/{c["a"]}">{html.escape(c["a_title"])}</a></td>'
+                 f'<td style="padding:5px;border-bottom:1px dashed var(--line)"><a href="/wiki/{c["b"]}">{html.escape(c["b_title"])}</a></td>'
+                 f'<td style="padding:5px;border-bottom:1px dashed var(--line);color:var(--ink2)" class="mono">{html.escape(c["reason"])}{sc}</td></tr>')
+    body += '</table>'
+    # isolates
+    iso = r["isolates"]
+    body += f'<h3>Сироты без связей ({len(iso)})</h3><div class="widx">'
+    for n in iso[:80]:
+        body += f'<a href="/wiki/{n["id"]}"><small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>'
+    body += '</div>'
+    return page("Отчёт покрытия — M2AI", body)
 
 
 @app.get("/wiki/{nid}", response_class=HTMLResponse)
