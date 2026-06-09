@@ -17,6 +17,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "Примечание 14 (стр. 722",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 722,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=722"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -38,6 +46,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 175",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 175,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=175"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -59,6 +75,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 17",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 17,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=17"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 130",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 130,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=130"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -106,6 +136,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -127,6 +158,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 177",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 177,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=177"
+   }
+  ],
   "backlinks": [
    {
     "from": "C118",
@@ -189,6 +228,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -210,6 +250,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 105",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 105,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=105"
+   }
+  ],
   "backlinks": [
    {
     "from": "C020",
@@ -236,6 +284,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 198",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 198,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=198"
+   },
+   {
+    "label": "- Путеводитель по понятиям, стр. 219",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 219,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=219"
+   }
+  ],
   "backlinks": [
    {
     "from": "C061",
@@ -288,6 +350,26 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 15",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 15,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=15"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 125",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 125,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=125"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 574",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 574,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=574"
+   }
+  ],
   "backlinks": [
    {
     "from": "C024",
@@ -430,6 +512,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Общая управленческая подготовка, стр. 10",
+    "file": "0/Общая управленческая подготовка.pdf",
+    "page": 10,
+    "deep_link": "/content/books/0/%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0.pdf#page=10"
+   }
+  ],
   "backlinks": [
    {
     "from": "C063",
@@ -460,6 +550,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 101",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 101,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=101"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -481,6 +579,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "Примечание 14 (стр. 722",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 722,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=722"
+   }
+  ],
   "backlinks": [
    {
     "from": "C130",
@@ -507,6 +613,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "T034",
@@ -538,6 +645,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 237",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 237,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=237"
+   }
+  ],
   "backlinks": [
    {
     "from": "ML006",
@@ -564,6 +679,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 112",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 112,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=112"
+   }
+  ],
   "backlinks": [
    {
     "from": "C049",
@@ -603,6 +726,32 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 105",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 105,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=105"
+   },
+   {
+    "label": "Элементы мышления в формальной логике (стр. 603",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 603,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=603"
+   },
+   {
+    "label": " в формальной логике (стр. 603). Элементы языковых выражений (стр. 433",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 433,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=433"
+   },
+   {
+    "label": "енты языковых выражений (стр. 433, 503). Элементы содержания (стр. 210",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 210,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=210"
+   }
+  ],
   "backlinks": [
    {
     "from": "C021",
@@ -649,6 +798,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 138",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 138,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=138"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -683,6 +840,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C112",
@@ -709,6 +867,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C104",
@@ -739,6 +898,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C128",
@@ -786,6 +946,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 230",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 230,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=230"
+   }
+  ],
   "backlinks": [
    {
     "from": "C126",
@@ -824,6 +992,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C011",
@@ -859,6 +1028,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 181",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 181,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=181"
+   }
+  ],
   "backlinks": [
    {
     "from": "C003",
@@ -897,6 +1074,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 3
  },
@@ -918,6 +1096,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "M018",
@@ -953,6 +1132,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 112",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 112,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=112"
+   }
+  ],
   "backlinks": [
    {
     "from": "C018",
@@ -979,6 +1166,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 115",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 115,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=115"
+   }
+  ],
   "backlinks": [
    {
     "from": "C052",
@@ -1009,6 +1204,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Общая управленческая подготовка, стр. 40",
+    "file": "0/Общая управленческая подготовка.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0.pdf#page=40"
+   }
+  ],
   "backlinks": [
    {
     "from": "M011",
@@ -1040,6 +1243,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 155",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 155,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -1066,6 +1277,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 117",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 117,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=117"
+   },
+   {
+    "label": "Категория формы (стр. 28",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 28,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=28"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -1096,6 +1321,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 25",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 25,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=25"
+   }
+  ],
   "backlinks": [],
   "degree": 1,
   "merged_ids": [
@@ -1123,6 +1356,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "S041",
@@ -1149,6 +1383,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 194",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 194,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=194"
+   }
+  ],
   "backlinks": [
    {
     "from": "C044",
@@ -1191,6 +1433,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 12",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 12,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=12"
+   }
+  ],
   "backlinks": [
    {
     "from": "C006",
@@ -1241,6 +1491,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 230",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 230,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=230"
+   }
+  ],
   "backlinks": [
    {
     "from": "C059",
@@ -1276,6 +1534,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 595",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 595,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=595"
+   }
+  ],
   "backlinks": [
    {
     "from": "C045",
@@ -1307,6 +1573,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 212",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 212,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=212"
+   }
+  ],
   "backlinks": [
    {
     "from": "S068",
@@ -1341,6 +1615,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 198",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 198,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=198"
+   }
+  ],
   "backlinks": [
    {
     "from": "C043",
@@ -1375,6 +1657,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -1401,6 +1684,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 115",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 115,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=115"
+   }
+  ],
   "backlinks": [
    {
     "from": "C017",
@@ -1525,9 +1816,13 @@
    {
     "from": "T006",
     "rel": "mentions"
+   },
+   {
+    "from": "C201",
+    "rel": "mentions"
    }
   ],
-  "degree": 32
+  "degree": 33
  },
  {
   "id": "C088",
@@ -1552,6 +1847,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 200",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 200,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=200"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -1578,6 +1881,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 200",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 200,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=200"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -1604,6 +1915,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 200",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 200,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=200"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -1630,6 +1949,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C050",
@@ -1661,6 +1981,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 101",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 101,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=101"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 582",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 582,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=582"
+   }
+  ],
   "backlinks": [
    {
     "from": "C049",
@@ -1711,6 +2045,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=134"
+   }
+  ],
   "backlinks": [
    {
     "from": "C047",
@@ -1746,6 +2088,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -1772,6 +2115,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "TH009",
@@ -1798,6 +2142,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 115",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 115,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=115"
+   }
+  ],
   "backlinks": [
    {
     "from": "C015",
@@ -1858,6 +2210,26 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 25",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 25,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=25"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -1908,6 +2280,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
+   }
+  ],
   "backlinks": [
    {
     "from": "C008",
@@ -1946,6 +2332,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -2020,6 +2420,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
+   }
+  ],
   "backlinks": [
    {
     "from": "C006",
@@ -2054,6 +2468,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 125",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 125,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=125"
+   }
+  ],
   "backlinks": [
    {
     "from": "T002",
@@ -2080,6 +2502,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -2101,6 +2524,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 194",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 194,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=194"
+   }
+  ],
   "backlinks": [
    {
     "from": "C043",
@@ -2139,6 +2570,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 230",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 230,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=230"
+   }
+  ],
   "backlinks": [
    {
     "from": "C060",
@@ -2185,6 +2624,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 177",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 177,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=177"
+   }
+  ],
   "backlinks": [
    {
     "from": "C038",
@@ -2220,6 +2667,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 215",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 215,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=215"
+   }
+  ],
   "backlinks": [
    {
     "from": "C054",
@@ -2256,6 +2711,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 158",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 158,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=158"
+   }
+  ],
   "backlinks": [
    {
     "from": "C055",
@@ -2294,6 +2757,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C002",
@@ -2320,6 +2784,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 110",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 110,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=110"
+   }
+  ],
   "backlinks": [
    {
     "from": "C029",
@@ -2403,6 +2875,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 189",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 189,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=189"
+   }
+  ],
   "backlinks": [
    {
     "from": "C002",
@@ -2441,6 +2921,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 110",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 110,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=110"
+   }
+  ],
   "backlinks": [
    {
     "from": "C019",
@@ -2479,6 +2967,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 170",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 170,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=170"
+   }
+  ],
   "backlinks": [
    {
     "from": "C026",
@@ -2525,6 +3021,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 179",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 179,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=179"
+   }
+  ],
   "backlinks": [
    {
     "from": "C065",
@@ -2559,6 +3063,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C072",
@@ -2593,6 +3098,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C108",
@@ -2619,6 +3125,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C109",
@@ -2654,6 +3161,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 195",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 195,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=195"
+   }
+  ],
   "backlinks": [
    {
     "from": "C205",
@@ -2692,6 +3207,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C002",
@@ -2718,6 +3234,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 134",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=134"
+   }
+  ],
   "backlinks": [
    {
     "from": "C014",
@@ -2768,6 +3292,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 180",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 180,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=180"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -2794,6 +3326,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 12",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 12,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=12"
+   },
+   {
+    "label": "ксте языкового мышления. Значение и смысл языковых выражений (стр. 455",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 455,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=455"
+   }
+  ],
   "backlinks": [
    {
     "from": "C008",
@@ -2837,6 +3383,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -2863,6 +3410,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -2889,6 +3437,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -2915,6 +3464,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 17",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 17,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=17"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 595",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 595,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=595"
+   }
+  ],
   "backlinks": [],
   "degree": 3
  },
@@ -2946,6 +3509,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 85",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 85,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=85"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 223",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 223,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=223"
+   }
+  ],
   "backlinks": [
    {
     "from": "C047",
@@ -2980,6 +3557,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 85",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 85,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=85"
+   }
+  ],
   "backlinks": [
    {
     "from": "C048",
@@ -3010,6 +3595,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 85",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 85,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=85"
+   }
+  ],
   "backlinks": [
    {
     "from": "T017",
@@ -3041,6 +3634,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 588",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 588,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=588"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -3062,6 +3663,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -3083,6 +3685,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C001",
@@ -3109,6 +3712,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 165",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 165,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=165"
+   }
+  ],
   "backlinks": [
    {
     "from": "C031",
@@ -3157,6 +3768,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 148",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 148,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=148"
+   }
+  ],
   "backlinks": [
    {
     "from": "C032",
@@ -3199,6 +3818,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 158",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 158,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=158"
+   }
+  ],
   "backlinks": [
    {
     "from": "C031",
@@ -3233,6 +3860,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 194",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 194,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=194"
+   }
+  ],
   "backlinks": [
    {
     "from": "C040",
@@ -3272,6 +3907,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 115",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 115,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=115"
+   }
+  ],
   "backlinks": [
    {
     "from": "C086",
@@ -3303,6 +3946,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 187",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 187,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=187"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -3329,6 +3980,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 189",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 189,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=189"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -3355,6 +4014,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 138",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 138,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=138"
+   }
+  ],
   "backlinks": [
    {
     "from": "C012",
@@ -3399,9 +4066,13 @@
    {
     "from": "C203",
     "rel": "mentions"
+   },
+   {
+    "from": "C204",
+    "rel": "mentions"
    }
   ],
-  "degree": 14
+  "degree": 15
  },
  {
   "id": "C003",
@@ -3436,6 +4107,26 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 30",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 30,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=30"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 155",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 155,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -3532,6 +4223,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 140",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 140,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=140"
+   }
+  ],
   "backlinks": [
    {
     "from": "C026",
@@ -3575,6 +4274,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 196",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 196,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=196"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -3601,6 +4308,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 196",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 196,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=196"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -3622,6 +4337,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 150",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 150,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=150"
+   }
+  ],
   "backlinks": [
    {
     "from": "TH004",
@@ -3652,6 +4375,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -3673,6 +4397,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 101",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 101,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=101"
+   }
+  ],
   "backlinks": [
    {
     "from": "C014",
@@ -3736,6 +4468,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 117",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 117,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=117"
+   },
+   {
+    "label": "Схемы мышления: схема «квадрата» (стр. 424",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 424,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=424"
+   }
+  ],
   "backlinks": [
    {
     "from": "C053",
@@ -3779,6 +4525,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 101",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 101,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=101"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 574",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 574,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=574"
+   }
+  ],
   "backlinks": [
    {
     "from": "C001",
@@ -3825,6 +4585,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 12",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 12,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=12"
+   }
+  ],
   "backlinks": [
    {
     "from": "C009",
@@ -3863,6 +4631,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -3884,6 +4653,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "Вся книга; особенно стр. 276",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 276,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=276"
+   }
+  ],
   "backlinks": [
    {
     "from": "C123",
@@ -3918,6 +4695,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "S045",
@@ -3948,6 +4726,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "M019",
@@ -3991,6 +4770,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 239",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 239,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=239"
+   }
+  ],
   "backlinks": [
    {
     "from": "C104",
@@ -4041,6 +4828,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 179",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 179,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=179"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -4072,6 +4867,32 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 17",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 17,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=17"
+   },
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 130",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 130,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=130"
+   },
+   {
+    "label": "**Источники:** На перекрёстке мысли, стр. 155",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 155,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   },
+   {
+    "label": "Сознание: проблема активности сознания (стр. 198",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 198,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=198"
+   }
+  ],
   "backlinks": [
    {
     "from": "C024",
@@ -4106,6 +4927,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 211",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 211,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=211"
+   }
+  ],
   "backlinks": [
    {
     "from": "C035",
@@ -4151,6 +4980,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 110",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 110,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=110"
+   }
+  ],
   "backlinks": [
    {
     "from": "C020",
@@ -4237,6 +5074,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C011",
@@ -4263,6 +5101,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -4289,6 +5128,26 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 112",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 112,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=112"
+   },
+   {
+    "label": "нанием и объектом. Связь между языковой формой и содержанием (стр. 314",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 314,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=314"
+   },
+   {
+    "label": "ой формой и содержанием (стр. 314). Связь языкового мышления (стр. 426",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 426,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=426"
+   }
+  ],
   "backlinks": [
    {
     "from": "C022",
@@ -4323,6 +5182,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 177",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 177,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=177"
+   }
+  ],
   "backlinks": [
    {
     "from": "C037",
@@ -4373,6 +5240,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 55",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 55,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=55"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -4394,6 +5269,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -4420,6 +5296,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 165",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 165,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=165"
+   }
+  ],
   "backlinks": [],
   "degree": 0,
   "merged_ids": [
@@ -4447,6 +5331,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C002",
@@ -4473,6 +5358,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Общая управленческая подготовка, стр. 30",
+    "file": "0/Общая управленческая подготовка.pdf",
+    "page": 30,
+    "deep_link": "/content/books/0/%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0.pdf#page=30"
+   }
+  ],
   "backlinks": [
    {
     "from": "C063",
@@ -4499,6 +5392,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   }
+  ],
   "backlinks": [
    {
     "from": "C072",
@@ -4566,13 +5467,25 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 215",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 215,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=215"
+   }
+  ],
   "backlinks": [
    {
     "from": "TH010",
     "rel": "mentions"
+   },
+   {
+    "from": "C205",
+    "rel": "mentions"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C067",
@@ -4592,6 +5505,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 125",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 125,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=125"
+   }
+  ],
   "backlinks": [
    {
     "from": "C025",
@@ -4618,6 +5539,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 125",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 125,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=125"
+   }
+  ],
   "backlinks": [
    {
     "from": "C067",
@@ -4648,6 +5577,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "Примечание 14 (стр. 722",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 722,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=722"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -4669,6 +5606,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C110",
@@ -4699,6 +5637,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 163",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 163,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=163"
+   }
+  ],
   "backlinks": [
    {
     "from": "C033",
@@ -4734,6 +5680,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 20",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 20,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=20"
+   }
+  ],
   "backlinks": [
    {
     "from": "C011",
@@ -4777,6 +5731,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям и схемам, стр. 55",
+    "file": "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf",
+    "page": 55,
+    "deep_link": "/content/books/0/2_SHH_Putevoditel%20ponyatiya%20i%20shemy_pravka.pdf#page=55"
+   }
+  ],
   "backlinks": [
    {
     "from": "C024",
@@ -4831,6 +5793,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "ML001",
@@ -4857,6 +5820,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C050",
@@ -4883,6 +5847,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 170",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 170,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=170"
+   }
+  ],
   "backlinks": [
    {
     "from": "C050",
@@ -4914,6 +5886,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 220",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 220,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=220"
+   }
+  ],
   "backlinks": [],
   "degree": 3
  },
@@ -4935,6 +5915,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -4956,6 +5937,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C050",
@@ -4982,6 +5964,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C122",
@@ -5013,6 +5996,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 230",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 230,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=230"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5034,6 +6025,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5055,6 +6047,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Общая управленческая подготовка, стр. 40",
+    "file": "0/Общая управленческая подготовка.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0.pdf#page=40"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5081,6 +6081,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -5107,6 +6108,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 610",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 610,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=610"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5128,6 +6137,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5154,6 +6164,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 607",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 607,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=607"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -5175,6 +6193,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5196,6 +6215,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5217,6 +6237,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям, стр. 230",
+    "file": "0/Reflexia.pdf",
+    "page": 230,
+    "deep_link": "/content/books/0/Reflexia.pdf#page=230"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -5238,6 +6266,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5264,6 +6293,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 215",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 215,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=215"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5285,6 +6322,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 30",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 30,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=30"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5306,6 +6351,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5327,6 +6373,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 160",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 160,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=160"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5348,6 +6402,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5369,6 +6424,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -5390,6 +6446,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5411,6 +6468,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 55",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 55,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=55"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5432,6 +6497,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5453,6 +6519,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5474,6 +6541,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 35",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 35,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=35"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5500,6 +6575,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 182",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 182,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=182"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -5521,6 +6604,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5542,6 +6626,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 175",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 175,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=175"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -5563,6 +6655,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5584,6 +6677,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 12",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 12,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=12"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5610,6 +6711,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -5631,6 +6733,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C013",
@@ -5657,6 +6760,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5678,6 +6782,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5699,6 +6804,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C032",
@@ -5725,6 +6831,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5746,6 +6853,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "TH004",
@@ -5772,6 +6880,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 30",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 30,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=30"
+   },
+   {
+    "label": "- Путеводитель по понятиям, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   }
+  ],
   "backlinks": [
    {
     "from": "C033",
@@ -5808,6 +6930,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5829,6 +6952,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 48",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 48,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=48"
+   }
+  ],
   "backlinks": [],
   "degree": 0
  },
@@ -5850,6 +6981,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 180",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 180,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=180"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5871,6 +7010,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5892,6 +7032,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 20",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 20,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=20"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -5913,6 +7061,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -5934,6 +7083,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -5955,6 +7105,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C002",
@@ -5989,6 +7140,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C052",
@@ -6015,6 +7167,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C052",
@@ -6046,6 +7199,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -6072,6 +7226,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 196",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 196,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=196"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6098,6 +7260,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -6119,6 +7282,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 3
  },
@@ -6140,6 +7304,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6161,6 +7326,20 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   },
+   {
+    "label": "- Путеводитель по понятиям, стр. 134",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 134,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=134"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6187,6 +7366,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 3
  },
@@ -6213,6 +7393,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6239,6 +7420,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 236",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 236,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=236"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6260,6 +7449,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6281,6 +7471,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "еская», научная, психологическая теории мышления. Построение (стр. 701",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 701,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=701"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6302,6 +7500,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6323,6 +7522,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6344,6 +7544,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 110",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 110,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=110"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6370,6 +7578,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 195",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 195,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=195"
+   }
+  ],
   "backlinks": [
    {
     "from": "C087",
@@ -6401,6 +7617,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6422,6 +7639,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям, стр. 138",
+    "file": "0/Reflexia.pdf",
+    "page": 138,
+    "deep_link": "/content/books/0/Reflexia.pdf#page=138"
+   }
+  ],
   "backlinks": [],
   "degree": 4
  },
@@ -6448,6 +7673,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 155",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 155,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6469,6 +7702,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 4
  },
@@ -6490,6 +7724,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6511,6 +7746,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6532,6 +7775,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 4
  },
@@ -6553,6 +7797,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6574,6 +7819,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "Примечание 14 (стр. 722",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 722,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=722"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6595,6 +7848,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6616,6 +7870,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 0
  },
@@ -6637,6 +7892,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1,
   "merged_ids": [
@@ -6669,6 +7925,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 181",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 181,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=181"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6690,6 +7954,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 15",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 15,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=15"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6711,6 +7983,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6732,6 +8005,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 15",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 15,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=15"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -6758,6 +8039,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6779,6 +8061,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6800,6 +8083,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 40",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 40,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=40"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -6821,6 +8112,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -6842,6 +8134,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6863,6 +8156,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6889,6 +8183,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 25",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 25,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=25"
+   }
+  ],
   "backlinks": [
    {
     "from": "C002",
@@ -6915,6 +8217,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6936,6 +8239,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -6957,6 +8261,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 4
  },
@@ -6978,6 +8283,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 110",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 110,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=110"
+   }
+  ],
   "backlinks": [
    {
     "from": "TH006",
@@ -7009,6 +8322,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -7030,6 +8344,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 85",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 85,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=85"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7051,6 +8373,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C031",
@@ -7077,6 +8400,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по понятиям, стр. 138",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 138,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=138"
+   }
+  ],
   "backlinks": [],
   "degree": 2
  },
@@ -7103,6 +8434,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- На перекрёстке мысли, стр. 155",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 155,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=155"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7124,6 +8463,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 30",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 30,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=30"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7145,6 +8492,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -7166,6 +8514,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -7187,6 +8536,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [
    {
     "from": "C016",
@@ -7213,6 +8563,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 2
  },
@@ -7234,6 +8585,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -7255,6 +8607,7 @@
    }
   ],
   "sources": [],
+  "anchors": [],
   "backlinks": [],
   "degree": 1
  },
@@ -7276,6 +8629,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Общая управленческая подготовка, стр. 10",
+    "file": "0/Общая управленческая подготовка.pdf",
+    "page": 10,
+    "deep_link": "/content/books/0/%D0%9E%D0%B1%D1%89%D0%B0%D1%8F%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0.pdf#page=10"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7297,6 +8658,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7318,6 +8687,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 145",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 145,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=145"
+   }
+  ],
   "backlinks": [],
   "degree": 1
  },
@@ -7339,6 +8716,14 @@
    }
   ],
   "sources": [],
+  "anchors": [
+   {
+    "label": "- Путеводитель по ОРУ, стр. 55",
+    "file": "0/1_SHH_Putevoditel ORU.pdf",
+    "page": 55,
+    "deep_link": "/content/books/0/1_SHH_Putevoditel%20ORU.pdf#page=55"
+   }
+  ],
   "backlinks": [
    {
     "from": "C033",
@@ -7358,10 +8743,18 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Знаковый",
-  "status": "stub",
-  "definition": "Объективное содержание знака в знаковой структуре X/λ; промежуточное звено между знаком и смыслом (Кн.3).",
+  "status": "filled",
+  "definition": "Объективное содержание, закреплённое за знаком в знаковой структуре X/λ. Значение занимает промежуточное положение между знаком (материальной формой) и смыслом (контекстным употреблением): оно фиксирует то общее предметное содержание, которое знак несёт в системе языка независимо от конкретной ситуации. В линии знакового слоя ГП значение — узел между замещением (как знак встаёт на место объекта) и смыслом (как знак работает в коммуникации).",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "Языковое мышление и методы его исследования",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 6,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=6"
+   }
+  ],
   "backlinks": [
    {
     "from": "C206",
@@ -7394,9 +8787,13 @@
    {
     "from": "TH005",
     "rel": "mentions"
+   },
+   {
+    "from": "C202",
+    "rel": "mentions"
    }
   ],
-  "degree": 10
+  "degree": 13
  },
  {
   "id": "C202",
@@ -7405,10 +8802,18 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Знаковый",
-  "status": "stub",
-  "definition": "Исходная операция знаковой ситуации: знак замещает объект; основание моделирования (Кн.3).",
+  "status": "filled",
+  "definition": "Исходная операция знаковой ситуации: знак ставится на место объекта и начинает в работе мышления выполнять функции этого объекта. Замещение — генетически первичный механизм, из которого разворачивается вся знаковая работа: на нём строятся значение, моделирование и далее теоретическое знание. Именно замещение делает возможным оперировать объектом «через знак», не имея самого объекта.",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "Языковое мышление и методы его исследования",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 183,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=183"
+   }
+  ],
   "backlinks": [
    {
     "from": "C203",
@@ -7429,9 +8834,17 @@
    {
     "from": "C069",
     "rel": "mentions"
+   },
+   {
+    "from": "C201",
+    "rel": "mentions"
+   },
+   {
+    "from": "C206",
+    "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 10
  },
  {
   "id": "C203",
@@ -7440,10 +8853,18 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Знаковый",
-  "status": "stub",
-  "definition": "Развитие замещения в построение модели; ступень к теоретическому знанию (Кн.3).",
+  "status": "filled",
+  "definition": "Развитие замещения: построение знаковой модели, которая воспроизводит структуру объекта и позволяет исследовать объект, работая с моделью. Моделирование — ступень между простым замещением и теорией: модель уже не просто замещает объект, а удерживает его строение и поведение, становясь инструментом получения нового знания.",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "Языковое мышление и методы его исследования",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": 16,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf#page=16"
+   }
+  ],
   "backlinks": [
    {
     "from": "C202",
@@ -7459,12 +8880,20 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Логический",
-  "status": "stub",
-  "definition": "Промежуточная ступень между формальной и содержательно-генетической логикой (Кн.2).",
+  "status": "filled",
+  "definition": "Промежуточная ступень в линии развития логики у ГП: между формальной логикой (фиксирующей готовые формы мысли) и содержательно-генетической логикой (реконструирующей происхождение содержания). Диалектическая логика вводит движение, противоречие и развитие в рассмотрение мышления, но ещё не даёт операционального аппарата реконструкции — его даёт следующая, содержательно-генетическая ступень.",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "От логики науки — к теории мышления",
+    "file": "1/ot-logiki-nauki-k-teorii-mysleniia.pdf",
+    "page": 173,
+    "deep_link": "/content/books/1/ot-logiki-nauki-k-teorii-mysleniia.pdf#page=173"
+   }
+  ],
   "backlinks": [],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C205",
@@ -7473,10 +8902,18 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Подход",
-  "status": "stub",
-  "definition": "Прикладной выход линии подхода: верстак+кладовая → культуротехника → педагогика (Кн.1).",
+  "status": "filled",
+  "definition": "Прикладной выход линии подхода: верстак и кладовая → культуротехника → педагогика. Педагогика рассматривается ГП не как обучение «предметам», а как культуротехническая работа по формированию способностей и форм мышления-деятельности; это область, где методологический подход реализуется в практике воспроизводства человека и его деятельности.",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "На перекрёстке мысли",
+    "file": "1/na-perekrestke-mysli.pdf",
+    "page": 101,
+    "deep_link": "/content/books/1/na-perekrestke-mysli.pdf#page=101"
+   }
+  ],
   "backlinks": [
    {
     "from": "C094",
@@ -7495,7 +8932,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 7
  },
  {
   "id": "C206",
@@ -7504,12 +8941,20 @@
   "category": "concepts",
   "category_label": "Понятие",
   "layer": "Знаковый",
-  "status": "stub",
-  "definition": "Расширение знаковой ситуации до взаимодействия деятелей; завершает знаковый слой (Кн.3).",
+  "status": "filled",
+  "definition": "Расширение знаковой ситуации до взаимодействия двух и более деятелей: знак начинает работать не только как замещение объекта, но и как средство передачи содержания между позициями. Коммуникативная ситуация завершает знаковый слой, связывая значение и смысл с реальной мысле-коммуникацией (М-К).",
   "versions": [],
   "sources": [],
+  "anchors": [
+   {
+    "book": "Языковое мышление и методы его исследования",
+    "file": "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf",
+    "page": null,
+    "deep_link": "/content/books/1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf"
+   }
+  ],
   "backlinks": [],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "A01",

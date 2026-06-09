@@ -12,6 +12,56 @@ CAT_LABEL = {"concepts": "Понятие", "schemas": "Схема", "theses": "�
              "methods": "Методика", "methodologies": "Методология", "theories": "Теория"}
 DELTAS = {"🆕": "new", "🔄": "deepened", "✅": "confirmed", "⚠️": "revised"}
 
+BOOK_FILES = [
+    ("на перекр", "1/na-perekrestke-mysli.pdf"),
+    ("от логики науки", "1/ot-logiki-nauki-k-teorii-mysleniia.pdf"),
+    ("языков", "1/iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf"),
+    ("путеводитель по ору", "0/1_SHH_Putevoditel ORU.pdf"),
+    ("ору", "0/1_SHH_Putevoditel ORU.pdf"),
+    ("понятиям и схемам", "0/2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf"),
+    ("общая управленческая", "0/Общая управленческая подготовка.pdf"),
+    ("рефлекси", "0/Reflexia.pdf"),
+    ("мифпсихолог", "1/Shedrovickiyi_G._Mifpsihologiya._Ot_Teorii_Myishleniya_K_T.a4.pdf"),
+]
+
+
+def _book_file(src_low):
+    for key, f in BOOK_FILES:
+        if key in src_low:
+            return f
+    return None
+
+
+def _deep_link(f, page):
+    from urllib.parse import quote as _q
+    link = "/content/books/" + "/".join(_q(p) for p in f.split("/"))
+    if page:
+        link += f"#page={page}"
+    return link
+
+
+def make_anchors(text):
+    low = text.lower()
+    books_in = [(k, f) for k, f in BOOK_FILES if k in low]
+    out, seen = [], set()
+    for m in re.finditer(r"стр\.?\s*(\d+)", text):
+        page = int(m.group(1))
+        win = low[max(0, m.start() - 90):m.start()]
+        f = _book_file(win)
+        if not f and len({f2 for _, f2 in books_in}) == 1:
+            f = books_in[0][1]
+        if not f:
+            continue
+        key = (f, page)
+        if key in seen:
+            continue
+        seen.add(key)
+        label = text[max(0, m.start() - 70):m.start() + len(m.group(0))].strip().split(chr(10))[-1][-70:]
+        out.append({"label": label, "file": f, "page": page, "deep_link": _deep_link(f, page)})
+        if len(out) >= 8:
+            break
+    return out
+
 nodes, edges = [], []
 
 
@@ -55,7 +105,7 @@ def parse_entity(md_path):
     return {"id": eid, "type": "entity", "title": title, "category": cat,
             "category_label": CAT_LABEL.get(cat, cat), "subcategory": sub,
             "first_appearance": first, "slug": md_path.parent.name,
-            "definition": definition, "versions": versions, "sources": src[:8]}
+            "definition": definition, "versions": versions, "sources": src[:8], "anchors": make_anchors(txt)}
 
 
 def parse_connections(conn_path, src_id):
@@ -94,7 +144,8 @@ def main():
                           "category": e.get("category", "concepts"),
                           "category_label": CAT_LABEL.get(e.get("category", "concepts"), "Понятие"),
                           "layer": e.get("layer"), "status": e.get("status", "stub"),
-                          "definition": e.get("definition", ""), "versions": [], "sources": []})
+                          "definition": e.get("definition", ""), "versions": [], "sources": [],
+                          "anchors": [dict(a, deep_link=_deep_link(a["file"], a.get("page"))) for a in e.get("anchors", [])]})
             ent_ids.add(e["id"])
             for r in e.get("relates", []):
                 edges.append({"from": e["id"], "to": r["to"], "rel": "relates_to",

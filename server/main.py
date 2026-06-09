@@ -650,8 +650,31 @@ def wiki_node(nid: str):
                      f'<span class="dl {v.get("delta","new")}">{v.get("delta","new")}</span>'
                      f'<br>{html.escape((v.get("text") or "")[:400])}</li>')
         body += '</ul>'
-    # sources
-    if n.get("sources"):
+    # anchors (book + page + deep-link) — fall back to plain sources
+    BOOK_TITLE = {
+        "na-perekrestke-mysli.pdf": "На перекрёстке мысли",
+        "ot-logiki-nauki-k-teorii-mysleniia.pdf": "От логики науки — к теории мышления",
+        "iazykovoe-myslenie-i-metody-ego-issledovaniia.pdf": "Языковое мышление",
+        "1_SHH_Putevoditel ORU.pdf": "Путеводитель по ОРУ",
+        "2_SHH_Putevoditel ponyatiya i shemy_pravka.pdf": "Путеводитель по понятиям и схемам",
+        "Общая управленческая подготовка.pdf": "Общая управленческая подготовка",
+        "Reflexia.pdf": "Рефлексия (Лефевр)",
+        "Shedrovickiyi_G._Mifpsihologiya._Ot_Teorii_Myishleniya_K_T.a4.pdf": "Мифпсихология",
+    }
+    anchors = n.get("anchors") or []
+    if anchors:
+        body += '<h2>Якоря-источники (cites · клик → страница в PDF)</h2><ul class="srcs">'
+        for a in anchors:
+            base = a["file"].split("/")[-1]
+            book = a.get("book") or BOOK_TITLE.get(base, base)
+            pg = a.get("page")
+            lbl = book + (f" · стр. {pg}" if pg else " · страница уточняется")
+            if pg:
+                body += f'<li><a href="{html.escape(a["deep_link"])}" target="_blank" rel="noopener">{html.escape(lbl)} ↗</a></li>'
+            else:
+                body += f'<li><span>{html.escape(lbl)}</span></li>'
+        body += '</ul>'
+    elif n.get("sources"):
         body += '<h2>Источники (cites)</h2><ul class="srcs">' + "".join(
             f'<li><span>{html.escape(s)}</span></li>' for s in n["sources"]) + '</ul>'
     # relations out
