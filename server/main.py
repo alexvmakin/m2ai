@@ -899,8 +899,9 @@ def api_rag(q: str = "", k: int = 6):
     results = [pack(i, sc) for sc, i in top]
     related = [pack(i) for i, _ in expanded]
     context = "\n\n".join(f'[{r["id"]}] {r["title"]}: {r["definition"]}' for r in results)
-    return {"query": q, "results": results, "related": related, "context": context,
-            "note": "Экстрактивный ретрив по графу. Генеративный ответ — через MCP-инструмент m2_search (агент со своей моделью)."}
+    mode = "hybrid (bm25+embeddings)" if (rmr_available() and _EMB_STATE.get("ready")) else "bm25"
+    return {"query": q, "retrieval_mode": mode, "results": results, "related": related, "context": context,
+            "note": "Генеративный ответ — в /ask (через RMR) и через MCP-инструмент m2_search."}
 
 
 @app.get("/ask", response_class=HTMLResponse)
