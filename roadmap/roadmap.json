@@ -257,12 +257,12 @@
         {
           "id": "P2-S5",
           "title": "S5 · Полнота + discovery + экспорт RAG",
-          "status": "backlog",
+          "status": "done",
           "tasks": [
             {
               "id": "P2-S5a",
               "title": "итерации вердикта до GO; новые источники",
-              "status": "backlog"
+              "status": "done"
             },
             {
               "id": "P2-S5b",
