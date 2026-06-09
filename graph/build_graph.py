@@ -12,6 +12,19 @@ CAT_LABEL = {"concepts": "Понятие", "schemas": "Схема", "theses": "�
              "methods": "Методика", "methodologies": "Методология", "theories": "Теория"}
 DELTAS = {"🆕": "new", "🔄": "deepened", "✅": "confirmed", "⚠️": "revised"}
 
+
+def clean_text(s, limit=700):
+    if not s:
+        return ""
+    s = re.sub(r"(?m)^\s*#{1,6}.*$", " ", s)        # drop markdown heading lines
+    s = re.sub(r"-{3,}", " ", s)                      # drop horizontal rules ---
+    s = re.sub(r"\*\*Источники:\*\*.*", " ", s)      # drop trailing source markers
+    s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)          # unbold
+    s = s.replace("**", "").replace("__", "")
+    s = re.sub(r"^[\s\-•*]+", "", s)                  # leading bullets
+    s = re.sub(r"\s+", " ", s).strip()
+    return s[:limit].strip()
+
 BOOK_FILES = [
     ("на перекр", "1/na-perekrestke-mysli.pdf"),
     ("от логики науки", "1/ot-logiki-nauki-k-teorii-mysleniia.pdf"),
@@ -83,23 +96,26 @@ def parse_entity(md_path):
     cat = md_path.parts[md_path.parts.index("entities") + 1]
     sub = field(txt, "Подкатегория")
     first = field(txt, "Первое появление")
-    # base definition: prose under ## Описание before any ### subsection
+    # base definition: clean prose under ## Описание (heading lines stripped)
     versions, definition = [], ""
-    md = re.search(r"##\s+Описание\s*(.*?)(?=\n###|\n##|\Z)", txt, re.S)
-    if md:
-        definition = re.sub(r"\s+", " ", md.group(1)).strip()[:600]
+    dm = re.search(r"##\s+Описание\s*(.*?)(?=\n##\s|\Z)", txt, re.S)
+    if dm:
+        definition = clean_text(dm.group(1))
     # versions: ALL ### subsections (Папка/Книга), wherever they live
-    for m in re.finditer(r"\n###\s+([^\n]+)\n(.*?)(?=\n###|\n##|\Z)", txt, re.S):
-        head = m.group(1).strip()
-        body = re.sub(r"\s+", " ", m.group(2)).strip()[:600]
+    for m in re.finditer(r"\n###\s+([^\n]+)\n(.*?)(?=\n###|\n##\s|\Z)", txt, re.S):
+        head = re.sub(r"\s+", " ", m.group(1)).strip()
         if not re.search(r"Папк|Книг|П0|Кн\.|Источник", head):
             continue
+        body = clean_text(m.group(2), 500)
         delta = next((v for k, v in DELTAS.items() if k in head), "new")
         versions.append({"source": head, "delta": delta, "text": body})
-        if not definition and body and not body.lstrip().startswith("-"):
-            definition = body
-    if not definition and versions:
-        definition = versions[0]["text"]
+    # if Описание had no prose, take first version body that is real prose (not page refs)
+    if not definition:
+        for v in versions:
+            t = v["text"]
+            if t and not re.match(r"^(на перекр|от логики|языков|путеводитель|стр\.?|с\.?\s*\d)", t.lower()) and len(t) > 20:
+                definition = t
+                break
     # sources
     src = []
     ms = re.search(r"##\s+Источники(.+?)(\n##|\Z)", txt, re.S)

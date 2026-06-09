@@ -416,42 +416,76 @@ def roadmap_project(pid: str):
 
 
 # ---- Вики (граф связанных объектов) ----
+def _trunc(t, n):
+    t = t or ""
+    return t if len(t) <= n else t[: n - 1] + "…"
+
+
 def _mini_graph_svg(nid):
-    neigh = []
+    import math
+    REL_COL = {"relates_to": "#8b919c", "refines": "#2a4d6e", "transforms": "#c0392b",
+               "produces": "#c0392b", "mentions": "#c9ccd2", "instantiates": "#2a4d6e"}
+    seen = {}
     for e in GRAPH_EDGES:
         if e["from"] == nid and e["to"] != nid:
-            neigh.append((e["to"], e.get("rel"), "out"))
+            seen.setdefault(e["to"], e.get("rel"))
         elif e["to"] == nid and e["from"] != nid:
-            neigh.append((e["from"], e.get("rel"), "in"))
-    seen, uniq = set(), []
-    for t, rel, d in neigh:
-        if t in seen:
-            continue
-        seen.add(t); uniq.append((t, rel, d))
-    uniq = uniq[:8]
-    import math
-    cx, cy = 150, 125
-    svg = ['<svg viewBox="0 0 300 250" width="100%" height="230" role="img" aria-label="мини-граф">',
-           '<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#bcbfc7"/></marker></defs>']
-    n = max(len(uniq), 1)
-    pts = []
-    for i, (t, rel, d) in enumerate(uniq):
+            seen.setdefault(e["from"], e.get("rel"))
+    items = list(seen.items())
+    total = len(items)
+    if total == 0:
+        return '<p class="sum">прямых связей нет</p>'
+    items = items[:12]
+    n = len(items)
+    W, H, cx, cy = 700, 460, 350, 230
+    RX, RY = 250, 175
+    parts = [f'<svg viewBox="0 0 {W} {H}" width="100%" style="max-width:720px" role="img" '
+             'aria-label="мини-граф окружения" font-family="IBM Plex Mono,monospace">',
+             '<defs>'
+             '<marker id="mg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#8b919c"/></marker>'
+             '<marker id="mr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#c0392b"/></marker>'
+             '<marker id="mb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#2a4d6e"/></marker>'
+             '</defs>']
+    pos = []
+    for i, (t, rel) in enumerate(items):
         ang = 2 * math.pi * i / n - math.pi / 2
-        x, y = cx + 95 * math.cos(ang), cy + 92 * math.sin(ang)
-        pts.append((x, y, t, rel))
-    for x, y, t, rel in pts:
-        col = "#c0392b" if rel == "transforms" else "#bcbfc7"
-        dash = '' if rel == "relates_to" else ' stroke-dasharray="3 3"'
-        svg.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.0f}" y2="{y:.0f}" stroke="{col}" stroke-width="1.1"{dash} marker-end="url(#a)"/>')
-    for x, y, t, rel in pts:
+        x, y = cx + RX * math.cos(ang), cy + RY * math.sin(ang)
+        pos.append((x, y, t, rel))
+    # edges first
+    for x, y, t, rel in pos:
+        col = REL_COL.get(rel, "#8b919c")
+        mk = "mr" if col == "#c0392b" else ("mb" if col == "#2a4d6e" else "mg")
+        dash = ' stroke-dasharray="3 3"' if rel == "mentions" else ""
+        dx, dy = x - cx, y - cy
+        d = math.hypot(dx, dy) or 1
+        ux, uy = dx / d, dy / d
+        sx, sy = cx + ux * 92, cy + uy * 22
+        ex, ey = x - ux * 64, y - uy * 18
+        parts.append(f'<line x1="{sx:.0f}" y1="{sy:.0f}" x2="{ex:.0f}" y2="{ey:.0f}" stroke="{col}" stroke-width="1.2"{dash} marker-end="url(#{mk})"/>')
+    # neighbor nodes
+    for x, y, t, rel in pos:
         nd = GRAPH_BY_ID.get(t)
-        lbl = (nd["title"] if nd else t)[:14]
-        svg.append(f'<rect x="{x-32:.0f}" y="{y-11:.0f}" width="64" height="22" fill="#fff" stroke="#bcbfc7"/>'
-                   f'<text x="{x:.0f}" y="{y+3:.0f}" text-anchor="middle" font-size="8" font-family="IBM Plex Mono,monospace" fill="#16181d">{html.escape(lbl)}</text>')
-    ctitle = (GRAPH_BY_ID.get(nid, {}).get("title", nid))[:16]
-    svg.append(f'<circle cx="{cx}" cy="{cy}" r="28" fill="#fff" stroke="#16181d" stroke-width="1.8"/>'
-               f'<text x="{cx}" y="{cy+3}" text-anchor="middle" font-size="9" font-family="IBM Plex Mono,monospace" fill="#16181d">{html.escape(ctitle)}</text></svg>')
-    return "".join(svg)
+        lbl = _trunc(nd["title"] if nd else t, 18)
+        w = max(70, min(150, len(lbl) * 7 + 14))
+        col = REL_COL.get(rel, "#8b919c")
+        href = f'/wiki/{t}' if nd else None
+        rect = (f'<rect x="{x - w/2:.0f}" y="{y-13:.0f}" width="{w}" height="26" rx="2" fill="#fff" stroke="{col}" stroke-width="1"/>'
+                f'<text x="{x:.0f}" y="{y+3:.0f}" text-anchor="middle" font-size="9" fill="#16181d">{html.escape(lbl)}</text>')
+        parts.append(f'<a href="{href}">{rect}</a>' if href else rect)
+    # center node (emphasis rect, not a tiny circle)
+    ct = _trunc(GRAPH_BY_ID.get(nid, {}).get("title", nid), 26)
+    cw = max(120, min(280, len(ct) * 8 + 20))
+    parts.append(f'<rect x="{cx - cw/2:.0f}" y="{cy-19}" width="{cw}" height="38" rx="3" fill="#fff" stroke="#16181d" stroke-width="2"/>'
+                 f'<text x="{cx}" y="{cy+4}" text-anchor="middle" font-size="12" fill="#16181d">{html.escape(ct)}</text>')
+    if total > 12:
+        parts.append(f'<text x="{W-12}" y="{H-10}" text-anchor="end" font-size="10" fill="#8b919c">+{total-12} ещё связей</text>')
+    parts.append('</svg>')
+    legend = ('<div class="mono" style="font-size:10px;color:var(--ink2);margin-top:4px">'
+              '<span style="color:#8b919c">— relates_to</span> · '
+              '<span style="color:#2a4d6e">— refines/instantiates</span> · '
+              '<span style="color:#c0392b">— transforms/produces</span> · '
+              '<span style="color:#c9ccd2">- - mentions</span></div>')
+    return "".join(parts) + legend
 
 
 def fill_level(n):
@@ -464,6 +498,7 @@ def fill_level(n):
     if d >= 70 or anchors or versions >= 2:
         return "partial"
     return "thin"
+
 
 FILL_MARK = {"filled": ("●", "#1c7a4d", "заполнено"),
              "partial": ("◐", "#9a6b12", "частично"),
