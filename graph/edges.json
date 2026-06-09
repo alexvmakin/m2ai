@@ -1820,6 +1820,76 @@
   "to_name": "Знание"
  },
  {
+  "from": "C201",
+  "to": "C069",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знак"
+ },
+ {
+  "from": "C201",
+  "to": "C010",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Смысл"
+ },
+ {
+  "from": "C202",
+  "to": "C069",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знак"
+ },
+ {
+  "from": "C202",
+  "to": "C203",
+  "rel": "relates_to",
+  "rel_type": "генетическая",
+  "to_name": "Моделирование"
+ },
+ {
+  "from": "C203",
+  "to": "C202",
+  "rel": "relates_to",
+  "rel_type": "генетическая",
+  "to_name": "Замещение"
+ },
+ {
+  "from": "C204",
+  "to": "C123",
+  "rel": "relates_to",
+  "rel_type": "генетическая",
+  "to_name": "Формальная логика"
+ },
+ {
+  "from": "C204",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "генетическая",
+  "to_name": "Содержательно-генетическая логика"
+ },
+ {
+  "from": "C205",
+  "to": "C087",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Подход"
+ },
+ {
+  "from": "C206",
+  "to": "C008",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Коммуникация"
+ },
+ {
+  "from": "C206",
+  "to": "C201",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Значение"
+ },
+ {
   "from": "C024",
   "to": "C019",
   "rel": "mentions",
@@ -1886,6 +1956,12 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "C111",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "C127",
   "to": "C019",
   "rel": "mentions",
@@ -1934,6 +2010,18 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "C126",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C126",
+  "to": "C202",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "C122",
   "to": "M018",
   "rel": "mentions",
@@ -1952,8 +2040,26 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "C022",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C022",
+  "to": "C202",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "C082",
   "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C094",
+  "to": "C205",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -1972,6 +2078,12 @@
  {
   "from": "C050",
   "to": "C095",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C050",
+  "to": "C205",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2108,6 +2220,12 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "C009",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "C073",
   "to": "C016",
   "rel": "mentions",
@@ -2240,6 +2358,18 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "C112",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C112",
+  "to": "C202",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "C004",
   "to": "C026",
   "rel": "mentions",
@@ -2302,6 +2432,18 @@
  {
   "from": "C069",
   "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C069",
+  "to": "C201",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C069",
+  "to": "C202",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2480,6 +2622,12 @@
   "rel_type": "co-mention"
  },
  {
+  "from": "S068",
+  "to": "C205",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "S069",
   "to": "C019",
   "rel": "mentions",
@@ -2530,6 +2678,12 @@
  {
   "from": "TH010",
   "to": "C093",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH010",
+  "to": "C205",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2608,6 +2762,12 @@
  {
   "from": "TH005",
   "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH005",
+  "to": "C201",
   "rel": "mentions",
   "rel_type": "co-mention"
  },
@@ -2704,6 +2864,102 @@
  {
   "from": "T006",
   "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C203",
+  "to": "C057",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C205",
+  "to": "C094",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C076",
+  "to": "C020",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C076",
+  "to": "C013",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C088",
+  "to": "C020",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C088",
+  "to": "C087",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C089",
+  "to": "C020",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C090",
+  "to": "C087",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C086",
+  "to": "C023",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C129",
+  "to": "C020",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M017",
+  "to": "C087",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M014",
+  "to": "C020",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M013",
+  "to": "C052",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M013",
+  "to": "C010",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S009",
+  "to": "C013",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T030",
+  "to": "C011",
   "rel": "mentions",
   "rel_type": "co-mention"
  },

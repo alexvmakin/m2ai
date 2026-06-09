@@ -85,6 +85,21 @@ def main():
                 edges.append({"from": e["id"], "to": c["target"], "rel": "relates_to",
                               "rel_type": c["rel_type"], "to_name": c["target_name"]})
 
+    # extra stub entities (gap concepts from integrated map)
+    extra_path = ENT.parent.parent / "graph" / "extra_entities.json"
+    if extra_path.exists():
+        ex = json.loads(extra_path.read_text(encoding="utf-8"))
+        for e in ex.get("entities", []):
+            nodes.append({"id": e["id"], "type": "entity", "title": e["title"],
+                          "category": e.get("category", "concepts"),
+                          "category_label": CAT_LABEL.get(e.get("category", "concepts"), "Понятие"),
+                          "layer": e.get("layer"), "status": e.get("status", "stub"),
+                          "definition": e.get("definition", ""), "versions": [], "sources": []})
+            ent_ids.add(e["id"])
+            for r in e.get("relates", []):
+                edges.append({"from": e["id"], "to": r["to"], "rel": "relates_to",
+                              "rel_type": r.get("type", "содержательная"), "to_name": r.get("name", r["to"])})
+
     # weak co-mention edges (connect isolates) — distinct from curated relates_to
     ent_nodes = [n for n in nodes if n.get("type") == "entity"]
     title_idx = [(n["id"], n["title"]) for n in ent_nodes if len(n["title"]) >= 8]
@@ -103,6 +118,37 @@ def main():
                 cnt += 1
                 if cnt >= 8:
                     break
+
+    # isolate-targeted lenient linking (from authored notes, threshold 5)
+    deg = {}
+    for e in edges:
+        deg[e["from"]] = deg.get(e["from"], 0) + 1
+        deg[e["to"]] = deg.get(e["to"], 0) + 1
+    ent_nodes2 = [n for n in nodes if n.get("type") == "entity"]
+    short_idx = [(n["id"], n["title"]) for n in ent_nodes2 if len(n["title"]) >= 5]
+    existing2 = {(e["from"], e["to"]) for e in edges}
+    for n in ent_nodes2:
+        if deg.get(n["id"], 0) > 0:
+            continue
+        text = (n.get("definition", "") + " " + " ".join(v.get("text", "") for v in n.get("versions", []))).lower()
+        added = 0
+        for tid, ttl in short_idx:
+            if tid == n["id"]:
+                continue
+            if ttl.lower() in text and (n["id"], tid) not in existing2:
+                edges.append({"from": n["id"], "to": tid, "rel": "mentions", "rel_type": "co-mention"})
+                existing2.add((n["id"], tid)); added += 1
+                if added >= 5:
+                    break
+        # reverse: someone mentions the isolate
+        if deg.get(n["id"], 0) == 0 and added == 0 and len(n["title"]) >= 5:
+            for m in ent_nodes2:
+                if m["id"] == n["id"]:
+                    continue
+                mt = (m.get("definition", "") + " " + " ".join(v.get("text", "") for v in m.get("versions", []))).lower()
+                if n["title"].lower() in mt and (m["id"], n["id"]) not in existing2:
+                    edges.append({"from": m["id"], "to": n["id"], "rel": "mentions", "rel_type": "co-mention"})
+                    existing2.add((m["id"], n["id"])); break
 
     # decompositions: operation types + genetic map + operations + sources
     alpha = json.loads((DEC / "04_MERGED_ALPHABET.json").read_text(encoding="utf-8"))

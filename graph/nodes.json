@@ -107,7 +107,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "C038",
@@ -607,9 +607,29 @@
    {
     "from": "C021",
     "rel": "relates_to"
+   },
+   {
+    "from": "C076",
+    "rel": "mentions"
+   },
+   {
+    "from": "C088",
+    "rel": "mentions"
+   },
+   {
+    "from": "C089",
+    "rel": "mentions"
+   },
+   {
+    "from": "C129",
+    "rel": "mentions"
+   },
+   {
+    "from": "M014",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 8
  },
  {
   "id": "C012",
@@ -669,7 +689,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C127",
@@ -735,9 +755,13 @@
    {
     "from": "T036",
     "rel": "relates_to"
+   },
+   {
+    "from": "C204",
+    "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C099",
@@ -874,7 +898,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "C122",
@@ -935,7 +959,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 4
+  "degree": 6
  },
  {
   "id": "C053",
@@ -1185,6 +1209,10 @@
     "rel": "relates_to"
    },
    {
+    "from": "C206",
+    "rel": "relates_to"
+   },
+   {
     "from": "C085",
     "rel": "mentions"
    },
@@ -1193,7 +1221,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 10
+  "degree": 11
  },
  {
   "id": "C060",
@@ -1287,9 +1315,13 @@
    {
     "from": "TH010",
     "rel": "mentions"
+   },
+   {
+    "from": "C205",
+    "rel": "mentions"
    }
   ],
-  "degree": 2
+  "degree": 4
  },
  {
   "id": "C044",
@@ -1521,7 +1553,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "C089",
@@ -1547,7 +1579,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C090",
@@ -1573,7 +1605,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C095",
@@ -1659,7 +1691,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 13
+  "degree": 14
  },
  {
   "id": "C048",
@@ -2622,8 +2654,25 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 3
+  "backlinks": [
+   {
+    "from": "C205",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C088",
+    "rel": "mentions"
+   },
+   {
+    "from": "C090",
+    "rel": "mentions"
+   },
+   {
+    "from": "M017",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 7
  },
  {
   "id": "C117",
@@ -2763,7 +2812,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 7
  },
  {
   "id": "C073",
@@ -3223,8 +3272,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C086",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C086",
@@ -3250,7 +3304,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C084",
@@ -3341,9 +3395,13 @@
    {
     "from": "T016",
     "rel": "mentions"
+   },
+   {
+    "from": "C203",
+    "rel": "mentions"
    }
   ],
-  "degree": 13
+  "degree": 14
  },
  {
   "id": "C003",
@@ -3643,9 +3701,17 @@
    {
     "from": "T004",
     "rel": "relates_to"
+   },
+   {
+    "from": "C076",
+    "rel": "mentions"
+   },
+   {
+    "from": "S009",
+    "rel": "mentions"
    }
   ],
-  "degree": 13
+  "degree": 15
  },
  {
   "id": "C052",
@@ -3682,9 +3748,13 @@
    {
     "from": "T013",
     "rel": "relates_to"
+   },
+   {
+    "from": "M013",
+    "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 8
  },
  {
   "id": "C049",
@@ -3763,9 +3833,17 @@
    {
     "from": "C069",
     "rel": "relates_to"
+   },
+   {
+    "from": "C201",
+    "rel": "relates_to"
+   },
+   {
+    "from": "M013",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 5
  },
  {
   "id": "C102",
@@ -3814,9 +3892,13 @@
    {
     "from": "T031",
     "rel": "relates_to"
+   },
+   {
+    "from": "C204",
+    "rel": "relates_to"
    }
   ],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "C113",
@@ -3884,7 +3966,7 @@
     "rel": "mentions"
    }
   ],
-  "degree": 5
+  "degree": 7
  },
  {
   "id": "C100",
@@ -4567,7 +4649,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C103",
@@ -4660,9 +4742,17 @@
    {
     "from": "TH005",
     "rel": "relates_to"
+   },
+   {
+    "from": "C201",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C202",
+    "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 9
  },
  {
   "id": "C011",
@@ -4715,9 +4805,13 @@
    {
     "from": "T012",
     "rel": "relates_to"
+   },
+   {
+    "from": "T030",
+    "rel": "mentions"
    }
   ],
-  "degree": 17
+  "degree": 18
  },
  {
   "id": "ML003",
@@ -4920,7 +5014,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "M010",
@@ -5014,7 +5108,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "M012",
@@ -5061,7 +5155,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "M005",
@@ -5318,7 +5412,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "S027",
@@ -6094,7 +6188,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "S069",
@@ -6282,7 +6376,7 @@
     "rel": "refines"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "TH009",
@@ -6439,7 +6533,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 3
+  "degree": 4
  },
  {
   "id": "T021",
@@ -6916,7 +7010,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "T017",
@@ -7256,6 +7350,166 @@
    }
   ],
   "degree": 3
+ },
+ {
+  "id": "C201",
+  "type": "entity",
+  "title": "Значение",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Знаковый",
+  "status": "stub",
+  "definition": "Объективное содержание знака в знаковой структуре X/λ; промежуточное звено между знаком и смыслом (Кн.3).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [
+   {
+    "from": "C206",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C111",
+    "rel": "mentions"
+   },
+   {
+    "from": "C126",
+    "rel": "mentions"
+   },
+   {
+    "from": "C022",
+    "rel": "mentions"
+   },
+   {
+    "from": "C009",
+    "rel": "mentions"
+   },
+   {
+    "from": "C112",
+    "rel": "mentions"
+   },
+   {
+    "from": "C069",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH005",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 10
+ },
+ {
+  "id": "C202",
+  "type": "entity",
+  "title": "Замещение",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Знаковый",
+  "status": "stub",
+  "definition": "Исходная операция знаковой ситуации: знак замещает объект; основание моделирования (Кн.3).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [
+   {
+    "from": "C203",
+    "rel": "relates_to"
+   },
+   {
+    "from": "C126",
+    "rel": "mentions"
+   },
+   {
+    "from": "C022",
+    "rel": "mentions"
+   },
+   {
+    "from": "C112",
+    "rel": "mentions"
+   },
+   {
+    "from": "C069",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 7
+ },
+ {
+  "id": "C203",
+  "type": "entity",
+  "title": "Моделирование",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Знаковый",
+  "status": "stub",
+  "definition": "Развитие замещения в построение модели; ступень к теоретическому знанию (Кн.3).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [
+   {
+    "from": "C202",
+    "rel": "relates_to"
+   }
+  ],
+  "degree": 3
+ },
+ {
+  "id": "C204",
+  "type": "entity",
+  "title": "Диалектическая логика",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Логический",
+  "status": "stub",
+  "definition": "Промежуточная ступень между формальной и содержательно-генетической логикой (Кн.2).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [],
+  "degree": 2
+ },
+ {
+  "id": "C205",
+  "type": "entity",
+  "title": "Педагогика",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Подход",
+  "status": "stub",
+  "definition": "Прикладной выход линии подхода: верстак+кладовая → культуротехника → педагогика (Кн.1).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [
+   {
+    "from": "C094",
+    "rel": "mentions"
+   },
+   {
+    "from": "C050",
+    "rel": "mentions"
+   },
+   {
+    "from": "S068",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH010",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 6
+ },
+ {
+  "id": "C206",
+  "type": "entity",
+  "title": "Коммуникативная ситуация",
+  "category": "concepts",
+  "category_label": "Понятие",
+  "layer": "Знаковый",
+  "status": "stub",
+  "definition": "Расширение знаковой ситуации до взаимодействия деятелей; завершает знаковый слой (Кн.3).",
+  "versions": [],
+  "sources": [],
+  "backlinks": [],
+  "degree": 2
  },
  {
   "id": "A01",

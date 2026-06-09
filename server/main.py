@@ -624,8 +624,11 @@ def wiki_node(nid: str):
         raise HTTPException(404, "Узел не найден")
     layer = ""
     crumbs = '<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+    layer_b = f'<span class="badge mono" style="border-color:#2a4d6e;color:#2a4d6e">слой: {html.escape(str(n.get("layer")))}</span>' if n.get("layer") else ""
+    stub_b = '<span class="badge mono" style="border-color:#c0392b;color:#c0392b">stub · к дозаполнению (S2)</span>' if n.get("status") == "stub" else ""
     idline = (f'<div class="idline"><span class="badge mono">{html.escape(n["id"])}</span>'
               f'<span class="badge cat mono">{html.escape(n.get("category_label",""))}</span>'
+              + layer_b + stub_b
               + (f'<span class="mono">первое появление: {html.escape(n["first_appearance"])}</span>' if n.get("first_appearance") else "") + '</div>')
     body = crumbs + idline + f'<h1 style="font-size:32px">{html.escape(n["title"])}</h1>'
     if n.get("definition"):
