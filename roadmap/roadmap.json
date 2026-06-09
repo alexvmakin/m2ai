@@ -4,7 +4,14 @@
     "owner": "Aleksei Makin",
     "updated": "2026-06-09",
     "version": "1.0",
-    "statuses": ["live", "done", "in_progress", "next", "backlog", "idea"],
+    "statuses": [
+      "live",
+      "done",
+      "in_progress",
+      "next",
+      "backlog",
+      "idea"
+    ],
     "legend": {
       "live": "В проде / работает",
       "done": "Завершено",
@@ -16,175 +23,513 @@
   },
   "projects": [
     {
-      "id": "P0", "code": "M2AI-PORTAL", "title": "M2AI — Research Portal",
-      "status": "live", "priority": "high", "progress": 70,
+      "id": "P0",
+      "code": "M2AI-PORTAL",
+      "title": "M2AI — Research Portal",
+      "status": "live",
+      "priority": "high",
+      "progress": 70,
       "horizon": "now",
       "summary": "Сайт-портал результатов проекта: люди (браузер/REST) + AI-агенты (MCP). Лёгкая версия в проде на www.m-2ai.com; полный REST+MCP за фабрикой.",
       "depends_on": [],
       "epics": [
-        {"id": "P0-E1", "title": "MVP-сайт (лендинг/статьи/файлы)", "status": "done",
-         "tasks": [
-           {"id": "P0-T1", "title": "FastAPI: лендинг, /articles, /files, /healthz", "status": "done"},
-           {"id": "P0-T2", "title": "Деплой Railway + домен www.m-2ai.com + SSL", "status": "done"}
-         ]},
-        {"id": "P0-E2", "title": "Полный REST API + MCP-сервер (KAN-258)", "status": "backlog",
-         "tasks": [
-           {"id": "P0-T3", "title": "12 REST endpoints по PROJECT-SPEC", "status": "backlog"},
-           {"id": "P0-T4", "title": "11 MCP tools + 3 resources (SSE)", "status": "backlog"},
-           {"id": "P0-T5", "title": "Раздел «Дорожная карта» на сайте", "status": "in_progress"}
-         ]}
+        {
+          "id": "P0-E1",
+          "title": "MVP-сайт (лендинг/статьи/файлы)",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P0-T1",
+              "title": "FastAPI: лендинг, /articles, /files, /healthz",
+              "status": "done"
+            },
+            {
+              "id": "P0-T2",
+              "title": "Деплой Railway + домен www.m-2ai.com + SSL",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": "P0-E2",
+          "title": "Полный REST API + MCP-сервер (KAN-258)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P0-T3",
+              "title": "12 REST endpoints по PROJECT-SPEC",
+              "status": "backlog"
+            },
+            {
+              "id": "P0-T4",
+              "title": "11 MCP tools + 3 resources (SSE)",
+              "status": "backlog"
+            },
+            {
+              "id": "P0-T5",
+              "title": "Раздел «Дорожная карта» на сайте",
+              "status": "in_progress"
+            }
+          ]
+        }
       ],
       "log": [
-        {"date": "2026-06-09", "entry": "www.m-2ai.com в проде: SSL, редирект apex→www, контент и файлы отдаются."},
-        {"date": "2026-06-09", "entry": "Починен healthcheck Railway (подстановка $PORT), залит MVP-сайт."},
-        {"date": "2026-06-07", "entry": "Репо alexvmakin/m2ai создан, залит контент + спеки, заведена KAN-258."}
+        {
+          "date": "2026-06-09",
+          "entry": "www.m-2ai.com в проде: SSL, редирект apex→www, контент и файлы отдаются."
+        },
+        {
+          "date": "2026-06-09",
+          "entry": "Починен healthcheck Railway (подстановка $PORT), залит MVP-сайт."
+        },
+        {
+          "date": "2026-06-07",
+          "entry": "Репо alexvmakin/m2ai создан, залит контент + спеки, заведена KAN-258."
+        }
       ]
     },
     {
-      "id": "P1", "code": "GP-DECOMP-P1", "title": "GP-разложение — Фаза 1 (фундамент)",
-      "status": "done", "priority": "high", "progress": 100,
+      "id": "P1",
+      "code": "GP-DECOMP-P1",
+      "title": "GP-разложение — Фаза 1 (фундамент)",
+      "status": "done",
+      "priority": "high",
+      "progress": 100,
       "horizon": "done",
       "summary": "Формальный алфавит операций мышления ГП: 3 книги разложены, сводный алфавит 18 типов (A01–A18), генетическая карта (DAG 18/21), валидация PASSED. Плюс entity-base 333 сущности.",
       "depends_on": [],
       "epics": [
-        {"id": "P1-E1", "title": "Разложение 3 текстов + сводный алфавит", "status": "done",
-         "tasks": [
-           {"id": "P1-T1", "title": "Диссертация / Евклид / Лекция-3 → JSON", "status": "done"},
-           {"id": "P1-T2", "title": "Сводный мета-алфавит 18 типов + генетическая карта", "status": "done"},
-           {"id": "P1-T3", "title": "Валидация на контрольном фрагменте (PASSED)", "status": "done"}
-         ]},
-        {"id": "P1-E2", "title": "Извлечение сущностей (entity-base)", "status": "done",
-         "tasks": [
-           {"id": "P1-T4", "title": "333 сущности, 6 категорий, дельта-протокол", "status": "done"},
-           {"id": "P1-T5", "title": "HTML-навигаторы (снапшоты)", "status": "done"}
-         ]}
+        {
+          "id": "P1-E1",
+          "title": "Разложение 3 текстов + сводный алфавит",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P1-T1",
+              "title": "Диссертация / Евклид / Лекция-3 → JSON",
+              "status": "done"
+            },
+            {
+              "id": "P1-T2",
+              "title": "Сводный мета-алфавит 18 типов + генетическая карта",
+              "status": "done"
+            },
+            {
+              "id": "P1-T3",
+              "title": "Валидация на контрольном фрагменте (PASSED)",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": "P1-E2",
+          "title": "Извлечение сущностей (entity-base)",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P1-T4",
+              "title": "333 сущности, 6 категорий, дельта-протокол",
+              "status": "done"
+            },
+            {
+              "id": "P1-T5",
+              "title": "HTML-навигаторы (снапшоты)",
+              "status": "done"
+            }
+          ]
+        }
       ],
       "log": [
-        {"date": "2026-06-09", "entry": "Проведена ревизия v1 → AUDIT-gp-decomposition-v1.md; намечен прогон v2."}
+        {
+          "date": "2026-06-09",
+          "entry": "Проведена ревизия v1 → AUDIT-gp-decomposition-v1.md; намечен прогон v2."
+        }
       ]
     },
     {
-      "id": "P2", "code": "GP-WIKI", "title": "Вики-база знаний ГП (связанные объекты)",
-      "status": "next", "priority": "high", "progress": 5,
-      "horizon": "next",
+      "id": "P2",
+      "code": "GP-WIKI",
+      "title": "Вики-база знаний ГП (связанные объекты)",
+      "status": "in_progress",
+      "priority": "high",
+      "progress": 22,
+      "horizon": "now",
       "summary": "Пересборка текстов ГП в серфабельную вики-базу: статьи Entity/Operation/Source со сквозными ссылками и backlinks. Под капотом — единый типизированный граф связанных объектов (сшивка entity-base и operation-base). Интерфейс — по мотивам эстетики redmadrobot.ai (dark/минимализм/типографика; вдохновение, не копия).",
-      "depends_on": ["P1"],
+      "depends_on": [
+        "P1"
+      ],
       "epics": [
-        {"id": "P2-E1", "title": "Единая онтология графа (Hydrate→Ontology→Wield)", "status": "next",
-         "tasks": [
-           {"id": "P2-T1", "title": "Унификация ID + entity resolution (same_as)", "status": "next"},
-           {"id": "P2-T2", "title": "Привязка сущностей к цитатам-якорям и страницам PDF", "status": "backlog"},
-           {"id": "P2-T3", "title": "Re-ingest 333 сущностей + 5 разложений в граф (JSON/graph)", "status": "backlog"}
-         ]},
-        {"id": "P2-E2", "title": "Вики-навигатор (серфинг по статьям)", "status": "backlog",
-         "tasks": [
-           {"id": "P2-T4", "title": "Страница статьи: контент, backlinks, мини-граф окружения", "status": "backlog"},
-           {"id": "P2-T5", "title": "Дизайн-система (по мотивам redmadrobot.ai)", "status": "backlog"},
-           {"id": "P2-T6", "title": "Глубокие интерактивные отчёты с drill-down/фильтрами", "status": "backlog"}
-         ]}
+        {
+          "id": "P2-S0",
+          "title": "S0 · Граф-скелет + интерактивный каркас",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P2-S0a",
+              "title": "build_graph.py → nodes/edges.json (270 узлов, 289 рёбер)",
+              "status": "done"
+            },
+            {
+              "id": "P2-S0b",
+              "title": "EntityVersion (revises): 72 сущности с ≥2 версиями",
+              "status": "done"
+            },
+            {
+              "id": "P2-S0c",
+              "title": "/wiki индекс+поиск, /wiki/{id} статья (мини-граф, backlinks)",
+              "status": "done"
+            },
+            {
+              "id": "P2-S0d",
+              "title": "/wiki/backbone — каркас-эталон + сверка A4.5 (32/40)",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": "P2-S1",
+          "title": "S1 · Резолюция + сверка с каркасом",
+          "status": "next",
+          "tasks": [
+            {
+              "id": "P2-S1a",
+              "title": "same_as дедуп между книгами",
+              "status": "next"
+            },
+            {
+              "id": "P2-S1b",
+              "title": "чистка сирот (isolate_node)",
+              "status": "backlog"
+            },
+            {
+              "id": "P2-S1c",
+              "title": "diff граф↔каркас → пробелы/находки → вердикт покрытия",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P2-S2",
+          "title": "S2 · Якоря + версионность (проход книг)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P2-S2a",
+              "title": "точные цитаты+страницы, deep-link в PDF",
+              "status": "backlog"
+            },
+            {
+              "id": "P2-S2b",
+              "title": "цепочки revises по понятиям из LOG/дельт",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P2-S3",
+          "title": "S3 · Сшивка операций (produces)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P2-S3a",
+              "title": "operation→entity (produces)",
+              "status": "backlog"
+            },
+            {
+              "id": "P2-S3b",
+              "title": "точечный прогон разложения где мало операций",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P2-S4",
+          "title": "S4 · Отчёты и таймлайны",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P2-S4a",
+              "title": "drill-down, таймлайн развития понятий, ось 1956→1987",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P2-S5",
+          "title": "S5 · Полнота + discovery + экспорт RAG",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P2-S5a",
+              "title": "итерации вердикта до GO; новые источники",
+              "status": "backlog"
+            },
+            {
+              "id": "P2-S5b",
+              "title": "экспорт графа для P3 (RAG)",
+              "status": "backlog"
+            }
+          ]
+        }
       ],
       "log": [
-        {"date": "2026-06-09", "entry": "Заведён проект; целевая модель v2 (единый граф) описана в аудите."}
+        {
+          "date": "2026-06-09",
+          "entry": "S0 готов: граф 270 узлов/289 рёбер, динамическая /wiki, версионность (72 сущности), интерактивный каркас + сверка 32/40. Методика v2.1 → P2-SPEC.md."
+        },
+        {
+          "date": "2026-06-09",
+          "entry": "Заведён проект; целевая модель v2 (единый граф) описана в аудите."
+        }
       ]
     },
     {
-      "id": "P3", "code": "GP-RAG", "title": "Ontological GraphRAG + интерфейс общения",
-      "status": "backlog", "priority": "high", "progress": 0,
+      "id": "P3",
+      "code": "GP-RAG",
+      "title": "Ontological GraphRAG + интерфейс общения",
+      "status": "backlog",
+      "priority": "high",
+      "progress": 0,
       "horizon": "later",
       "summary": "RAG по лучшим практикам поверх графа знаний ГП (Ontological GraphRAG из плана ГП×LLM) + интерфейс диалога. Шаг 2 после вики-базы — использует тот же граф объектов как источник.",
-      "depends_on": ["P2"],
+      "depends_on": [
+        "P2"
+      ],
       "epics": [
-        {"id": "P3-E1", "title": "Архитектура и стек RAG", "status": "backlog",
-         "tasks": [
-           {"id": "P3-T1", "title": "Граф + векторный гибрид (GraphRAG), выбор стека", "status": "backlog"},
-           {"id": "P3-T2", "title": "Индексация графа объектов P2 в retrieval-слой", "status": "backlog"},
-           {"id": "P3-T3", "title": "Оценка качества ответов (faithfulness/citations)", "status": "backlog"}
-         ]},
-        {"id": "P3-E2", "title": "Интерфейс общения", "status": "backlog",
-         "tasks": [
-           {"id": "P3-T4", "title": "Чат с цитированием первоисточников", "status": "backlog"},
-           {"id": "P3-T5", "title": "Подключение как MCP-инструмент портала", "status": "backlog"}
-         ]}
+        {
+          "id": "P3-E1",
+          "title": "Архитектура и стек RAG",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P3-T1",
+              "title": "Граф + векторный гибрид (GraphRAG), выбор стека",
+              "status": "backlog"
+            },
+            {
+              "id": "P3-T2",
+              "title": "Индексация графа объектов P2 в retrieval-слой",
+              "status": "backlog"
+            },
+            {
+              "id": "P3-T3",
+              "title": "Оценка качества ответов (faithfulness/citations)",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P3-E2",
+          "title": "Интерфейс общения",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P3-T4",
+              "title": "Чат с цитированием первоисточников",
+              "status": "backlog"
+            },
+            {
+              "id": "P3-T5",
+              "title": "Подключение как MCP-инструмент портала",
+              "status": "backlog"
+            }
+          ]
+        }
       ],
       "log": []
     },
     {
-      "id": "P4", "code": "GP-TIMELINE", "title": "Массовое разложение и таймлайн развития мышления",
-      "status": "backlog", "priority": "high", "progress": 0,
+      "id": "P4",
+      "code": "GP-TIMELINE",
+      "title": "Массовое разложение и таймлайн развития мышления",
+      "status": "backlog",
+      "priority": "high",
+      "progress": 0,
       "horizon": "later",
       "summary": "Продолжение линии разложения: отбор корпуса текстов, массовый прогон GP-разложения с контролем качества, связывание текстов в единый таймлайн развития мышления (1956→…). Включает фазы 2–4 исследовательской программы (отбор 1000 работ, мета-алфавит корпуса, ASDS, arXiv paper).",
-      "depends_on": ["P1"],
+      "depends_on": [
+        "P1"
+      ],
       "epics": [
-        {"id": "P4-E1", "title": "Отбор корпуса и пайплайн прогона", "status": "backlog",
-         "tasks": [
-           {"id": "P4-T1", "title": "Критерии отбора + список текстов", "status": "backlog"},
-           {"id": "P4-T2", "title": "Пайплайн массового разложения + QA-валидация", "status": "backlog"}
-         ]},
-        {"id": "P4-E2", "title": "Таймлайн и синтез", "status": "backlog",
-         "tasks": [
-           {"id": "P4-T3", "title": "Ось 1956→1987: эволюция набора операций, инварианты", "status": "backlog"},
-           {"id": "P4-T4", "title": "Automated Scientific Discovery System (проект)", "status": "idea"},
-           {"id": "P4-T5", "title": "arXiv paper по результатам", "status": "idea"}
-         ]}
+        {
+          "id": "P4-E1",
+          "title": "Отбор корпуса и пайплайн прогона",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P4-T1",
+              "title": "Критерии отбора + список текстов",
+              "status": "backlog"
+            },
+            {
+              "id": "P4-T2",
+              "title": "Пайплайн массового разложения + QA-валидация",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P4-E2",
+          "title": "Таймлайн и синтез",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P4-T3",
+              "title": "Ось 1956→1987: эволюция набора операций, инварианты",
+              "status": "backlog"
+            },
+            {
+              "id": "P4-T4",
+              "title": "Automated Scientific Discovery System (проект)",
+              "status": "idea"
+            },
+            {
+              "id": "P4-T5",
+              "title": "arXiv paper по результатам",
+              "status": "idea"
+            }
+          ]
+        }
       ],
       "log": []
     },
     {
-      "id": "P5", "code": "PHIL-MAP", "title": "Карта домена: философия мышления (метод П49)",
-      "status": "backlog", "priority": "medium", "progress": 0,
+      "id": "P5",
+      "code": "PHIL-MAP",
+      "title": "Карта домена: философия мышления (метод П49)",
+      "status": "backlog",
+      "priority": "medium",
+      "progress": 0,
       "horizon": "later",
       "summary": "Подпроект: построить карту предметной области развития философии (пока ограниченной мышлением) по методу П49 (ecosystem-картография: reconnaissance → ontology → plan → extract → coverage → synthesis). Даёт внешний контекст для текстов ГП.",
       "depends_on": [],
       "epics": [
-        {"id": "P5-E1", "title": "Картирование территории (A0–A2)", "status": "backlog",
-         "tasks": [
-           {"id": "P5-T1", "title": "Reconnaissance: акторы, зависимости, таймлайн", "status": "backlog"},
-           {"id": "P5-T2", "title": "Онтология домена + план исследования", "status": "backlog"}
-         ]},
-        {"id": "P5-E2", "title": "Извлечение и синтез (A4–A6)", "status": "backlog",
-         "tasks": [
-           {"id": "P5-T3", "title": "Extract + агрегация в DAG, оценка покрытия", "status": "backlog"},
-           {"id": "P5-T4", "title": "Аналитический отчёт по домену", "status": "backlog"}
-         ]}
+        {
+          "id": "P5-E1",
+          "title": "Картирование территории (A0–A2)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P5-T1",
+              "title": "Reconnaissance: акторы, зависимости, таймлайн",
+              "status": "backlog"
+            },
+            {
+              "id": "P5-T2",
+              "title": "Онтология домена + план исследования",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P5-E2",
+          "title": "Извлечение и синтез (A4–A6)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P5-T3",
+              "title": "Extract + агрегация в DAG, оценка покрытия",
+              "status": "backlog"
+            },
+            {
+              "id": "P5-T4",
+              "title": "Аналитический отчёт по домену",
+              "status": "backlog"
+            }
+          ]
+        }
       ],
       "log": []
     },
     {
-      "id": "P6", "code": "GP-APPLIED", "title": "Прикладные применения GP-разложения",
-      "status": "backlog", "priority": "medium", "progress": 0,
+      "id": "P6",
+      "code": "GP-APPLIED",
+      "title": "Прикладные применения GP-разложения",
+      "status": "backlog",
+      "priority": "medium",
+      "progress": 0,
       "horizon": "later",
       "summary": "Сформулировать прикладные тесты и сценарии использования результатов: что разложение даёт и как Алексей это применяет. Кандидаты: GP-PRM (process reward по типу операции), аннотация reasoning-трейсов, диагностика мышления в докладах/стратегиях, тренажёр операций.",
-      "depends_on": ["P1"],
+      "depends_on": [
+        "P1"
+      ],
       "epics": [
-        {"id": "P6-E1", "title": "Каталог применений и гипотез", "status": "backlog",
-         "tasks": [
-           {"id": "P6-T1", "title": "Список use-case'ов с ценностью и метрикой", "status": "backlog"},
-           {"id": "P6-T2", "title": "GP-PRM: оценка шага по типу операции (эксперимент)", "status": "idea"},
-           {"id": "P6-T3", "title": "Диагностика мышления: разложение реальных докладов/стратегий", "status": "idea"}
-         ]}
+        {
+          "id": "P6-E1",
+          "title": "Каталог применений и гипотез",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P6-T1",
+              "title": "Список use-case'ов с ценностью и метрикой",
+              "status": "backlog"
+            },
+            {
+              "id": "P6-T2",
+              "title": "GP-PRM: оценка шага по типу операции (эксперимент)",
+              "status": "idea"
+            },
+            {
+              "id": "P6-T3",
+              "title": "Диагностика мышления: разложение реальных докладов/стратегий",
+              "status": "idea"
+            }
+          ]
+        }
       ],
       "log": []
     },
     {
-      "id": "P7", "code": "VERSTAK-AGENT", "title": "Воспроизведение «верстака» ГП на агентной системе",
-      "status": "idea", "priority": "medium", "progress": 0,
+      "id": "P7",
+      "code": "VERSTAK-AGENT",
+      "title": "Воспроизведение «верстака» ГП на агентной системе",
+      "status": "idea",
+      "priority": "medium",
+      "progress": 0,
       "horizon": "later",
       "summary": "Спроектировать и собрать на агентной системе систему работ ГП «верстак + кладовая» (M016 / схема S070, «На перекрёстке мысли», стр. 215, 235–236): актуальная работа на верстаке регулируется онтологическими картинами из кладовой; два верстака (онтологии и нормировки), два блока хранения. Вторым шагом — то же для схемы мыследеятельности.",
       "depends_on": [],
       "epics": [
-        {"id": "P7-E1", "title": "Реконструкция модели верстака", "status": "idea",
-         "tasks": [
-           {"id": "P7-T1", "title": "Свести верстак из сущностей M016 + S069/S070 в спецификацию", "status": "idea"},
-           {"id": "P7-T2", "title": "Найти исходное изображение схемы (присылал ранее)", "status": "idea"},
-           {"id": "P7-T3", "title": "Агентная реализация: роли верстак/кладовая/нормировка", "status": "idea"}
-         ]},
-        {"id": "P7-E2", "title": "Схема мыследеятельности (СМД) на агентах", "status": "idea",
-         "tasks": [
-           {"id": "P7-T4", "title": "Перенос модели верстака на схему мыследеятельности", "status": "idea"}
-         ]}
+        {
+          "id": "P7-E1",
+          "title": "Реконструкция модели верстака",
+          "status": "idea",
+          "tasks": [
+            {
+              "id": "P7-T1",
+              "title": "Свести верстак из сущностей M016 + S069/S070 в спецификацию",
+              "status": "idea"
+            },
+            {
+              "id": "P7-T2",
+              "title": "Найти исходное изображение схемы (присылал ранее)",
+              "status": "idea"
+            },
+            {
+              "id": "P7-T3",
+              "title": "Агентная реализация: роли верстак/кладовая/нормировка",
+              "status": "idea"
+            }
+          ]
+        },
+        {
+          "id": "P7-E2",
+          "title": "Схема мыследеятельности (СМД) на агентах",
+          "status": "idea",
+          "tasks": [
+            {
+              "id": "P7-T4",
+              "title": "Перенос модели верстака на схему мыследеятельности",
+              "status": "idea"
+            }
+          ]
+        }
       ],
       "log": [
-        {"date": "2026-06-09", "entry": "Верстак найден в базе: метод M016 + схема S070 (расширенная, Рис.4 Section II)."}
+        {
+          "date": "2026-06-09",
+          "entry": "Верстак найден в базе: метод M016 + схема S070 (расширенная, Рис.4 Section II)."
+        }
       ]
     }
   ]
