@@ -618,6 +618,115 @@
           "entry": "Верстак найден в базе: метод M016 + схема S070 (расширенная, Рис.4 Section II)."
         }
       ]
+    },
+    {
+      "id": "P8",
+      "code": "WORKBENCH-RAGv2",
+      "title": "Workbench + RAG v2 (среда общения с базой)",
+      "status": "next",
+      "priority": "high",
+      "progress": 0,
+      "horizon": "next",
+      "depends_on": [
+        "P2",
+        "P3"
+      ],
+      "summary": "Полноценная рабочая среда: быстрые вопросы, несколько чатов, создание/сохранение статей, артефакты. Опенсорс-Workbench (Open WebUI) + RMR + наш GraphRAG как ретривер. RAG v2: pgvector + граф + онтология + rerank. Пайплайн пополнения базы + простая админка. Спека: roadmap/P8-WORKBENCH-RAGv2-SPEC.md.",
+      "epics": [
+        {
+          "id": "P8-S0",
+          "title": "S0 · Open WebUI + RMR (чаты/артефакты)",
+          "status": "next",
+          "tasks": [
+            {
+              "id": "P8-S0a",
+              "title": "Поднять Open WebUI (Railway), RMR как провайдер",
+              "status": "next"
+            },
+            {
+              "id": "P8-S0b",
+              "title": "Базовые чаты, артефакты, рабочие пространства",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P8-S1",
+          "title": "S1 · GraphRAG как Pipeline-ретривер",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P8-S1a",
+              "title": "Pipeline-плагин в Open WebUI → /api/rag",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P8-S2",
+          "title": "S2 · RAG v2 (pgvector + graph traversal + rerank)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P8-S2a",
+              "title": "pgvector store + персистентные эмбеддинги",
+              "status": "backlog"
+            },
+            {
+              "id": "P8-S2b",
+              "title": "multi-hop обход графа + rerank + community summaries",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P8-S3",
+          "title": "S3 · Пайплайн пополнения + админка v1",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P8-S3a",
+              "title": "intake→decompose→resolve→enrich→embed→verdict→publish",
+              "status": "backlog"
+            },
+            {
+              "id": "P8-S3b",
+              "title": "простая админка (CRUD + ревью same_as + реиндекс)",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P8-S4",
+          "title": "S4 · Статьи/артефакты (создать-сохранить-экспорт)",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P8-S4a",
+              "title": "сборка статьи по N темам → артефакт → сохранение/экспорт",
+              "status": "backlog"
+            }
+          ]
+        },
+        {
+          "id": "P8-S5",
+          "title": "S5 · Оценка (RAGAS) + глобальные вопросы",
+          "status": "backlog",
+          "tasks": [
+            {
+              "id": "P8-S5a",
+              "title": "RAGAS faithfulness/relevancy, community-summaries",
+              "status": "backlog"
+            }
+          ]
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "P8 заведён: спека Workbench+RAGv2 (Open WebUI + RMR + наш GraphRAG, pgvector, пайплайн пополнения, админка). roadmap/P8-WORKBENCH-RAGv2-SPEC.md."
+        }
+      ]
     }
   ]
 }
