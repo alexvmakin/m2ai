@@ -121,20 +121,33 @@ def rag_search(q, k=6):
         boost += 0.15 * _math.log1p(deg)                     # лёгкий приоритет центральности
         scored.append((base + boost, d["id"]))
     scored.sort(reverse=True)
+    if scored and rmr_available() and _ensure_doc_emb():
+        cand = scored[:20]
+        qv = _rmr_embed([q])
+        if qv:
+            qv = qv[0]
+            mx = max(sc for sc, _ in cand) or 1.0
+            blended = []
+            for sc, i in cand:
+                dv = _DOC_VEC.get(i)
+                cos = ((_cos(qv, dv) + 1) / 2) if dv else 0.0
+                blended.append((0.55 * (sc / mx) + 0.45 * cos, i))
+            blended.sort(reverse=True)
+            top = [(round(sc, 3), i) for sc, i in blended][:k]
+            return top, _expand(top)
     top = [(round(sc, 2), i) for sc, i in scored][:k]
+    return top, _expand(top)
+
+
+def _expand(top):
     top_ids = {i for _, i in top}
     exp = {}
     for _, i in top:
         for e in GRAPH_EDGES:
-            pair = None
-            if e["from"] == i:
-                pair = e["to"]
-            elif e["to"] == i:
-                pair = e["from"]
+            pair = e["to"] if e["from"] == i else (e["from"] if e["to"] == i else None)
             if pair and pair not in top_ids and GRAPH_BY_ID.get(pair, {}).get("type") == "entity":
                 exp[pair] = exp.get(pair, 0) + 1
-    expanded = sorted(exp.items(), key=lambda kv: -kv[1])[:6]
-    return top, expanded
+    return sorted(exp.items(), key=lambda kv: -kv[1])[:6]
 
 
 # ---- RMR router (OpenAI-compatible) for generative answers ----
@@ -172,6 +185,61 @@ def rmr_generate(question, context):
         return data["choices"][0]["message"]["content"].strip()
     except Exception:
         return None
+
+
+# ---- P3-S1 · embeddings (RMR) hybrid retrieval (best-effort, lazy, cached) ----
+_EMB_STATE = {"tried": False, "ready": False}
+_DOC_VEC = {}
+_EMB_CACHE = "/tmp/m2_doc_emb.json"
+
+def _rmr_embed(texts):
+    key, base, _ = _rmr_cfg()
+    if not key:
+        return None
+    model = os.environ.get("RMR_EMBED_MODEL", "text-embedding-3-small")
+    url = base + "/embeddings"
+    payload = {"model": model, "input": texts}
+    req = _urlreq.Request(url, data=json.dumps(payload).encode("utf-8"),
+                          headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with _urlreq.urlopen(req, timeout=60) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        return [d["embedding"] for d in data["data"]]
+    except Exception:
+        return None
+
+def _ensure_doc_emb():
+    if _EMB_STATE["tried"]:
+        return _EMB_STATE["ready"]
+    _EMB_STATE["tried"] = True
+    if not rmr_available():
+        return False
+    ents = [n for n in GRAPH_NODES if n.get("type") == "entity"]
+    try:
+        if os.path.exists(_EMB_CACHE):
+            c = json.loads(open(_EMB_CACHE, encoding="utf-8").read())
+            if c.get("n") == len(ents):
+                _DOC_VEC.update(c["vecs"]); _EMB_STATE["ready"] = True
+                return True
+    except Exception:
+        pass
+    texts = [f'{n["title"]}. {n.get("definition","")}' for n in ents]
+    vecs = _rmr_embed(texts)
+    if not vecs or len(vecs) != len(ents):
+        return False
+    for n, v in zip(ents, vecs):
+        _DOC_VEC[n["id"]] = v
+    try:
+        json.dump({"n": len(ents), "vecs": _DOC_VEC}, open(_EMB_CACHE, "w"))
+    except Exception:
+        pass
+    _EMB_STATE["ready"] = True
+    return True
+
+def _cos(a, b):
+    s = sum(x * y for x, y in zip(a, b))
+    na = _math.sqrt(sum(x * x for x in a)); nb = _math.sqrt(sum(y * y for y in b))
+    return s / (na * nb) if na and nb else 0.0
 
 
 

@@ -333,7 +333,7 @@
       "title": "Ontological GraphRAG + интерфейс общения",
       "status": "in_progress",
       "priority": "high",
-      "progress": 70,
+      "progress": 82,
       "horizon": "now",
       "summary": "RAG по лучшим практикам поверх графа знаний ГП (Ontological GraphRAG из плана ГП×LLM) + интерфейс диалога. Шаг 2 после вики-базы — использует тот же граф объектов как источник.",
       "depends_on": [
@@ -372,12 +372,12 @@
         {
           "id": "P3-S1",
           "title": "S1 · Эмбеддинги (гибрид BM25+вектор)",
-          "status": "backlog",
+          "status": "done",
           "tasks": [
             {
               "id": "P3-S1a",
               "title": "векторный ретрив (эмбеддинг-API/локально)",
-              "status": "backlog"
+              "status": "done"
             }
           ]
         },
@@ -407,6 +407,10 @@
         }
       ],
       "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "P3-S1: гибрид BM25+эмбеддинги (RMR /v1/embeddings, модель по env RMR_EMBED_MODEL, дефолт text-embedding-3-small). Векторы 245 документов строятся лениво и кэшируются (/tmp), запрос эмбеддится в рантайме, blend 0.55 BM25 + 0.45 cos по топ-20. Откат на BM25 при отсутствии эндпоинта."
+        },
         {
           "date": "2026-06-09",
           "entry": "P3-S3: реранкинг (title/exact/degree) — eval 16 вопросов: recall@6 100%, MRR 1.0, top-1 16/16 (было 94%/0.865/13). Грунтинг цитат в /ask (валидные → ссылки, вне контекста → подсветка). rag_eval.py + результаты в репо."
