@@ -333,7 +333,7 @@
       "title": "Ontological GraphRAG + интерфейс общения",
       "status": "in_progress",
       "priority": "high",
-      "progress": 30,
+      "progress": 55,
       "horizon": "now",
       "summary": "RAG по лучшим практикам поверх графа знаний ГП (Ontological GraphRAG из плана ГП×LLM) + интерфейс диалога. Шаг 2 после вики-базы — использует тот же граф объектов как источник.",
       "depends_on": [
@@ -353,6 +353,18 @@
             {
               "id": "P3-S0b",
               "title": "/api/rag (JSON) + /ask (интерфейс с цитатами)",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": "P3-S0b2",
+          "title": "S0+ · Генерация через RMR-роутер",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P3-rmr",
+              "title": "RMR (OpenAI chat/completions) в /ask, env RMR_API_KEY, grounded на подграфе",
               "status": "done"
             }
           ]
@@ -395,6 +407,10 @@
         }
       ],
       "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "Генерация подключена к RMR-роутеру (rmrrouter.redmadrobot.com/v1, модель по env RMR_MODEL, дефолт claude-sonnet-4-6). /ask: grounded-ответ по найденному подграфу + цитаты. Ключ читается из env (RMR_API_KEY), в код не зашит. Нужно задать env на Railway-сервисе m2ai."
+        },
         {
           "date": "2026-06-09",
           "entry": "P3-S0: GraphRAG MVP в проде — BM25 по 245 entity-документам + 1-hop расширение по графу, /ask (ретрив с цитатами книга+страница) и /api/rag. Спека P3-SPEC.md. Генерация — дорожка MCP m2_search."

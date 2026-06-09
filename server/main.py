@@ -123,6 +123,44 @@ def rag_search(q, k=6):
     return top, expanded
 
 
+# ---- RMR router (OpenAI-compatible) for generative answers ----
+import urllib.request as _urlreq
+import urllib.error as _urlerr
+
+def _rmr_cfg():
+    key = os.environ.get("RMR_API_KEY") or os.environ.get("RMR_ROUTER_API_KEY") or os.environ.get("RMR_KEY")
+    base = (os.environ.get("RMR_BASE_URL") or os.environ.get("RMR_ROUTER_BASE_URL")
+            or os.environ.get("RMR_ROUTER_URL") or os.environ.get("RMR_URL")
+            or "https://rmrrouter.redmadrobot.com/v1")
+    model = os.environ.get("RMR_MODEL", "claude-sonnet-4-6")
+    return key, base.rstrip("/"), model
+
+def rmr_available():
+    return bool(_rmr_cfg()[0])
+
+def rmr_generate(question, context):
+    key, base, model = _rmr_cfg()
+    if not key:
+        return None
+    url = base + ("/chat/completions" if not base.endswith("/chat/completions") else "")
+    system = ("Ты — помощник по методологии Г.П. Щедровицкого (СМД-подход, ММК). "
+              "Отвечай ТОЛЬКО на основе приведённого ниже контекста из базы знаний. "
+              "Если в контексте нет ответа — честно скажи об этом. Ссылайся на сущности в квадратных скобках по их ID. "
+              "Пиши по-русски, ясно и по существу, 1–3 абзаца. Не выдумывай фактов вне контекста.")
+    payload = {"model": model, "temperature": 0.2, "max_tokens": 700,
+               "messages": [{"role": "system", "content": system},
+                            {"role": "user", "content": f"Вопрос: {question}\n\nКонтекст (база знаний ГП):\n{context}"}]}
+    req = _urlreq.Request(url, data=json.dumps(payload).encode("utf-8"),
+                          headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with _urlreq.urlopen(req, timeout=45) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception:
+        return None
+
+
+
 WIKI_CSS = """
 .widx{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 18px}
 .widx a{display:block;padding:6px 0;font-size:14px;border-bottom:1px dotted var(--line)}
@@ -794,9 +832,20 @@ def ask(q: str = ""):
             body += '<p class="sum">Ничего не найдено. Попробуй переформулировать запрос.</p>'
         else:
             best = GRAPH_BY_ID.get(top[0][1], {})
-            body += (f'<div class="def">По запросу наиболее релевантны {len(top)} сущностей графа. '
-                     f'Ключевая: <a href="/wiki/{top[0][1]}" style="color:var(--red)">{html.escape(best.get("title",""))}</a>. '
-                     'Ниже — определения с источниками; кликом проваливайся в статью или в страницу PDF.</div>')
+            ctx = "\n\n".join(f'[{GRAPH_BY_ID.get(i,{}).get("id",i)}] {GRAPH_BY_ID.get(i,{}).get("title","")}: {GRAPH_BY_ID.get(i,{}).get("definition","")}' for _, i in top)
+            for i, _ in expanded:
+                nn = GRAPH_BY_ID.get(i, {})
+                ctx += f"\n\n[{i}] {nn.get('title','')}: {nn.get('definition','')}"
+            answer = rmr_generate(q, ctx) if rmr_available() else None
+            if answer:
+                import html as _h
+                ans_html = _h.escape(answer).replace(chr(10), "<br>")
+                body += (f'<div class="def" style="border-left-color:#1d7a5e">{ans_html}</div>'
+                         '<p class="sum" style="font-size:12px">Ответ сгенерирован через RMR по найденному подграфу. Источники ниже.</p>')
+            else:
+                body += (f'<div class="def">По запросу наиболее релевантны {len(top)} сущностей графа. '
+                         f'Ключевая: <a href="/wiki/{top[0][1]}" style="color:var(--red)">{html.escape(best.get("title",""))}</a>. '
+                         'Ниже — определения с источниками; кликом проваливайся в статью или в страницу PDF.</div>')
             body += '<h3>Найдено</h3>'
             for sc, i in top:
                 n = GRAPH_BY_ID.get(i, {})
@@ -815,9 +864,9 @@ def ask(q: str = ""):
             if expanded:
                 rel = " · ".join(f'<a href="/wiki/{i}">{html.escape(GRAPH_BY_ID.get(i,{}).get("title",""))}</a>' for i, _ in expanded)
                 body += f'<h3>Связанное (по графу)</h3><p style="font-size:14px">{rel}</p>'
-            body += ('<p class="sum" style="margin-top:18px">Это ретрив с цитатами из графа знаний. '
-                     'Генеративный ответ с рассуждением — через MCP-инструмент <span class="mono">m2_search</span> '
-                     '(агент подключает свою модель). Машинный доступ: '
+            tail = ('Генерация активна через RMR-роутер.' if rmr_available()
+                    else 'Генерация выключена (нет RMR_API_KEY) — показан ретрив. Включить: задать RMR_API_KEY в env сервиса.')
+            body += ('<p class="sum" style="margin-top:18px">' + tail + ' Машинный доступ: '
                      '<a href="/api/rag?q=' + quote(q) + '" class="mono" style="color:var(--red)">/api/rag ↗</a></p>')
     else:
         body += ('<p class="sum">Семантический поиск по графу из 245 сущностей: находит релевантные понятия, '
