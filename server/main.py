@@ -4,6 +4,7 @@
 дорожная карта, лента изменений (news.json). Полный REST+MCP — позже (KAN-258).
 """
 import os
+import re
 import html
 import json
 from pathlib import Path
@@ -57,6 +58,70 @@ def _load_alphabet():
     return types, a.get("meta_genetic_map", {}).get("key_hubs", {})
 
 ALPHA_TYPES, ALPHA_HUBS = _load_alphabet()
+
+# ---- P3 · Ontological GraphRAG (BM25 + graph expansion, pure python) ----
+import math as _math
+from collections import Counter as _Counter
+_RAG_STOP = set("и в во не на с со что как а то по из у за от к о об для это так но или же бы был быть есть при над под при через между его её их том тем кто все весь чем чём".split())
+
+def _rag_tok(t):
+    return [w for w in re.findall(r"[а-яёa-z0-9]+", (t or "").lower()) if len(w) > 2 and w not in _RAG_STOP]
+
+def _build_rag_index():
+    docs = []
+    for n in GRAPH_NODES:
+        if n.get("type") != "entity":
+            continue
+        rel_names = []
+        for e in GRAPH_EDGES:
+            if e["from"] == n["id"]:
+                tg = GRAPH_BY_ID.get(e["to"])
+                if tg:
+                    rel_names.append(tg["title"])
+        text = " ".join([n["title"], n["title"], n.get("definition", "")]
+                        + [v.get("text", "") for v in n.get("versions", [])] + rel_names)
+        toks = _rag_tok(text)
+        docs.append({"id": n["id"], "tf": _Counter(toks), "len": len(toks)})
+    N = len(docs)
+    df = {}
+    for d in docs:
+        for w in d["tf"]:
+            df[w] = df.get(w, 0) + 1
+    idf = {w: _math.log(1 + (N - f + 0.5) / (f + 0.5)) for w, f in df.items()}
+    avgdl = (sum(d["len"] for d in docs) / N) if N else 1
+    return docs, idf, avgdl
+
+RAG_DOCS, RAG_IDF, RAG_AVGDL = _build_rag_index()
+
+def _bm25(qt, d, k1=1.5, b=0.75):
+    s = 0.0
+    for w in qt:
+        f = d["tf"].get(w)
+        if not f:
+            continue
+        s += RAG_IDF.get(w, 0) * (f * (k1 + 1)) / (f + k1 * (1 - b + b * d["len"] / RAG_AVGDL))
+    return s
+
+def rag_search(q, k=6):
+    qt = _rag_tok(q)
+    if not qt:
+        return [], []
+    scored = sorted(((_bm25(qt, d), d["id"]) for d in RAG_DOCS), reverse=True)
+    top = [(round(sc, 2), i) for sc, i in scored if sc > 0][:k]
+    top_ids = {i for _, i in top}
+    exp = {}
+    for _, i in top:
+        for e in GRAPH_EDGES:
+            pair = None
+            if e["from"] == i:
+                pair = e["to"]
+            elif e["to"] == i:
+                pair = e["from"]
+            if pair and pair not in top_ids and GRAPH_BY_ID.get(pair, {}).get("type") == "entity":
+                exp[pair] = exp.get(pair, 0) + 1
+    expanded = sorted(exp.items(), key=lambda kv: -kv[1])[:6]
+    return top, expanded
+
 
 WIKI_CSS = """
 .widx{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 18px}
@@ -216,7 +281,7 @@ def news_rail():
 
 
 NAV = ('<nav><a href="/">Главная</a><a href="/articles">Статьи</a>'
-       '<a href="/files">Файлы</a><a href="/wiki">Вики</a><a href="/roadmap">Дорожная карта</a>'
+       '<a href="/files">Файлы</a><a href="/wiki">Вики</a><a href="/ask">Спросить</a><a href="/roadmap">Дорожная карта</a>'
        '<a href="/news">Лента</a><a href="/api-docs">API</a></nav>')
 
 META = ('<div class="metastrip mono"><span>M2AI · Research Portal</span>'
@@ -699,6 +764,66 @@ def wiki_coverage():
         body += f'<a href="/wiki/{n["id"]}"><small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>'
     body += '</div>'
     return page("Отчёт покрытия — M2AI", body)
+
+
+@app.get("/api/rag")
+def api_rag(q: str = "", k: int = 6):
+    top, expanded = rag_search(q, k)
+    def pack(nid, score=None):
+        n = GRAPH_BY_ID.get(nid, {})
+        return {"id": nid, "title": n.get("title"), "category": n.get("category_label"),
+                "score": score, "definition": n.get("definition", ""),
+                "anchors": [{"book": a.get("book") or a["file"].split("/")[-1], "page": a.get("page"),
+                             "deep_link": a.get("deep_link")} for a in n.get("anchors", [])],
+                "url": f"/wiki/{nid}"}
+    results = [pack(i, sc) for sc, i in top]
+    related = [pack(i) for i, _ in expanded]
+    context = "\n\n".join(f'[{r["id"]}] {r["title"]}: {r["definition"]}' for r in results)
+    return {"query": q, "results": results, "related": related, "context": context,
+            "note": "Экстрактивный ретрив по графу. Генеративный ответ — через MCP-инструмент m2_search (агент со своей моделью)."}
+
+
+@app.get("/ask", response_class=HTMLResponse)
+def ask(q: str = ""):
+    body = ('<div class="idx mono">Ontological GraphRAG · поиск по графу с цитатами</div>'
+            '<h2 style="margin-top:8px">Спросить базу знаний ГП</h2>'
+            f'<form method="get"><input class="wsearch" name="q" placeholder="например: что такое рефлексия и как она связана с мышлением?" value="{html.escape(q)}" autofocus></form>')
+    if q.strip():
+        top, expanded = rag_search(q, 6)
+        if not top:
+            body += '<p class="sum">Ничего не найдено. Попробуй переформулировать запрос.</p>'
+        else:
+            best = GRAPH_BY_ID.get(top[0][1], {})
+            body += (f'<div class="def">По запросу наиболее релевантны {len(top)} сущностей графа. '
+                     f'Ключевая: <a href="/wiki/{top[0][1]}" style="color:var(--red)">{html.escape(best.get("title",""))}</a>. '
+                     'Ниже — определения с источниками; кликом проваливайся в статью или в страницу PDF.</div>')
+            body += '<h3>Найдено</h3>'
+            for sc, i in top:
+                n = GRAPH_BY_ID.get(i, {})
+                anchors = n.get("anchors") or []
+                src = ""
+                if anchors:
+                    a = anchors[0]
+                    book = a.get("book") or a["file"].split("/")[-1]
+                    pg = a.get("page")
+                    if pg and a.get("deep_link"):
+                        src = f' · <a href="{html.escape(a["deep_link"])}" target="_blank" rel="noopener" class="mono" style="font-size:11px;color:var(--red)">{html.escape(book)} стр. {pg} ↗</a>'
+                body += (f'<div class="proj"><div class="code">{html.escape(i)} · {html.escape(n.get("category_label",""))} · '
+                         f'score {sc}{src}</div>'
+                         f'<h3 style="margin:4px 0"><a href="/wiki/{i}">{html.escape(n.get("title",""))}</a></h3>'
+                         f'<p class="sum">{html.escape(n.get("definition",""))}</p></div>')
+            if expanded:
+                rel = " · ".join(f'<a href="/wiki/{i}">{html.escape(GRAPH_BY_ID.get(i,{}).get("title",""))}</a>' for i, _ in expanded)
+                body += f'<h3>Связанное (по графу)</h3><p style="font-size:14px">{rel}</p>'
+            body += ('<p class="sum" style="margin-top:18px">Это ретрив с цитатами из графа знаний. '
+                     'Генеративный ответ с рассуждением — через MCP-инструмент <span class="mono">m2_search</span> '
+                     '(агент подключает свою модель). Машинный доступ: '
+                     '<a href="/api/rag?q=' + quote(q) + '" class="mono" style="color:var(--red)">/api/rag ↗</a></p>')
+    else:
+        body += ('<p class="sum">Семантический поиск по графу из 245 сущностей: находит релевантные понятия, '
+                 'расширяет ответ по связям и даёт цитаты со страницами книг. '
+                 'Машинный доступ — <span class="mono">/api/rag?q=…</span>.</p>')
+    return page("Спросить — M2AI", body)
 
 
 @app.get("/api/graph")

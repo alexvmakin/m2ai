@@ -331,56 +331,75 @@
       "id": "P3",
       "code": "GP-RAG",
       "title": "Ontological GraphRAG + интерфейс общения",
-      "status": "backlog",
+      "status": "in_progress",
       "priority": "high",
-      "progress": 0,
-      "horizon": "later",
+      "progress": 30,
+      "horizon": "now",
       "summary": "RAG по лучшим практикам поверх графа знаний ГП (Ontological GraphRAG из плана ГП×LLM) + интерфейс диалога. Шаг 2 после вики-базы — использует тот же граф объектов как источник.",
       "depends_on": [
         "P2"
       ],
       "epics": [
         {
-          "id": "P3-E1",
-          "title": "Архитектура и стек RAG",
+          "id": "P3-S0",
+          "title": "S0 · GraphRAG движок + /ask (MVP)",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "P3-S0a",
+              "title": "BM25 по 245 документам + graph-expansion",
+              "status": "done"
+            },
+            {
+              "id": "P3-S0b",
+              "title": "/api/rag (JSON) + /ask (интерфейс с цитатами)",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": "P3-S1",
+          "title": "S1 · Эмбеддинги (гибрид BM25+вектор)",
           "status": "backlog",
           "tasks": [
             {
-              "id": "P3-T1",
-              "title": "Граф + векторный гибрид (GraphRAG), выбор стека",
-              "status": "backlog"
-            },
-            {
-              "id": "P3-T2",
-              "title": "Индексация графа объектов P2 в retrieval-слой",
-              "status": "backlog"
-            },
-            {
-              "id": "P3-T3",
-              "title": "Оценка качества ответов (faithfulness/citations)",
+              "id": "P3-S1a",
+              "title": "векторный ретрив (эмбеддинг-API/локально)",
               "status": "backlog"
             }
           ]
         },
         {
-          "id": "P3-E2",
-          "title": "Интерфейс общения",
+          "id": "P3-S2",
+          "title": "S2 · MCP-инструмент m2_search (генерация у агента)",
           "status": "backlog",
           "tasks": [
             {
-              "id": "P3-T4",
-              "title": "Чат с цитированием первоисточников",
+              "id": "P3-S2a",
+              "title": "m2_search в MCP-сервере (KAN-258)",
               "status": "backlog"
-            },
+            }
+          ]
+        },
+        {
+          "id": "P3-S3",
+          "title": "S3 · Оценка качества (faithfulness/citations)",
+          "status": "backlog",
+          "tasks": [
             {
-              "id": "P3-T5",
-              "title": "Подключение как MCP-инструмент портала",
+              "id": "P3-S3a",
+              "title": "метрики и переранжирование",
               "status": "backlog"
             }
           ]
         }
       ],
-      "log": []
+      "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "P3-S0: GraphRAG MVP в проде — BM25 по 245 entity-документам + 1-hop расширение по графу, /ask (ретрив с цитатами книга+страница) и /api/rag. Спека P3-SPEC.md. Генерация — дорожка MCP m2_search."
+        }
+      ]
     },
     {
       "id": "P4",
