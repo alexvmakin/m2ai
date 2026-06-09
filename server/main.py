@@ -18,6 +18,56 @@ BASE = Path(__file__).resolve().parent.parent
 CONTENT = Path(os.environ.get("CONTENT_DIR", BASE / "content"))
 ROADMAP_FILE = BASE / "roadmap" / "roadmap.json"
 NEWS_FILE = BASE / "roadmap" / "news.json"
+GRAPH_NODES_FILE = BASE / "graph" / "nodes.json"
+GRAPH_EDGES_FILE = BASE / "graph" / "edges.json"
+BACKBONE_FILE = BASE / "graph" / "backbone.json"
+
+def _load_graph():
+    try:
+        nodes = json.loads(GRAPH_NODES_FILE.read_text(encoding="utf-8"))
+        edges = json.loads(GRAPH_EDGES_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return [], {}, []
+    return nodes, {n["id"]: n for n in nodes}, edges
+
+GRAPH_NODES, GRAPH_BY_ID, GRAPH_EDGES = _load_graph()
+
+WIKI_CSS = """
+.widx{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 18px}
+.widx a{display:block;padding:6px 0;font-size:14px;border-bottom:1px dotted var(--line)}
+.widx a small{color:var(--ink2);font-family:'IBM Plex Mono',monospace;font-size:10px;margin-right:6px}
+.wsearch{width:100%;padding:9px 12px;border:1.5px solid var(--ink);font-family:Inter,sans-serif;font-size:14px;margin:6px 0 18px;background:var(--paper)}
+.versions{list-style:none;padding:0;margin:0}
+.versions li{padding:9px 0 9px 16px;border-left:2px solid var(--line2);margin-left:6px;font-size:14px}
+.versions li .h{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red)}
+.dl{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;border:1px solid var(--line2);padding:1px 5px;margin-left:6px;text-transform:uppercase;color:var(--ink2)}
+.dl.new{color:#1c7a4d;border-color:#bfe3cf}.dl.deepened{color:#9a6b12;border-color:#ecd9a8}
+.dl.confirmed{color:#27557f;border-color:#cadcef}.dl.revised{color:#a32d2d;border-color:#f0c1c1}
+.bbflow{display:flex;flex-direction:column;gap:0}
+.bbc{border:1px solid var(--line2);margin-bottom:0;border-bottom:none}
+.bbc:last-child{border-bottom:1px solid var(--line2)}
+.bbc .hd{background:var(--wash);padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);display:flex;justify-content:space-between;align-items:center}
+.bbc .arrow{text-align:center;color:var(--ink2);font-family:'IBM Plex Mono',monospace;font-size:12px;padding:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px}
+.bnode{font-size:12px;padding:5px 10px;border:1px solid var(--line2);background:var(--paper);display:inline-flex;align-items:center;gap:6px}
+.bnode.hit{border-color:#1c7a4d}.bnode.hit::before{content:'✓';color:#1c7a4d;font-family:'IBM Plex Mono',monospace}
+.bnode.gap{border-style:dashed;color:var(--ink2)}.bnode.gap::before{content:'○';color:var(--red)}
+.bnode a{text-decoration:none;color:var(--ink)}
+.cover{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink2)}
+.def{font-size:16px;color:#2a2d34;border-left:3px solid var(--ink);padding-left:14px;margin:14px 0}
+.idline{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink2);margin-top:6px}
+.badge{border:1px solid var(--line2);padding:2px 8px;text-transform:uppercase;letter-spacing:.05em}
+.badge.cat{border-color:#1d7a5e;color:#1d7a5e}
+.srcs{list-style:none;padding:0;margin:0}
+.srcs li{padding:7px 0;border-top:1px dashed var(--line2);font-size:14px}
+.srcs li:first-child{border:none}
+.rel{list-style:none;padding:0;margin:0}
+.rel li{display:flex;align-items:baseline;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.rel li:first-child{border:none}
+.rel .edge{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--red);width:110px;flex:0 0 110px;text-transform:uppercase}
+.rel a{color:var(--ink);text-decoration:none}.rel a:hover{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+"""
+
 
 app = FastAPI(title="M2AI — Methodology-to-AI Research Portal", docs_url="/api-docs")
 
@@ -140,7 +190,7 @@ def news_rail():
 
 
 NAV = ('<nav><a href="/">Главная</a><a href="/articles">Статьи</a>'
-       '<a href="/files">Файлы</a><a href="/roadmap">Дорожная карта</a>'
+       '<a href="/files">Файлы</a><a href="/wiki">Вики</a><a href="/roadmap">Дорожная карта</a>'
        '<a href="/news">Лента</a><a href="/api-docs">API</a></nav>')
 
 META = ('<div class="metastrip mono"><span>M2AI · Research Portal</span>'
@@ -154,7 +204,7 @@ def page(title: str, body: str, rail: bool = False) -> str:
     return (
         f'<!doctype html><html lang=ru><head><meta charset=utf-8>'
         f'<meta name=viewport content="width=device-width,initial-scale=1">'
-        f'<title>{html.escape(title)}</title>{FONTS}<style>{CSS}</style></head><body>'
+        f'<title>{html.escape(title)}</title>{FONTS}<style>{CSS}{WIKI_CSS}</style></head><body>'
         f'<div class="wrap"><header class="top"><div class="brand">М2<i>/</i>Методология'
         f'<small>M2AI — Methodology to AI</small></div>{NAV}</header>{META}'
         f'{inner}'
@@ -358,3 +408,173 @@ def roadmap_project(pid: str):
         f'<li><b>{html.escape(l.get("date",""))}</b><br>{html.escape(l.get("entry",""))}</li>' for l in log
     ) + '</ul>') if log else '<p class="sum">записей пока нет</p>'
     return page(p.get("title", "Проект") + " — M2AI", body)
+
+
+# ---- Вики (граф связанных объектов) ----
+def _mini_graph_svg(nid):
+    neigh = []
+    for e in GRAPH_EDGES:
+        if e["from"] == nid and e["to"] != nid:
+            neigh.append((e["to"], e.get("rel"), "out"))
+        elif e["to"] == nid and e["from"] != nid:
+            neigh.append((e["from"], e.get("rel"), "in"))
+    seen, uniq = set(), []
+    for t, rel, d in neigh:
+        if t in seen:
+            continue
+        seen.add(t); uniq.append((t, rel, d))
+    uniq = uniq[:8]
+    import math
+    cx, cy = 150, 125
+    svg = ['<svg viewBox="0 0 300 250" width="100%" height="230" role="img" aria-label="мини-граф">',
+           '<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6" fill="#bcbfc7"/></marker></defs>']
+    n = max(len(uniq), 1)
+    pts = []
+    for i, (t, rel, d) in enumerate(uniq):
+        ang = 2 * math.pi * i / n - math.pi / 2
+        x, y = cx + 95 * math.cos(ang), cy + 92 * math.sin(ang)
+        pts.append((x, y, t, rel))
+    for x, y, t, rel in pts:
+        col = "#c0392b" if rel == "transforms" else "#bcbfc7"
+        dash = '' if rel == "relates_to" else ' stroke-dasharray="3 3"'
+        svg.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.0f}" y2="{y:.0f}" stroke="{col}" stroke-width="1.1"{dash} marker-end="url(#a)"/>')
+    for x, y, t, rel in pts:
+        nd = GRAPH_BY_ID.get(t)
+        lbl = (nd["title"] if nd else t)[:14]
+        svg.append(f'<rect x="{x-32:.0f}" y="{y-11:.0f}" width="64" height="22" fill="#fff" stroke="#bcbfc7"/>'
+                   f'<text x="{x:.0f}" y="{y+3:.0f}" text-anchor="middle" font-size="8" font-family="IBM Plex Mono,monospace" fill="#16181d">{html.escape(lbl)}</text>')
+    ctitle = (GRAPH_BY_ID.get(nid, {}).get("title", nid))[:16]
+    svg.append(f'<circle cx="{cx}" cy="{cy}" r="28" fill="#fff" stroke="#16181d" stroke-width="1.8"/>'
+               f'<text x="{cx}" y="{cy+3}" text-anchor="middle" font-size="9" font-family="IBM Plex Mono,monospace" fill="#16181d">{html.escape(ctitle)}</text></svg>')
+    return "".join(svg)
+
+
+@app.get("/wiki", response_class=HTMLResponse)
+def wiki_index(q: str = ""):
+    ql = q.strip().lower()
+    ents = [n for n in GRAPH_NODES if n["type"] == "entity"]
+    if ql:
+        ents = [n for n in ents if ql in n["title"].lower() or ql in (n.get("definition") or "").lower()]
+    by_cat = {}
+    for n in ents:
+        by_cat.setdefault(n.get("category_label", "—"), []).append(n)
+    total = len([n for n in GRAPH_NODES if n["type"] == "entity"])
+    body = ('<div class="idx mono">Вики · граф связанных объектов</div>'
+            '<h2 style="margin-top:8px">База знаний ГП</h2>'
+            f'<p class="lead" style="font-size:15px">{total} сущностей · 18 типов операций · '
+            '<a href="/wiki/backbone" style="color:var(--red)">каркас-эталон ↗</a></p>'
+            f'<form method="get"><input class="wsearch" name="q" placeholder="поиск по сущностям…" value="{html.escape(q)}"></form>')
+    for cat in sorted(by_cat, key=lambda c: -len(by_cat[c])):
+        items = sorted(by_cat[cat], key=lambda n: n["title"].lower())
+        body += f'<h3>{html.escape(cat)} · {len(items)}</h3><div class="widx">'
+        for n in items:
+            body += f'<a href="/wiki/{html.escape(n["id"])}"><small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>'
+        body += '</div>'
+    return page("Вики — M2AI", body, rail=True)
+
+
+@app.get("/wiki/backbone", response_class=HTMLResponse)
+def wiki_backbone():
+    bb = _load_json(BACKBONE_FILE) or {"clusters": [], "flow": []}
+    ents = [n for n in GRAPH_NODES if n["type"] == "entity"]
+
+    def match(label):
+        ll = label.lower()
+        for n in ents:
+            t = n["title"].lower()
+            if ll == t or ll in t or t in ll:
+                return n
+        return None
+
+    clusters = {c["id"]: c for c in bb.get("clusters", [])}
+    hit = tot = 0
+    rows = ""
+    flow = bb.get("flow") or list(clusters)
+    for ci, cid in enumerate(flow):
+        c = clusters.get(cid)
+        if not c:
+            continue
+        chips = ""
+        for nd in c["nodes"]:
+            tot += 1
+            m = match(nd.get("match", nd["label"]))
+            if m:
+                hit += 1
+                chips += f'<span class="bnode hit"><a href="/wiki/{html.escape(m["id"])}">{html.escape(nd["label"])}</a></span>'
+            else:
+                chips += f'<span class="bnode gap">{html.escape(nd["label"])}</span>'
+        src = f'<span>← {html.escape(c["source"])}</span>' if c.get("source") else '<span></span>'
+        rows += (f'<div class="bbc"><div class="hd"><span>{html.escape(c["label"])}</span>{src}</div>'
+                 f'<div class="chips">{chips}</div></div>')
+        if ci < len(flow) - 1:
+            rows += '<div class="arrow">↓</div>'
+    body = ('<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+            f'<div class="idx mono">Каркас-эталон · A4.5 сверка</div>'
+            f'<h2 style="margin-top:6px">{html.escape(bb.get("title","Каркас"))}</h2>'
+            f'<p class="lead" style="font-size:14px">{html.escape(bb.get("note",""))} '
+            f'<span class="cover">· покрытие {hit}/{tot} ({round(hit*100/tot) if tot else 0}%) · '
+            '✓ есть в графе · ○ пробел</span></p>'
+            f'<div class="bbflow">{rows}</div>')
+    return page("Каркас-эталон — M2AI", body)
+
+
+@app.get("/wiki/{nid}", response_class=HTMLResponse)
+def wiki_node(nid: str):
+    n = GRAPH_BY_ID.get(nid)
+    if not n:
+        raise HTTPException(404, "Узел не найден")
+    layer = ""
+    crumbs = '<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+    idline = (f'<div class="idline"><span class="badge mono">{html.escape(n["id"])}</span>'
+              f'<span class="badge cat mono">{html.escape(n.get("category_label",""))}</span>'
+              + (f'<span class="mono">первое появление: {html.escape(n["first_appearance"])}</span>' if n.get("first_appearance") else "") + '</div>')
+    body = crumbs + idline + f'<h1 style="font-size:32px">{html.escape(n["title"])}</h1>'
+    if n.get("definition"):
+        body += f'<p class="def">{html.escape(n["definition"])}</p>'
+
+    if n["type"] == "operation_type":
+        body += ('<h2>Параметры типа</h2><div class="meta-row">'
+                 f'<span>S-паттерн: {html.escape(str(n.get("s_pattern")))}</span>'
+                 f'<span>знак: {html.escape(str(n.get("sign")))}</span>'
+                 f'<span>частота: {html.escape(str(n.get("frequency")))}</span>'
+                 f'<span>ген.сложность: {html.escape(str(n.get("genetic_complexity")))}</span></div>')
+
+    # versions (revises timeline)
+    vers = n.get("versions") or []
+    if len(vers) > 0:
+        body += '<h2>Версии инстанса (revises)</h2><ul class="versions">'
+        for v in vers:
+            body += (f'<li><span class="h mono">{html.escape(v.get("source",""))}</span>'
+                     f'<span class="dl {v.get("delta","new")}">{v.get("delta","new")}</span>'
+                     f'<br>{html.escape((v.get("text") or "")[:400])}</li>')
+        body += '</ul>'
+    # sources
+    if n.get("sources"):
+        body += '<h2>Источники (cites)</h2><ul class="srcs">' + "".join(
+            f'<li><span>{html.escape(s)}</span></li>' for s in n["sources"]) + '</ul>'
+    # relations out
+    outs = [e for e in GRAPH_EDGES if e["from"] == nid]
+    if outs:
+        body += '<h2>Связи</h2><ul class="rel">'
+        for e in outs[:40]:
+            tgt = GRAPH_BY_ID.get(e["to"])
+            nm = e.get("to_name") or (tgt["title"] if tgt else e["to"])
+            link = f'/wiki/{e["to"]}' if tgt else None
+            label = f'{html.escape(e["to"])} · {html.escape(nm)}'
+            cell = f'<a href="{link}">{label}</a>' if link else f'<span>{label}</span>'
+            rel = e.get("rel_type") or e.get("rel")
+            body += f'<li><span class="edge">{html.escape(rel)}→</span>{cell}</li>'
+        body += '</ul>'
+    # backlinks
+    ins = [e for e in GRAPH_EDGES if e["to"] == nid]
+    if ins:
+        body += '<h2>Обратные ссылки</h2><ul class="rel">'
+        for e in ins[:30]:
+            src = GRAPH_BY_ID.get(e["from"])
+            nm = src["title"] if src else e["from"]
+            cell = f'<a href="/wiki/{e["from"]}">{html.escape(e["from"])} · {html.escape(nm)}</a>' if src else f'<span>{html.escape(e["from"])}</span>'
+            body += f'<li><span class="edge">←{html.escape(e.get("rel",""))}</span>{cell}</li>'
+        body += '</ul>'
+    # mini-graph
+    body += '<h2>Мини-граф окружения</h2>' + _mini_graph_svg(nid)
+    return page(n["title"] + " — Вики", body)

@@ -1,0 +1,65 @@
+{
+  "title": "Структурная карта интегрированной онтологии",
+  "note": "Каркас-эталон (gold). Курируется вручную; на A4.5 сверяется с собранным графом.",
+  "clusters": [
+    {"id": "refl", "label": "Рефлексия", "source": "Кн.1", "nodes": [
+      {"id": "b_chistaya_refleksiya", "label": "Чистая рефлексия (вне истории)", "match": "Чистая рефлексия"}
+    ]},
+    {"id": "forms", "label": "Формы организации", "nodes": [
+      {"id": "b_komm_formy", "label": "Коммуникативные формы", "match": "Коммуникация"},
+      {"id": "b_mysl_formy", "label": "Мыслительные формы", "match": "Мышление"},
+      {"id": "b_deyat_formy", "label": "Деятельностные формы", "match": "Деятельность"},
+      {"id": "b_mk", "label": "М-К", "match": "Мыслекоммуникация"},
+      {"id": "b_myshlenie", "label": "Мышление", "match": "Мышление"},
+      {"id": "b_md_small", "label": "мД", "match": "Мыследействование"}
+    ]},
+    {"id": "md", "label": "Мыследеятельность", "source": "П0", "nodes": [
+      {"id": "b_md", "label": "Мыследеятельность", "match": "Мыследеятельность"}
+    ]},
+    {"id": "deyat", "label": "Деятельность", "source": "П0+Кн.1", "nodes": [
+      {"id": "b_deyatelnost", "label": "Деятельность (бессубъектна, безобъектна)", "match": "Деятельность"},
+      {"id": "b_e", "label": "Е (естественное)", "match": "Естественное"},
+      {"id": "b_i", "label": "И (искусственное)", "match": "Искусственное"},
+      {"id": "b_kentavr", "label": "Кентавр-система", "match": "Кентавр-система"}
+    ]},
+    {"id": "approach", "label": "Подход", "nodes": [
+      {"id": "b_podhod", "label": "Подход", "match": "Подход"},
+      {"id": "b_verstak", "label": "Верстак + кладовая", "match": "Верстак"},
+      {"id": "b_kulturotehnika", "label": "Культуротехника", "match": "Культуротехника"},
+      {"id": "b_pedagogika", "label": "Педагогика", "match": "Педагогика"}
+    ]},
+    {"id": "subject", "label": "Предмет", "nodes": [
+      {"id": "b_predmet", "label": "Предмет", "match": "Предмет"},
+      {"id": "b_ontologiya", "label": "Онтология (плоское единство)", "match": "Онтология"},
+      {"id": "b_monady", "label": "Понятия-монады (ансамбль)", "match": "Понятие-монада"},
+      {"id": "b_oru", "label": "ОРУ-система", "source": "П0", "match": "ОРУ"},
+      {"id": "b_org", "label": "Организация", "match": "Организация"},
+      {"id": "b_ruk", "label": "Руководство", "match": "Руководство"},
+      {"id": "b_upr", "label": "Управление", "match": "Управление"},
+      {"id": "b_progr", "label": "Программирование", "match": "Программирование"},
+      {"id": "b_odi", "label": "ОДИ", "match": "Организационно-деятельностная игра"}
+    ]},
+    {"id": "position", "label": "Позиция", "source": "Кн.1", "nodes": [
+      {"id": "b_poziciya", "label": "Позиция", "match": "Позиция"},
+      {"id": "b_kooperaciya", "label": "Кооперация", "match": "Кооперация"},
+      {"id": "b_13principov", "label": "13 принципов СМД-подхода", "match": "Принципы СМД"}
+    ]},
+    {"id": "logic", "label": "Содержательная логика", "source": "Кн.2", "nodes": [
+      {"id": "b_form_logika", "label": "Формальная логика", "match": "Формальная логика"},
+      {"id": "b_dialekt_logika", "label": "Диалектическая логика", "match": "Диалектическая логика"},
+      {"id": "b_sgl", "label": "Содержательно-генетическая логика", "match": "Содержательно-генетическая логика"},
+      {"id": "b_znanie_znak_obekt", "label": "Знание ↔ Знак ↔ Объект", "match": "Знание"}
+    ]},
+    {"id": "lang", "label": "Языковое мышление", "source": "Кн.3", "nodes": [
+      {"id": "b_znak_xl", "label": "Знак = X/λ", "match": "Знак"},
+      {"id": "b_znachenie", "label": "Значение", "match": "Значение"},
+      {"id": "b_smysl", "label": "Смысл", "match": "Смысл"},
+      {"id": "b_zameshchenie", "label": "Замещение", "match": "Замещение"},
+      {"id": "b_modelirovanie", "label": "Моделирование", "match": "Моделирование"},
+      {"id": "b_teoriya", "label": "Теория", "match": "Теория"},
+      {"id": "b_znak_situaciya", "label": "Знаковая ситуация", "match": "Знаковая ситуация"},
+      {"id": "b_komm_situaciya", "label": "Коммуникативная ситуация", "match": "Коммуникативная ситуация"}
+    ]}
+  ],
+  "flow": ["refl", "forms", "md", "deyat", "approach", "subject", "position", "logic", "lang"]
+}

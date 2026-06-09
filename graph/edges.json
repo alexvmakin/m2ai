@@ -1,0 +1,2025 @@
+[
+ {
+  "from": "C130",
+  "to": "C128",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "C072",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C072",
+  "to": "C063",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОУП"
+ },
+ {
+  "from": "C024",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C024",
+  "to": "C004",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Сознание"
+ },
+ {
+  "from": "C024",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "C038",
+  "to": "C037",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Оестествление"
+ },
+ {
+  "from": "C104",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C103**"
+ },
+ {
+  "from": "C021",
+  "to": "C020",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Элемент"
+ },
+ {
+  "from": "C043",
+  "to": "C042",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Общество"
+ },
+ {
+  "from": "C043",
+  "to": "C044",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Личность"
+ },
+ {
+  "from": "C001",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление (М)"
+ },
+ {
+  "from": "C001",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "C001",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мыследеятельность (МД)"
+ },
+ {
+  "from": "C001",
+  "to": "C012",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Естественное и Искусственное"
+ },
+ {
+  "from": "C001",
+  "to": "C024",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Акт деятельности"
+ },
+ {
+  "from": "C001",
+  "to": "C049",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "СМД-подход"
+ },
+ {
+  "from": "C061",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C061",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "C055",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление"
+ },
+ {
+  "from": "C055",
+  "to": "C054",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Онтология"
+ },
+ {
+  "from": "C128",
+  "to": "C123",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "C118",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C100**"
+ },
+ {
+  "from": "C066",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "C020",
+  "to": "C016",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Структура"
+ },
+ {
+  "from": "C020",
+  "to": "C021",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Часть-Целое"
+ },
+ {
+  "from": "C012",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C012",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "C127",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C099**"
+ },
+ {
+  "from": "C123",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C102**"
+ },
+ {
+  "from": "C107",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C107**"
+ },
+ {
+  "from": "C126",
+  "to": "C099",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C113**"
+ },
+ {
+  "from": "C022",
+  "to": "C018",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Связь"
+ },
+ {
+  "from": "C053",
+  "to": "C052",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Схема"
+ },
+ {
+  "from": "C071",
+  "to": "C063",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОУП"
+ },
+ {
+  "from": "C051",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление"
+ },
+ {
+  "from": "C064",
+  "to": "C012",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Е/И"
+ },
+ {
+  "from": "C110",
+  "to": "C103",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C038**"
+ },
+ {
+  "from": "C040",
+  "to": "C041",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Производство"
+ },
+ {
+  "from": "C040",
+  "to": "C042",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Общество"
+ },
+ {
+  "from": "C040",
+  "to": "C044",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Личность"
+ },
+ {
+  "from": "C008",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C008",
+  "to": "C006",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мысль-коммуникация"
+ },
+ {
+  "from": "C008",
+  "to": "C009",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Понимание"
+ },
+ {
+  "from": "C060",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "C044",
+  "to": "C040",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Клуб"
+ },
+ {
+  "from": "C044",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "C019",
+  "to": "C017",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организованность"
+ },
+ {
+  "from": "C050",
+  "to": "C049",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "СМД-подход"
+ },
+ {
+  "from": "C048",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление"
+ },
+ {
+  "from": "C048",
+  "to": "C047",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предметизация"
+ },
+ {
+  "from": "C014",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "C014",
+  "to": "C015",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Полисистема"
+ },
+ {
+  "from": "C002",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C002",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "C002",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мыследеятельность (МД)"
+ },
+ {
+  "from": "C006",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C006",
+  "to": "C007",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мыследействование"
+ },
+ {
+  "from": "C006",
+  "to": "C008",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Коммуникация"
+ },
+ {
+  "from": "C005",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление (М)"
+ },
+ {
+  "from": "C005",
+  "to": "C006",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мысль-коммуникация"
+ },
+ {
+  "from": "C005",
+  "to": "C007",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мыследействование"
+ },
+ {
+  "from": "C005",
+  "to": "C008",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Коммуникация"
+ },
+ {
+  "from": "C007",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C007",
+  "to": "C006",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мысль-коммуникация"
+ },
+ {
+  "from": "C056",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C106",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C104**"
+ },
+ {
+  "from": "C042",
+  "to": "C040",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Клуб"
+ },
+ {
+  "from": "C042",
+  "to": "C041",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Производство"
+ },
+ {
+  "from": "C042",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "C059",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C059",
+  "to": "C060",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Конфликт"
+ },
+ {
+  "from": "C037",
+  "to": "C035",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Технология"
+ },
+ {
+  "from": "C037",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Артификация"
+ },
+ {
+  "from": "C054",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление"
+ },
+ {
+  "from": "C054",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C119",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C001**"
+ },
+ {
+  "from": "C026",
+  "to": "C027",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Руководство"
+ },
+ {
+  "from": "C026",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C026",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "C017",
+  "to": "C016",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Структура"
+ },
+ {
+  "from": "C017",
+  "to": "C019",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Материал"
+ },
+ {
+  "from": "C029",
+  "to": "C026",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организация"
+ },
+ {
+  "from": "C029",
+  "to": "C027",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Руководство"
+ },
+ {
+  "from": "C029",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C029",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "C039",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C039",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C063",
+  "to": "C061",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность по изготовлению человека"
+ },
+ {
+  "from": "C063",
+  "to": "C062",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Тьюторство"
+ },
+ {
+  "from": "C109",
+  "to": "C108",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C099**"
+ },
+ {
+  "from": "C108",
+  "to": "C109",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C038**"
+ },
+ {
+  "from": "C117",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C112**"
+ },
+ {
+  "from": "C015",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C015",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "C015",
+  "to": "C014",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Моносистема"
+ },
+ {
+  "from": "C030",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C030",
+  "to": "C040",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Клуб"
+ },
+ {
+  "from": "C009",
+  "to": "C008",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Коммуникация"
+ },
+ {
+  "from": "C009",
+  "to": "C010",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Смысл"
+ },
+ {
+  "from": "C045",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "C045",
+  "to": "C024",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Акт деятельности"
+ },
+ {
+  "from": "C046",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "C046",
+  "to": "C047",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предметизация"
+ },
+ {
+  "from": "C047",
+  "to": "C046",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предмет и Объект"
+ },
+ {
+  "from": "C047",
+  "to": "C048",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Многоязыковость мышления"
+ },
+ {
+  "from": "C070",
+  "to": "C046",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предмет и Объект"
+ },
+ {
+  "from": "C070",
+  "to": "C048",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Многоязыковость"
+ },
+ {
+  "from": "C116",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "C120",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C038**"
+ },
+ {
+  "from": "C033",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "C033",
+  "to": "C034",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Задача vs Проблема"
+ },
+ {
+  "from": "C031",
+  "to": "C032",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Программирование"
+ },
+ {
+  "from": "C031",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "C032",
+  "to": "C031",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проектирование"
+ },
+ {
+  "from": "C032",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "C041",
+  "to": "C040",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Клуб"
+ },
+ {
+  "from": "C041",
+  "to": "C042",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Общество"
+ },
+ {
+  "from": "C023",
+  "to": "C014",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Моносистема"
+ },
+ {
+  "from": "C057",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "C057",
+  "to": "C012",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Е/И"
+ },
+ {
+  "from": "C057",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "C003",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C003",
+  "to": "C002",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мышление (М)"
+ },
+ {
+  "from": "C003",
+  "to": "C004",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Сознание"
+ },
+ {
+  "from": "C027",
+  "to": "C026",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организация"
+ },
+ {
+  "from": "C027",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "C027",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "C058",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "C105",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C104**"
+ },
+ {
+  "from": "C013",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C013",
+  "to": "C014",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Моносистема"
+ },
+ {
+  "from": "C013",
+  "to": "C015",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Полисистема"
+ },
+ {
+  "from": "C052",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C052",
+  "to": "C053",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Идеальный объект"
+ },
+ {
+  "from": "C049",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C049",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "C049",
+  "to": "C066",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Двойное знание"
+ },
+ {
+  "from": "C010",
+  "to": "C009",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Понимание"
+ },
+ {
+  "from": "C101",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C038**"
+ },
+ {
+  "from": "C113",
+  "to": "C099",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C112**"
+ },
+ {
+  "from": "C112",
+  "to": "C111",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C113**"
+ },
+ {
+  "from": "C065",
+  "to": "C039",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОТС"
+ },
+ {
+  "from": "C004",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "C004",
+  "to": "C024",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Акт деятельности"
+ },
+ {
+  "from": "C036",
+  "to": "C035",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Технология"
+ },
+ {
+  "from": "C016",
+  "to": "C017",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организованность"
+ },
+ {
+  "from": "C016",
+  "to": "C018",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Связь"
+ },
+ {
+  "from": "C114",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C099**"
+ },
+ {
+  "from": "C018",
+  "to": "C016",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Структура"
+ },
+ {
+  "from": "C018",
+  "to": "C022",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Функция"
+ },
+ {
+  "from": "C035",
+  "to": "C036",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Стратегия"
+ },
+ {
+  "from": "C035",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C068",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "C124",
+  "to": "C123",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "C121",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "C062",
+  "to": "C061",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность по изготовлению человека"
+ },
+ {
+  "from": "C028",
+  "to": "C026",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организация"
+ },
+ {
+  "from": "C028",
+  "to": "C027",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Руководство"
+ },
+ {
+  "from": "C028",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "C067",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C067",
+  "to": "C025",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Воспроизводство деятельности"
+ },
+ {
+  "from": "C025",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C025",
+  "to": "C067",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Воспроизводство"
+ },
+ {
+  "from": "C103",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C099**"
+ },
+ {
+  "from": "C034",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "C069",
+  "to": "C009",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Понимание"
+ },
+ {
+  "from": "C069",
+  "to": "C010",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Смысл"
+ },
+ {
+  "from": "C011",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "C011",
+  "to": "C046",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предмет и Объект"
+ },
+ {
+  "from": "C011",
+  "to": "C069",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знак"
+ },
+ {
+  "from": "ML003",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "ML005",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "ML004",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "ML002",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "ML001",
+  "to": "C049",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "СМД-подход"
+ },
+ {
+  "from": "M018",
+  "to": "C122",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "M010",
+  "to": "C066",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Двойное знание"
+ },
+ {
+  "from": "M011",
+  "to": "C071",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Инструментальная мастерская"
+ },
+ {
+  "from": "M012",
+  "to": "C031",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проектирование"
+ },
+ {
+  "from": "M005",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "M002",
+  "to": "C032",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Программирование"
+ },
+ {
+  "from": "M003",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "M009",
+  "to": "C014",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Моносистема"
+ },
+ {
+  "from": "M004",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "M008",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "M001",
+  "to": "C039",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОТС"
+ },
+ {
+  "from": "M007",
+  "to": "C052",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Схема"
+ },
+ {
+  "from": "M019",
+  "to": "C112",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C111**"
+ },
+ {
+  "from": "S027",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "S002",
+  "to": "C024",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Акт деятельности"
+ },
+ {
+  "from": "S012",
+  "to": "C024",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Акт деятельности"
+ },
+ {
+  "from": "S006",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "S025",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "S017",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "S017",
+  "to": "C031",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проектирование"
+ },
+ {
+  "from": "S004",
+  "to": "C064",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Кентавр-объекты"
+ },
+ {
+  "from": "S028",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "S001",
+  "to": "C008",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Коммуникация"
+ },
+ {
+  "from": "S023",
+  "to": "C039",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОТС"
+ },
+ {
+  "from": "S024",
+  "to": "C042",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Общество"
+ },
+ {
+  "from": "S022",
+  "to": "C035",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Технология"
+ },
+ {
+  "from": "S021",
+  "to": "C033",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проблематизация"
+ },
+ {
+  "from": "S019",
+  "to": "C032",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Программирование"
+ },
+ {
+  "from": "S014",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "S015",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "S005",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "S016",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "S020",
+  "to": "C034",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Задача vs Проблема"
+ },
+ {
+  "from": "S030",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "S018",
+  "to": "C058",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Шаг развития"
+ },
+ {
+  "from": "S010",
+  "to": "C014",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Моносистема"
+ },
+ {
+  "from": "S010",
+  "to": "C053",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Идеальный объект"
+ },
+ {
+  "from": "S003",
+  "to": "C007",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Мыследействование"
+ },
+ {
+  "from": "S041",
+  "to": "C110",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C103**"
+ },
+ {
+  "from": "S040",
+  "to": "C099",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C100**"
+ },
+ {
+  "from": "S013",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "S043",
+  "to": "C108",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C109**"
+ },
+ {
+  "from": "S044",
+  "to": "C112",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C111**"
+ },
+ {
+  "from": "S026",
+  "to": "C036",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Стратегия"
+ },
+ {
+  "from": "S045",
+  "to": "C113",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C099**"
+ },
+ {
+  "from": "S042",
+  "to": "C103",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C108**"
+ },
+ {
+  "from": "S007",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "S011",
+  "to": "C025",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Воспроизводство деятельности"
+ },
+ {
+  "from": "TH001",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "TH011",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "TH002",
+  "to": "C005",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "МД"
+ },
+ {
+  "from": "TH012",
+  "to": "C100",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C114**"
+ },
+ {
+  "from": "TH006",
+  "to": "C026",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организация"
+ },
+ {
+  "from": "TH004",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "TH003",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "TH013",
+  "to": "C123",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C124**"
+ },
+ {
+  "from": "TH007",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "TH005",
+  "to": "C069",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знак"
+ },
+ {
+  "from": "T021",
+  "to": "C049",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "СМД-подход"
+ },
+ {
+  "from": "T036",
+  "to": "C123",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C101**"
+ },
+ {
+  "from": "T022",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "T019",
+  "to": "C043",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Человек"
+ },
+ {
+  "from": "T001",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "T035",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C120**"
+ },
+ {
+  "from": "T007",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "T010",
+  "to": "C040",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Клуб"
+ },
+ {
+  "from": "T003",
+  "to": "C001",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Деятельность"
+ },
+ {
+  "from": "T031",
+  "to": "C101",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C123**"
+ },
+ {
+  "from": "T024",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "T024",
+  "to": "C060",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Конфликт"
+ },
+ {
+  "from": "T032",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C001**"
+ },
+ {
+  "from": "T002",
+  "to": "C056",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Натурализм"
+ },
+ {
+  "from": "T016",
+  "to": "C059",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОДИ"
+ },
+ {
+  "from": "T023",
+  "to": "C037",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Оестествление"
+ },
+ {
+  "from": "T023",
+  "to": "C038",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Артификация"
+ },
+ {
+  "from": "T018",
+  "to": "C026",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организация"
+ },
+ {
+  "from": "T017",
+  "to": "C070",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Предметное мышление"
+ },
+ {
+  "from": "T014",
+  "to": "C031",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Проектирование"
+ },
+ {
+  "from": "T008",
+  "to": "C029",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОРУ"
+ },
+ {
+  "from": "T008",
+  "to": "C057",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Развитие"
+ },
+ {
+  "from": "T011",
+  "to": "C003",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Рефлексия"
+ },
+ {
+  "from": "T004",
+  "to": "C013",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Система"
+ },
+ {
+  "from": "T013",
+  "to": "C052",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Схема"
+ },
+ {
+  "from": "T005",
+  "to": "C016",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Структура"
+ },
+ {
+  "from": "T005",
+  "to": "C017",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Организованность"
+ },
+ {
+  "from": "T006",
+  "to": "C018",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Связь"
+ },
+ {
+  "from": "T015",
+  "to": "C035",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Технология"
+ },
+ {
+  "from": "T034",
+  "to": "C118",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "**C038**"
+ },
+ {
+  "from": "T025",
+  "to": "C063",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "ОУП"
+ },
+ {
+  "from": "T020",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "T009",
+  "to": "C028",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Управление"
+ },
+ {
+  "from": "T012",
+  "to": "C011",
+  "rel": "relates_to",
+  "rel_type": "содержательная",
+  "to_name": "Знание"
+ },
+ {
+  "from": "A01",
+  "to": "A04",
+  "rel": "transforms",
+  "condition": "проблемная ситуация → поиск генезиса",
+  "weight": 1
+ },
+ {
+  "from": "A01",
+  "to": "A02",
+  "rel": "transforms",
+  "condition": "проблемная ситуация → разграничение предмета",
+  "weight": 1
+ },
+ {
+  "from": "A02",
+  "to": "A08",
+  "rel": "transforms",
+  "condition": "разграничение → категориальное определение",
+  "weight": 2
+ },
+ {
+  "from": "A04",
+  "to": "A06",
+  "rel": "transforms",
+  "condition": "генетический переход → конвергенция областей",
+  "weight": 1
+ },
+ {
+  "from": "A06",
+  "to": "A03",
+  "rel": "transforms",
+  "condition": "конвергенция → инвентаризация единиц",
+  "weight": 1
+ },
+ {
+  "from": "A03",
+  "to": "A07",
+  "rel": "transforms",
+  "condition": "инвентаризация → проверка на зависимости",
+  "weight": 1
+ },
+ {
+  "from": "A07",
+  "to": "A16",
+  "rel": "transforms",
+  "condition": "системная зависимость → онтологический переворот",
+  "weight": 1
+ },
+ {
+  "from": "A08",
+  "to": "A05",
+  "rel": "transforms",
+  "condition": "определение → проведение границ",
+  "weight": 2
+ },
+ {
+  "from": "A05",
+  "to": "A09",
+  "rel": "transforms",
+  "condition": "границы → правила следования",
+  "weight": 1
+ },
+ {
+  "from": "A05",
+  "to": "A17",
+  "rel": "transforms",
+  "condition": "проведение границ → рефлексия модусов",
+  "weight": 1
+ },
+ {
+  "from": "A08",
+  "to": "A10",
+  "rel": "transforms",
+  "condition": "определение → негативное уточнение (через контрпримеры)",
+  "weight": 2
+ },
+ {
+  "from": "A10",
+  "to": "A12",
+  "rel": "transforms",
+  "condition": "негативное определение → замена принципа",
+  "weight": 3
+ },
+ {
+  "from": "A11",
+  "to": "A12",
+  "rel": "transforms",
+  "condition": "отсечение ложного → формулировка правильного",
+  "weight": 2
+ },
+ {
+  "from": "A16",
+  "to": "A11",
+  "rel": "transforms",
+  "condition": "новая онтология → отсечение наивных подходов",
+  "weight": 1
+ },
+ {
+  "from": "A12",
+  "to": "A15",
+  "rel": "transforms",
+  "condition": "новый метод → декомпозиция на подпроблемы",
+  "weight": 1
+ },
+ {
+  "from": "A12",
+  "to": "A13",
+  "rel": "transforms",
+  "condition": "замена принципа → переопределение понятий",
+  "weight": 2
+ },
+ {
+  "from": "A12",
+  "to": "A14",
+  "rel": "transforms",
+  "condition": "новый принцип → раскрытие механизма",
+  "weight": 1
+ },
+ {
+  "from": "A13",
+  "to": "A11",
+  "rel": "transforms",
+  "condition": "переопределение → обнаружение кризиса старых форм",
+  "weight": 1
+ },
+ {
+  "from": "A15",
+  "to": "A13",
+  "rel": "transforms",
+  "condition": "подпроблемы → уточнение понятий (генетический метод)",
+  "weight": 1
+ },
+ {
+  "from": "A17",
+  "to": "A18",
+  "rel": "transforms",
+  "condition": "рефлексия модусов → итоговый интегрирующий тезис",
+  "weight": 1
+ },
+ {
+  "from": "A09",
+  "to": "A17",
+  "rel": "transforms",
+  "condition": "правила следования → мета-рефлексия над процессом",
+  "weight": 1
+ }
+]
