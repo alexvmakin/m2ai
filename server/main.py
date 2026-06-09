@@ -37,6 +37,27 @@ def _load_graph():
 
 GRAPH_NODES, GRAPH_BY_ID, GRAPH_EDGES = _load_graph()
 
+DEC_INFO = {"D02": (1956, "Анализ Евклида"), "D01": (1964, "Диссертация · Языковое мышление"),
+            "D03": (1987, "На перекрёстке мысли · Лекция 3")}
+S_LABEL = {"S1": "атрибутивное", "S2": "разграничительное", "S3": "определительное",
+           "S4": "контрпримерное", "S5": "замещающее", "S6": "рефлексивное"}
+
+def _load_alphabet():
+    try:
+        a = json.loads((CONTENT / "decompositions" / "04_MERGED_ALPHABET.json").read_text(encoding="utf-8"))
+    except Exception:
+        return [], {}
+    types = []
+    for i, (k, v) in enumerate(a.get("unified_alphabet", {}).items(), 1):
+        years = sorted({DEC_INFO.get(ins.split(":")[0], (0, ""))[0] for ins in v.get("instances", [])})
+        types.append({"code": f"A{i:02d}", "key": k, "s": (v.get("sopostavlenie_pattern") or "").split("/")[0],
+                      "sign": v.get("otnesenie_pattern"), "freq": v.get("frequency"),
+                      "complexity": v.get("genetic_complexity"), "definition": v.get("definition", ""),
+                      "years": [y for y in years if y]})
+    return types, a.get("meta_genetic_map", {}).get("key_hubs", {})
+
+ALPHA_TYPES, ALPHA_HUBS = _load_alphabet()
+
 WIKI_CSS = """
 .widx{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px 18px}
 .widx a{display:block;padding:6px 0;font-size:14px;border-bottom:1px dotted var(--line)}
@@ -527,7 +548,7 @@ def wiki_index(q: str = "", fill: str = ""):
     clearf = ' · <a href="/wiki" style="color:var(--ink2)">сбросить фильтр</a>' if fill else ""
     body = ('<div class="idx mono">Вики · граф связанных объектов</div>'
             '<h2 style="margin-top:8px">База знаний ГП</h2>'
-            f'<p class="lead" style="font-size:15px">{total} сущностей · 18 типов операций · '
+            f'<p class="lead" style="font-size:15px">{total} сущностей · <a href="/wiki/operations" style="color:var(--red)">18 типов операций ↗</a> · <a href="/wiki/timeline" style="color:var(--red)">таймлайн 1956→1987 ↗</a> · '
             '<a href="/wiki/backbone" style="color:var(--red)">каркас-эталон ↗</a> · <a href="/wiki/coverage" style="color:var(--red)">отчёт покрытия ↗</a></p>'
             f'<p style="font-size:13px;color:var(--ink2)">{legend}{clearf}</p>'
             f'<form method="get"><input class="wsearch" name="q" placeholder="поиск по сущностям…" value="{html.escape(q)}"></form>')
@@ -678,6 +699,73 @@ def wiki_coverage():
         body += f'<a href="/wiki/{n["id"]}"><small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>'
     body += '</div>'
     return page("Отчёт покрытия — M2AI", body)
+
+
+@app.get("/wiki/operations", response_class=HTMLResponse)
+def wiki_operations(s: str = ""):
+    types = ALPHA_TYPES
+    flt = [t for t in types if t["s"] == s] if s in S_LABEL else types
+    SCOL = {"S1": "#8b919c", "S2": "#2a4d6e", "S3": "#1d7a5e", "S4": "#9a6b12", "S5": "#c0392b", "S6": "#6a3fa3"}
+    chips = " ".join(
+        f'<a href="/wiki/operations?s={k}" class="chip" style="border-color:{SCOL[k]};color:{SCOL[k]};text-decoration:none">{k} {v}</a>'
+        for k, v in S_LABEL.items())
+    clear = ' <a href="/wiki/operations" style="color:var(--ink2);font-size:12px">все</a>' if s else ""
+    rows = ""
+    for t in sorted(flt, key=lambda x: x["code"]):
+        col = SCOL.get(t["s"], "#8b919c")
+        yrs = ", ".join(str(y) for y in t["years"]) or "—"
+        rows += (f'<tr><td style="padding:7px 10px;border-bottom:1px dashed var(--line)"><a href="/wiki/{t["code"]}">{t["code"]}</a></td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)">{html.escape(t["key"].replace("_"," ").title())}</td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)"><span style="color:{col}" class="mono">{t["s"]}</span> {html.escape(S_LABEL.get(t["s"],""))}</td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)" class="mono">{html.escape(str(t["sign"]))}</td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)" class="mono">{t["freq"]}</td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)" class="mono">{t["complexity"]}</td>'
+                 f'<td style="padding:7px 10px;border-bottom:1px dashed var(--line)" class="mono">{yrs}</td></tr>')
+    hubs = "".join(f'<li><b>{html.escape(k.split("_")[0])}</b> — {html.escape(v)}</li>' for k, v in ALPHA_HUBS.items())
+    body = ('<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+            '<div class="idx mono">Алфавит операций мышления · A01–A18</div>'
+            '<h2 style="margin-top:6px">Операции мышления</h2>'
+            f'<p class="lead" style="font-size:14px">Фильтр по типу сопоставления: {chips}{clear}</p>'
+            '<table style="width:100%;border-collapse:collapse;font-size:13px">'
+            '<tr>' + "".join(f'<th style="text-align:left;padding:7px 10px;border-bottom:1px solid var(--ink);font-family:IBM Plex Mono,monospace;font-size:11px;text-transform:uppercase;color:var(--ink2)">{h}</th>'
+                              for h in ["Код","Тип","Сопоставление","Знак","Частота","Сложн.","Годы"]) + '</tr>'
+            + rows + '</table>'
+            f'<h3>Ключевые хабы генетической карты</h3><ul class="bl" style="font-size:13px">{hubs}</ul>')
+    return page("Операции — M2AI", body)
+
+
+@app.get("/wiki/timeline", response_class=HTMLResponse)
+def wiki_timeline():
+    SCOL = {"S1": "#8b919c", "S2": "#2a4d6e", "S3": "#1d7a5e", "S4": "#9a6b12", "S5": "#c0392b", "S6": "#6a3fa3"}
+    order = sorted(DEC_INFO.items(), key=lambda kv: kv[1][0])
+    all_years = [v[0] for _, v in order]
+    cols = ""
+    for did, (yr, label) in order:
+        present = [t for t in ALPHA_TYPES if yr in t["years"]]
+        chips = "".join(
+            f'<a href="/wiki/{t["code"]}" class="chip" style="border-color:{SCOL.get(t["s"],"#8b919c")};color:{SCOL.get(t["s"],"#8b919c")};text-decoration:none" title="{html.escape(t["key"])}">{t["code"]} {t["s"]}</a> '
+            for t in sorted(present, key=lambda x: x["code"]))
+        cols += (f'<div style="flex:1;min-width:230px;border-left:2px solid var(--ink);padding:0 0 0 14px">'
+                 f'<div class="mono" style="font-size:22px;font-weight:500">{yr}</div>'
+                 f'<div class="mono" style="font-size:11px;color:var(--ink2);margin-bottom:10px">{html.escape(label)} · {len(present)} типов</div>'
+                 f'<div style="display:flex;flex-wrap:wrap;gap:6px">{chips}</div></div>')
+    invariant = [t for t in ALPHA_TYPES if set(all_years).issubset(set(t["years"]))]
+    inv = ", ".join(f'<a href="/wiki/{t["code"]}" style="color:var(--red)">{t["code"]} ({t["key"].split("_")[1] if "_" in t["key"] else t["key"]})</a>' for t in invariant) or "—"
+    # corpus sources
+    corpus = [("Папка 0 · Хрестоматии Зинченко", "≈2012"), ("Кн.1 · На перекрёстке мысли", "1987"),
+              ("Кн.2 · От логики науки к теории мышления", "1960-е"), ("Кн.3 · Языковое мышление", "1960-е")]
+    corp = "".join(f'<li><b class="mono">{html.escape(y)}</b> — {html.escape(t)}</li>' for t, y in corpus)
+    body = ('<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+            '<div class="idx mono">Развитие мышления ГП · 1956 → 1987</div>'
+            '<h2 style="margin-top:6px">Таймлайн операций</h2>'
+            '<p class="lead" style="font-size:14px">Три разложенных текста на оси времени и набор операций мышления в каждом. '
+            'Цвет — тип сопоставления (S1–S6).</p>'
+            f'<div style="display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 8px">{cols}</div>'
+            f'<div class="def">Инвариант (присутствует во всех трёх текстах): {inv}. '
+            'Центральный хаб A12 (замена принципа) — ядро мышления ГП, стабильное 1956–1987.</div>'
+            f'<h3>Корпус источников</h3><ul class="bl" style="font-size:13px">{corp}</ul>'
+            '<p class="sum">Таймлайн развития каждого понятия — на странице сущности, раздел «Версии инстанса (revises)».</p>')
+    return page("Таймлайн — M2AI", body)
 
 
 @app.get("/wiki/{nid}", response_class=HTMLResponse)
