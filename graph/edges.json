@@ -1876,6 +1876,918 @@
   "to_name": "Знание"
  },
  {
+  "from": "C024",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C038",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C038",
+  "to": "C113",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C104",
+  "to": "C127",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C080",
+  "to": "C085",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C001",
+  "to": "C051",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C001",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C001",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C001",
+  "to": "C120",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C012",
+  "to": "C049",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C111",
+  "to": "C112",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C127",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C127",
+  "to": "C057",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C127",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C099",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C107",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C085",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C085",
+  "to": "C008",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C085",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C122",
+  "to": "M018",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C022",
+  "to": "C122",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C022",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C082",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C095",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C050",
+  "to": "C085",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C050",
+  "to": "C095",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C075",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C075",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C075",
+  "to": "C017",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C014",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "C119",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "C081",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "C117",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "C121",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "S013",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C002",
+  "to": "T026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C005",
+  "to": "C015",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C005",
+  "to": "S013",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C007",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C077",
+  "to": "C054",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C054",
+  "to": "C044",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C054",
+  "to": "C077",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C026",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C081",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C081",
+  "to": "C008",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C081",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C087",
+  "to": "C035",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C117",
+  "to": "C112",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C073",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C045",
+  "to": "C096",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C046",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C046",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C046",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C046",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C116",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C120",
+  "to": "C051",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C033",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C033",
+  "to": "S005",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C033",
+  "to": "T012",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C031",
+  "to": "T014",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C041",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C003",
+  "to": "C080",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C003",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C003",
+  "to": "C081",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C003",
+  "to": "S005",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C027",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C091",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C052",
+  "to": "S043",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C052",
+  "to": "S044",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C049",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C113",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C004",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C016",
+  "to": "T005",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C114",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C115",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C018",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C035",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C121",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C121",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C062",
+  "to": "C035",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C093",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C069",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C011",
+  "to": "C127",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C011",
+  "to": "C107",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C011",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "C011",
+  "to": "C114",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML005",
+  "to": "C031",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML004",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML006",
+  "to": "C098",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML006",
+  "to": "C099",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML006",
+  "to": "C054",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML001",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "ML001",
+  "to": "ML003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M010",
+  "to": "C036",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M003",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "M016",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S002",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S002",
+  "to": "C004",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S066",
+  "to": "C080",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S066",
+  "to": "C085",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S066",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S028",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S023",
+  "to": "C026",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S024",
+  "to": "C041",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S020",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S040",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S013",
+  "to": "C015",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S067",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S045",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S045",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S007",
+  "to": "S013",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S068",
+  "to": "C094",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S068",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S069",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "S070",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH001",
+  "to": "C054",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH002",
+  "to": "C015",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH006",
+  "to": "T018",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH010",
+  "to": "C094",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH010",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH010",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH010",
+  "to": "C093",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH009",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH009",
+  "to": "C075",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH004",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH004",
+  "to": "C058",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH004",
+  "to": "S015",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH004",
+  "to": "S018",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH008",
+  "to": "C081",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH008",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH003",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH003",
+  "to": "C014",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH003",
+  "to": "C015",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH007",
+  "to": "C027",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH005",
+  "to": "C009",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "TH005",
+  "to": "C016",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T029",
+  "to": "C085",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T029",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T028",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T010",
+  "to": "C057",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T003",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T032",
+  "to": "C050",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T026",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T026",
+  "to": "C081",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T026",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T002",
+  "to": "C001",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T016",
+  "to": "C057",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T023",
+  "to": "C036",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T023",
+  "to": "C035",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T027",
+  "to": "C003",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T005",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
+  "from": "T006",
+  "to": "C019",
+  "rel": "mentions",
+  "rel_type": "co-mention"
+ },
+ {
   "from": "A01",
   "to": "A04",
   "rel": "transforms",

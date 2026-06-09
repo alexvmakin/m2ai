@@ -81,7 +81,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 8
+  "degree": 9
  },
  {
   "id": "C076",
@@ -169,7 +169,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 11
+  "degree": 13
  },
  {
   "id": "C104",
@@ -190,7 +190,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "C021",
@@ -287,8 +287,17 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C003",
+    "rel": "mentions"
+   },
+   {
+    "from": "S066",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C001",
@@ -406,9 +415,41 @@
    {
     "from": "T003",
     "rel": "relates_to"
+   },
+   {
+    "from": "C085",
+    "rel": "mentions"
+   },
+   {
+    "from": "C095",
+    "rel": "mentions"
+   },
+   {
+    "from": "C081",
+    "rel": "mentions"
+   },
+   {
+    "from": "C046",
+    "rel": "mentions"
+   },
+   {
+    "from": "C033",
+    "rel": "mentions"
+   },
+   {
+    "from": "C027",
+    "rel": "mentions"
+   },
+   {
+    "from": "T026",
+    "rel": "mentions"
+   },
+   {
+    "from": "T002",
+    "rel": "mentions"
    }
   ],
-  "degree": 28
+  "degree": 40
  },
  {
   "id": "C061",
@@ -536,8 +577,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "ML006",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 1
  },
  {
   "id": "C066",
@@ -632,7 +678,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C111",
@@ -658,7 +704,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "C127",
@@ -678,8 +724,17 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C104",
+    "rel": "mentions"
+   },
+   {
+    "from": "C011",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 6
  },
  {
   "id": "C123",
@@ -754,9 +809,13 @@
    {
     "from": "S040",
     "rel": "relates_to"
+   },
+   {
+    "from": "ML006",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 5
  },
  {
   "id": "C107",
@@ -776,8 +835,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C011",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C085",
@@ -802,8 +866,25 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C080",
+    "rel": "mentions"
+   },
+   {
+    "from": "C050",
+    "rel": "mentions"
+   },
+   {
+    "from": "S066",
+    "rel": "mentions"
+   },
+   {
+    "from": "T029",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 7
  },
  {
   "id": "C126",
@@ -848,9 +929,13 @@
    {
     "from": "M018",
     "rel": "relates_to"
+   },
+   {
+    "from": "C022",
+    "rel": "mentions"
    }
   ],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "C022",
@@ -881,7 +966,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 2
+  "degree": 4
  },
  {
   "id": "C053",
@@ -963,7 +1048,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C051",
@@ -988,8 +1073,17 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C001",
+    "rel": "mentions"
+   },
+   {
+    "from": "C120",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C064",
@@ -1119,9 +1213,17 @@
    {
     "from": "S001",
     "rel": "relates_to"
+   },
+   {
+    "from": "C085",
+    "rel": "mentions"
+   },
+   {
+    "from": "C081",
+    "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 9
  },
  {
   "id": "C060",
@@ -1176,8 +1278,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C045",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 1
  },
  {
   "id": "C094",
@@ -1202,8 +1309,17 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "S068",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH010",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C044",
@@ -1231,9 +1347,13 @@
    {
     "from": "C040",
     "rel": "relates_to"
+   },
+   {
+    "from": "C054",
+    "rel": "mentions"
    }
   ],
-  "degree": 4
+  "degree": 5
  },
  {
   "id": "C125",
@@ -1283,9 +1403,133 @@
    {
     "from": "C017",
     "rel": "relates_to"
+   },
+   {
+    "from": "C024",
+    "rel": "mentions"
+   },
+   {
+    "from": "C001",
+    "rel": "mentions"
+   },
+   {
+    "from": "C127",
+    "rel": "mentions"
+   },
+   {
+    "from": "C099",
+    "rel": "mentions"
+   },
+   {
+    "from": "C085",
+    "rel": "mentions"
+   },
+   {
+    "from": "C022",
+    "rel": "mentions"
+   },
+   {
+    "from": "C075",
+    "rel": "mentions"
+   },
+   {
+    "from": "C014",
+    "rel": "mentions"
+   },
+   {
+    "from": "C007",
+    "rel": "mentions"
+   },
+   {
+    "from": "C026",
+    "rel": "mentions"
+   },
+   {
+    "from": "C046",
+    "rel": "mentions"
+   },
+   {
+    "from": "C116",
+    "rel": "mentions"
+   },
+   {
+    "from": "C003",
+    "rel": "mentions"
+   },
+   {
+    "from": "C113",
+    "rel": "mentions"
+   },
+   {
+    "from": "C115",
+    "rel": "mentions"
+   },
+   {
+    "from": "C018",
+    "rel": "mentions"
+   },
+   {
+    "from": "C035",
+    "rel": "mentions"
+   },
+   {
+    "from": "C093",
+    "rel": "mentions"
+   },
+   {
+    "from": "S002",
+    "rel": "mentions"
+   },
+   {
+    "from": "S020",
+    "rel": "mentions"
+   },
+   {
+    "from": "S067",
+    "rel": "mentions"
+   },
+   {
+    "from": "S045",
+    "rel": "mentions"
+   },
+   {
+    "from": "S069",
+    "rel": "mentions"
+   },
+   {
+    "from": "S070",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH010",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH009",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH003",
+    "rel": "mentions"
+   },
+   {
+    "from": "T028",
+    "rel": "mentions"
+   },
+   {
+    "from": "T003",
+    "rel": "mentions"
+   },
+   {
+    "from": "T005",
+    "rel": "mentions"
+   },
+   {
+    "from": "T006",
+    "rel": "mentions"
    }
   ],
-  "degree": 2
+  "degree": 33
  },
  {
   "id": "C088",
@@ -1388,8 +1632,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C050",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C050",
@@ -1414,8 +1663,37 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C049",
+    "rel": "mentions"
+   },
+   {
+    "from": "C121",
+    "rel": "mentions"
+   },
+   {
+    "from": "ML004",
+    "rel": "mentions"
+   },
+   {
+    "from": "ML001",
+    "rel": "mentions"
+   },
+   {
+    "from": "S068",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH010",
+    "rel": "mentions"
+   },
+   {
+    "from": "T032",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 10
  },
  {
   "id": "C048",
@@ -1496,8 +1774,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "TH009",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 4
  },
  {
   "id": "C014",
@@ -1537,9 +1820,13 @@
    {
     "from": "S010",
     "rel": "relates_to"
+   },
+   {
+    "from": "TH003",
+    "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 9
  },
  {
   "id": "C002",
@@ -1599,7 +1886,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 10
+  "degree": 16
  },
  {
   "id": "C006",
@@ -1703,7 +1990,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 16
+  "degree": 18
  },
  {
   "id": "C007",
@@ -1737,7 +2024,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C056",
@@ -1923,8 +2210,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C054",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C054",
@@ -1958,9 +2250,21 @@
    {
     "from": "C055",
     "rel": "relates_to"
+   },
+   {
+    "from": "C077",
+    "rel": "mentions"
+   },
+   {
+    "from": "ML006",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH001",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 8
  },
  {
   "id": "C119",
@@ -1980,8 +2284,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C026",
@@ -2021,9 +2330,45 @@
    {
     "from": "T018",
     "rel": "relates_to"
+   },
+   {
+    "from": "C038",
+    "rel": "mentions"
+   },
+   {
+    "from": "C001",
+    "rel": "mentions"
+   },
+   {
+    "from": "C075",
+    "rel": "mentions"
+   },
+   {
+    "from": "C046",
+    "rel": "mentions"
+   },
+   {
+    "from": "C091",
+    "rel": "mentions"
+   },
+   {
+    "from": "C004",
+    "rel": "mentions"
+   },
+   {
+    "from": "M016",
+    "rel": "mentions"
+   },
+   {
+    "from": "S028",
+    "rel": "mentions"
+   },
+   {
+    "from": "S023",
+    "rel": "mentions"
    }
   ],
-  "degree": 8
+  "degree": 18
  },
  {
   "id": "C081",
@@ -2048,8 +2393,25 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   },
+   {
+    "from": "C003",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH008",
+    "rel": "mentions"
+   },
+   {
+    "from": "T026",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 7
  },
  {
   "id": "C017",
@@ -2081,9 +2443,13 @@
    {
     "from": "T005",
     "rel": "relates_to"
+   },
+   {
+    "from": "C075",
+    "rel": "mentions"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C029",
@@ -2279,7 +2645,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C117",
@@ -2299,8 +2665,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C015",
@@ -2328,9 +2699,25 @@
    {
     "from": "C013",
     "rel": "relates_to"
+   },
+   {
+    "from": "C005",
+    "rel": "mentions"
+   },
+   {
+    "from": "S013",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH002",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH003",
+    "rel": "mentions"
    }
   ],
-  "degree": 5
+  "degree": 9
  },
  {
   "id": "C030",
@@ -2388,9 +2775,13 @@
    {
     "from": "C069",
     "rel": "relates_to"
+   },
+   {
+    "from": "TH005",
+    "rel": "mentions"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C073",
@@ -2416,7 +2807,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C074",
@@ -2494,7 +2885,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C046",
@@ -2538,7 +2929,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 9
  },
  {
   "id": "C047",
@@ -2641,7 +3032,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "C120",
@@ -2661,8 +3052,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C001",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C033",
@@ -2708,7 +3104,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 8
+  "degree": 11
  },
  {
   "id": "C031",
@@ -2744,9 +3140,13 @@
    {
     "from": "T014",
     "rel": "relates_to"
+   },
+   {
+    "from": "ML005",
+    "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 8
  },
  {
   "id": "C032",
@@ -2808,9 +3208,13 @@
    {
     "from": "C042",
     "rel": "relates_to"
+   },
+   {
+    "from": "S024",
+    "rel": "mentions"
    }
   ],
-  "degree": 4
+  "degree": 6
  },
  {
   "id": "C023",
@@ -2941,9 +3345,21 @@
    {
     "from": "T008",
     "rel": "relates_to"
+   },
+   {
+    "from": "C127",
+    "rel": "mentions"
+   },
+   {
+    "from": "T010",
+    "rel": "mentions"
+   },
+   {
+    "from": "T016",
+    "rel": "mentions"
    }
   ],
-  "degree": 10
+  "degree": 13
  },
  {
   "id": "C003",
@@ -3004,9 +3420,45 @@
    {
     "from": "T011",
     "rel": "relates_to"
+   },
+   {
+    "from": "C082",
+    "rel": "mentions"
+   },
+   {
+    "from": "C081",
+    "rel": "mentions"
+   },
+   {
+    "from": "M003",
+    "rel": "mentions"
+   },
+   {
+    "from": "S066",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH004",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH008",
+    "rel": "mentions"
+   },
+   {
+    "from": "T029",
+    "rel": "mentions"
+   },
+   {
+    "from": "T026",
+    "rel": "mentions"
+   },
+   {
+    "from": "T027",
+    "rel": "mentions"
    }
   ],
-  "degree": 12
+  "degree": 25
  },
  {
   "id": "C027",
@@ -3038,9 +3490,13 @@
    {
     "from": "C028",
     "rel": "relates_to"
+   },
+   {
+    "from": "TH007",
+    "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 8
  },
  {
   "id": "C091",
@@ -3066,7 +3522,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C092",
@@ -3116,9 +3572,13 @@
    {
     "from": "S018",
     "rel": "relates_to"
+   },
+   {
+    "from": "TH004",
+    "rel": "mentions"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C105",
@@ -3228,7 +3688,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 7
  },
  {
   "id": "C049",
@@ -3269,9 +3729,13 @@
    {
     "from": "T021",
     "rel": "relates_to"
+   },
+   {
+    "from": "C012",
+    "rel": "mentions"
    }
   ],
-  "degree": 7
+  "degree": 9
  },
  {
   "id": "C010",
@@ -3376,9 +3840,13 @@
    {
     "from": "S045",
     "rel": "relates_to"
+   },
+   {
+    "from": "C038",
+    "rel": "mentions"
    }
   ],
-  "degree": 2
+  "degree": 4
  },
  {
   "id": "C112",
@@ -3406,9 +3874,17 @@
    {
     "from": "S044",
     "rel": "relates_to"
+   },
+   {
+    "from": "C111",
+    "rel": "mentions"
+   },
+   {
+    "from": "C117",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 5
  },
  {
   "id": "C100",
@@ -3522,9 +3998,13 @@
    {
     "from": "C003",
     "rel": "relates_to"
+   },
+   {
+    "from": "S002",
+    "rel": "mentions"
    }
   ],
-  "degree": 4
+  "degree": 6
  },
  {
   "id": "C036",
@@ -3552,9 +4032,17 @@
    {
     "from": "S026",
     "rel": "relates_to"
+   },
+   {
+    "from": "M010",
+    "rel": "mentions"
+   },
+   {
+    "from": "T023",
+    "rel": "mentions"
    }
   ],
-  "degree": 3
+  "degree": 5
  },
  {
   "id": "C016",
@@ -3595,9 +4083,57 @@
    {
     "from": "T005",
     "rel": "relates_to"
+   },
+   {
+    "from": "C127",
+    "rel": "mentions"
+   },
+   {
+    "from": "C107",
+    "rel": "mentions"
+   },
+   {
+    "from": "C073",
+    "rel": "mentions"
+   },
+   {
+    "from": "C046",
+    "rel": "mentions"
+   },
+   {
+    "from": "C041",
+    "rel": "mentions"
+   },
+   {
+    "from": "C114",
+    "rel": "mentions"
+   },
+   {
+    "from": "C121",
+    "rel": "mentions"
+   },
+   {
+    "from": "C069",
+    "rel": "mentions"
+   },
+   {
+    "from": "C011",
+    "rel": "mentions"
+   },
+   {
+    "from": "S040",
+    "rel": "mentions"
+   },
+   {
+    "from": "S045",
+    "rel": "mentions"
+   },
+   {
+    "from": "TH005",
+    "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 19
  },
  {
   "id": "C114",
@@ -3617,8 +4153,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C011",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "C115",
@@ -3639,7 +4180,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "C018",
@@ -3678,7 +4219,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 5
+  "degree": 6
  },
  {
   "id": "C035",
@@ -3714,9 +4255,21 @@
    {
     "from": "T015",
     "rel": "relates_to"
+   },
+   {
+    "from": "C087",
+    "rel": "mentions"
+   },
+   {
+    "from": "C062",
+    "rel": "mentions"
+   },
+   {
+    "from": "T023",
+    "rel": "mentions"
    }
   ],
-  "degree": 6
+  "degree": 10
  },
  {
   "id": "C068",
@@ -3804,8 +4357,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 4
  },
  {
   "id": "C062",
@@ -3831,7 +4389,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 2
+  "degree": 3
  },
  {
   "id": "C028",
@@ -3918,8 +4476,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "TH010",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "C067",
@@ -4091,7 +4654,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 4
+  "degree": 5
  },
  {
   "id": "C011",
@@ -4146,7 +4709,7 @@
     "rel": "relates_to"
    }
   ],
-  "degree": 10
+  "degree": 14
  },
  {
   "id": "ML003",
@@ -4166,8 +4729,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "ML001",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "ML005",
@@ -4188,7 +4756,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "ML004",
@@ -4209,7 +4777,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "ML006",
@@ -4235,7 +4803,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 3
  },
  {
   "id": "ML002",
@@ -4277,7 +4845,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "M018",
@@ -4297,8 +4865,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C122",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "M017",
@@ -4345,7 +4918,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "M011",
@@ -4528,7 +5101,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "M009",
@@ -4575,7 +5148,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "M004",
@@ -4764,7 +5337,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "S012",
@@ -4853,7 +5426,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 3
  },
  {
   "id": "S017",
@@ -4937,7 +5510,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S001",
@@ -5005,7 +5578,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S024",
@@ -5026,7 +5599,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S022",
@@ -5130,8 +5703,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "TH004",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "S005",
@@ -5151,8 +5729,17 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C033",
+    "rel": "mentions"
+   },
+   {
+    "from": "C003",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 3
  },
  {
   "id": "S016",
@@ -5194,7 +5781,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S008",
@@ -5256,8 +5843,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "TH004",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "S010",
@@ -5341,7 +5933,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S013",
@@ -5361,8 +5953,21 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   },
+   {
+    "from": "C005",
+    "rel": "mentions"
+   },
+   {
+    "from": "S007",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 5
  },
  {
   "id": "S043",
@@ -5382,8 +5987,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C052",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "S044",
@@ -5403,8 +6013,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C052",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "S063",
@@ -5477,7 +6092,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "S062",
@@ -5524,7 +6139,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "S042",
@@ -5592,7 +6207,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "S068",
@@ -5618,7 +6233,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "S069",
@@ -5644,7 +6259,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "S070",
@@ -5670,7 +6285,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "S011",
@@ -5712,7 +6327,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "TH011",
@@ -5754,7 +6369,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "TH012",
@@ -5796,7 +6411,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "TH010",
@@ -5822,7 +6437,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 4
  },
  {
   "id": "TH009",
@@ -5848,7 +6463,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "TH004",
@@ -5869,7 +6484,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 5
  },
  {
   "id": "TH008",
@@ -5895,7 +6510,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "TH003",
@@ -5916,7 +6531,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 4
  },
  {
   "id": "TH013",
@@ -5958,7 +6573,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "TH005",
@@ -5979,7 +6594,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 3
  },
  {
   "id": "T021",
@@ -6110,7 +6725,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 2
  },
  {
   "id": "T001",
@@ -6199,7 +6814,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "T010",
@@ -6220,7 +6835,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T003",
@@ -6241,7 +6856,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T031",
@@ -6304,7 +6919,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T026",
@@ -6329,8 +6944,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 0
+  "backlinks": [
+   {
+    "from": "C002",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 4
  },
  {
   "id": "T002",
@@ -6351,7 +6971,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T016",
@@ -6372,7 +6992,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T023",
@@ -6393,7 +7013,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 2
+  "degree": 4
  },
  {
   "id": "T018",
@@ -6413,8 +7033,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "TH006",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "T030",
@@ -6481,8 +7106,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C031",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "T008",
@@ -6529,7 +7159,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 0
+  "degree": 1
  },
  {
   "id": "T011",
@@ -6612,8 +7242,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 2
+  "backlinks": [
+   {
+    "from": "C016",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 4
  },
  {
   "id": "T006",
@@ -6634,7 +7269,7 @@
   ],
   "sources": [],
   "backlinks": [],
-  "degree": 1
+  "degree": 2
  },
  {
   "id": "T015",
@@ -6759,8 +7394,13 @@
    }
   ],
   "sources": [],
-  "backlinks": [],
-  "degree": 1
+  "backlinks": [
+   {
+    "from": "C033",
+    "rel": "mentions"
+   }
+  ],
+  "degree": 2
  },
  {
   "id": "A01",

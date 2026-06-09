@@ -1,91 +1,516 @@
 {
   "title": "Структурная карта интегрированной онтологии",
   "note": "Каркас-эталон (gold). На A4.5 сверяется с собранным графом. ✓ есть в графе · ○ пробел.",
-  "viewBox": [0, 0, 1000, 1640],
+  "viewBox": [
+    0,
+    0,
+    1000,
+    1640
+  ],
   "boxes": [
-    {"x": 110, "y": 1120, "w": 800, "h": 170, "label": "СОДЕРЖАТЕЛЬНАЯ ЛОГИКА ← Кн.2"},
-    {"x": 110, "y": 1320, "w": 800, "h": 280, "label": "ЯЗЫКОВОЕ МЫШЛЕНИЕ ← Кн.3"}
+    {
+      "x": 110,
+      "y": 1120,
+      "w": 800,
+      "h": 170,
+      "label": "СОДЕРЖАТЕЛЬНАЯ ЛОГИКА ← Кн.2"
+    },
+    {
+      "x": 110,
+      "y": 1320,
+      "w": 800,
+      "h": 280,
+      "label": "ЯЗЫКОВОЕ МЫШЛЕНИЕ ← Кн.3"
+    }
   ],
   "nodes": [
-    {"id": "b_chistaya_refleksiya", "label": "Чистая рефлексия\n(вне истории)", "x": 500, "y": 46, "w": 220, "src": "Кн.1", "match": "Чистая рефлексия"},
-    {"id": "b_komm_formy", "label": "Коммуникативные\nформы", "x": 200, "y": 156, "w": 180, "match": "Коммуникация"},
-    {"id": "b_mysl_formy", "label": "Мыслительные\nформы", "x": 500, "y": 156, "w": 170, "match": "Мышление"},
-    {"id": "b_deyat_formy", "label": "Деятельностные\nформы", "x": 800, "y": 156, "w": 180, "match": "Деятельность"},
-    {"id": "b_mk", "label": "М-К", "x": 200, "y": 246, "w": 100, "match": "Мыслекоммуникация"},
-    {"id": "b_myshlenie", "label": "Мышление", "x": 500, "y": 246, "w": 130, "match": "Мышление"},
-    {"id": "b_md_small", "label": "мД", "x": 800, "y": 246, "w": 100, "match": "Мыследействование"},
-    {"id": "b_md", "label": "Мыследеятельность", "x": 500, "y": 336, "w": 220, "src": "П0", "match": "Мыследеятельность"},
-    {"id": "b_deyatelnost", "label": "Деятельность\n(бессубъектна, безобъектна)", "x": 500, "y": 430, "w": 280, "src": "П0+Кн.1", "match": "Деятельность"},
-    {"id": "b_e", "label": "Е", "x": 390, "y": 510, "w": 70, "match": "Естественное"},
-    {"id": "b_i", "label": "И", "x": 610, "y": 510, "w": 70, "match": "Искусственное"},
-    {"id": "b_kentavr", "label": "Кентавр-система", "x": 500, "y": 580, "w": 200, "match": "Кентавр"},
-    {"id": "b_podhod", "label": "Подход", "x": 185, "y": 680, "w": 130, "match": "Подход"},
-    {"id": "b_verstak", "label": "Верстак + кладовая", "x": 185, "y": 752, "w": 180, "match": "Верстак"},
-    {"id": "b_kulturotehnika", "label": "Культуротехника", "x": 185, "y": 824, "w": 170, "match": "Культуротехника"},
-    {"id": "b_pedagogika", "label": "Педагогика", "x": 185, "y": 896, "w": 150, "match": "Педагогика"},
-    {"id": "b_predmet", "label": "Предмет", "x": 500, "y": 680, "w": 130, "match": "Предмет"},
-    {"id": "b_ontologiya", "label": "Онтология\n(плоское единство)", "x": 500, "y": 752, "w": 210, "match": "Онтология"},
-    {"id": "b_monady", "label": "Понятия-монады\n(ансамбль)", "x": 500, "y": 824, "w": 210, "match": "Понятие-монада"},
-    {"id": "b_oru", "label": "ОРУ-система", "x": 500, "y": 896, "w": 160, "src": "П0", "match": "ОРУ"},
-    {"id": "b_org", "label": "Организация", "x": 385, "y": 968, "w": 120, "match": "Организация"},
-    {"id": "b_ruk", "label": "Руководство", "x": 500, "y": 968, "w": 120, "match": "Руководство"},
-    {"id": "b_upr", "label": "Управление", "x": 615, "y": 968, "w": 120, "match": "Управление"},
-    {"id": "b_progr", "label": "Программирование", "x": 500, "y": 1040, "w": 180, "match": "Программирование"},
-    {"id": "b_odi", "label": "ОДИ", "x": 740, "y": 1040, "w": 90, "match": "Организационно-деятельностная игра"},
-    {"id": "b_poziciya", "label": "Позиция", "x": 830, "y": 680, "w": 120, "src": "Кн.1", "match": "Позиция"},
-    {"id": "b_kooperaciya", "label": "Кооперация", "x": 830, "y": 752, "w": 130, "match": "Кооперация"},
-    {"id": "b_13principov", "label": "13 принципов\nСМД-подхода", "x": 830, "y": 824, "w": 170, "match": "Принципы СМД"},
-    {"id": "b_form_logika", "label": "Формальная\nлогика", "x": 260, "y": 1185, "w": 150, "match": "Формальная логика"},
-    {"id": "b_dialekt_logika", "label": "Диалектическая\nлогика", "x": 510, "y": 1185, "w": 160, "match": "Диалектическая логика"},
-    {"id": "b_sgl", "label": "Содержательно-\nгенетическая логика", "x": 770, "y": 1185, "w": 200, "match": "Содержательно-генетическая логика"},
-    {"id": "b_znanie_znak_obekt", "label": "Знание ↔ Знак ↔ Объект", "x": 500, "y": 1255, "w": 280, "match": "Знание"},
-    {"id": "b_znak_xl", "label": "Знак = X/λ", "x": 260, "y": 1390, "w": 140, "match": "Знак"},
-    {"id": "b_znachenie", "label": "Значение", "x": 510, "y": 1390, "w": 130, "match": "Значение"},
-    {"id": "b_smysl", "label": "Смысл", "x": 760, "y": 1390, "w": 120, "match": "Смысл"},
-    {"id": "b_zameshchenie", "label": "Замещение", "x": 260, "y": 1470, "w": 140, "match": "Замещение"},
-    {"id": "b_modelirovanie", "label": "Моделирование", "x": 510, "y": 1470, "w": 160, "match": "Моделирование"},
-    {"id": "b_teoriya", "label": "Теория", "x": 760, "y": 1470, "w": 120, "match": "Теория"},
-    {"id": "b_znak_situaciya", "label": "Знаковая ситуация", "x": 330, "y": 1545, "w": 170, "match": "Знаковая ситуация"},
-    {"id": "b_komm_situaciya", "label": "Коммуникативная\nситуация", "x": 680, "y": 1545, "w": 200, "match": "Коммуникативная ситуация"}
+    {
+      "id": "b_chistaya_refleksiya",
+      "label": "Чистая рефлексия\n(вне истории)",
+      "x": 500,
+      "y": 46,
+      "w": 220,
+      "src": "Кн.1",
+      "match": "Чистая рефлексия"
+    },
+    {
+      "id": "b_komm_formy",
+      "label": "Коммуникативные\nформы",
+      "x": 200,
+      "y": 156,
+      "w": 180,
+      "match": "Коммуникация"
+    },
+    {
+      "id": "b_mysl_formy",
+      "label": "Мыслительные\nформы",
+      "x": 500,
+      "y": 156,
+      "w": 170,
+      "match": "Мышление"
+    },
+    {
+      "id": "b_deyat_formy",
+      "label": "Деятельностные\nформы",
+      "x": 800,
+      "y": 156,
+      "w": 180,
+      "match": "Деятельность"
+    },
+    {
+      "id": "b_mk",
+      "label": "М-К",
+      "x": 200,
+      "y": 246,
+      "w": 100,
+      "match": "Мыслекоммуникация"
+    },
+    {
+      "id": "b_myshlenie",
+      "label": "Мышление",
+      "x": 500,
+      "y": 246,
+      "w": 130,
+      "match": "Мышление"
+    },
+    {
+      "id": "b_md_small",
+      "label": "мД",
+      "x": 800,
+      "y": 246,
+      "w": 100,
+      "match": "Мыследействование"
+    },
+    {
+      "id": "b_md",
+      "label": "Мыследеятельность",
+      "x": 500,
+      "y": 336,
+      "w": 220,
+      "src": "П0",
+      "match": "Мыследеятельность"
+    },
+    {
+      "id": "b_deyatelnost",
+      "label": "Деятельность\n(бессубъектна, безобъектна)",
+      "x": 500,
+      "y": 430,
+      "w": 280,
+      "src": "П0+Кн.1",
+      "match": "Деятельность"
+    },
+    {
+      "id": "b_e",
+      "label": "Е",
+      "x": 390,
+      "y": 510,
+      "w": 70,
+      "match": "Естественное"
+    },
+    {
+      "id": "b_i",
+      "label": "И",
+      "x": 610,
+      "y": 510,
+      "w": 70,
+      "match": "Искусственное"
+    },
+    {
+      "id": "b_kentavr",
+      "label": "Кентавр-система",
+      "x": 500,
+      "y": 580,
+      "w": 200,
+      "match": "Кентавр"
+    },
+    {
+      "id": "b_podhod",
+      "label": "Подход",
+      "x": 185,
+      "y": 680,
+      "w": 130,
+      "match": "Подход"
+    },
+    {
+      "id": "b_verstak",
+      "label": "Верстак + кладовая",
+      "x": 185,
+      "y": 752,
+      "w": 180,
+      "match": "Верстак"
+    },
+    {
+      "id": "b_kulturotehnika",
+      "label": "Культуротехника",
+      "x": 185,
+      "y": 824,
+      "w": 170,
+      "match": "Культуротехника"
+    },
+    {
+      "id": "b_pedagogika",
+      "label": "Педагогика",
+      "x": 185,
+      "y": 896,
+      "w": 150,
+      "match": "Педагогика"
+    },
+    {
+      "id": "b_predmet",
+      "label": "Предмет",
+      "x": 500,
+      "y": 680,
+      "w": 130,
+      "match": "Предмет"
+    },
+    {
+      "id": "b_ontologiya",
+      "label": "Онтология\n(плоское единство)",
+      "x": 500,
+      "y": 752,
+      "w": 210,
+      "match": "Онтология"
+    },
+    {
+      "id": "b_monady",
+      "label": "Понятия-монады\n(ансамбль)",
+      "x": 500,
+      "y": 824,
+      "w": 210,
+      "match": "Понятия-монады"
+    },
+    {
+      "id": "b_oru",
+      "label": "ОРУ-система",
+      "x": 500,
+      "y": 896,
+      "w": 160,
+      "src": "П0",
+      "match": "ОРУ"
+    },
+    {
+      "id": "b_org",
+      "label": "Организация",
+      "x": 385,
+      "y": 968,
+      "w": 120,
+      "match": "Организация"
+    },
+    {
+      "id": "b_ruk",
+      "label": "Руководство",
+      "x": 500,
+      "y": 968,
+      "w": 120,
+      "match": "Руководство"
+    },
+    {
+      "id": "b_upr",
+      "label": "Управление",
+      "x": 615,
+      "y": 968,
+      "w": 120,
+      "match": "Управление"
+    },
+    {
+      "id": "b_progr",
+      "label": "Программирование",
+      "x": 500,
+      "y": 1040,
+      "w": 180,
+      "match": "Программирование"
+    },
+    {
+      "id": "b_odi",
+      "label": "ОДИ",
+      "x": 740,
+      "y": 1040,
+      "w": 90,
+      "match": "Организационно-деятельностная игра"
+    },
+    {
+      "id": "b_poziciya",
+      "label": "Позиция",
+      "x": 830,
+      "y": 680,
+      "w": 120,
+      "src": "Кн.1",
+      "match": "Позиция"
+    },
+    {
+      "id": "b_kooperaciya",
+      "label": "Кооперация",
+      "x": 830,
+      "y": 752,
+      "w": 130,
+      "match": "Кооперация"
+    },
+    {
+      "id": "b_13principov",
+      "label": "13 принципов\nСМД-подхода",
+      "x": 830,
+      "y": 824,
+      "w": 170,
+      "match": "принципов СМД"
+    },
+    {
+      "id": "b_form_logika",
+      "label": "Формальная\nлогика",
+      "x": 260,
+      "y": 1185,
+      "w": 150,
+      "match": "Формальная логика"
+    },
+    {
+      "id": "b_dialekt_logika",
+      "label": "Диалектическая\nлогика",
+      "x": 510,
+      "y": 1185,
+      "w": 160,
+      "match": "Диалектическая логика"
+    },
+    {
+      "id": "b_sgl",
+      "label": "Содержательно-\nгенетическая логика",
+      "x": 770,
+      "y": 1185,
+      "w": 200,
+      "match": "Содержательно-генетическая логика"
+    },
+    {
+      "id": "b_znanie_znak_obekt",
+      "label": "Знание ↔ Знак ↔ Объект",
+      "x": 500,
+      "y": 1255,
+      "w": 280,
+      "match": "Знание"
+    },
+    {
+      "id": "b_znak_xl",
+      "label": "Знак = X/λ",
+      "x": 260,
+      "y": 1390,
+      "w": 140,
+      "match": "Знак"
+    },
+    {
+      "id": "b_znachenie",
+      "label": "Значение",
+      "x": 510,
+      "y": 1390,
+      "w": 130,
+      "match": "Значение"
+    },
+    {
+      "id": "b_smysl",
+      "label": "Смысл",
+      "x": 760,
+      "y": 1390,
+      "w": 120,
+      "match": "Смысл"
+    },
+    {
+      "id": "b_zameshchenie",
+      "label": "Замещение",
+      "x": 260,
+      "y": 1470,
+      "w": 140,
+      "match": "Замещение"
+    },
+    {
+      "id": "b_modelirovanie",
+      "label": "Моделирование",
+      "x": 510,
+      "y": 1470,
+      "w": 160,
+      "match": "Моделирование"
+    },
+    {
+      "id": "b_teoriya",
+      "label": "Теория",
+      "x": 760,
+      "y": 1470,
+      "w": 120,
+      "match": "Теория"
+    },
+    {
+      "id": "b_znak_situaciya",
+      "label": "Знаковая ситуация",
+      "x": 330,
+      "y": 1545,
+      "w": 170,
+      "match": "Знаковая ситуация"
+    },
+    {
+      "id": "b_komm_situaciya",
+      "label": "Коммуникативная\nситуация",
+      "x": 680,
+      "y": 1545,
+      "w": 200,
+      "match": "Коммуникативная ситуация"
+    }
   ],
   "edges": [
-    {"from": "b_chistaya_refleksiya", "to": "b_komm_formy", "label": "организуется формами"},
-    {"from": "b_chistaya_refleksiya", "to": "b_mysl_formy"},
-    {"from": "b_chistaya_refleksiya", "to": "b_deyat_formy"},
-    {"from": "b_komm_formy", "to": "b_mk"},
-    {"from": "b_mysl_formy", "to": "b_myshlenie"},
-    {"from": "b_deyat_formy", "to": "b_md_small"},
-    {"from": "b_mk", "to": "b_md"},
-    {"from": "b_myshlenie", "to": "b_md"},
-    {"from": "b_md_small", "to": "b_md"},
-    {"from": "b_md", "to": "b_deyatelnost"},
-    {"from": "b_deyatelnost", "to": "b_e"},
-    {"from": "b_deyatelnost", "to": "b_i"},
-    {"from": "b_e", "to": "b_kentavr"},
-    {"from": "b_i", "to": "b_kentavr"},
-    {"from": "b_kentavr", "to": "b_podhod"},
-    {"from": "b_kentavr", "to": "b_predmet"},
-    {"from": "b_kentavr", "to": "b_poziciya"},
-    {"from": "b_podhod", "to": "b_verstak"},
-    {"from": "b_verstak", "to": "b_kulturotehnika"},
-    {"from": "b_kulturotehnika", "to": "b_pedagogika"},
-    {"from": "b_predmet", "to": "b_ontologiya"},
-    {"from": "b_ontologiya", "to": "b_monady"},
-    {"from": "b_monady", "to": "b_oru"},
-    {"from": "b_oru", "to": "b_org"},
-    {"from": "b_oru", "to": "b_ruk"},
-    {"from": "b_oru", "to": "b_upr"},
-    {"from": "b_ruk", "to": "b_progr"},
-    {"from": "b_progr", "to": "b_odi", "kind": "h"},
-    {"from": "b_poziciya", "to": "b_kooperaciya"},
-    {"from": "b_kooperaciya", "to": "b_13principov"},
-    {"from": "b_form_logika", "to": "b_dialekt_logika", "kind": "h"},
-    {"from": "b_dialekt_logika", "to": "b_sgl", "kind": "h"},
-    {"from": "b_znak_xl", "to": "b_znachenie", "kind": "bi"},
-    {"from": "b_znachenie", "to": "b_smysl", "kind": "bi"},
-    {"from": "b_znak_xl", "to": "b_zameshchenie"},
-    {"from": "b_zameshchenie", "to": "b_modelirovanie", "kind": "h"},
-    {"from": "b_modelirovanie", "to": "b_teoriya", "kind": "h"},
-    {"from": "b_znak_situaciya", "to": "b_komm_situaciya", "kind": "h"}
+    {
+      "from": "b_chistaya_refleksiya",
+      "to": "b_komm_formy",
+      "label": "организуется формами"
+    },
+    {
+      "from": "b_chistaya_refleksiya",
+      "to": "b_mysl_formy"
+    },
+    {
+      "from": "b_chistaya_refleksiya",
+      "to": "b_deyat_formy"
+    },
+    {
+      "from": "b_komm_formy",
+      "to": "b_mk"
+    },
+    {
+      "from": "b_mysl_formy",
+      "to": "b_myshlenie"
+    },
+    {
+      "from": "b_deyat_formy",
+      "to": "b_md_small"
+    },
+    {
+      "from": "b_mk",
+      "to": "b_md"
+    },
+    {
+      "from": "b_myshlenie",
+      "to": "b_md"
+    },
+    {
+      "from": "b_md_small",
+      "to": "b_md"
+    },
+    {
+      "from": "b_md",
+      "to": "b_deyatelnost"
+    },
+    {
+      "from": "b_deyatelnost",
+      "to": "b_e"
+    },
+    {
+      "from": "b_deyatelnost",
+      "to": "b_i"
+    },
+    {
+      "from": "b_e",
+      "to": "b_kentavr"
+    },
+    {
+      "from": "b_i",
+      "to": "b_kentavr"
+    },
+    {
+      "from": "b_kentavr",
+      "to": "b_podhod"
+    },
+    {
+      "from": "b_kentavr",
+      "to": "b_predmet"
+    },
+    {
+      "from": "b_kentavr",
+      "to": "b_poziciya"
+    },
+    {
+      "from": "b_podhod",
+      "to": "b_verstak"
+    },
+    {
+      "from": "b_verstak",
+      "to": "b_kulturotehnika"
+    },
+    {
+      "from": "b_kulturotehnika",
+      "to": "b_pedagogika"
+    },
+    {
+      "from": "b_predmet",
+      "to": "b_ontologiya"
+    },
+    {
+      "from": "b_ontologiya",
+      "to": "b_monady"
+    },
+    {
+      "from": "b_monady",
+      "to": "b_oru"
+    },
+    {
+      "from": "b_oru",
+      "to": "b_org"
+    },
+    {
+      "from": "b_oru",
+      "to": "b_ruk"
+    },
+    {
+      "from": "b_oru",
+      "to": "b_upr"
+    },
+    {
+      "from": "b_ruk",
+      "to": "b_progr"
+    },
+    {
+      "from": "b_progr",
+      "to": "b_odi",
+      "kind": "h"
+    },
+    {
+      "from": "b_poziciya",
+      "to": "b_kooperaciya"
+    },
+    {
+      "from": "b_kooperaciya",
+      "to": "b_13principov"
+    },
+    {
+      "from": "b_form_logika",
+      "to": "b_dialekt_logika",
+      "kind": "h"
+    },
+    {
+      "from": "b_dialekt_logika",
+      "to": "b_sgl",
+      "kind": "h"
+    },
+    {
+      "from": "b_znak_xl",
+      "to": "b_znachenie",
+      "kind": "bi"
+    },
+    {
+      "from": "b_znachenie",
+      "to": "b_smysl",
+      "kind": "bi"
+    },
+    {
+      "from": "b_znak_xl",
+      "to": "b_zameshchenie"
+    },
+    {
+      "from": "b_zameshchenie",
+      "to": "b_modelirovanie",
+      "kind": "h"
+    },
+    {
+      "from": "b_modelirovanie",
+      "to": "b_teoriya",
+      "kind": "h"
+    },
+    {
+      "from": "b_znak_situaciya",
+      "to": "b_komm_situaciya",
+      "kind": "h"
+    }
   ]
 }

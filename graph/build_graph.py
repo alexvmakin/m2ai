@@ -85,6 +85,25 @@ def main():
                 edges.append({"from": e["id"], "to": c["target"], "rel": "relates_to",
                               "rel_type": c["rel_type"], "to_name": c["target_name"]})
 
+    # weak co-mention edges (connect isolates) — distinct from curated relates_to
+    ent_nodes = [n for n in nodes if n.get("type") == "entity"]
+    title_idx = [(n["id"], n["title"]) for n in ent_nodes if len(n["title"]) >= 8]
+    existing = {(e["from"], e["to"]) for e in edges}
+    for n in ent_nodes:
+        text = (n.get("definition", "") + " " + " ".join(v.get("text", "") for v in n.get("versions", []))).lower()
+        if not text.strip():
+            continue
+        cnt = 0
+        for tid, ttl in title_idx:
+            if tid == n["id"]:
+                continue
+            if ttl.lower() in text and (n["id"], tid) not in existing:
+                edges.append({"from": n["id"], "to": tid, "rel": "mentions", "rel_type": "co-mention"})
+                existing.add((n["id"], tid))
+                cnt += 1
+                if cnt >= 8:
+                    break
+
     # decompositions: operation types + genetic map + operations + sources
     alpha = json.loads((DEC / "04_MERGED_ALPHABET.json").read_text(encoding="utf-8"))
     code_by_key = {}
