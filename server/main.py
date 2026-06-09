@@ -454,26 +454,56 @@ def _mini_graph_svg(nid):
     return "".join(svg)
 
 
+def fill_level(n):
+    d = len(n.get("definition", "") or "")
+    anchors = bool(n.get("anchors"))
+    versions = len(n.get("versions") or [])
+    st = n.get("status")
+    if st in ("enriched", "filled") or (d >= 160 and anchors):
+        return "filled"
+    if d >= 70 or anchors or versions >= 2:
+        return "partial"
+    return "thin"
+
+FILL_MARK = {"filled": ("●", "#1c7a4d", "заполнено"),
+             "partial": ("◐", "#9a6b12", "частично"),
+             "thin": ("○", "#c0392b", "требует доработки")}
+
+
 @app.get("/wiki", response_class=HTMLResponse)
-def wiki_index(q: str = ""):
+def wiki_index(q: str = "", fill: str = ""):
     ql = q.strip().lower()
-    ents = [n for n in GRAPH_NODES if n["type"] == "entity"]
+    allents = [n for n in GRAPH_NODES if n["type"] == "entity"]
+    for n in allents:
+        n["_fill"] = fill_level(n)
+    ents = allents
     if ql:
         ents = [n for n in ents if ql in n["title"].lower() or ql in (n.get("definition") or "").lower()]
+    if fill in ("filled", "partial", "thin"):
+        ents = [n for n in ents if n["_fill"] == fill]
     by_cat = {}
     for n in ents:
         by_cat.setdefault(n.get("category_label", "—"), []).append(n)
-    total = len([n for n in GRAPH_NODES if n["type"] == "entity"])
+    total = len(allents)
+    counts = {k: sum(1 for n in allents if n["_fill"] == k) for k in ("filled", "partial", "thin")}
+    legend = " · ".join(
+        f'<a href="/wiki?fill={k}" style="text-decoration:none"><span style="color:{c}">{mk}</span> {lbl} {counts[k]}</a>'
+        for k, (mk, c, lbl) in FILL_MARK.items())
+    clearf = ' · <a href="/wiki" style="color:var(--ink2)">сбросить фильтр</a>' if fill else ""
     body = ('<div class="idx mono">Вики · граф связанных объектов</div>'
             '<h2 style="margin-top:8px">База знаний ГП</h2>'
             f'<p class="lead" style="font-size:15px">{total} сущностей · 18 типов операций · '
             '<a href="/wiki/backbone" style="color:var(--red)">каркас-эталон ↗</a> · <a href="/wiki/coverage" style="color:var(--red)">отчёт покрытия ↗</a></p>'
+            f'<p style="font-size:13px;color:var(--ink2)">{legend}{clearf}</p>'
             f'<form method="get"><input class="wsearch" name="q" placeholder="поиск по сущностям…" value="{html.escape(q)}"></form>')
     for cat in sorted(by_cat, key=lambda c: -len(by_cat[c])):
-        items = sorted(by_cat[cat], key=lambda n: n["title"].lower())
+        items = sorted(by_cat[cat], key=lambda n: (n["_fill"] != "thin", n["title"].lower()))
         body += f'<h3>{html.escape(cat)} · {len(items)}</h3><div class="widx">'
         for n in items:
-            body += f'<a href="/wiki/{html.escape(n["id"])}"><small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>'
+            mk, col, lbl = FILL_MARK[n["_fill"]]
+            dim = ' style="color:var(--ink2)"' if n["_fill"] == "thin" else ""
+            body += (f'<a href="/wiki/{html.escape(n["id"])}"{dim} title="{lbl}">'
+                     f'<span style="color:{col}">{mk}</span> <small>{html.escape(n["id"])}</small>{html.escape(n["title"])}</a>')
         body += '</div>'
     return page("Вики — M2AI", body, rail=True)
 
@@ -624,11 +654,16 @@ def wiki_node(nid: str):
         raise HTTPException(404, "Узел не найден")
     layer = ""
     crumbs = '<div class="crumbs"><a href="/wiki">← Вики</a></div>'
+    _fl = fill_level(n) if n.get("type") == "entity" else None
+    fill_b = ""
+    if _fl:
+        _mk, _c, _lbl = FILL_MARK[_fl]
+        fill_b = f'<span class="badge mono" style="border-color:{_c};color:{_c}">{_mk} {_lbl}</span>'
     layer_b = f'<span class="badge mono" style="border-color:#2a4d6e;color:#2a4d6e">слой: {html.escape(str(n.get("layer")))}</span>' if n.get("layer") else ""
     stub_b = '<span class="badge mono" style="border-color:#c0392b;color:#c0392b">stub · к дозаполнению (S2)</span>' if n.get("status") == "stub" else ""
     idline = (f'<div class="idline"><span class="badge mono">{html.escape(n["id"])}</span>'
               f'<span class="badge cat mono">{html.escape(n.get("category_label",""))}</span>'
-              + layer_b + stub_b
+              + fill_b + layer_b + stub_b
               + (f'<span class="mono">первое появление: {html.escape(n["first_appearance"])}</span>' if n.get("first_appearance") else "") + '</div>')
     body = crumbs + idline + f'<h1 style="font-size:32px">{html.escape(n["title"])}</h1>'
     if n.get("definition"):
