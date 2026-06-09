@@ -475,46 +475,94 @@ def wiki_index(q: str = ""):
 
 @app.get("/wiki/backbone", response_class=HTMLResponse)
 def wiki_backbone():
-    bb = _load_json(BACKBONE_FILE) or {"clusters": [], "flow": []}
+    import math
+    bb = _load_json(BACKBONE_FILE) or {"nodes": [], "edges": [], "boxes": [], "viewBox": [0, 0, 1000, 1000]}
     ents = [n for n in GRAPH_NODES if n["type"] == "entity"]
 
     def match(label):
-        ll = label.lower()
+        ll = (label or "").lower()
         for n in ents:
             t = n["title"].lower()
-            if ll == t or ll in t or t in ll:
+            if ll and (ll == t or ll in t or t in ll):
                 return n
         return None
 
-    clusters = {c["id"]: c for c in bb.get("clusters", [])}
-    hit = tot = 0
-    rows = ""
-    flow = bb.get("flow") or list(clusters)
-    for ci, cid in enumerate(flow):
-        c = clusters.get(cid)
-        if not c:
+    by = {}
+    hit = 0
+    for nd in bb["nodes"]:
+        m = match(nd.get("match", nd["label"]))
+        nd["_hit"] = m["id"] if m else None
+        by[nd["id"]] = nd
+        if m:
+            hit += 1
+    tot = len(bb["nodes"])
+    vb = bb.get("viewBox", [0, 0, 1000, 1000])
+    H = 30
+
+    def nh(nd):
+        return 40 if "\n" in nd["label"] else 30
+
+    svg = [f'<svg viewBox="{vb[0]} {vb[1]} {vb[2]} {vb[3]}" width="100%" style="max-width:1000px" '
+           'role="img" aria-label="структурная карта интегрированной онтологии" font-family="IBM Plex Mono,monospace">',
+           '<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">'
+           '<path d="M0,0 L7,3 L0,6" fill="#5b606b"/></marker>'
+           '<marker id="ars" markerWidth="9" markerHeight="9" refX="2" refY="3" orient="auto">'
+           '<path d="M7,0 L0,3 L7,6" fill="#5b606b"/></marker></defs>']
+    for bx in bb.get("boxes", []):
+        svg.append(f'<rect x="{bx["x"]}" y="{bx["y"]}" width="{bx["w"]}" height="{bx["h"]}" '
+                   'fill="none" stroke="#16181d" stroke-width="1.3"/>'
+                   f'<text x="{bx["x"]+14}" y="{bx["y"]+18}" font-size="12" fill="#5b606b" '
+                   f'letter-spacing="1">{html.escape(bx["label"])}</text>')
+    for e in bb["edges"]:
+        a, b = by.get(e["from"]), by.get(e["to"])
+        if not a or not b:
             continue
-        chips = ""
-        for nd in c["nodes"]:
-            tot += 1
-            m = match(nd.get("match", nd["label"]))
-            if m:
-                hit += 1
-                chips += f'<span class="bnode hit"><a href="/wiki/{html.escape(m["id"])}">{html.escape(nd["label"])}</a></span>'
-            else:
-                chips += f'<span class="bnode gap">{html.escape(nd["label"])}</span>'
-        src = f'<span>← {html.escape(c["source"])}</span>' if c.get("source") else '<span></span>'
-        rows += (f'<div class="bbc"><div class="hd"><span>{html.escape(c["label"])}</span>{src}</div>'
-                 f'<div class="chips">{chips}</div></div>')
-        if ci < len(flow) - 1:
-            rows += '<div class="arrow">↓</div>'
+        ax, ay, bx2, by2 = a["x"], a["y"], b["x"], b["y"]
+        dx, dy = bx2 - ax, by2 - ay
+        d = math.hypot(dx, dy) or 1
+        ux, uy = dx / d, dy / d
+        sh, th = nh(a), nh(b)
+        sx, sy = ax + ux * (sh / 2 + 2), ay + uy * (sh / 2 + 2)
+        ex, ey = bx2 - ux * (th / 2 + 5), by2 - uy * (th / 2 + 5)
+        bi = e.get("kind") == "bi"
+        svg.append(f'<line x1="{sx:.0f}" y1="{sy:.0f}" x2="{ex:.0f}" y2="{ey:.0f}" '
+                   f'stroke="#9aa3b2" stroke-width="1.2" marker-end="url(#ar)"'
+                   + (' marker-start="url(#ars)"' if bi else '') + '/>')
+        if e.get("label"):
+            mx, my = (sx + ex) / 2, (sy + ey) / 2
+            svg.append(f'<text x="{mx+6:.0f}" y="{my-3:.0f}" font-size="10" fill="#c0392b">{html.escape(e["label"])}</text>')
+    for nd in bb["nodes"]:
+        w = nd.get("w", 150)
+        h = nh(nd)
+        x, y = nd["x"] - w / 2, nd["y"] - h / 2
+        hitid = nd["_hit"]
+        stroke = "#1c7a4d" if hitid else "#c0392b"
+        dash = '' if hitid else ' stroke-dasharray="4 3"'
+        rect = (f'<rect x="{x:.0f}" y="{y:.0f}" width="{w}" height="{h}" rx="2" fill="#fff" '
+                f'stroke="{stroke}" stroke-width="1.4"{dash}/>')
+        lines = nd["label"].split("\n")
+        if len(lines) == 1:
+            txt = f'<text x="{nd["x"]}" y="{nd["y"]+4:.0f}" text-anchor="middle" font-size="12" fill="#16181d">{html.escape(lines[0])}</text>'
+        else:
+            txt = (f'<text x="{nd["x"]}" y="{nd["y"]-3:.0f}" text-anchor="middle" font-size="11" fill="#16181d">{html.escape(lines[0])}</text>'
+                   f'<text x="{nd["x"]}" y="{nd["y"]+11:.0f}" text-anchor="middle" font-size="11" fill="#16181d">{html.escape(lines[1])}</text>')
+        mark = '' if hitid else f'<text x="{x+8:.0f}" y="{y+13:.0f}" font-size="11" fill="#c0392b">○</text>'
+        src = ''
+        if nd.get("src"):
+            src = f'<text x="{nd["x"]+w/2+6:.0f}" y="{nd["y"]+3:.0f}" font-size="9" fill="#5b606b">← {html.escape(nd["src"])}</text>'
+        block = rect + txt + mark + src
+        if hitid:
+            svg.append(f'<a href="/wiki/{hitid}">{block}</a>')
+        else:
+            svg.append(block)
+    svg.append('</svg>')
     body = ('<div class="crumbs"><a href="/wiki">← Вики</a></div>'
-            f'<div class="idx mono">Каркас-эталон · A4.5 сверка</div>'
+            f'<div class="idx mono">Каркас-эталон · A4.5 сверка с графом</div>'
             f'<h2 style="margin-top:6px">{html.escape(bb.get("title","Каркас"))}</h2>'
             f'<p class="lead" style="font-size:14px">{html.escape(bb.get("note",""))} '
-            f'<span class="cover">· покрытие {hit}/{tot} ({round(hit*100/tot) if tot else 0}%) · '
-            '✓ есть в графе · ○ пробел</span></p>'
-            f'<div class="bbflow">{rows}</div>')
+            f'<span class="cover">· покрытие {hit}/{tot} ({round(hit*100/tot) if tot else 0}%)</span></p>'
+            '<div style="overflow-x:auto;border:1px solid var(--line2);background:#fff;padding:10px">'
+            + "".join(svg) + '</div>')
     return page("Каркас-эталон — M2AI", body)
 
 
