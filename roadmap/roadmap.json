@@ -333,7 +333,7 @@
       "title": "Ontological GraphRAG + интерфейс общения",
       "status": "in_progress",
       "priority": "high",
-      "progress": 55,
+      "progress": 70,
       "horizon": "now",
       "summary": "RAG по лучшим практикам поверх графа знаний ГП (Ontological GraphRAG из плана ГП×LLM) + интерфейс диалога. Шаг 2 после вики-базы — использует тот же граф объектов как источник.",
       "depends_on": [
@@ -396,17 +396,21 @@
         {
           "id": "P3-S3",
           "title": "S3 · Оценка качества (faithfulness/citations)",
-          "status": "backlog",
+          "status": "done",
           "tasks": [
             {
               "id": "P3-S3a",
               "title": "метрики и переранжирование",
-              "status": "backlog"
+              "status": "done"
             }
           ]
         }
       ],
       "log": [
+        {
+          "date": "2026-06-09",
+          "entry": "P3-S3: реранкинг (title/exact/degree) — eval 16 вопросов: recall@6 100%, MRR 1.0, top-1 16/16 (было 94%/0.865/13). Грунтинг цитат в /ask (валидные → ссылки, вне контекста → подсветка). rag_eval.py + результаты в репо."
+        },
         {
           "date": "2026-06-09",
           "entry": "Генерация подключена к RMR-роутеру (rmrrouter.redmadrobot.com/v1, модель по env RMR_MODEL, дефолт claude-sonnet-4-6). /ask: grounded-ответ по найденному подграфу + цитаты. Ключ читается из env (RMR_API_KEY), в код не зашит. Нужно задать env на Railway-сервисе m2ai."

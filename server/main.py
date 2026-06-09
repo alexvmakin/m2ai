@@ -81,7 +81,7 @@ def _build_rag_index():
         text = " ".join([n["title"], n["title"], n.get("definition", "")]
                         + [v.get("text", "") for v in n.get("versions", [])] + rel_names)
         toks = _rag_tok(text)
-        docs.append({"id": n["id"], "tf": _Counter(toks), "len": len(toks)})
+        docs.append({"id": n["id"], "tf": _Counter(toks), "len": len(toks), "ttoks": set(_rag_tok(n["title"]))})
     N = len(docs)
     df = {}
     for d in docs:
@@ -106,8 +106,22 @@ def rag_search(q, k=6):
     qt = _rag_tok(q)
     if not qt:
         return [], []
-    scored = sorted(((_bm25(qt, d), d["id"]) for d in RAG_DOCS), reverse=True)
-    top = [(round(sc, 2), i) for sc, i in scored if sc > 0][:k]
+    qset = set(qt)
+    scored = []
+    for d in RAG_DOCS:
+        base = _bm25(qt, d)
+        if base <= 0:
+            continue
+        tt = d["ttoks"]
+        cover = len(qset & tt) / max(len(tt), 1)            # доля заголовка, покрытая запросом
+        boost = 3.5 * cover
+        if qset and qset.issubset(tt):                       # запрос целиком в заголовке (точный концепт)
+            boost += 5.0
+        deg = GRAPH_BY_ID.get(d["id"], {}).get("degree", 0)
+        boost += 0.15 * _math.log1p(deg)                     # лёгкий приоритет центральности
+        scored.append((base + boost, d["id"]))
+    scored.sort(reverse=True)
+    top = [(round(sc, 2), i) for sc, i in scored][:k]
     top_ids = {i for _, i in top}
     exp = {}
     for _, i in top:
@@ -838,10 +852,26 @@ def ask(q: str = ""):
                 ctx += f"\n\n[{i}] {nn.get('title','')}: {nn.get('definition','')}"
             answer = rmr_generate(q, ctx) if rmr_available() else None
             if answer:
-                import html as _h
-                ans_html = _h.escape(answer).replace(chr(10), "<br>")
+                ctx_ids = {i for _, i in top} | {i for i, _ in expanded}
+                ans_html = html.escape(answer).replace(chr(10), "<br>")
+                valid, bad = set(), set()
+                def _cite(m):
+                    parts = [p.strip() for p in m.group(1).split(",")]
+                    out = []
+                    for p in parts:
+                        nd = GRAPH_BY_ID.get(p)
+                        if nd and p in ctx_ids:
+                            valid.add(p); out.append(f'<a href="/wiki/{p}">{p}</a>')
+                        elif nd:
+                            bad.add(p); out.append(f'<span title="вне найденного контекста" style="color:#9a6b12">{p}</span>')
+                        else:
+                            bad.add(p); out.append(f'<span title="нет такой сущности" style="color:#c0392b">{p}?</span>')
+                    return "[" + ", ".join(out) + "]"
+                ans_html = re.sub(r"\[((?:[A-ZА-Я]{1,3}\d+\s*,?\s*)+)\]", _cite, ans_html)
+                ground = (f'<span style="color:#1d7a5e">{len(valid)} цитат подтверждено контекстом</span>'
+                          + (f' · <span style="color:#9a6b12">{len(bad)} вне контекста</span>' if bad else ""))
                 body += (f'<div class="def" style="border-left-color:#1d7a5e">{ans_html}</div>'
-                         '<p class="sum" style="font-size:12px">Ответ сгенерирован через RMR по найденному подграфу. Источники ниже.</p>')
+                         f'<p class="sum" style="font-size:12px">Ответ сгенерирован через RMR по найденному подграфу · грунтинг цитат: {ground}. Источники ниже.</p>')
             else:
                 body += (f'<div class="def">По запросу наиболее релевантны {len(top)} сущностей графа. '
                          f'Ключевая: <a href="/wiki/{top[0][1]}" style="color:var(--red)">{html.escape(best.get("title",""))}</a>. '
